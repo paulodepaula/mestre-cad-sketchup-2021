@@ -7,3 +7,7 @@ Para produzir `.skp` **diretamente em um runner do GitHub**, precisamos solicita
 Nao foram incluidas DLLs/headers do SDK porque a distribuicao depende das condicoes do fabricante e do acesso autorizado. Nao e correto chamar um DAE ou ZIP de SKP. Ate essa etapa estar pronta, a unica forma validada de produzir um SKP nativo e abrir os dados no SketchUp Desktop 2021 e salvar nele.
 
 O workflow atual nao executa o SketchUp via emulacao/servidor e nao exige SketchUp no runner Linux para gerar DXF e DAE.
+
+## Extensao 1.4.0: SKP local automatico
+
+O SketchUp Desktop 2021 salva uma copia nativa `.skp` automaticamente ao importar o projeto sincronizado. O metodo `Sketchup::Model#save_copy` (suportado desde 2014) preserva o arquivo principal aberto. O usuario tambem pode salvar uma copia do grupo selecionado sem reimportar. Nao ha geracao de SKP no runner GitHub nem push automatico de arquivos SKP.

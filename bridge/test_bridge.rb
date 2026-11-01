@@ -2,6 +2,8 @@
 # Testes offline: exercitam validacao e logica via mock, NAO substituem SketchUp real.
 require 'minitest/autorun'
 require 'json'
+require 'tmpdir'
+require 'minitest/mock'
 
 class Numeric
   def mm; to_f / 25.4; end
@@ -115,6 +117,13 @@ module Sketchup
     def start_operation(*_args); @history << :start; end
     def commit_operation; @history << :commit; end
     def abort_operation; @history << :abort; end
+    def path; 'C:/outro-projeto/meu-trabalho.skp'; end
+    def save_copy(filename)
+      raise 'Sobrescrita de SKP nao autorizada' if File.exist?(filename)
+      File.binwrite(filename, "SKP_SIMULADO_2021\x00".b)
+      @history << :save_copy
+      true
+    end
   end
   def self.version; '21.1.332'; end
   def self.active_model; @model ||= Model.new; end
@@ -130,6 +139,54 @@ class TestMestreCAD < Minitest::Test
     Sketchup.reset
     @data = JSON.parse(File.read(PATH))
   end
+  def test_import_synced_builds_audits_and_saves_native_skp_copy
+    Dir.mktmpdir do |local|
+      source=File.join(local,'model.json')
+      File.binwrite(source,File.binread(PATH))
+      ps=MestreCAD::SketchUp2021::ProjectSync
+      ps.stub(:local_root,local) do
+        dest=ps.import_synced
+        assert File.file?(dest), 'SKP deveria ser salvo automaticamente'
+        assert_match(/\.skp\z/,dest)
+        assert_equal "SKP_SIMULADO_2021\x00".b,File.binread(dest)
+        assert_equal 'C:/outro-projeto/meu-trabalho.skp',Sketchup.active_model.path
+        assert_equal [:start,:commit,:save_copy],Sketchup.active_model.history
+        assert_equal 1,Sketchup.active_model.entities.groups.length
+      end
+    end
+  end
+
+  def test_cancelled_import_does_not_create_sketchup_copy
+    Dir.mktmpdir do |local|
+      source=File.join(local,'model.json')
+      File.binwrite(source,File.binread(PATH))
+      ps=MestreCAD::SketchUp2021::ProjectSync
+      original_messagebox=UI.method(:messagebox)
+      UI.stub(:messagebox,lambda { |msg,mode=nil| mode==MB_YESNO ? 7 : original_messagebox.call(msg,mode) }) do
+        ps.stub(:local_root,local) do
+          assert_nil ps.import_synced
+          assert_empty Dir.glob(File.join(local,'sketchup','*.skp'))
+          assert_empty Sketchup.active_model.entities.groups
+        end
+      end
+    end
+  end
+
+  def test_save_selected_existing_project_copy_without_reimport
+    Dir.mktmpdir do |local|
+      source=File.join(local,'model.json')
+      File.binwrite(source,File.binread(PATH))
+      root=MestreCAD::SketchUp2021.build(@data)
+      ps=MestreCAD::SketchUp2021::ProjectSync
+      ps.stub(:local_root,local) do
+        file=ps.save_selected_skp
+        assert File.file?(file)
+        assert_equal 1,Sketchup.active_model.entities.groups.length
+        assert_equal [:start,:commit,:save_copy],Sketchup.active_model.history
+      end
+    end
+  end
+
   def test_example_contract
     result = MestreCAD::SketchUp2021.validate!(@data)
     assert_match(/PASS: 6 elementos/, result)

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# Mestre CAD Bridge 1.3.0 - SketchUp Desktop 2021 / Ruby 2.7.
+# Mestre CAD Bridge 1.4.0 - SketchUp Desktop 2021 / Ruby 2.7.
 # Sem rede, sem execucao arbitraria de JSON, sem alterar/apagar entidades existentes.
 require 'sketchup.rb'
 require 'json'
@@ -208,7 +208,7 @@ module MestreCAD
       [issues.empty?, issues, "X/Y/Z: #{root_size.map { |v| v.round(1) }.join(' / ')} mm; #{children.length} grupos"]
     end
 
-    def build(data)
+    def build(data, auto_save: false)
       check_version!
       resumo = validate!(data)
       msg = "#{data['nome']} / #{data['revisao']}\n#{resumo}\n\nAdicionar novo grupo ao modelo aberto?\nElementos existentes NAO serao apagados.\nA estrutura e um ESTUDO, nao um calculo estrutural."
@@ -229,7 +229,9 @@ module MestreCAD
         model.selection.clear
         model.selection.add(root)
         puts "MESTRE CAD PASS: #{resumo} - #{details}"
-        UI.messagebox("Projeto criado e verificado.\n#{details}\n\nSalve uma COPIA .skp no SketchUp.\nNao e projeto executivo.")
+        unless auto_save
+          UI.messagebox("Projeto criado e verificado.\n#{details}\n\nSalve uma COPIA .skp no SketchUp.\nNao e projeto executivo.")
+        end
         root
       rescue StandardError => e
         model.abort_operation
@@ -291,6 +293,7 @@ module MestreCAD
       menu.add_separator
       menu.add_item('Sincronizar arquivos CAD do GitHub...') { ProjectSync.sync_dialog }
       menu.add_item('Importar projeto sincronizado...') { ProjectSync.import_synced }
+      menu.add_item('Salvar copia SKP do projeto sincronizado...') { ProjectSync.save_selected_skp }
       menu.add_separator
       menu.add_item('Configurar repositorio GitHub...') { Updater.configure_repository }
       menu.add_item('Verificar atualizacoes no GitHub...') { Updater.check_for_updates }

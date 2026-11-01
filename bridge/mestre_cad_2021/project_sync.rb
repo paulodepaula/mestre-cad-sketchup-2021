@@ -199,11 +199,73 @@ module MestreCAD
         result = apply_package!(manifest, payloads)
         UI.messagebox("Sincronizacao concluida: #{result[:changed]} arquivo(s) novo(s)/atualizado(s).\n" \
                       "Local: #{result[:root]}\nRevisao: #{manifest['revisao']}\n\n" \
-                      'Para gerar um SKP nativo, use Importar projeto sincronizado e Salvar como no SketchUp.')
+                      'Apos importar, o SketchUp salva uma copia SKP local sem sobrescrever outras copias.')
         result
       rescue StandardError => e
         warn "MESTRE CAD SYNC ERRO: #{e.class}: #{e.message}"
         UI.messagebox("Sincronizacao nao concluida: #{e.message}\nOs arquivos locais foram preservados.")
+        nil
+      end
+
+      # O Model#save_copy existe desde SketchUp 2014 e preserva model.path.
+      # Salva APENAS no computador do usuario; sincronizar nao envia SKP ao GitHub.
+      def save_synced_skp!(model, group, source_path, root = local_root)
+        raise 'Nenhum modelo SketchUp valido aberto.' unless model && model.respond_to?(:save_copy)
+        raise 'Grupo do Mestre CAD nao identificado.' unless group && group.respond_to?(:get_attribute)
+        raise 'Grupo sem identificacao Mestre CAD.' unless group.get_attribute('MestreCAD2021', 'schema') == 'mestre-cad-geometria-v1'
+        expected_source = File.join(root, 'model.json')
+        raise 'Fonte JSON fora do projeto sincronizado.' unless File.expand_path(source_path) == File.expand_path(expected_source)
+        assert_regular_paths!(root, ['model.json', 'sketchup'])
+        raise 'Projeto JSON sincronizado ausente.' unless File.file?(expected_source)
+        raw = File.binread(expected_source)
+        data = JSON.parse(raw)
+        imported = JSON.parse(group.get_attribute('MestreCAD2021', 'data').to_s)
+        raise 'O modelo aberto difere do JSON sincronizado; salve manualmente.' unless imported == data
+        # Nao criar uma copia marcada como confiavel se o grupo foi alterado.
+        ok, issues, _info = MestreCAD::SketchUp2021.verify_group(group)
+        raise "A auditoria do grupo falhou: #{issues.first(3).join('; ')}" unless ok
+        revision = data['revisao'].to_s
+        raise 'Revisao com caracteres nao permitidos no nome SKP.' unless revision.match?(/\A[A-Za-z0-9_-]{1,20}\z/)
+
+        dst_dir = File.join(root, 'sketchup')
+        FileUtils.mkdir_p(dst_dir)
+        assert_regular_paths!(root, ['sketchup'])
+        stamp = Time.now.utc.strftime('%Y%m%dT%H%M%SZ')
+        source_id = sha256(raw)[0, 12]
+        # Um nome novo a cada exportacao impede sobrescrever SKPs editados.
+        12.times do
+          name = "#{PROJECT}-#{revision}-#{source_id}-#{stamp}-#{SecureRandom.hex(4)}.skp"
+          dst = File.join(dst_dir, name)
+          assert_regular_paths!(root, ["sketchup/#{name}"])
+          next if File.exist?(dst) || File.symlink?(dst)
+          begin
+            result = model.save_copy(dst)
+            raise 'SketchUp nao conseguiu salvar a copia SKP.' unless result
+            raise 'SketchUp gerou um arquivo SKP vazio ou ausente.' unless File.file?(dst) && File.size(dst) > 0
+            return dst
+          rescue StandardError
+            File.delete(dst) if File.file?(dst)
+            raise
+          end
+        end
+        raise 'Nao foi possivel reservar um nome SKP sem sobrescrever arquivos.'
+      end
+
+      # Tambem funciona para o usuario que ja havia importado na versao 1.3.0.
+      def save_selected_skp
+        raise 'Extensao requer SketchUp 2021.' unless Sketchup.version.to_i == 21
+        model = Sketchup.active_model
+        raise 'Nao ha modelo SketchUp aberto.' unless model
+        groups = model.selection.grep(Sketchup::Group)
+        raise 'Selecione somente o grupo principal importado do Mestre CAD.' unless groups.length == 1 && model.selection.length == 1
+        source_path = File.join(local_root, 'model.json')
+        path = save_synced_skp!(model, groups.first, source_path)
+        UI.messagebox("Copia SKP salva com sucesso em:\n#{path}\n\nO arquivo original aberto nao foi alterado.
+Esta copia esta apenas no computador, nao no GitHub.")
+        path
+      rescue StandardError => e
+        warn "MESTRE CAD SAVE SKP ERRO: #{e.class}: #{e.message}"
+        UI.messagebox("Nao foi possivel salvar copia SKP: #{e.message}")
         nil
       end
 
@@ -212,10 +274,23 @@ module MestreCAD
         path = File.join(local_root, 'model.json')
         raise 'Projeto nao sincronizado. Execute Sincronizar arquivos CAD do GitHub primeiro.' unless File.file?(path)
         data = MestreCAD::SketchUp2021.read_json(path)
-        MestreCAD::SketchUp2021.build(data)
+        imported_group = MestreCAD::SketchUp2021.build(data, auto_save: true)
+        return nil unless imported_group
+        begin
+          result = save_synced_skp!(Sketchup.active_model, imported_group, path)
+          UI.messagebox("Projeto importado, auditado e copiado para:\n#{result}\n\n" \
+                        'Modelo aberto preservado; nenhum SKP foi enviado ao GitHub.')
+          result
+        rescue StandardError => save_error
+          warn "MESTRE CAD SAVE SKP ERRO: #{save_error.class}: #{save_error.message}"
+          UI.messagebox("Projeto importado e auditado, mas o SKP nao foi salvo: #{save_error.message}\n" \
+                        'Use Salvar copia SKP do projeto sincronizado ou Arquivo > Salvar como.')
+          nil
+        end
       rescue StandardError => e
         warn "MESTRE CAD IMPORT ERRO: #{e.class}: #{e.message}"
         UI.messagebox("Importacao nao concluida: #{e.message}")
+        nil
       end
     end
   end
