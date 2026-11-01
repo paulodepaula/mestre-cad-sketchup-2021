@@ -29,16 +29,27 @@ class TestSkpAutosave < Minitest::Test
     end
   end
   class ModelMock
-    attr_reader :saved, :path
-    attr_accessor :fail_copy, :empty_copy
-    def initialize
+    attr_reader :saved, :path, :calls
+    attr_accessor :fail_copy, :empty_copy, :fail_save
+    def initialize(path = 'C:/outro-projeto/existente.skp')
       @saved=[]
-      @path='C:/outro-projeto/existente.skp'
+      @calls=[]
+      @path=path
     end
     def save_copy(dest)
+      @calls << [:save_copy, dest]
+      raise 'Model must be saved before copying.' if @path.to_s.empty?
       @saved << dest
       File.binwrite(dest, @empty_copy ? '' : "SKP-PROVA-TESTE\x00")
       !@fail_copy
+    end
+    def save(dest)
+      @calls << [:save, dest]
+      File.binwrite(dest, @empty_copy ? '' : "SKP-PROVA-TESTE\x00")
+      return false if @fail_save
+      @path = dest
+      @saved << dest
+      true
     end
   end
 
@@ -58,6 +69,44 @@ class TestSkpAutosave < Minitest::Test
       assert_equal 'C:/outro-projeto/existente.skp', model.path
       assert_equal [path], model.saved
       assert_equal "SKP-PROVA-TESTE\x00", File.binread(path)
+    end
+  end
+
+  def test_untitled_sketchup_2021_model_first_save_does_not_call_save_copy
+    Dir.mktmpdir do |root|
+      source, group = fixture(root)
+      model = ModelMock.new('')
+      file = PS.save_synced_skp!(model, group, source, root)
+      assert File.file?(file)
+      assert_equal file, model.path
+      assert_equal [[:save, file]], model.calls
+    end
+  end
+
+  def test_after_initial_save_followup_creates_a_copy_without_changing_path
+    Dir.mktmpdir do |root|
+      source, group = fixture(root)
+      model = ModelMock.new('')
+      first = PS.save_synced_skp!(model, group, source, root)
+      File.binwrite(first, 'primeiro mantido')
+      second = PS.save_synced_skp!(model, group, source, root)
+      assert_equal first, model.path
+      refute_equal first, second
+      assert_equal [[:save,first], [:save_copy,second]], model.calls
+      assert_equal 'primeiro mantido', File.binread(first)
+      assert File.file?(second)
+    end
+  end
+
+  def test_failed_first_save_removes_partial_file_but_not_other_project_files
+    Dir.mktmpdir do |root|
+      source, group = fixture(root)
+      model = ModelMock.new('')
+      model.fail_save = true
+      assert_raises(RuntimeError) { PS.save_synced_skp!(model, group, source, root) }
+      assert_equal '', model.path
+      assert_empty Dir.glob(File.join(root,'sketchup','*.skp'))
+      assert File.file?(source)
     end
   end
 

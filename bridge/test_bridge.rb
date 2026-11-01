@@ -108,16 +108,24 @@ module Sketchup
   end
   class Model
     attr_reader :entities, :layers, :selection, :history
+    attr_accessor :path
     def initialize
       @entities = Entities.new
       @layers = Layers.new
       @selection = Selection.new
       @history = []
+      @path = 'C:/outro-projeto/meu-trabalho.skp'
     end
     def start_operation(*_args); @history << :start; end
     def commit_operation; @history << :commit; end
     def abort_operation; @history << :abort; end
-    def path; 'C:/outro-projeto/meu-trabalho.skp'; end
+    def save(filename)
+      raise 'Sobrescrita de SKP nao autorizada' if File.exist?(filename)
+      File.binwrite(filename, "SKP_SIMULADO_2021\x00".b)
+      @path = filename
+      @history << :save
+      true
+    end
     def save_copy(filename)
       raise 'Sobrescrita de SKP nao autorizada' if File.exist?(filename)
       File.binwrite(filename, "SKP_SIMULADO_2021\x00".b)
@@ -151,6 +159,22 @@ class TestMestreCAD < Minitest::Test
         assert_equal "SKP_SIMULADO_2021\x00".b,File.binread(dest)
         assert_equal 'C:/outro-projeto/meu-trabalho.skp',Sketchup.active_model.path
         assert_equal [:start,:commit,:save_copy],Sketchup.active_model.history
+        assert_equal 1,Sketchup.active_model.entities.groups.length
+      end
+    end
+  end
+
+  def test_untitled_sketchup_import_creates_first_skp_and_sets_model_path
+    Dir.mktmpdir do |local|
+      source=File.join(local,'model.json')
+      File.binwrite(source,File.binread(PATH))
+      Sketchup.active_model.path = ''
+      ps=MestreCAD::SketchUp2021::ProjectSync
+      ps.stub(:local_root,local) do
+        dest=ps.import_synced
+        assert File.file?(dest)
+        assert_equal dest, Sketchup.active_model.path
+        assert_equal [:start,:commit,:save], Sketchup.active_model.history
         assert_equal 1,Sketchup.active_model.entities.groups.length
       end
     end

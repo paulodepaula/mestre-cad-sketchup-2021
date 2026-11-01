@@ -14,7 +14,7 @@ O arquivo fonte de medidas está em [`projects/obra-com-mezanino/model.json`](pr
 
 ## SketchUp 2021
 
-Na seção [Releases](https://github.com/paulodepaula/mestre-cad-sketchup-2021/releases), instale a versão 1.4.0 ou posterior do `.rbz` uma vez. No SketchUp, use:
+Na seção [Releases](https://github.com/paulodepaula/mestre-cad-sketchup-2021/releases), instale a versão 1.4.1 ou posterior do `.rbz` uma vez. No SketchUp, use:
 
 1. **Extensões > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub...** (baixa JSON/DXF/DAE e verifica SHA-256 sem sobrescrever alterações locais).
 2. **Extensões > Mestre CAD 2021 > Importar projeto sincronizado...** (cria grupos editáveis a partir do JSON; salve como `.skp`).
@@ -34,9 +34,9 @@ python3 tools/build_project.py projects/obra-com-mezanino/model.json --check
 python3 -m unittest discover -s tools/tests -v
 ```
 
-## Gerar um SKP local automaticamente (desde 1.4.0)
+## Gerar um SKP local automaticamente (corrigido em 1.4.1)
 
-No SketchUp 2021, **Importar projeto sincronizado** valida a geometria, gera os grupos e salva uma COPIA .skp na pasta local `Documents/MestreCAD/projetos/obra-com-mezanino/sketchup/`. A copia nao substitui o modelo original nem outras copias; usa `Sketchup::Model#save_copy`.
+No SketchUp 2021, **Importar projeto sincronizado** valida a geometria, gera os grupos e salva um SKP na pasta local `Documents/MestreCAD/projetos/obra-com-mezanino/sketchup/`. Quando o modelo ainda nao tem caminho, a primeira gravacao usa `Model#save(path)` e associa o modelo aberto a esse arquivo. Em modelos ja salvos, `Model#save_copy(path)` cria outra copia, mantendo o caminho original. Nenhuma gravacao sobrescreve arquivos anteriores.
 
 Se a geometria ja foi importada em uma versao anterior, selecione o grupo principal e use **Salvar copia SKP do projeto sincronizado**. O grupo precisa passar na auditoria e coincidir com o `model.json` sincronizado.
 

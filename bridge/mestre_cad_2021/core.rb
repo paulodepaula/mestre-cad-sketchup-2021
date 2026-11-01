@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# Mestre CAD Bridge 1.4.0 - SketchUp Desktop 2021 / Ruby 2.7.
+# Mestre CAD Bridge 1.4.1 - SketchUp Desktop 2021 / Ruby 2.7.
 # Sem rede, sem execucao arbitraria de JSON, sem alterar/apagar entidades existentes.
 require 'sketchup.rb'
 require 'json'

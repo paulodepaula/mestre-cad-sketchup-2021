@@ -207,10 +207,12 @@ module MestreCAD
         nil
       end
 
-      # O Model#save_copy existe desde SketchUp 2014 e preserva model.path.
-      # Salva APENAS no computador do usuario; sincronizar nao envia SKP ao GitHub.
+      # Em modelos sem caminho, save_copy falha no SketchUp 2021:
+      # 'Model must be saved before copying.' O primeiro SKP usa save(path),
+      # vinculando o modelo aberto ao novo arquivo; os seguintes usam save_copy.
+      # Salva apenas no computador, nunca envia SKP ao GitHub.
       def save_synced_skp!(model, group, source_path, root = local_root)
-        raise 'Nenhum modelo SketchUp valido aberto.' unless model && model.respond_to?(:save_copy)
+        raise 'Nenhum modelo SketchUp valido aberto.' unless model && model.respond_to?(:save_copy) && model.respond_to?(:save) && model.respond_to?(:path)
         raise 'Grupo do Mestre CAD nao identificado.' unless group && group.respond_to?(:get_attribute)
         raise 'Grupo sem identificacao Mestre CAD.' unless group.get_attribute('MestreCAD2021', 'schema') == 'mestre-cad-geometria-v1'
         expected_source = File.join(root, 'model.json')
@@ -232,6 +234,9 @@ module MestreCAD
         assert_regular_paths!(root, ['sketchup'])
         stamp = Time.now.utc.strftime('%Y%m%dT%H%M%SZ')
         source_id = sha256(raw)[0, 12]
+        # O modelo sem nome nao aceita save_copy: primeira gravacao via save.
+        # O caminho do modelo aberto muda somente nessa primeira gravacao.
+        first_save = model.path.to_s.empty?
         # Um nome novo a cada exportacao impede sobrescrever SKPs editados.
         12.times do
           name = "#{PROJECT}-#{revision}-#{source_id}-#{stamp}-#{SecureRandom.hex(4)}.skp"
@@ -239,12 +244,17 @@ module MestreCAD
           assert_regular_paths!(root, ["sketchup/#{name}"])
           next if File.exist?(dst) || File.symlink?(dst)
           begin
-            result = model.save_copy(dst)
-            raise 'SketchUp nao conseguiu salvar a copia SKP.' unless result
+            result = first_save ? model.save(dst) : model.save_copy(dst)
+            raise 'SketchUp nao conseguiu salvar o arquivo SKP.' unless result
             raise 'SketchUp gerou um arquivo SKP vazio ou ausente.' unless File.file?(dst) && File.size(dst) > 0
+            raise 'SketchUp nao associou o modelo novo ao SKP salvo.' if first_save && model.path.to_s.empty?
             return dst
           rescue StandardError
-            File.delete(dst) if File.file?(dst)
+            # Caso save tenha vinculado o documento ao novo arquivo, NAO apagar
+            # a origem do modelo aberto, mesmo que a validacao posterior falhe.
+            active_path = model.path.to_s
+            bound_to_target = !active_path.empty? && File.expand_path(active_path) == File.expand_path(dst)
+            File.delete(dst) if File.file?(dst) && !bound_to_target
             raise
           end
         end
@@ -259,9 +269,10 @@ module MestreCAD
         groups = model.selection.grep(Sketchup::Group)
         raise 'Selecione somente o grupo principal importado do Mestre CAD.' unless groups.length == 1 && model.selection.length == 1
         source_path = File.join(local_root, 'model.json')
+        was_untitled = model.path.to_s.empty?
         path = save_synced_skp!(model, groups.first, source_path)
-        UI.messagebox("Copia SKP salva com sucesso em:\n#{path}\n\nO arquivo original aberto nao foi alterado.
-Esta copia esta apenas no computador, nao no GitHub.")
+        note = was_untitled ? 'Primeira gravacao: este arquivo agora e o modelo aberto no SketchUp.' : 'Copia salva sem alterar o caminho do modelo aberto.'
+        UI.messagebox("SKP salvo com sucesso em:\n#{path}\n\n#{note}\nEste arquivo esta apenas no computador, nao no GitHub.")
         path
       rescue StandardError => e
         warn "MESTRE CAD SAVE SKP ERRO: #{e.class}: #{e.message}"
@@ -274,12 +285,13 @@ Esta copia esta apenas no computador, nao no GitHub.")
         path = File.join(local_root, 'model.json')
         raise 'Projeto nao sincronizado. Execute Sincronizar arquivos CAD do GitHub primeiro.' unless File.file?(path)
         data = MestreCAD::SketchUp2021.read_json(path)
+        was_untitled = Sketchup.active_model.path.to_s.empty?
         imported_group = MestreCAD::SketchUp2021.build(data, auto_save: true)
         return nil unless imported_group
         begin
           result = save_synced_skp!(Sketchup.active_model, imported_group, path)
-          UI.messagebox("Projeto importado, auditado e copiado para:\n#{result}\n\n" \
-                        'Modelo aberto preservado; nenhum SKP foi enviado ao GitHub.')
+          note = was_untitled ? 'Primeiro salvamento: este arquivo agora e o modelo atual no SketchUp.' : 'Copia criada sem alterar o caminho do modelo aberto.'
+          UI.messagebox("Projeto importado, auditado e salvo em:\n#{result}\n\n#{note}\nNenhum SKP foi enviado ao GitHub.")
           result
         rescue StandardError => save_error
           warn "MESTRE CAD SAVE SKP ERRO: #{save_error.class}: #{save_error.message}"
