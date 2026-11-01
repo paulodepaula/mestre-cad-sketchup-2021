@@ -1,0 +1,15 @@
+{
+  "schema": "mestre-cad-geometria-v1",
+  "nome": "Oficina 4 x 6 m - referencia geometrica",
+  "revisao": "R00",
+  "unidades": "mm",
+  "envelope_mm": {"x": 4000, "y": 6000, "z": 3420},
+  "elementos": [
+    {"id": "PISO", "nome": "Planta de referencia sem espessura", "tipo": "face", "tag": "REFERENCIAS", "pontos_mm": [[0,0,0], [4000,0,0], [4000,6000,0], [0,6000,0]], "status": "hipotese"},
+    {"id": "P1", "nome": "Pilar frontal esquerdo - ilustrativo", "tipo": "caixa", "tag": "PILARES_ESTUDO", "origem_mm": [0,0,0], "dimensoes_mm": [100,100,3000], "status": "hipotese"},
+    {"id": "P2", "nome": "Pilar frontal direito - ilustrativo", "tipo": "caixa", "tag": "PILARES_ESTUDO", "origem_mm": [3900,0,0], "dimensoes_mm": [100,100,3000], "status": "hipotese"},
+    {"id": "P3", "nome": "Pilar traseiro esquerdo - ilustrativo", "tipo": "caixa", "tag": "PILARES_ESTUDO", "origem_mm": [0,5900,0], "dimensoes_mm": [100,100,3413], "status": "hipotese"},
+    {"id": "P4", "nome": "Pilar traseiro direito - ilustrativo", "tipo": "caixa", "tag": "PILARES_ESTUDO", "origem_mm": [3900,5900,0], "dimensoes_mm": [100,100,3413], "status": "hipotese"},
+    {"id": "COB", "nome": "Plano de cobertura com inclinacao de 7 por cento", "tipo": "face", "tag": "COBERTURA_REF", "pontos_mm": [[0,0,3000], [4000,0,3000], [4000,6000,3420], [0,6000,3420]], "status": "hipotese"}
+  ]
+}
