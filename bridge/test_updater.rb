@@ -19,7 +19,7 @@ class TestGithubUpdater < Minitest::Test
   UP = MestreCAD::SketchUp2021::Updater
   REPO = 'paulodepaula/mestre-cad-sketchup-2021'
 
-  def asset_info(version: '1.3.0')
+  def asset_info(version: '1.3.1')
     name = "mestre-cad-bridge-2021-v#{version}.rbz"
     hash = 'a' * 64
     {
@@ -31,10 +31,10 @@ class TestGithubUpdater < Minitest::Test
   end
 
   def test_version_order
-    assert UP.version_newer?('v1.2.2')
-    assert UP.version_newer?('v1.3.0')
-    refute UP.version_newer?('v1.2.1')
-    refute UP.version_newer?('v1.2.0')
+    assert UP.version_newer?('v1.3.1')
+    assert UP.version_newer?('v1.4.0')
+    refute UP.version_newer?('v1.3.0')
+    refute UP.version_newer?('v1.1.1')
     assert_raises(ArgumentError) { UP.version_newer?('v1.3.0-beta') }
   end
 
@@ -47,13 +47,13 @@ class TestGithubUpdater < Minitest::Test
 
   def test_accepts_valid_release
     asset = UP.candidate_from_release(asset_info, REPO)
-    assert_equal '1.3.0', asset[:version]
+    assert_equal '1.3.1', asset[:version]
     assert_equal 'a'*64, asset[:sha256]
     assert_equal 4500, asset[:size]
   end
 
   def test_no_update_for_same_version
-    assert_nil UP.candidate_from_release(asset_info(version: '1.2.1'), REPO)
+    assert_nil UP.candidate_from_release(asset_info(version: '1.3.0'), REPO)
   end
 
   def test_rejects_nonpublic_release

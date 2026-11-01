@@ -27,8 +27,10 @@ jobs:
           ruby -c bridge/mestre_cad_2021.rb
           ruby -c bridge/mestre_cad_2021/core.rb
           ruby -c bridge/mestre_cad_2021/updater.rb
+          ruby -c bridge/mestre_cad_2021/project_sync.rb
           ruby bridge/test_bridge.rb
           ruby bridge/test_updater.rb
+          ruby bridge/test_project_sync.rb
       - name: Empacotar e validar RBZ
         id: pkg
         shell: bash
@@ -41,7 +43,7 @@ jobs:
           (cd bridge && zip -qr "../dist/mestre-cad-bridge-2021-v$VERSION.rbz" mestre_cad_2021.rb mestre_cad_2021)
           FILE="dist/mestre-cad-bridge-2021-v$VERSION.rbz"
           unzip -t "$FILE"
-          for required in mestre_cad_2021.rb mestre_cad_2021/core.rb mestre_cad_2021/updater.rb mestre_cad_2021/exemplo-4x6.json; do
+          for required in mestre_cad_2021.rb mestre_cad_2021/core.rb mestre_cad_2021/updater.rb mestre_cad_2021/project_sync.rb mestre_cad_2021/exemplo-4x6.json; do
             unzip -Z -1 "$FILE" | grep -Fx "$required"
           done
           unzip -p "$FILE" mestre_cad_2021/exemplo-4x6.json | ruby -rjson -e 'd=JSON.parse(STDIN.read); abort "Exemplo invalido" unless d["schema"]=="mestre-cad-geometria-v1" && d["elementos"].length==6'
@@ -58,5 +60,5 @@ jobs:
           if gh release view "$TAG" >/dev/null 2>&1; then
             echo "Release $TAG ja existe; nao sobrescrever."
           else
-            gh release create "$TAG" "$ASSET" --target "$GITHUB_SHA" --title "Mestre CAD SketchUp 2021 $TAG" --notes "Testes offline aprovados. Homologacao manual no SketchUp 2021 ainda necessaria."
+            gh release create "$TAG" "$ASSET" --target "$GITHUB_SHA" --title "Mestre CAD SketchUp 2021 $TAG" --notes "Integra sincronizacao de projeto CAD/DXF/DAE do GitHub. Testes offline aprovados; teste no SketchUp 2021 ainda necessario."
           fi

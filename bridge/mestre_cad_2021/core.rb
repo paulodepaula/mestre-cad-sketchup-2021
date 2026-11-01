@@ -1,9 +1,10 @@
 # frozen_string_literal: true
-# Mestre CAD Bridge 1.2.1 - SketchUp Desktop 2021 / Ruby 2.7.
+# Mestre CAD Bridge 1.3.0 - SketchUp Desktop 2021 / Ruby 2.7.
 # Sem rede, sem execucao arbitraria de JSON, sem alterar/apagar entidades existentes.
 require 'sketchup.rb'
 require 'json'
 require_relative 'updater'
+require_relative 'project_sync'
 
 module MestreCAD
   module SketchUp2021
@@ -287,6 +288,9 @@ module MestreCAD
       menu.add_item('Importar projeto JSON como grupos...') { import_file }
       menu.add_item('Gerar exemplo 4 x 6 m...') { example }
       menu.add_item('Conferir grupo selecionado...') { audit_selection }
+      menu.add_separator
+      menu.add_item('Sincronizar arquivos CAD do GitHub...') { ProjectSync.sync_dialog }
+      menu.add_item('Importar projeto sincronizado...') { ProjectSync.import_synced }
       menu.add_separator
       menu.add_item('Configurar repositorio GitHub...') { Updater.configure_repository }
       menu.add_item('Verificar atualizacoes no GitHub...') { Updater.check_for_updates }

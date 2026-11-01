@@ -1,31 +1,35 @@
 # Mestre CAD & SketchUp 2021
 
-Extensao Ruby de modelagem geometrica por medidas para SketchUp 2021 (21.x).
+Repositório do plugin e, em `projects/`, dos arquivos de projeto gerados automaticamente no GitHub.
 
-- Importa arquivos JSON com medidas em milimetros e gera grupos editaveis.
-- Confere dimensoes geometricas e oferece auditoria do grupo criado.
-- Inclui exemplo conceitual de oficina 4 x 6 m; **nao e projeto estrutural**.
-- Depois da instalacao inicial, permite verificar e instalar atualizacoes publicadas como GitHub Releases, com verificacao SHA-256, confirmacao e backup.
+## Projeto: obra com mezanino
 
-## Primeira instalacao
+O arquivo fonte de medidas está em [`projects/obra-com-mezanino/model.json`](projects/obra-com-mezanino/model.json). Cada alteração do JSON dispara o workflow **Gerar arquivos CAD a partir do projeto**, que valida os dados e publica:
 
-1. Abra a pagina **Releases** deste repositorio e baixe o `mestre-cad-bridge-2021-v1.2.1.rbz`.
-2. No SketchUp 2021: **Extensoes > Gerenciador de Extensoes > Instalar Extensao**.
-3. Instale o RBZ, reinicie o SketchUp e abra um modelo vazio.
-4. Menu **Extensoes > Mestre CAD 2021 > Gerar exemplo 4 x 6 m**.
-5. Confirme que o envelope esperado e **4.000 x 6.000 x 3.420 mm** e salve o SKP de teste.
+- [Planta DXF](projects/obra-com-mezanino/cadcraft/planta.dxf) e [elevações DXF](projects/obra-com-mezanino/cadcraft/elevacoes.dxf) para o CadCraft ou outro CAD compatível.
+- [Modelo DAE](projects/obra-com-mezanino/sketchup/modelo.dae) 3D para importar no SketchUp 2021.
+- [Manifesto de integridade](projects/obra-com-mezanino/manifest.json) com SHA-256.
 
-## Atualizar sem baixar manualmente
+**Ainda não existe `.skp` diretamente gerado no GitHub:** para isso precisamos integrar o SDK oficial e habilitar um ambiente compatível. Veja [documentação](docs/SKP-NATIVO.md). Também não há geração nativa de `.dwg` nesta fase. O projeto R00 usa medidas ilustrativas e não dimensiona um mezanino.
 
-No menu Mestre CAD, clique **Verificar atualizacoes no GitHub**.
-A extensao consulta somente releases publicas do repositorio configurado; novas versoes exigem confirmacao antes de instalar e o processo guarda backup local.
-O projeto aberto nao e alterado pelo atualizador.
+## SketchUp 2021
 
-## Lancamentos
+Na seção [Releases](https://github.com/paulodepaula/mestre-cad-sketchup-2021/releases), instale a versão 1.3.0 ou posterior do `.rbz` uma vez. No SketchUp, use:
 
-No push para `main` alterando `bridge/`, `examples/` ou o workflow, GitHub Actions roda testes Ruby offline, cria RBZ e publica release estavel `vX.Y.Z` caso a tag ainda nao exista.
-Para novas versoes, ajuste **ambos** `bridge/mestre_cad_2021.rb` (`ext.version`) e `bridge/mestre_cad_2021/updater.rb` (`VERSION`) antes do push.
+1. **Extensões > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub...** (baixa JSON/DXF/DAE e verifica SHA-256 sem sobrescrever alterações locais).
+2. **Extensões > Mestre CAD 2021 > Importar projeto sincronizado...** (cria grupos editáveis a partir do JSON; salve como `.skp`).
+3. **Extensões > Mestre CAD 2021 > Verificar atualizações no GitHub...** para atualizar a própria extensão quando necessário.
 
-O exemplo `bridge/mestre_cad_2021/exemplo-4x6.json` faz parte do RBZ; uma verificacao de empacotamento impede release sem o arquivo.
+O diretório local padrão é `Documentos/MestreCAD/projetos/obra-com-mezanino`. Os arquivos `.skp` locais não são alterados pelo comando de sincronização. Você também pode usar `git clone` e `git pull --ff-only` para obter os arquivos, sem a extensão.
 
-**Testes offline nao substituem homologacao no SketchUp 2021.**
+## Desenvolvimento
+
+Código Ruby está em `bridge/`; executa no SketchUp 21.x (Ruby 2.7). Os testes da extensão rodam offline no GitHub Actions, mas a execução gráfica depende de homologação no SketchUp 2021.
+
+O gerador Python não usa dependências de terceiros:
+
+```bash
+python3 tools/build_project.py projects/obra-com-mezanino/model.json
+python3 tools/build_project.py projects/obra-com-mezanino/model.json --check
+python3 -m unittest discover -s tools/tests -v
+```
