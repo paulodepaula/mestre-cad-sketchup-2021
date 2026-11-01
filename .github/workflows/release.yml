@@ -34,7 +34,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          VERSION=$(ruby -e 'require_relative "bridge/mestre_cad_2021/updater"; print MestreCAD::SketchUp2021::Updater::VERSION')
+          VERSION=$(ruby -Ibridge -rmestre_cad_2021/updater -e 'print MestreCAD::SketchUp2021::Updater::VERSION')
           grep -Fq "ext.version = '$VERSION'" bridge/mestre_cad_2021.rb
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           mkdir -p dist
