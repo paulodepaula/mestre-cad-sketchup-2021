@@ -46,5 +46,29 @@
   "lado_frontal": "AB",
   "lado_direito_vista_da_rua": "BC",
   "lado_esquerdo_vista_da_rua": "DA",
-  "identificacao_frontal": "confirmada pelo proprietario; frente para rua A-B (10,20 m)"
+  "identificacao_frontal": "confirmada pelo proprietario; frente para rua A-B (10,20 m)",
+  "condicionantes_informados": {
+    "muro_lateral_BC": {
+      "altura_mm": 4800,
+      "extensao": "todo_o_quintal",
+      "lado": "BC",
+      "status": "informado_pelo_proprietario_nao_medido_na_topografia"
+    },
+    "portao_frontal": {
+      "lado": "AB",
+      "deslizamento": "para_direita_visto_da_rua",
+      "ocupacao_interna_informada_mm": 300,
+      "interferencia": "afastamento_lateral_esquerda_da_oficina_pode_interferir_com_portao",
+      "status": "percurso_exato_nao_dimensionado"
+    },
+    "implantacao": {
+      "faixa_oficina_e_passarela_mm": 5000,
+      "lado_de_preferencia": "BC",
+      "diretriz": "nao_criar_recuo_lateral_arbitrario",
+      "distancia_lateral_real_mm": null,
+      "posicao_global_oficina": "pendente",
+      "entrada_funcional_orientada": "fundos_do_terreno_CD"
+    },
+    "obs": "Muro alto nao e suporte estrutural; verificar legislacao de recuos, drenagem, portao e encontro de cobertura antes de locacao definitiva."
+  }
 }
