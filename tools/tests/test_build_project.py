@@ -17,10 +17,10 @@ class ProjectGenerationTest(unittest.TestCase):
     def setUp(self):
         self.data=json.loads(EXAMPLE.read_text(encoding='utf-8'))
 
-    def test_r08_five_150x150x3_columns_and_beam_V13(self):
+    def test_r09_five_150x150x3_columns_and_beam_V13(self):
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
         self.assertEqual(len(self.data['elementos']),52)
-        self.assertEqual(self.data['revisao'],'R08')
+        self.assertEqual(self.data['revisao'],'R09')
         self.assertEqual({e['tipo'] for e in self.data['elementos']},{'face','caixa'})
         self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_ESTUDO'),7)
         self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_MEZ_ESTUDO'),2)
@@ -34,41 +34,44 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(self.data['parametros_estudo_mm']['mezanino_r04']['area_total_m2'],16.8)
         p = next(e for e in self.data['elementos'] if e['id']=='MEZ_PRINCIPAL')
         l = next(e for e in self.data['elementos'] if e['id']=='MEZ_PATAMAR')
-        self.assertEqual(p['origem_mm'], [6461,621,2690])
-        self.assertEqual(p['dimensoes_mm'], [3000,5000,160])
-        self.assertEqual(l['origem_mm'], [9461,621,2690])
-        self.assertEqual(l['dimensoes_mm'], [1000,1800,160])
+        self.assertEqual(p['origem_mm'], [6461,621,2825])
+        self.assertEqual(p['dimensoes_mm'], [3000,4975,25])
+        self.assertEqual(l['origem_mm'], [9461,621,2825])
+        self.assertEqual(l['dimensoes_mm'], [1000,1800,25])
         stair = next(e for e in self.data['elementos'] if e['id']=='ESCADA_RES')
         self.assertEqual(max(v[1] for v in stair['pontos_mm']),6621)
         self.assertEqual(min(v[0] for v in stair['pontos_mm']),9461)
         self.assertEqual(self.data['parametros_estudo_mm']['balanco_direito']['balanco_nominal'],1000)
 
 
-    def test_r08_changes_only_V05_C07_and_upper_glass(self):
-        previous=json.loads((EXAMPLE.parent/'historico'/'model-R07.json').read_text(encoding='utf-8'))
-        self.assertEqual(previous['revisao'],'R07')
-        self.assertEqual(len(previous['elementos']),50)
+    def test_r09_only_floor_changed_since_R08(self):
+        previous=json.loads((EXAMPLE.parent/'historico'/'model-R08.json').read_text(encoding='utf-8'))
+        self.assertEqual(previous['revisao'],'R08')
+        self.assertEqual(len(previous['elementos']),52)
         current={e['id']:e for e in self.data['elementos']}
         before={e['id']:e for e in previous['elementos']}
-        self.assertEqual(set(current)-set(before),{'VF08_SUP_ESQ','VF08_SUP_DIR'})
+        self.assertEqual(set(current),set(before))
         for id,old in before.items():
-            if id not in ('V05','C07'):
+            if id not in ('MEZ_PRINCIPAL','MEZ_PATAMAR'):
                 self.assertEqual(current[id],old,id)
-        self.assertEqual(current['V05']['origem_mm'],[6461,5521,2510])
-        self.assertEqual(current['V05']['dimensoes_mm'],[4000,100,180])
-        self.assertEqual(current['V05']['origem_mm'][0]+current['V05']['dimensoes_mm'][0],10461)
-        self.assertEqual(current['C10']['origem_mm'][0],10361)
-        self.assertEqual(current['C07']['origem_mm'],[9361,5521,0])
-        self.assertEqual(current['C07']['dimensoes_mm'],[100,100,5355])
-        self.assertEqual(current['VF08_SUP_ESQ']['pontos_mm'],
-            [[6611,5621,2850],[9361,5621,2850],[9361,5621,5355],[6611,5621,5217.5]])
-        self.assertEqual(current['VF08_SUP_DIR']['pontos_mm'],
-            [[9461,5621,2850],[10361,5621,2850],[10361,5621,5405],[9461,5621,5360]])
-        self.assertEqual(self.data['parametros_estudo_mm']['estrutura_r08']['piso_mezanino']['espessura_geometrica_reservada_mm'],160)
-        self.assertIsNone(self.data['parametros_estudo_mm']['estrutura_r08']['piso_mezanino']['composicao_final'])
-        self.assertEqual(current['C04']['perfil_referencia']['parede_mm'],3)
-        self.assertEqual(current['C02']['dimensoes_mm'][:2],[150,150])
+        p=current['MEZ_PRINCIPAL']; l=current['MEZ_PATAMAR']
+        self.assertEqual(p['origem_mm'],[6461,621,2825])
+        self.assertEqual(p['dimensoes_mm'],[3000,4975,25])
+        self.assertEqual(l['origem_mm'],[9461,621,2825])
+        self.assertEqual(l['dimensoes_mm'],[1000,1800,25])
+        self.assertEqual(p['origem_mm'][2]+p['dimensoes_mm'][2],2850)
+        self.assertEqual(l['origem_mm'][2]+l['dimensoes_mm'][2],2850)
+        self.assertEqual(p['origem_mm'][1]+p['dimensoes_mm'][1],5596)
+        self.assertEqual(current['VF08_SUP_ESQ']['pontos_mm'][0][1],5621)
+        self.assertEqual(current['VF08_SUP_DIR']['pontos_mm'][0][1],5621)
+        self.assertEqual(current['VF08_SUP_ESQ']['pontos_mm'][0][2],2850)
+        self.assertEqual(current['VF08_SUP_DIR']['pontos_mm'][0][2],2850)
+        self.assertEqual(self.data['parametros_estudo_mm']['piso_r09']['afastamento_geometrico_piso_vidro_mm'],25)
+        self.assertEqual(self.data['parametros_estudo_mm']['piso_r09']['intervalo_sem_detalhe_secundario_mm'],135)
+        self.assertFalse(self.data['parametros_estudo_mm']['piso_r09']['espessura_estrutural_calculada'])
         self.assertEqual(current['COB_R03'],before['COB_R03'])
+        self.assertEqual(current['V05'],before['V05'])
+        self.assertEqual(current['C07'],before['C07'])
 
     def test_r06_preserves_terrain_and_roof_from_r05(self):
         previous=json.loads((EXAMPLE.parent/'historico'/'model-R05.json').read_text(encoding='utf-8'))
@@ -81,7 +84,7 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(refs['PASSE'],next(e for e in previous['elementos'] if e['id']=='PASSE'))
         self.assertEqual(refs['COB_R03'],next(e for e in previous['elementos'] if e['id']=='COB_R03'))
         for prior in previous['elementos']:
-            if prior['id'] in ('C02','C03','C04','C05','C06','C07','C09','V05'):
+            if prior['id'] in ('C02','C03','C04','C05','C06','C07','C09','V05','MEZ_PRINCIPAL','MEZ_PATAMAR'):
                 continue
             self.assertEqual(refs[prior['id']],prior)
         self.assertNotIn('C09',refs)
