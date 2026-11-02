@@ -1,26 +1,17 @@
-# Obra com mezanino - R03 (estudo, NAO EXECUTIVO)
+# Obra com mezanino - R04 (estudo geometrico, NAO EXECUTIVO)
 
-O `model.json` e a fonte de geometria em mm. GitHub Actions gera `cadcraft/planta.dxf`, `cadcraft/elevacoes.dxf`, `sketchup/modelo.dae` e `manifest.json`.
+A fonte principal e `model.json`; o GitHub Actions gera DXF, DAE e manifesto. `historico/model-R03.json` preserva a revisao anterior.
 
-## Dimensoes e hipoteses
-- Oficina 4000 x 6000 mm e passarela direita de 1000 mm de largura: definidas pelo proprietario.
-- Portao existente avanca 300 mm para dentro do muro frontal (medida informada). Nao equivale a recuo aprovado.
-- Mezanino proposto 3000 x 4000 mm, topo Z2850, piso representativo 160 mm; escada somente reserva 900 x 4200.
-- Altura de estudo Z5600, inclinacao ilustrativa 5%, marcadores de secoes e vigas: nao dimensionados.
+## R04
+- Colunas numeradas **C01-C09** e vigas **V01-V12**, como nomes de grupos no SketchUp e textos no DXF (travessas V07-V09 divididas em seis faces por viga).
+- Mezanino principal com recuo frontal de 1000 mm (X1000..4000, Y1000..6000) e retorno de chegada a escada (X0..1000, Y4200..6000), area bruta hipotetica 16,8m2.
+- Escada ainda reserva X100..1000 Y0..4200, chegada geometricamente alinhada a Y4200.
+- Cobertura mantida em balanco de 1000mm, livre de pilares na extremidade direita.
+- Encontro piso/escada, apoios e alturas **nao validam seguranca nem dimensionamento estrutural**.
+- Dimensoes da oficina 4000x6000mm e passarela direita 1000mm mantidas. Posicao no terreno T01 ainda pendente.
+- Projeto geotecnico e fundacoes ainda pendentes.
 
-## Cobertura em balanco
-- Retirados os tres pilares e viga longitudinal externos da passarela do modelo R02.
-- R03 modela tres travessas transversais inclinadas de estudo ate X5000, a partir de uma linha de apoio de referencia no limite X4000 da oficina. Balanco nominal 1000 mm, **sem coluna na extremidade**.
-- Com a extensao 1.4.1 as travessas inclinadas sao representadas por 6 faces por elemento formando casca, nao perfis estruturais.
-- Nao utilizar para fabricar: capacidade de vigas, rigidez de ligacoes, vento, deflexao e fundacoes pendentes de projeto e ART/RRT.
+Detalhes e legendas em [R04-REFERENCIAS-MEZANINO.md](R04-REFERENCIAS-MEZANINO.md).
 
-## Historico e integracao
-R00/R01/R02 preservados em `historico/`. Detalhes em [R03-BALANCO-COBERTURA.md](R03-BALANCO-COBERTURA.md).
-Extensoes > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub > Importar projeto sincronizado > Conferir grupo selecionado. O arquivo SKP fica apenas local no SketchUp.
-
-## Terreno - levantamento T01 (KMZ revisado)
-
-- **Area geodesica de referencia: 382,15 m2.** Lados: AB 10,20 m, BC 37,02 m, CD 10,47 m, DA 36,99 m.
-- Este levantamento **substitui o de 271,31 m2**; os limites sao estimados a partir de Google Earth, sem certidao topografica.
-- Dados e contorno local sem coordenadas GPS em [TERRENO-T01.md](TERRENO-T01.md) e [`terreno/T01-contorno.json`](terreno/T01-contorno.json).
-- Frente A-B (10,20 m) confirmada; olhando da rua, B-C e a lateral direita prevista para a oficina. Geometria R03 ainda nao movida: faltam cotas dos recuos, circulacao e folga do portao.
+## Uso
+SketchUp 2021 > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub > Importar projeto sincronizado > Conferir grupo selecionado. O SKP fica local. Nao confundir C01, V01 etc. com perfis ou secoes projetadas.

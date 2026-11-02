@@ -154,6 +154,21 @@ def dxf(data, mode):
             for i in range(len(coords)):
                 if coords[i]!=coords[(i+1)%len(coords)]:
                     line(coords[i],coords[(i+1)%len(coords)],el['tag'])
+        # Referencias visiveis no CAD 2D: colunas e vigas numeradas.
+        # Vigas inclinadas V07-V09 possuem seis faces cada; rotular apenas _TOP.
+        for el in data['elementos']:
+            key = el['id']
+            if re.fullmatch(r'C[0-9]{2}', key):
+                coords = projected_outline(el, (0, 1))
+                if coords:
+                    text(key, coords[0][0]+130, coords[0][1]+130, 95)
+            elif re.fullmatch(r'V[0-9]{2}', key) or re.fullmatch(r'V[0-9]{2}_TOP', key):
+                coords = projected_outline(el, (0, 1))
+                if coords:
+                    label = key[:3]
+                    midx = (min(p[0] for p in coords)+max(p[0] for p in coords))/2
+                    midy = (min(p[1] for p in coords)+max(p[1] for p in coords))/2
+                    text(label, midx, midy, 90)
         text('PLANTA ESTUDO '+data['revisao']+' - MM - NAO EXECUTIVO',0,-350)
         text('LARGURA '+fmt(x)+' mm',0,-550,90)
         text('PROFUNDIDADE '+fmt(y)+' mm',0,-720,90)

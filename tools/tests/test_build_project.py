@@ -17,17 +17,30 @@ class ProjectGenerationTest(unittest.TestCase):
     def setUp(self):
         self.data=json.loads(EXAMPLE.read_text(encoding='utf-8'))
 
-    def test_r03_cantilever_roof_without_external_columns(self):
+    def test_r04_numbered_members_and_mezzanine_landing(self):
         self.assertEqual(bp.validate(self.data),(5000.,6000.,5600.))
-        self.assertEqual(len(self.data['elementos']),38)
-        self.assertEqual(self.data['revisao'],'R03')
+        self.assertEqual(len(self.data['elementos']),42)
+        self.assertEqual(self.data['revisao'],'R04')
         self.assertEqual({e['tipo'] for e in self.data['elementos']},{'face','caixa'})
         self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_ESTUDO'),6)
         self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_MEZ_ESTUDO'),3)
-        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='VIGAS_MEZ_ESTUDO'),4)
+        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='VIGAS_MEZ_ESTUDO'),7)
         self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='TRAVESSAS_BALANCO_ESTUDO'),18)
         self.assertFalse(any(e['id'] in ('P_PF','P_PM','P_PT','V_COB_P') for e in self.data['elementos']))
         self.assertTrue(any(e['id']=='COB_R03' for e in self.data['elementos']))
+        self.assertEqual({e['id'] for e in self.data['elementos'] if e['tag']=='PILARES_ESTUDO'}, set('C%02d'%i for i in range(1,7)))
+        self.assertEqual({e['id'] for e in self.data['elementos'] if e['tag']=='PILARES_MEZ_ESTUDO'}, set('C%02d'%i for i in range(7,10)))
+        self.assertEqual(len([e for e in self.data['elementos'] if e['id'].startswith('V07_')]),6)
+        self.assertEqual(self.data['parametros_estudo_mm']['mezanino_r04']['area_total_m2'],16.8)
+        p = next(e for e in self.data['elementos'] if e['id']=='MEZ_PRINCIPAL')
+        l = next(e for e in self.data['elementos'] if e['id']=='MEZ_PATAMAR')
+        self.assertEqual(p['origem_mm'], [1000,1000,2690])
+        self.assertEqual(p['dimensoes_mm'], [3000,5000,160])
+        self.assertEqual(l['origem_mm'], [0,4200,2690])
+        self.assertEqual(l['dimensoes_mm'], [1000,1800,160])
+        stair = next(e for e in self.data['elementos'] if e['id']=='ESCADA_RES')
+        self.assertEqual(max(v[1] for v in stair['pontos_mm']),4200)
+        self.assertEqual(min(v[0] for v in stair['pontos_mm']),100)
         self.assertEqual(self.data['parametros_estudo_mm']['balanco_direito']['balanco_nominal'],1000)
 
     def test_dxf_ascii_r12_contains_geometry(self):
@@ -38,6 +51,12 @@ class ProjectGenerationTest(unittest.TestCase):
             self.assertTrue(dxf.endswith(b'\nEOF\n'))
             self.assertIn(b'OFICINA_REFERENCIA',dxf)
         self.assertIn(b'6000',bp.dxf(self.data,'planta'))
+        plan = bp.dxf(self.data,'planta')
+        self.assertIn(b'\nC01\n',plan)
+        self.assertIn(b'\nC09\n',plan)
+        self.assertIn(b'\nV01\n',plan)
+        self.assertIn(b'\nV09\n',plan)
+        self.assertIn(b'\nV12\n',plan)
 
     def test_collada_valid_xml_and_metric_units(self):
         tree=ET.fromstring(bp.dae(self.data))
@@ -45,9 +64,9 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
         nodes=tree.findall('.//c:visual_scene/c:node',ns)
-        self.assertEqual(len(nodes),38)
+        self.assertEqual(len(nodes),42)
         triangles=tree.findall('.//c:mesh/c:triangles',ns)
-        self.assertEqual(sum(int(tr.attrib['count']) for tr in triangles),236)
+        self.assertEqual(sum(int(tr.attrib['count']) for tr in triangles),284)
 
     def test_rejects_missing_units(self):
         self.data['unidades']='m'
