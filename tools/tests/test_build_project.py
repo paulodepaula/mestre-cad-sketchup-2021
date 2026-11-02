@@ -17,11 +17,15 @@ class ProjectGenerationTest(unittest.TestCase):
     def setUp(self):
         self.data=json.loads(EXAMPLE.read_text(encoding='utf-8'))
 
-    def test_r01_envelope_and_reference_elements(self):
-        self.assertEqual(bp.validate(self.data),(5000.,6000.,2850.))
-        self.assertEqual(len(self.data['elementos']),4)
-        self.assertEqual(self.data['revisao'],'R01')
-        self.assertEqual({e['tipo'] for e in self.data['elementos']},{'face'})
+    def test_r02_envelope_and_study_components(self):
+        self.assertEqual(bp.validate(self.data),(5000.,6000.,5600.))
+        self.assertEqual(len(self.data['elementos']),24)
+        self.assertEqual(self.data['revisao'],'R02')
+        self.assertEqual({e['tipo'] for e in self.data['elementos']},{'face','caixa'})
+        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_ESTUDO'),9)
+        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_MEZ_ESTUDO'),3)
+        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='VIGAS_MEZ_ESTUDO'),4)
+        self.assertTrue(any(e['id']=='COB_R02' for e in self.data['elementos']))
 
     def test_dxf_ascii_r12_contains_geometry(self):
         for view in ('planta','elevacoes'):
@@ -38,9 +42,9 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
         nodes=tree.findall('.//c:visual_scene/c:node',ns)
-        self.assertEqual(len(nodes),4)
+        self.assertEqual(len(nodes),24)
         triangles=tree.findall('.//c:mesh/c:triangles',ns)
-        self.assertEqual(sum(int(tr.attrib['count']) for tr in triangles),8)
+        self.assertEqual(sum(int(tr.attrib['count']) for tr in triangles),248)
 
     def test_rejects_missing_units(self):
         self.data['unidades']='m'
@@ -55,7 +59,7 @@ class ProjectGenerationTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'fora do envelope'):bp.validate(self.data)
 
     def test_rejects_corrupt_envelope(self):
-        self.data['envelope_mm']['z']=3000
+        self.data['envelope_mm']['z']=6000
         with self.assertRaisesRegex(ValueError,'incoerente'):bp.validate(self.data)
 
     def test_rejects_duplicate_id(self):

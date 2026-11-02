@@ -1,0 +1,139 @@
+{
+  "schema": "mestre-cad-geometria-v1",
+  "nome": "Obra com mezanino - R01 planta e locacao de mezanino (estudo, NAO EXECUTIVO)",
+  "revisao": "R01",
+  "unidades": "mm",
+  "envelope_mm": {
+    "x": 5000,
+    "y": 6000,
+    "z": 2850
+  },
+  "elementos": [
+    {
+      "id": "PISO_T",
+      "nome": "Area nominal oficina/deposito 4000x6000 - plano de referencia Z0",
+      "tipo": "face",
+      "tag": "OFICINA_REFERENCIA",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          4000,
+          0,
+          0
+        ],
+        [
+          4000,
+          6000,
+          0
+        ],
+        [
+          0,
+          6000,
+          0
+        ]
+      ],
+      "status": "dimensao_definida"
+    },
+    {
+      "id": "PASSE",
+      "nome": "Passarela direita 1000x6000 - projecao em planta",
+      "tipo": "face",
+      "tag": "PASSARELA_REFERENCIA",
+      "pontos_mm": [
+        [
+          4000,
+          0,
+          0
+        ],
+        [
+          5000,
+          0,
+          0
+        ],
+        [
+          5000,
+          6000,
+          0
+        ],
+        [
+          4000,
+          6000,
+          0
+        ]
+      ],
+      "status": "largura_definida_comprimento_hipotese"
+    },
+    {
+      "id": "ESCADA_RES",
+      "nome": "Reserva de escada lateral esquerda 900x4200 - NAO dimensionada",
+      "tipo": "face",
+      "tag": "ESCADA_HIPOTESE",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          900,
+          0,
+          0
+        ],
+        [
+          900,
+          4200,
+          0
+        ],
+        [
+          0,
+          4200,
+          0
+        ]
+      ],
+      "status": "hipotese"
+    },
+    {
+      "id": "MEZ_R01",
+      "nome": "Mezanino proposto 3000x4000: X1000-4000 Y2000-6000 Z2850",
+      "tipo": "face",
+      "tag": "MEZANINO_HIPOTESE",
+      "pontos_mm": [
+        [
+          1000,
+          2000,
+          2850
+        ],
+        [
+          4000,
+          2000,
+          2850
+        ],
+        [
+          4000,
+          6000,
+          2850
+        ],
+        [
+          1000,
+          6000,
+          2850
+        ]
+      ],
+      "status": "posicao_area_e_nivel_hipotese"
+    }
+  ],
+  "levantamento_campo_mm": {
+    "portao": {
+      "referencia": "Distancia da face interna do muro frontal ate a extremidade mais interna ocupada pelo portao totalmente aberto, incluindo motor",
+      "avanco_para_dentro_do_lote": 300,
+      "fonte": "Medida informada pelo proprietario (30 cm)",
+      "status": "medida_informada; posicao exata em X ainda nao levantada"
+    },
+    "recuo_da_edificacao_em_relacao_ao_muro": null,
+    "nota": "300 mm representam ocupacao observada do portao, nao recuo aprovado; deve ser acrescentada folga tecnica e atendidos afastamentos legais. O sistema local da geometria R01 usa Y=0 na frente da oficina e nao foi deslocado."
+  }
+}
