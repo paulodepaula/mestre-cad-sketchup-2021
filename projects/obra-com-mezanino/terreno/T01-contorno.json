@@ -3,7 +3,7 @@
   "revisao": "T01",
   "titulo": "Terreno - levantamento geometrico de referencia (KMZ revisado)",
   "unidades": "mm",
-  "datum_origem": "Vertice A = (0,0); eixo X acompanha A->B; eixo Y fica voltado para C,D; sem norte geodesico nem identificacao da frente da rua",
+  "datum_origem": "A=(0,0) canto frontal esquerdo olhando da rua; B=(10196,0) canto frontal direito; eixo X acompanha a frente A->B; Y entra no terreno para C,D",
   "metodo": "WGS84 - comprimentos e area geodesicos; coordenadas cartesianas locais obtidas por azimute/distancia a partir do vertice A e eixo AB",
   "vertices": [
     {
@@ -40,7 +40,11 @@
   "notas": [
     "O KMZ novo substitui como referencia dimensional os dois anteriores (que indicavam area aproximada de 271,31 m2 e lados longos de 26,0 m).",
     "Os vertices sao medidas de tela no Google Earth, nao marcos levantados por topografia; arredondamento para milimetros no desenho local nao implica precisao milimetrica.",
-    "Nao presumir que AB corresponda a frente da rua sem confirmacao.",
+    "Confirmado pelo proprietario: a frente da rua corresponde ao lado A-B, com A a esquerda e B a direita da pessoa que olha da rua para dentro do terreno.",
     "Nao associar o contorno do lote as coordenadas locais da oficina do model.json enquanto a orientacao e implantacao nao forem determinadas."
-  ]
+  ],
+  "lado_frontal": "AB",
+  "lado_direito_vista_da_rua": "BC",
+  "lado_esquerdo_vista_da_rua": "DA",
+  "identificacao_frontal": "confirmada pelo proprietario; frente para rua A-B (10,20 m)"
 }

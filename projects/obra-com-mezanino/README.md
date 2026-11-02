@@ -23,4 +23,4 @@ Extensoes > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub > Importar proj
 - **Area geodesica de referencia: 382,15 m2.** Lados: AB 10,20 m, BC 37,02 m, CD 10,47 m, DA 36,99 m.
 - Este levantamento **substitui o de 271,31 m2**; os limites sao estimados a partir de Google Earth, sem certidao topografica.
 - Dados e contorno local sem coordenadas GPS em [TERRENO-T01.md](TERRENO-T01.md) e [`terreno/T01-contorno.json`](terreno/T01-contorno.json).
-- A geometria da R03 nao foi movida; falta confirmar qual extremidade do poligono esta na rua para posicionar a obra.
+- Frente A-B (10,20 m) confirmada; olhando da rua, B-C e a lateral direita prevista para a oficina. Geometria R03 ainda nao movida: faltam cotas dos recuos, circulacao e folga do portao.

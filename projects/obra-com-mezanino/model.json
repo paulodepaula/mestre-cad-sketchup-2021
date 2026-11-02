@@ -979,7 +979,13 @@
       "DA": 36.991
     },
     "status": "levantamento geoespacial estimativo, nao topografico",
-    "lado_frontal": "ainda_nao_identificado",
-    "impacto_na_geometria_R03": "nenhum; a oficina continua em coordenadas locais"
+    "lado_frontal": "AB",
+    "impacto_na_geometria_R03": "nenhum; a R03 permanece em origem propria; falta locacao/rotacao relativa a BC e recuo frontal",
+    "orientacao_confirmada_pelo_proprietario": true,
+    "largura_frontal_m": 10.195656,
+    "lateral_direita_vista_da_rua": "BC",
+    "lateral_esquerda_vista_da_rua": "DA",
+    "eixos_locais": "A(0,0) na esquerda da rua, B(10196,0) na direita da rua, Y positivo entrando no lote",
+    "status_implantacao": "lado frontal definido; afastamento lateral e recuo de portao ainda nao dimensionados"
   }
 }
