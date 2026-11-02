@@ -1,0 +1,1227 @@
+{
+  "schema": "mestre-cad-geometria-v1",
+  "nome": "Oficina 4x6 R04 - pilares e vigas numerados, mezanino L e encontro com escada - estudo",
+  "revisao": "R04",
+  "unidades": "mm",
+  "envelope_mm": {
+    "x": 5000,
+    "y": 6000,
+    "z": 5600
+  },
+  "elementos": [
+    {
+      "id": "PISO_T",
+      "nome": "Area nominal oficina/deposito 4000x6000 - plano de referencia Z0",
+      "tipo": "face",
+      "tag": "OFICINA_REFERENCIA",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          4000,
+          0,
+          0
+        ],
+        [
+          4000,
+          6000,
+          0
+        ],
+        [
+          0,
+          6000,
+          0
+        ]
+      ],
+      "status": "dimensao_definida"
+    },
+    {
+      "id": "PASSE",
+      "nome": "Passarela direita 1000x6000 - projecao em planta",
+      "tipo": "face",
+      "tag": "PASSARELA_REFERENCIA",
+      "pontos_mm": [
+        [
+          4000,
+          0,
+          0
+        ],
+        [
+          5000,
+          0,
+          0
+        ],
+        [
+          5000,
+          6000,
+          0
+        ],
+        [
+          4000,
+          6000,
+          0
+        ]
+      ],
+      "status": "largura_definida_comprimento_hipotese"
+    },
+    {
+      "id": "ESCADA_RES",
+      "nome": "Reserva de escada 900x4200, faixa X100-1000 Y0-4200 - topo encontra patamar Y4200",
+      "tipo": "face",
+      "tag": "ESCADA_HIPOTESE",
+      "pontos_mm": [
+        [
+          100,
+          0,
+          0
+        ],
+        [
+          1000,
+          0,
+          0
+        ],
+        [
+          1000,
+          4200,
+          0
+        ],
+        [
+          100,
+          4200,
+          0
+        ]
+      ],
+      "status": "reserva_geometrica_nao_escada_executiva"
+    },
+    {
+      "id": "MEZ_PRINCIPAL",
+      "nome": "Piso mezanino principal X1000-4000 Y1000-6000 topo Z2850",
+      "tipo": "caixa",
+      "tag": "MEZANINO_ESTUDO",
+      "origem_mm": [
+        1000,
+        1000,
+        2690
+      ],
+      "dimensoes_mm": [
+        3000,
+        5000,
+        160
+      ],
+      "status": "hipotese_geom_nao_executiva"
+    },
+    {
+      "id": "MEZ_PATAMAR",
+      "nome": "Piso retorno lateral - chegada escada X0-1000 Y4200-6000 topo Z2850",
+      "tipo": "caixa",
+      "tag": "MEZANINO_ESTUDO",
+      "origem_mm": [
+        0,
+        4200,
+        2690
+      ],
+      "dimensoes_mm": [
+        1000,
+        1800,
+        160
+      ],
+      "status": "hipotese_geom_nao_executiva"
+    },
+    {
+      "id": "C01",
+      "nome": "C01 - Marcador volumetrico pilar E-F 100x100 mm NAO calculado",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        0,
+        0,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5420
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "C02",
+      "nome": "C02 - Marcador volumetrico pilar E-M 100x100 mm NAO calculado",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        0,
+        2950,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5420
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "C03",
+      "nome": "C03 - Marcador volumetrico pilar E-T 100x100 mm NAO calculado",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        0,
+        5900,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5420
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "C04",
+      "nome": "C04 - Marcador volumetrico pilar D-F 100x100 mm NAO calculado",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        3900,
+        0,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5225
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "C05",
+      "nome": "C05 - Marcador volumetrico pilar D-M 100x100 mm NAO calculado",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        3900,
+        2950,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5225
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "C06",
+      "nome": "C06 - Marcador volumetrico pilar D-T 100x100 mm NAO calculado",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        3900,
+        5900,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5225
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "V01",
+      "nome": "V01 - Viga longitudinal teto E 100x175 mm NAO calculada",
+      "tipo": "caixa",
+      "tag": "VIGAS_COB_ESTUDO",
+      "origem_mm": [
+        0,
+        0,
+        5420
+      ],
+      "dimensoes_mm": [
+        100,
+        6000,
+        175
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "V02",
+      "nome": "V02 - Viga longitudinal teto D 100x175 mm NAO calculada",
+      "tipo": "caixa",
+      "tag": "VIGAS_COB_ESTUDO",
+      "origem_mm": [
+        3900,
+        0,
+        5225
+      ],
+      "dimensoes_mm": [
+        100,
+        6000,
+        175
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "C07",
+      "nome": "C07 - apoio frontal hipotetico mezanino em Y1000 (NAO dimensionado)",
+      "tipo": "caixa",
+      "tag": "PILARES_MEZ_ESTUDO",
+      "origem_mm": [
+        1000,
+        1000,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        2510
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "C08",
+      "nome": "C08 - Marcador de suporte mezanino 100x100 mm NAO calculado",
+      "tipo": "caixa",
+      "tag": "PILARES_MEZ_ESTUDO",
+      "origem_mm": [
+        1000,
+        5900,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        2510
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "C09",
+      "nome": "C09 - apoio frontal hipotetico mezanino em Y1000 (NAO dimensionado)",
+      "tipo": "caixa",
+      "tag": "PILARES_MEZ_ESTUDO",
+      "origem_mm": [
+        3900,
+        1000,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        2510
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "V03",
+      "nome": "V03 - viga longitudinal mezanino de estudo Y1000..6000",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        1000,
+        1000,
+        2510
+      ],
+      "dimensoes_mm": [
+        100,
+        5000,
+        180
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "V04",
+      "nome": "V04 - viga longitudinal mezanino de estudo Y1000..6000",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        3900,
+        1000,
+        2510
+      ],
+      "dimensoes_mm": [
+        100,
+        5000,
+        180
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "V05",
+      "nome": "V05 - viga frontal mezanino em Y1000 (estudo nao executivo)",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        1000,
+        1000,
+        2510
+      ],
+      "dimensoes_mm": [
+        3000,
+        100,
+        180
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "V06",
+      "nome": "V06 - Viga transversal mezanino Y5900: 100x180 mm NAO calculada",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        1000,
+        5900,
+        2510
+      ],
+      "dimensoes_mm": [
+        3000,
+        100,
+        180
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "COB_R03",
+      "nome": "Plano de cobertura de estudo 5% para direita - SEM espessura nem calha",
+      "tipo": "face",
+      "tag": "COBERTURA_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          5600
+        ],
+        [
+          5000,
+          0,
+          5350
+        ],
+        [
+          5000,
+          6000,
+          5350
+        ],
+        [
+          0,
+          6000,
+          5600
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "V07_SIDEA",
+      "nome": "V07 - travessa de cobertura 1, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          5585
+        ],
+        [
+          5000,
+          0,
+          5335
+        ],
+        [
+          5000,
+          0,
+          5160
+        ],
+        [
+          0,
+          0,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_SIDEB",
+      "nome": "V07 - travessa de cobertura 1, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          100,
+          5585
+        ],
+        [
+          5000,
+          100,
+          5335
+        ],
+        [
+          5000,
+          100,
+          5160
+        ],
+        [
+          0,
+          100,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_TOP",
+      "nome": "V07 - travessa de cobertura 1, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          5585
+        ],
+        [
+          5000,
+          0,
+          5335
+        ],
+        [
+          5000,
+          100,
+          5335
+        ],
+        [
+          0,
+          100,
+          5585
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_BOTTOM",
+      "nome": "V07 - travessa de cobertura 1, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          5410
+        ],
+        [
+          5000,
+          0,
+          5160
+        ],
+        [
+          5000,
+          100,
+          5160
+        ],
+        [
+          0,
+          100,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_ENDL",
+      "nome": "V07 - travessa de cobertura 1, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          5585
+        ],
+        [
+          0,
+          100,
+          5585
+        ],
+        [
+          0,
+          100,
+          5410
+        ],
+        [
+          0,
+          0,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_ENDR",
+      "nome": "V07 - travessa de cobertura 1, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5000,
+          0,
+          5335
+        ],
+        [
+          5000,
+          100,
+          5335
+        ],
+        [
+          5000,
+          100,
+          5160
+        ],
+        [
+          5000,
+          0,
+          5160
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V08_SIDEA",
+      "nome": "V08 - travessa de cobertura 2, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          2950,
+          5585
+        ],
+        [
+          5000,
+          2950,
+          5335
+        ],
+        [
+          5000,
+          2950,
+          5160
+        ],
+        [
+          0,
+          2950,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_SIDEB",
+      "nome": "V08 - travessa de cobertura 2, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          3050,
+          5585
+        ],
+        [
+          5000,
+          3050,
+          5335
+        ],
+        [
+          5000,
+          3050,
+          5160
+        ],
+        [
+          0,
+          3050,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_TOP",
+      "nome": "V08 - travessa de cobertura 2, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          2950,
+          5585
+        ],
+        [
+          5000,
+          2950,
+          5335
+        ],
+        [
+          5000,
+          3050,
+          5335
+        ],
+        [
+          0,
+          3050,
+          5585
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_BOTTOM",
+      "nome": "V08 - travessa de cobertura 2, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          2950,
+          5410
+        ],
+        [
+          5000,
+          2950,
+          5160
+        ],
+        [
+          5000,
+          3050,
+          5160
+        ],
+        [
+          0,
+          3050,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_ENDL",
+      "nome": "V08 - travessa de cobertura 2, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          2950,
+          5585
+        ],
+        [
+          0,
+          3050,
+          5585
+        ],
+        [
+          0,
+          3050,
+          5410
+        ],
+        [
+          0,
+          2950,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_ENDR",
+      "nome": "V08 - travessa de cobertura 2, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5000,
+          2950,
+          5335
+        ],
+        [
+          5000,
+          3050,
+          5335
+        ],
+        [
+          5000,
+          3050,
+          5160
+        ],
+        [
+          5000,
+          2950,
+          5160
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V09_SIDEA",
+      "nome": "V09 - travessa de cobertura 3, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          5900,
+          5585
+        ],
+        [
+          5000,
+          5900,
+          5335
+        ],
+        [
+          5000,
+          5900,
+          5160
+        ],
+        [
+          0,
+          5900,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_SIDEB",
+      "nome": "V09 - travessa de cobertura 3, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          6000,
+          5585
+        ],
+        [
+          5000,
+          6000,
+          5335
+        ],
+        [
+          5000,
+          6000,
+          5160
+        ],
+        [
+          0,
+          6000,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_TOP",
+      "nome": "V09 - travessa de cobertura 3, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          5900,
+          5585
+        ],
+        [
+          5000,
+          5900,
+          5335
+        ],
+        [
+          5000,
+          6000,
+          5335
+        ],
+        [
+          0,
+          6000,
+          5585
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_BOTTOM",
+      "nome": "V09 - travessa de cobertura 3, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          5900,
+          5410
+        ],
+        [
+          5000,
+          5900,
+          5160
+        ],
+        [
+          5000,
+          6000,
+          5160
+        ],
+        [
+          0,
+          6000,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_ENDL",
+      "nome": "V09 - travessa de cobertura 3, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          5900,
+          5585
+        ],
+        [
+          0,
+          6000,
+          5585
+        ],
+        [
+          0,
+          6000,
+          5410
+        ],
+        [
+          0,
+          5900,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_ENDR",
+      "nome": "V09 - travessa de cobertura 3, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5000,
+          5900,
+          5335
+        ],
+        [
+          5000,
+          6000,
+          5335
+        ],
+        [
+          5000,
+          6000,
+          5160
+        ],
+        [
+          5000,
+          5900,
+          5160
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva",
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V10",
+      "nome": "V10 - viga lateral de encontro patamar X0 Y2950..6000 (estudo)",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        0,
+        2950,
+        2510
+      ],
+      "dimensoes_mm": [
+        100,
+        3050,
+        180
+      ],
+      "status": "hipotese_geom_nao_executiva"
+    },
+    {
+      "id": "V11",
+      "nome": "V11 - travessa da borda de chegada escada Y4200 X0..1000 (estudo)",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        0,
+        4200,
+        2510
+      ],
+      "dimensoes_mm": [
+        1000,
+        100,
+        180
+      ],
+      "status": "hipotese_geom_nao_executiva"
+    },
+    {
+      "id": "V12",
+      "nome": "V12 - travessa posterior do patamar Y5900 X0..1000 (estudo)",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        0,
+        5900,
+        2510
+      ],
+      "dimensoes_mm": [
+        1000,
+        100,
+        180
+      ],
+      "status": "hipotese_geom_nao_executiva"
+    }
+  ],
+  "levantamento_campo_mm": {
+    "portao": {
+      "referencia": "Distancia da face interna do muro frontal ate a extremidade mais interna ocupada pelo portao totalmente aberto, incluindo motor",
+      "avanco_para_dentro_do_lote": 300,
+      "fonte": "Medida informada pelo proprietario (30 cm)",
+      "status": "medida_informada; posicao exata em X ainda nao levantada"
+    },
+    "recuo_da_edificacao_em_relacao_ao_muro": null,
+    "nota": "300 mm representam ocupacao observada do portao, nao recuo aprovado; deve ser acrescentada folga tecnica e atendidos afastamentos legais. O sistema local da geometria R01 usa Y=0 na frente da oficina e nao foi deslocado."
+  },
+  "parametros_estudo_mm": {
+    "nivel_superior_mezanino": 2850,
+    "espessura_representativa_plataforma": 160,
+    "pilares_marcadores": {
+      "lado": 100,
+      "observacao": "Cubo geometrico para ver posicao, nao secao estrutural."
+    },
+    "vigas_marcadores": {
+      "largura": 100,
+      "altura_cobertura": 175,
+      "altura_mezanino": 180,
+      "observacao": "Volumes ilustrativos sem calculo, jamais usar para fabricar."
+    },
+    "cobertura": {
+      "queda_transversal": 250,
+      "vao_horizontal": 5000,
+      "inclinacao_percentual": 5,
+      "orientacao": "caimento para direita (X crescente)",
+      "status": "hipotese"
+    },
+    "observacao": "R04 renumera C01-C09 e V01-V12, estende piso para Y1000 com faixa lateral de acesso em Y4200; sem dimensionamento de escada, perfis ou ligacoes.",
+    "balanco_direito": {
+      "x_apoio_referencia": 4000,
+      "x_borda": 5000,
+      "balanco_nominal": 1000,
+      "travessas_posicoes_y": [
+        0,
+        2950,
+        5900
+      ],
+      "largura_representativa_y": 100,
+      "altura_representativa_z": 175,
+      "tipo_modelagem": "casca fechada de seis faces por travessa; nao equivale a perfil calculado",
+      "pendencias": "verificar ligacoes resistentes a momento, momento e flecha do balanco, sucção de vento, cargas, travamentos e fundacoes"
+    },
+    "mezanino_r04": {
+      "recuo_frontal_mm": 1000,
+      "linha_frontal_piso_y_mm": 1000,
+      "piso_principal": {
+        "x_mm": [
+          1000,
+          4000
+        ],
+        "y_mm": [
+          1000,
+          6000
+        ],
+        "area_m2": 15
+      },
+      "retorno_acesso_escada": {
+        "x_mm": [
+          0,
+          1000
+        ],
+        "y_mm": [
+          4200,
+          6000
+        ],
+        "area_m2": 1.8
+      },
+      "area_total_m2": 16.8,
+      "termino_escada": {
+        "x_mm": [
+          100,
+          1000
+        ],
+        "y_mm": 4200
+      },
+      "situacao": "superficies se encontram em Y4200 e X1000 sem afastamento na planta; escada, patamar, altura e ligacoes nao dimensionados",
+      "limitacoes": "O usuario solicitou piso ate o termino da escada. Plataforma em L de estudo deixa a faixa de escada livre antes de Y4200; revisar pe-direito e sistema de apoio."
+    }
+  },
+  "levantamento_terreno": {
+    "revisao": "T01",
+    "origem": "KMZ corrigido enviado pelo proprietario (Caminho sem titulo(2).kmz)",
+    "metodo": "distancias e area geodesicas WGS84; poligono local no arquivo terreno/T01-contorno.json",
+    "area_m2": 382.152,
+    "perimetro_m": 94.673,
+    "segmentos_m": {
+      "AB": 10.196,
+      "BC": 37.019,
+      "CD": 10.467,
+      "DA": 36.991
+    },
+    "status": "levantamento geoespacial estimativo, nao topografico",
+    "lado_frontal": "AB",
+    "impacto_na_geometria_R03": "nenhum; a R03 permanece em origem propria; falta locacao/rotacao relativa a BC e recuo frontal",
+    "orientacao_confirmada_pelo_proprietario": true,
+    "largura_frontal_m": 10.195656,
+    "lateral_direita_vista_da_rua": "BC",
+    "lateral_esquerda_vista_da_rua": "DA",
+    "eixos_locais": "A(0,0) na esquerda da rua, B(10196,0) na direita da rua, Y positivo entrando no lote",
+    "status_implantacao": "lado frontal definido; afastamento lateral e recuo de portao ainda nao dimensionados"
+  },
+  "referencias_estruturais": {
+    "revisao": "R04",
+    "convencao": "C=coluna; V=viga. IDs persistem em revisoes futuras e no nome do grupo SketchUp.",
+    "codigos": {
+      "C01": {
+        "id_original": "P_EF",
+        "categoria": "coluna",
+        "tipo": "PILARES_ESTUDO"
+      },
+      "C02": {
+        "id_original": "P_EM",
+        "categoria": "coluna",
+        "tipo": "PILARES_ESTUDO"
+      },
+      "C03": {
+        "id_original": "P_ET",
+        "categoria": "coluna",
+        "tipo": "PILARES_ESTUDO"
+      },
+      "C04": {
+        "id_original": "P_DF",
+        "categoria": "coluna",
+        "tipo": "PILARES_ESTUDO"
+      },
+      "C05": {
+        "id_original": "P_DM",
+        "categoria": "coluna",
+        "tipo": "PILARES_ESTUDO"
+      },
+      "C06": {
+        "id_original": "P_DT",
+        "categoria": "coluna",
+        "tipo": "PILARES_ESTUDO"
+      },
+      "V01": {
+        "id_original": "V_COB_E",
+        "categoria": "viga",
+        "tipo": "VIGAS_COB_ESTUDO"
+      },
+      "V02": {
+        "id_original": "V_COB_D",
+        "categoria": "viga",
+        "tipo": "VIGAS_COB_ESTUDO"
+      },
+      "C07": {
+        "id_original": "PM_F_E",
+        "categoria": "coluna",
+        "tipo": "PILARES_MEZ_ESTUDO"
+      },
+      "C08": {
+        "id_original": "PM_T_E",
+        "categoria": "coluna",
+        "tipo": "PILARES_MEZ_ESTUDO"
+      },
+      "C09": {
+        "id_original": "PM_F_D",
+        "categoria": "coluna",
+        "tipo": "PILARES_MEZ_ESTUDO"
+      },
+      "V03": {
+        "id_original": "VM_Y1000",
+        "categoria": "viga",
+        "tipo": "VIGAS_MEZ_ESTUDO"
+      },
+      "V04": {
+        "id_original": "VM_Y3900",
+        "categoria": "viga",
+        "tipo": "VIGAS_MEZ_ESTUDO"
+      },
+      "V05": {
+        "id_original": "VM_X2000",
+        "categoria": "viga",
+        "tipo": "VIGAS_MEZ_ESTUDO"
+      },
+      "V06": {
+        "id_original": "VM_X5900",
+        "categoria": "viga",
+        "tipo": "VIGAS_MEZ_ESTUDO"
+      },
+      "V10": {
+        "id_original": null,
+        "categoria": "viga",
+        "tipo": "VIGAS_MEZ_ESTUDO"
+      },
+      "V11": {
+        "id_original": null,
+        "categoria": "viga",
+        "tipo": "VIGAS_MEZ_ESTUDO"
+      },
+      "V12": {
+        "id_original": null,
+        "categoria": "viga",
+        "tipo": "VIGAS_MEZ_ESTUDO"
+      },
+      "V07": {
+        "id_original": "TR1_*",
+        "categoria": "viga",
+        "tipo": "TRAVESSAS_BALANCO_ESTUDO",
+        "nota": "seis faces constituintes por viga logica"
+      },
+      "V08": {
+        "id_original": "TR2_*",
+        "categoria": "viga",
+        "tipo": "TRAVESSAS_BALANCO_ESTUDO",
+        "nota": "seis faces constituintes por viga logica"
+      },
+      "V09": {
+        "id_original": "TR3_*",
+        "categoria": "viga",
+        "tipo": "TRAVESSAS_BALANCO_ESTUDO",
+        "nota": "seis faces constituintes por viga logica"
+      }
+    }
+  }
+}

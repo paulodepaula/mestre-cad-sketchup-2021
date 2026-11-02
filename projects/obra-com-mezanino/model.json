@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina 4x6 R04 - pilares e vigas numerados, mezanino L e encontro com escada - estudo",
-  "revisao": "R04",
+  "nome": "Oficina 4x6 R05 - entrada pelos fundos recuada, fechamento e C04 compartilhada (estudo)",
+  "revisao": "R05",
   "unidades": "mm",
   "envelope_mm": {
     "x": 5000,
@@ -98,12 +98,12 @@
     },
     {
       "id": "MEZ_PRINCIPAL",
-      "nome": "Piso mezanino principal X1000-4000 Y1000-6000 topo Z2850",
+      "nome": "MEZ_PRINCIPAL - piso principal X1000..4000 Y0..5000, topo Z2850 (estudo; NAO executivo)",
       "tipo": "caixa",
       "tag": "MEZANINO_ESTUDO",
       "origem_mm": [
         1000,
-        1000,
+        0,
         2690
       ],
       "dimensoes_mm": [
@@ -115,7 +115,7 @@
     },
     {
       "id": "MEZ_PATAMAR",
-      "nome": "Piso retorno lateral - chegada escada X0-1000 Y4200-6000 topo Z2850",
+      "nome": "MEZ_PATAMAR - retorno da chegada de escada X0..1000 Y4200..5000 (estudo; NAO executivo)",
       "tipo": "caixa",
       "tag": "MEZANINO_ESTUDO",
       "origem_mm": [
@@ -125,7 +125,7 @@
       ],
       "dimensoes_mm": [
         1000,
-        1800,
+        800,
         160
       ],
       "status": "hipotese_geom_nao_executiva"
@@ -183,7 +183,7 @@
     },
     {
       "id": "C04",
-      "nome": "C04 - Marcador volumetrico pilar D-F 100x100 mm NAO calculado",
+      "nome": "C04 - coluna direita unica da cobertura e do mezanino (C09 incorporada); secao 100x100 ilustrativa",
       "tipo": "caixa",
       "tag": "PILARES_ESTUDO",
       "origem_mm": [
@@ -268,12 +268,12 @@
     },
     {
       "id": "C07",
-      "nome": "C07 - apoio frontal hipotetico mezanino em Y1000 (NAO dimensionado)",
+      "nome": "C07 - coluna do mezanino na linha Y0, nao calculada (estudo; NAO executivo)",
       "tipo": "caixa",
       "tag": "PILARES_MEZ_ESTUDO",
       "origem_mm": [
         1000,
-        1000,
+        0,
         0
       ],
       "dimensoes_mm": [
@@ -285,29 +285,12 @@
     },
     {
       "id": "C08",
-      "nome": "C08 - Marcador de suporte mezanino 100x100 mm NAO calculado",
+      "nome": "C08 - coluna de apoio proxima ao fechamento Y5000, nao calculada (estudo; NAO executivo)",
       "tipo": "caixa",
       "tag": "PILARES_MEZ_ESTUDO",
       "origem_mm": [
         1000,
-        5900,
-        0
-      ],
-      "dimensoes_mm": [
-        100,
-        100,
-        2510
-      ],
-      "status": "hipotese_geometrica_nao_dimensionada"
-    },
-    {
-      "id": "C09",
-      "nome": "C09 - apoio frontal hipotetico mezanino em Y1000 (NAO dimensionado)",
-      "tipo": "caixa",
-      "tag": "PILARES_MEZ_ESTUDO",
-      "origem_mm": [
-        3900,
-        1000,
+        4900,
         0
       ],
       "dimensoes_mm": [
@@ -319,12 +302,12 @@
     },
     {
       "id": "V03",
-      "nome": "V03 - viga longitudinal mezanino de estudo Y1000..6000",
+      "nome": "V03 - viga longitudinal esquerda piso mezanino Y0..5000 (estudo; NAO executivo)",
       "tipo": "caixa",
       "tag": "VIGAS_MEZ_ESTUDO",
       "origem_mm": [
         1000,
-        1000,
+        0,
         2510
       ],
       "dimensoes_mm": [
@@ -336,12 +319,12 @@
     },
     {
       "id": "V04",
-      "nome": "V04 - viga longitudinal mezanino de estudo Y1000..6000",
+      "nome": "V04 - viga longitudinal direita piso mezanino Y0..5000; apoio frontal C04 (estudo; NAO executivo)",
       "tipo": "caixa",
       "tag": "VIGAS_MEZ_ESTUDO",
       "origem_mm": [
         3900,
-        1000,
+        0,
         2510
       ],
       "dimensoes_mm": [
@@ -353,12 +336,12 @@
     },
     {
       "id": "V05",
-      "nome": "V05 - viga frontal mezanino em Y1000 (estudo nao executivo)",
+      "nome": "V05 - travessa frontal mezanino Y0 (estudo; NAO executivo)",
       "tipo": "caixa",
       "tag": "VIGAS_MEZ_ESTUDO",
       "origem_mm": [
         1000,
-        1000,
+        0,
         2510
       ],
       "dimensoes_mm": [
@@ -370,12 +353,12 @@
     },
     {
       "id": "V06",
-      "nome": "V06 - Viga transversal mezanino Y5900: 100x180 mm NAO calculada",
+      "nome": "V06 - travessa de fundo na linha da fachada Y4900..5000 (estudo; NAO executivo)",
       "tipo": "caixa",
       "tag": "VIGAS_MEZ_ESTUDO",
       "origem_mm": [
         1000,
-        5900,
+        4900,
         2510
       ],
       "dimensoes_mm": [
@@ -956,7 +939,7 @@
     },
     {
       "id": "V10",
-      "nome": "V10 - viga lateral de encontro patamar X0 Y2950..6000 (estudo)",
+      "nome": "V10 - viga esquerda de estudo Y2950..5000 (estudo; NAO executivo)",
       "tipo": "caixa",
       "tag": "VIGAS_MEZ_ESTUDO",
       "origem_mm": [
@@ -966,7 +949,7 @@
       ],
       "dimensoes_mm": [
         100,
-        3050,
+        2050,
         180
       ],
       "status": "hipotese_geom_nao_executiva"
@@ -990,12 +973,12 @@
     },
     {
       "id": "V12",
-      "nome": "V12 - travessa posterior do patamar Y5900 X0..1000 (estudo)",
+      "nome": "V12 - travessa posterior retorno do patamar em Y4900..5000 (estudo; NAO executivo)",
       "tipo": "caixa",
       "tag": "VIGAS_MEZ_ESTUDO",
       "origem_mm": [
         0,
-        5900,
+        4900,
         2510
       ],
       "dimensoes_mm": [
@@ -1004,6 +987,93 @@
         180
       ],
       "status": "hipotese_geom_nao_executiva"
+    },
+    {
+      "id": "F05_VIDRO",
+      "nome": "F05_VIDRO - pano de vidro de 1,00 m a esquerda na entrada pelos fundos Y5000, altura estudo 2400",
+      "tipo": "face",
+      "tag": "FACHADA_VIDROS_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          5000,
+          0
+        ],
+        [
+          1000,
+          5000,
+          0
+        ],
+        [
+          1000,
+          5000,
+          2400
+        ],
+        [
+          0,
+          5000,
+          2400
+        ]
+      ],
+      "status": "fechamento_em_plano_com_altura_ilustrativa_nao_projeto_esquadrias"
+    },
+    {
+      "id": "F05_PORTAO",
+      "nome": "F05_PORTAO - portao de 3,00 m a direita na entrada pelos fundos Y5000, altura estudo 2400",
+      "tipo": "face",
+      "tag": "FACHADA_PORTAO_ESTUDO",
+      "pontos_mm": [
+        [
+          1000,
+          5000,
+          0
+        ],
+        [
+          4000,
+          5000,
+          0
+        ],
+        [
+          4000,
+          5000,
+          2400
+        ],
+        [
+          1000,
+          5000,
+          2400
+        ]
+      ],
+      "status": "fechamento_em_plano_com_altura_ilustrativa_nao_projeto_esquadrias"
+    },
+    {
+      "id": "F05_SUPERIOR",
+      "nome": "F05_SUPERIOR - faixa superior de fechamento Z2400..2690 (esquematica)",
+      "tipo": "face",
+      "tag": "FACHADA_FECHAMENTO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          5000,
+          2400
+        ],
+        [
+          4000,
+          5000,
+          2400
+        ],
+        [
+          4000,
+          5000,
+          2690
+        ],
+        [
+          0,
+          5000,
+          2690
+        ]
+      ],
+      "status": "fechamento_em_plano_com_altura_ilustrativa_nao_projeto_esquadrias"
     }
   ],
   "levantamento_campo_mm": {
@@ -1036,7 +1106,7 @@
       "orientacao": "caimento para direita (X crescente)",
       "status": "hipotese"
     },
-    "observacao": "R04 renumera C01-C09 e V01-V12, estende piso para Y1000 com faixa lateral de acesso em Y4200; sem dimensionamento de escada, perfis ou ligacoes.",
+    "observacao": "R05: fundos Y6000; fechamentos no plano Y5000; piso recuado 1000mm com retorno ate escada; 8 colunas; cobertura geometrica IDENTICA a R04. Todas as alturas e secoes construtivas sao hipoteses.",
     "balanco_direito": {
       "x_apoio_referencia": 4000,
       "x_borda": 5000,
@@ -1086,6 +1156,84 @@
       },
       "situacao": "superficies se encontram em Y4200 e X1000 sem afastamento na planta; escada, patamar, altura e ligacoes nao dimensionados",
       "limitacoes": "O usuario solicitou piso ate o termino da escada. Plataforma em L de estudo deixa a faixa de escada livre antes de Y4200; revisar pe-direito e sistema de apoio."
+    },
+    "mezanino_r05": {
+      "recuo_entrada_fundos_mm": 1000,
+      "linha_entrada_y_mm": 5000,
+      "piso_principal": {
+        "x_mm": [
+          1000,
+          4000
+        ],
+        "y_mm": [
+          0,
+          5000
+        ],
+        "area_m2": 15
+      },
+      "retorno_escada": {
+        "x_mm": [
+          0,
+          1000
+        ],
+        "y_mm": [
+          4200,
+          5000
+        ],
+        "area_m2": 0.8
+      },
+      "area_total_m2": 15.8,
+      "topo_piso_mm": 2850,
+      "termino_escada_referencia_y_mm": 4200,
+      "nota": "O alinhamento com a escada e apenas em planta; degraus, patamar, alturas, guarda-corpo, vedacoes e estrutura pendem de dimensionamento."
+    },
+    "entrada_fundos_r05": {
+      "orientacao": "fundos da oficina no eixo Y6000; acesso via fachada recuada Y5000",
+      "linha_fechamento_y_mm": 5000,
+      "projecao_cobertura_y_mm": 6000,
+      "espaco_coberto_recuado_mm": 1000,
+      "vidros": {
+        "id": "F05_VIDRO",
+        "x_mm": [
+          0,
+          1000
+        ],
+        "y_mm": 5000,
+        "altura_referencia_mm": 2400,
+        "largura_mm": 1000,
+        "status": "largura confirmada, altura hipotese"
+      },
+      "portao": {
+        "id": "F05_PORTAO",
+        "x_mm": [
+          1000,
+          4000
+        ],
+        "y_mm": 5000,
+        "altura_referencia_mm": 2400,
+        "largura_mm": 3000,
+        "status": "largura confirmada, altura hipotese"
+      },
+      "faixa_superior": {
+        "id": "F05_SUPERIOR",
+        "z_mm": [
+          2400,
+          2690
+        ],
+        "status": "hipotese de fechamento; verificar viga superior e material"
+      },
+      "nota": "A fachada foi representada como tres faces, sem espessura nem esquadrias moveis. Calha, telhado e vigas de cobertura foram mantidos inalterados."
+    },
+    "colunas_r05": {
+      "C04": {
+        "situacao": "Coluna compartilhada da estrutura principal e mezanino, origem e altura geometricas de R04 inalteradas",
+        "x_mm": 3900,
+        "y_mm": 0,
+        "substitui": "C09"
+      },
+      "C09": {
+        "situacao": "descontinuada/absorvida pela C04, nao deve ser gerada como segunda coluna"
+      }
     }
   },
   "levantamento_terreno": {
@@ -1111,7 +1259,7 @@
     "status_implantacao": "lado frontal definido; afastamento lateral e recuo de portao ainda nao dimensionados"
   },
   "referencias_estruturais": {
-    "revisao": "R04",
+    "revisao": "R05",
     "convencao": "C=coluna; V=viga. IDs persistem em revisoes futuras e no nome do grupo SketchUp.",
     "codigos": {
       "C01": {
@@ -1132,7 +1280,17 @@
       "C04": {
         "id_original": "P_DF",
         "categoria": "coluna",
-        "tipo": "PILARES_ESTUDO"
+        "tipo": "PILARES_ESTUDO",
+        "funcoes": [
+          "pilar principal da cobertura",
+          "apoio compartilhado do mezanino"
+        ],
+        "incorpora": "C09",
+        "origem_mm": [
+          3900,
+          0,
+          0
+        ]
       },
       "C05": {
         "id_original": "P_DM",
@@ -1161,11 +1319,6 @@
       },
       "C08": {
         "id_original": "PM_T_E",
-        "categoria": "coluna",
-        "tipo": "PILARES_MEZ_ESTUDO"
-      },
-      "C09": {
-        "id_original": "PM_F_D",
         "categoria": "coluna",
         "tipo": "PILARES_MEZ_ESTUDO"
       },
@@ -1222,6 +1375,9 @@
         "tipo": "TRAVESSAS_BALANCO_ESTUDO",
         "nota": "seis faces constituintes por viga logica"
       }
+    },
+    "aliases_historicos": {
+      "C09": "C04"
     }
   }
 }
