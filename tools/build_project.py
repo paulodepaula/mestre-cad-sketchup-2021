@@ -154,7 +154,7 @@ def dxf(data, mode):
             for i in range(len(coords)):
                 if coords[i]!=coords[(i+1)%len(coords)]:
                     line(coords[i],coords[(i+1)%len(coords)],el['tag'])
-        text('PLANTA ESTUDO R00 - MM - SEM DIMENSIONAMENTO ESTRUTURAL',0,-350)
+        text('PLANTA ESTUDO '+data['revisao']+' - MM - NAO EXECUTIVO',0,-350)
         text('LARGURA '+fmt(x)+' mm',0,-550,90)
         text('PROFUNDIDADE '+fmt(y)+' mm',0,-720,90)
     elif mode=='elevacoes':

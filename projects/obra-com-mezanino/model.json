@@ -1,15 +1,129 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina 4 x 6 m - referencia geometrica",
-  "revisao": "R00",
+  "nome": "Obra com mezanino - R01 planta e locacao de mezanino (estudo, NAO EXECUTIVO)",
+  "revisao": "R01",
   "unidades": "mm",
-  "envelope_mm": {"x": 4000, "y": 6000, "z": 3420},
+  "envelope_mm": {
+    "x": 5000,
+    "y": 6000,
+    "z": 2850
+  },
   "elementos": [
-    {"id": "PISO", "nome": "Planta de referencia sem espessura", "tipo": "face", "tag": "REFERENCIAS", "pontos_mm": [[0,0,0], [4000,0,0], [4000,6000,0], [0,6000,0]], "status": "hipotese"},
-    {"id": "P1", "nome": "Pilar frontal esquerdo - ilustrativo", "tipo": "caixa", "tag": "PILARES_ESTUDO", "origem_mm": [0,0,0], "dimensoes_mm": [100,100,3000], "status": "hipotese"},
-    {"id": "P2", "nome": "Pilar frontal direito - ilustrativo", "tipo": "caixa", "tag": "PILARES_ESTUDO", "origem_mm": [3900,0,0], "dimensoes_mm": [100,100,3000], "status": "hipotese"},
-    {"id": "P3", "nome": "Pilar traseiro esquerdo - ilustrativo", "tipo": "caixa", "tag": "PILARES_ESTUDO", "origem_mm": [0,5900,0], "dimensoes_mm": [100,100,3413], "status": "hipotese"},
-    {"id": "P4", "nome": "Pilar traseiro direito - ilustrativo", "tipo": "caixa", "tag": "PILARES_ESTUDO", "origem_mm": [3900,5900,0], "dimensoes_mm": [100,100,3413], "status": "hipotese"},
-    {"id": "COB", "nome": "Plano de cobertura com inclinacao de 7 por cento", "tipo": "face", "tag": "COBERTURA_REF", "pontos_mm": [[0,0,3000], [4000,0,3000], [4000,6000,3420], [0,6000,3420]], "status": "hipotese"}
+    {
+      "id": "PISO_T",
+      "nome": "Area nominal oficina/deposito 4000x6000 - plano de referencia Z0",
+      "tipo": "face",
+      "tag": "OFICINA_REFERENCIA",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          4000,
+          0,
+          0
+        ],
+        [
+          4000,
+          6000,
+          0
+        ],
+        [
+          0,
+          6000,
+          0
+        ]
+      ],
+      "status": "dimensao_definida"
+    },
+    {
+      "id": "PASSE",
+      "nome": "Passarela direita 1000x6000 - projecao em planta",
+      "tipo": "face",
+      "tag": "PASSARELA_REFERENCIA",
+      "pontos_mm": [
+        [
+          4000,
+          0,
+          0
+        ],
+        [
+          5000,
+          0,
+          0
+        ],
+        [
+          5000,
+          6000,
+          0
+        ],
+        [
+          4000,
+          6000,
+          0
+        ]
+      ],
+      "status": "largura_definida_comprimento_hipotese"
+    },
+    {
+      "id": "ESCADA_RES",
+      "nome": "Reserva de escada lateral esquerda 900x4200 - NAO dimensionada",
+      "tipo": "face",
+      "tag": "ESCADA_HIPOTESE",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          900,
+          0,
+          0
+        ],
+        [
+          900,
+          4200,
+          0
+        ],
+        [
+          0,
+          4200,
+          0
+        ]
+      ],
+      "status": "hipotese"
+    },
+    {
+      "id": "MEZ_R01",
+      "nome": "Mezanino proposto 3000x4000: X1000-4000 Y2000-6000 Z2850",
+      "tipo": "face",
+      "tag": "MEZANINO_HIPOTESE",
+      "pontos_mm": [
+        [
+          1000,
+          2000,
+          2850
+        ],
+        [
+          4000,
+          2000,
+          2850
+        ],
+        [
+          4000,
+          6000,
+          2850
+        ],
+        [
+          1000,
+          6000,
+          2850
+        ]
+      ],
+      "status": "posicao_area_e_nivel_hipotese"
+    }
   ]
 }

@@ -1,18 +1,23 @@
-# Obra com mezanino - estudo geometrico R00
+# Obra com mezanino - R01: planta e posicionamento de estudo
 
-**Status: estudo ilustrativo 4.000 x 6.000 mm, NAO e projeto executivo nem mezanino dimensionado.**
+**Status: REFERENCIA GEOMETRICA NAO EXECUTIVA.** `model.json` e a fonte de verdade para o gerador e a sincronizacao da extensao Mestre CAD 2021.
 
-## Fonte do projeto
+## Medidas e eixos
 
-`model.json` e a fonte das medidas e posicoes. Edite o JSON e publique na branch `main`. O workflow `Gerar arquivos CAD a partir do projeto` valida o modelo, gera e versiona:
+- X cresce para a direita, de frente para a oficina. Y cresce da frente para o fundo. Z e elevacao acima do piso de referencia.
+- **Definidos pelo usuario:** oficina principal 4.000 x 6.000 mm; faixa/passarela a direita com largura de 1.000 mm; terreno com 10.000 mm de frente (nao representado no envelope); oficina terrea e deposito/ferramentas; mezanino destinado a escritorio.
+- **Proposta geometrica provisoria:** faixa direita acompanha 6.000 mm de profundidade; mezanino de 3.000 x 4.000 mm (12 m2) em X=1.000..4.000, Y=2.000..6.000; nivel Z=2.850 mm; reserva da escada de 900 x 4.200 mm na esquerda, X=0..900, Y=0..4.200.
+- **Envelope do ARQUIVO:** X=5.000, Y=6.000, Z=2.850 mm. Z indica **somente a cota mais alta REPRESENTADA**, NAO a altura total da edificacao.
+- A cobertura, pilares e fundacoes de R00 foram retirados do **modelo ativo**, porque nao estavam dimensionados. O arquivo original foi preservado em `historico/model-R00.json`.
+- As faces de piso, passarela, reserva de escada e mezanino sao referencias SEM espessura, suporte estrutural, vãos ou verificacao de cargas.
+- A face do mezanino e uma hipotese de localizacao, nao uma laje executiva: o acesso no topo da escada, patamar e pe-direito precisam ser resolvidos antes do detalhamento.
+- O espaco de pe-direito duplo e a area de impressao 3D precisam ser compatibilizados: impressoras e armarios exigem piso estrutural, ventilacao e circulacao; nao ficam apoiados no vazio.
+- Sem alteracao ou aprovacao de dimensoes estruturais. O nivel de R00 (3.420 mm) e seus pilares sao apenas referencia historica.
 
-- `cadcraft/planta.dxf`: geometria 2D da planta em milimetros, DXF ASCII R12.
-- `cadcraft/elevacoes.dxf`: elevacoes frontal/lateral em milimetros, DXF ASCII R12.
-- `sketchup/modelo.dae`: geometria 3D COLLADA, unidade declarada em milimetros, eixo Z vertical.
-- `manifest.json`: arquivo verificavel com SHA-256 e tamanho de cada arquivo.
+## Arquivos e operacao
 
-Os desenhos podem ser abertos no CadCraft e o DAE pode ser importado no SketchUp 2021. A extensao Mestre CAD 2021 v1.3.0 tambem sincroniza estes arquivos diretamente do GitHub e importa o JSON como grupos SketchUp. Depois e possivel salvar localmente o modelo editavel `.skp` no proprio SketchUp.
+Alteracoes em `model.json` na branch `main` acionam GitHub Actions, que gera `cadcraft/planta.dxf`, `cadcraft/elevacoes.dxf`, `sketchup/modelo.dae` e `manifest.json`. Verifique sucesso do workflow e integridade do manifesto antes de sincronizar.
 
-**Nao existe um `.skp` nativo gerado no GitHub neste MVP:** requer o SDK C oficial autorizado e um runner Windows/macOS configurado. Nao renomear DAE para SKP. Nao existe conversao DWG sem programa conversor licenciado/verificado.
+SketchUp 2021: Extensoes > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub; Importar projeto sincronizado; Conferir grupo selecionado; Salvar copia SKP do projeto sincronizado. O SKP permanece local.
 
-Os pilares ilustrativos de 100 x 100 mm nao foram dimensionados e a cobertura nao teve verificada sua estabilidade ou fixacao. Exigem validacao por profissional habilitado e ART/RRT conforme aplicavel.
+Detalhes e pendencias: [R01-PLANTA-E-MEZANINO.md](R01-PLANTA-E-MEZANINO.md).
