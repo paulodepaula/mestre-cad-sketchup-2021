@@ -30,6 +30,14 @@
 - O portao existente fica na frente A-B e **corre para a direita**, ocupando a lateral onde se pretende a obra. Sua saliencia para o interior da face do muro frontal foi informada como **300 mm**, ainda sem planta cotada da folha, trilhos, motor e percurso aberto.
 - Segundo o proprietario, **afastar a oficina do lado B-C para o centro do lote interfere na area do portao**. Assim, nao mover a construcao lateralmente para impor um corredor adicional. A passarela nominal de 1m ja faz parte da faixa geral de 5m da R04 (oficina 4m + passarela 1m).
 - A entrada funcional da oficina foi informada como **voltada para os fundos do terreno C-D**; isto se refere ao acesso, e nao autoriza inverter a geometria ativa R04 ou restabelecer a R05 desfeita.
-- A distancia de **0,30 m** mencionada pelo proprietario como recuo precisa ser associada explicitamente a um par de superficies (muro frontal, portao, oficina) no levantamento. **Nao confundir** com a ocupacao de 0,30m do portao nem aprovar como recuo normativo.
+- O proprietario esclareceu que o **recuo de 300 mm da construçao e medido desde a face interna do MURO DA RUA A-B**, para reservar espaco ao portao de correr quando estiver aberto. E a **linha frontal Y=300 mm** como referencia de estudo, independente da distancia ainda nao definida ate a lateral B-C. A existencia desse vao nao comprova folgas adequadas da folha, trilho, motor e batentes, nem aprova recuos municipais.
 - O muro vizinho **nao pode ser assumido como apoio estrutural** de vigas, terças ou cobertura. A cobertura existente do estudo cai para o lado B-C (5% ilustrativos), exigindo futura solucao de calha/drenagem que nao descarregue agua na propriedade vizinha.
 - Deixar pendente a posicao global X/Y da oficina, a folga real da cobertura em relacao ao muro, a faixa de deslizamento do portao e as restricoes municipais de afastamento, sem alterar `model.json` nem `T01-planta-base.dxf` antes dessas conferencias.
+
+## Cota confirmada do portao - referencia transversal ao muro frontal
+
+- **Muro da rua A-B**: referencia Y=0 do terreno no desenho local, observando que o KMZ e aproximado e a face interna real do muro ainda precisa de afericao topografica.
+- **Borda frontal da construcao**: distancia nominal **300 mm a partir da face interna do muro A-B**, destinada exclusivamente ao alojamento do portao de correr aberto. Para visualizacao no estudo, linha Y=300 mm.
+- **Nao e recuo lateral** em relacao ao muro alto B-C. Esse muro tem 4,80 m de altura informado e ainda nao define a cota X da oficina.
+- Esta linha de afastamento foi anotada no DXF T01 como **referencia de dimensao**, nao e a planta final posicionada do predio. O bloco de oficina no DXF continua nao locado.
+- Conferir fisicamente com folha completamente aberta, carrinho/roldanas, trilho, motor, batentes, tolerancia para manutencao, cobertura e muros antes de congelar a implantacao.

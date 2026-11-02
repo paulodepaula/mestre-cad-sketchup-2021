@@ -59,15 +59,22 @@
       "deslizamento": "para_direita_visto_da_rua",
       "ocupacao_interna_informada_mm": 300,
       "interferencia": "afastamento_lateral_esquerda_da_oficina_pode_interferir_com_portao",
-      "status": "percurso_exato_nao_dimensionado"
+      "status": "recuo informado; nao assegura folga sem conferir a abertura real",
+      "recuo_reservado_obra_mm": 300,
+      "referencia_distancia": "face interna do muro da rua A-B"
     },
     "implantacao": {
       "faixa_oficina_e_passarela_mm": 5000,
       "lado_de_preferencia": "BC",
       "diretriz": "nao_criar_recuo_lateral_arbitrario",
       "distancia_lateral_real_mm": null,
-      "posicao_global_oficina": "pendente",
-      "entrada_funcional_orientada": "fundos_do_terreno_CD"
+      "posicao_global_oficina": "Y frontal de referencia 300 mm; coordenada X lateral pendente, edif. ainda nao locado",
+      "entrada_funcional_orientada": "fundos_do_terreno_CD",
+      "recuo_frontal_mm": 300,
+      "referencia_recuo_frontal": "face interna do muro de rua A-B ate inicio da construcao",
+      "linha_frontal_estudo_y_mm": 300,
+      "finalidade_recuo_frontal": "acomodar o portao de correr quando totalmente aberto; cota informada pelo proprietario",
+      "status_recuo_frontal": "medida informada pelo proprietario, pendente confirmar geometria da folha aberta, trilho, motor e folgas"
     },
     "obs": "Muro alto nao e suporte estrutural; verificar legislacao de recuos, drenagem, portao e encontro de cobertura antes de locacao definitiva."
   }
