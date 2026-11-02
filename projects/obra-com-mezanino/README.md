@@ -1,30 +1,16 @@
-# Obra com mezanino - R04 (estudo geometrico, NAO EXECUTIVO)
+# Obra com mezanino - R05 (terreno e muro no modelo sincronizado)
 
-A fonte principal e `model.json`; o GitHub Actions gera DXF, DAE e manifesto. `historico/model-R03.json` preserva a revisao anterior.
+**Fonte unica**: `model.json` no GitHub. O SketchUp 2021 apenas sincroniza e importa; nenhuma modelagem manual faz parte do fluxo.
 
-## R04
-- Colunas numeradas **C01-C09** e vigas **V01-V12**, como nomes de grupos no SketchUp e textos no DXF (travessas V07-V09 divididas em seis faces por viga).
-- Mezanino principal com recuo frontal de 1000 mm (X1000..4000, Y1000..6000) e retorno de chegada a escada (X0..1000, Y4200..6000), area bruta hipotetica 16,8m2.
-- Escada ainda reserva X100..1000 Y0..4200, chegada geometricamente alinhada a Y4200.
-- Cobertura mantida em balanco de 1000mm, livre de pilares na extremidade direita.
-- Encontro piso/escada, apoios e alturas **nao validam seguranca nem dimensionamento estrutural**.
-- Dimensoes da oficina 4000x6000mm e passarela direita 1000mm mantidas. Posicao no terreno T01 ainda pendente.
-- Projeto geotecnico e fundacoes ainda pendentes.
+## Conteudo R05
+- Terreno T01 completo (contorno A-B-C-D do KMZ), muro lateral direito **B-C de 4800mm de altura** (face sem espessura).
+- Oficina 4x6m e passarela 1m no referencial do terreno: **oficina do lado direito junto ao muro B-C, passarela de 1m a esquerda**, entrada funcional para os fundos C-D.
+- Espaco frontal nominal 300mm no canto direito junto ao portao. Alinhamento BC sem afastamento so como estudo; checar lei e calha.
+- Todos os **42 elementos da R04** preservados por rotacao de 180 graus e translacao, mantendo vigas, colunas, mezanino e geometria relativa do telhado.
+- **44 grupos no modelo** (42 da oficina + `T01_TERRENO` + `MURO_BC`). Envelope do terreno/projeto: X10461 Y37341 Z5600mm.
+- O novo R05 de implantacao e distinto da **R05 antiga de fachada, que permanece desfeita**.
 
-Detalhes e legendas em [R04-REFERENCIAS-MEZANINO.md](R04-REFERENCIAS-MEZANINO.md).
+Mais detalhes: [R05-TERRENO-MURO.md](R05-TERRENO-MURO.md). Metodo obrigatorio para proximas sessoes: [AGENTS.md](AGENTS.md).
 
-## Uso
-SketchUp 2021 > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub > Importar projeto sincronizado > Conferir grupo selecionado. O SKP fica local. Nao confundir C01, V01 etc. com perfis ou secoes projetadas.
-
-## Estado apos rollback de R05
-
-- **Geometria ativa restaurada para R04** por solicitacao do proprietario. Modificacoes R05 (fechamento em Y5000, vidro/portao, fusao C09 com C04 e inversao do mezanino) nao fazem parte do modelo ativo.
-- O estudo desfeito foi preservado no historico em `historico/model-R05-desfeito.json` e em `R05-ENTRADA-FUNDOS.md`, marcado como CANCELADO.
-- **Frente da RUA no terreno T01**: A-B (10,20 m); fundos do TERRENO: C-D (10,47 m); lateral direita olhando da rua: B-C (37,02 m).
-- A palavra frente/fundos da **oficina** deve ser definida separadamente da frente/fundos do terreno antes de fazer qualquer fachada, alinhamento, deslocamento ou nova implantacao.
-
-## I01 - Implantacao de estudo (futura R05)
-
-A frente do terreno e A-B, o muro alto da direita e B-C, e a oficina R04 foi **posicionada em estudo girada 180 graus**: oficina 4x6 na direita, passarela de 1m a esquerda, frente funcional para C-D e recuo frontal nominal 300mm do muro da rua. O telhado fica alinhado em B-C e avanca 1m para a esquerda. **Nenhuma geometria do model.json R04 foi alterada.** Antiga R05 continua desfeita. Alinhamento nominal zero em B-C nao e afastamento legal validado.
-
-Arquivos: [planta DXF](terreno/R05-implantacao-estudo.dxf), [dados JSON](terreno/R05-implantacao-estudo.json) e [notas I01](terreno/R05-IMPLANTACAO-ESTUDO.md).
+## Operacao
+Nao enviar passo a passo de modelagem: **todas as alteracoes sao feitas no GitHub**, e o usuario apenas sincroniza e importa o projeto pelo plugin do SketchUp. CadCraft recebe os DXFs gerados pelo GitHub Actions. Arquivos SKP permanecem locais.

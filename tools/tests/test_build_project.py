@@ -17,10 +17,10 @@ class ProjectGenerationTest(unittest.TestCase):
     def setUp(self):
         self.data=json.loads(EXAMPLE.read_text(encoding='utf-8'))
 
-    def test_r04_numbered_members_and_mezzanine_landing(self):
-        self.assertEqual(bp.validate(self.data),(5000.,6000.,5600.))
-        self.assertEqual(len(self.data['elementos']),42)
-        self.assertEqual(self.data['revisao'],'R04')
+    def test_r05_project_and_terrain_wall(self):
+        self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
+        self.assertEqual(len(self.data['elementos']),44)
+        self.assertEqual(self.data['revisao'],'R05')
         self.assertEqual({e['tipo'] for e in self.data['elementos']},{'face','caixa'})
         self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_ESTUDO'),6)
         self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_MEZ_ESTUDO'),3)
@@ -34,14 +34,40 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(self.data['parametros_estudo_mm']['mezanino_r04']['area_total_m2'],16.8)
         p = next(e for e in self.data['elementos'] if e['id']=='MEZ_PRINCIPAL')
         l = next(e for e in self.data['elementos'] if e['id']=='MEZ_PATAMAR')
-        self.assertEqual(p['origem_mm'], [1000,1000,2690])
+        self.assertEqual(p['origem_mm'], [6461,621,2690])
         self.assertEqual(p['dimensoes_mm'], [3000,5000,160])
-        self.assertEqual(l['origem_mm'], [0,4200,2690])
+        self.assertEqual(l['origem_mm'], [9461,621,2690])
         self.assertEqual(l['dimensoes_mm'], [1000,1800,160])
         stair = next(e for e in self.data['elementos'] if e['id']=='ESCADA_RES')
-        self.assertEqual(max(v[1] for v in stair['pontos_mm']),4200)
-        self.assertEqual(min(v[0] for v in stair['pontos_mm']),100)
+        self.assertEqual(max(v[1] for v in stair['pontos_mm']),6621)
+        self.assertEqual(min(v[0] for v in stair['pontos_mm']),9461)
         self.assertEqual(self.data['parametros_estudo_mm']['balanco_direito']['balanco_nominal'],1000)
+
+
+    def test_r05_terrain_wall_and_original_r04_integrity(self):
+        historical=json.loads((EXAMPLE.parent/'historico'/'model-R04.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(historical['elementos']),42)
+        self.assertEqual(self.data['envelope_mm'],{'x':10461,'y':37341,'z':5600})
+        elements={e['id']:e for e in self.data['elementos']}
+        self.assertEqual(elements['T01_TERRENO']['pontos_mm'],[[270,0,0],[10461,321,0],[10461,37341,0],[0,36990,0]])
+        self.assertEqual(elements['MURO_BC']['pontos_mm'],[[10461,321,0],[10461,37341,0],[10461,37341,4800],[10461,321,4800]])
+        self.assertEqual(elements['MURO_BC']['tag'],'T01_MURO_BC')
+        self.assertEqual(elements['PASSE']['pontos_mm'],[[6461,6621,0],[5461,6621,0],[5461,621,0],[6461,621,0]])
+        self.assertTrue(all(e['tipo'] in ('face','caixa') for e in self.data['elementos']))
+        for prior in historical['elementos']:
+            curr=elements[prior['id']]
+            self.assertEqual(curr['tipo'], prior['tipo'])
+            self.assertEqual(curr['tag'], prior['tag'])
+            if prior['tipo']=='caixa':
+                x,y,z=prior['origem_mm'];w,d,h=prior['dimensoes_mm']
+                self.assertEqual(curr['origem_mm'],[10461-x-w,6621-y-d,z],prior['id'])
+                self.assertEqual(curr['dimensoes_mm'],prior['dimensoes_mm'],prior['id'])
+            else:
+                self.assertEqual(curr['pontos_mm'],[[10461-x,6621-y,z] for x,y,z in prior['pontos_mm']],prior['id'])
+        placement=self.data['parametros_estudo_mm']['implantacao_r05']
+        self.assertEqual(placement['recuo_frontal_direito_nominal_mm'],300)
+        self.assertEqual(placement['muro_BC']['altura_mm'],4800)
+        self.assertTrue(placement['telhado_inalterado_em_relacao_a_R04'])
 
     def test_dxf_ascii_r12_contains_geometry(self):
         for view in ('planta','elevacoes'):
@@ -57,6 +83,8 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertIn(b'\nV01\n',plan)
         self.assertIn(b'\nV09\n',plan)
         self.assertIn(b'\nV12\n',plan)
+        self.assertIn(b'T01_TERRENO',plan)
+        self.assertIn(b'T01_MURO_BC',plan)
 
     def test_collada_valid_xml_and_metric_units(self):
         tree=ET.fromstring(bp.dae(self.data))
@@ -64,9 +92,9 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
         nodes=tree.findall('.//c:visual_scene/c:node',ns)
-        self.assertEqual(len(nodes),42)
+        self.assertEqual(len(nodes),44)
         triangles=tree.findall('.//c:mesh/c:triangles',ns)
-        self.assertEqual(sum(int(tr.attrib['count']) for tr in triangles),284)
+        self.assertEqual(sum(int(tr.attrib['count']) for tr in triangles),288)
 
     def test_rejects_missing_units(self):
         self.data['unidades']='m'
@@ -77,7 +105,7 @@ class ProjectGenerationTest(unittest.TestCase):
         with self.assertRaises(ValueError):bp.validate(self.data)
 
     def test_rejects_extra_element_outside_envelope(self):
-        self.data['elementos'][1]['pontos_mm'][1][0]=5001
+        self.data['elementos'][1]['pontos_mm'][1][0]=10462
         with self.assertRaisesRegex(ValueError,'fora do envelope'):bp.validate(self.data)
 
     def test_rejects_corrupt_envelope(self):
