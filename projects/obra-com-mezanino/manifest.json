@@ -14,8 +14,8 @@
       "size": 1373
     },
     "model.json": {
-      "sha256": "a215a5d969d7c66578f49cb5fb30d1bf90c9564e1d3e9709c04bc2534a70e4a6",
-      "size": 2236
+      "sha256": "086fd76e82394c4b4cc1193acfb77202e66c50fd93a9652f455368a5133effd7",
+      "size": 2908
     },
     "sketchup/modelo.dae": {
       "sha256": "908e5c75a070f0f89e8171866d8d9cb11a91cab4564d13c7262ec7f751938175",
@@ -25,5 +25,5 @@
   "projeto": "obra-com-mezanino",
   "revisao": "R01",
   "schema": "mestre-cad-sync-v1",
-  "source_sha256": "a215a5d969d7c66578f49cb5fb30d1bf90c9564e1d3e9709c04bc2534a70e4a6"
+  "source_sha256": "086fd76e82394c4b4cc1193acfb77202e66c50fd93a9652f455368a5133effd7"
 }
