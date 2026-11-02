@@ -1,16 +1,18 @@
-# Obra com mezanino - R05 (terreno e muro no modelo sincronizado)
+# Obra com mezanino - R06 (C04/C09 unificadas e V13 entre apoios)
 
-**Fonte unica**: `model.json` no GitHub. O SketchUp 2021 apenas sincroniza e importa; nenhuma modelagem manual faz parte do fluxo.
+**Fonte unica: GitHub/model.json.** Sincronizacao no SketchUp 2021 via plugin Mestre CAD. Nao ha procedimentos manuais de modelagem.
 
-## Conteudo R05
-- Terreno T01 completo (contorno A-B-C-D do KMZ), muro lateral direito **B-C de 4800mm de altura** (face sem espessura).
-- Oficina 4x6m e passarela 1m no referencial do terreno: **oficina do lado direito junto ao muro B-C, passarela de 1m a esquerda**, entrada funcional para os fundos C-D.
-- Espaco frontal nominal 300mm no canto direito junto ao portao. Alinhamento BC sem afastamento so como estudo; checar lei e calha.
-- Todos os **42 elementos da R04** preservados por rotacao de 180 graus e translacao, mantendo vigas, colunas, mezanino e geometria relativa do telhado.
-- **44 grupos no modelo** (42 da oficina + `T01_TERRENO` + `MURO_BC`). Envelope do terreno/projeto: X10461 Y37341 Z5600mm.
-- O novo R05 de implantacao e distinto da **R05 antiga de fachada, que permanece desfeita**.
+## R06
+- **C04** agora ocupa a posicao antes usada por **C09**, mas sobe ate a cobertura (topo Z5225mm).
+- **C09 eliminada** como coluna independente; seu nome aponta historicamente para C04.
+- **C10 nova coluna** a direita, junto a B-C, ate o telhado (topo Z5420mm).
+- **V13 nova viga transversal de cobertura** sobre C04/C10 (seis faces, inclinacao de 5% conforme cobertura existente).
+- Superficie do telhado e vigas preexistentes **nao alteradas**; terreno T01, muro B-C de 4,8m, passarela de 1m e recuo frontal do portao 300mm mantidos.
+- **50 grupos** no projeto sincronizado. Envelope X10461 x Y37341 x Z5600mm.
+- Todas as secoes de pilares/vigas sao representacoes para estudo; sem calculo estrutural ou autorizacao de construir junto a divisa.
 
-Mais detalhes: [R05-TERRENO-MURO.md](R05-TERRENO-MURO.md). Metodo obrigatorio para proximas sessoes: [AGENTS.md](AGENTS.md).
-
-## Operacao
-Nao enviar passo a passo de modelagem: **todas as alteracoes sao feitas no GitHub**, e o usuario apenas sincroniza e importa o projeto pelo plugin do SketchUp. CadCraft recebe os DXFs gerados pelo GitHub Actions. Arquivos SKP permanecem locais.
+## Historico e referencia
+- [R06-APOIOS-V13.md](R06-APOIOS-V13.md) descreve pontos, alturas e viga nova.
+- Modelo anterior: `historico/model-R05.json`.
+- R05 antiga de fachada, desfeita, permanece em `historico/model-R05-desfeito.json`.
+- Contrato de producao GitHub em [AGENTS.md](AGENTS.md).

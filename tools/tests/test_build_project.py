@@ -17,19 +17,19 @@ class ProjectGenerationTest(unittest.TestCase):
     def setUp(self):
         self.data=json.loads(EXAMPLE.read_text(encoding='utf-8'))
 
-    def test_r05_project_and_terrain_wall(self):
+    def test_r06_columns_C04_C10_and_beam_V13(self):
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
-        self.assertEqual(len(self.data['elementos']),44)
-        self.assertEqual(self.data['revisao'],'R05')
+        self.assertEqual(len(self.data['elementos']),50)
+        self.assertEqual(self.data['revisao'],'R06')
         self.assertEqual({e['tipo'] for e in self.data['elementos']},{'face','caixa'})
-        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_ESTUDO'),6)
-        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_MEZ_ESTUDO'),3)
+        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_ESTUDO'),7)
+        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_MEZ_ESTUDO'),2)
         self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='VIGAS_MEZ_ESTUDO'),7)
-        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='TRAVESSAS_BALANCO_ESTUDO'),18)
+        self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='TRAVESSAS_BALANCO_ESTUDO'),24)
         self.assertFalse(any(e['id'] in ('P_PF','P_PM','P_PT','V_COB_P') for e in self.data['elementos']))
         self.assertTrue(any(e['id']=='COB_R03' for e in self.data['elementos']))
-        self.assertEqual({e['id'] for e in self.data['elementos'] if e['tag']=='PILARES_ESTUDO'}, set('C%02d'%i for i in range(1,7)))
-        self.assertEqual({e['id'] for e in self.data['elementos'] if e['tag']=='PILARES_MEZ_ESTUDO'}, set('C%02d'%i for i in range(7,10)))
+        self.assertEqual({e['id'] for e in self.data['elementos'] if e['tag']=='PILARES_ESTUDO'}, set('C%02d'%i for i in range(1,7)) | {'C10'})
+        self.assertEqual({e['id'] for e in self.data['elementos'] if e['tag']=='PILARES_MEZ_ESTUDO'}, {'C07','C08'})
         self.assertEqual(len([e for e in self.data['elementos'] if e['id'].startswith('V07_')]),6)
         self.assertEqual(self.data['parametros_estudo_mm']['mezanino_r04']['area_total_m2'],16.8)
         p = next(e for e in self.data['elementos'] if e['id']=='MEZ_PRINCIPAL')
@@ -44,30 +44,48 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(self.data['parametros_estudo_mm']['balanco_direito']['balanco_nominal'],1000)
 
 
-    def test_r05_terrain_wall_and_original_r04_integrity(self):
-        historical=json.loads((EXAMPLE.parent/'historico'/'model-R04.json').read_text(encoding='utf-8'))
-        self.assertEqual(len(historical['elementos']),42)
-        self.assertEqual(self.data['envelope_mm'],{'x':10461,'y':37341,'z':5600})
-        elements={e['id']:e for e in self.data['elementos']}
-        self.assertEqual(elements['T01_TERRENO']['pontos_mm'],[[270,0,0],[10461,321,0],[10461,37341,0],[0,36990,0]])
-        self.assertEqual(elements['MURO_BC']['pontos_mm'],[[10461,321,0],[10461,37341,0],[10461,37341,4800],[10461,321,4800]])
-        self.assertEqual(elements['MURO_BC']['tag'],'T01_MURO_BC')
-        self.assertEqual(elements['PASSE']['pontos_mm'],[[6461,6621,0],[5461,6621,0],[5461,621,0],[6461,621,0]])
-        self.assertTrue(all(e['tipo'] in ('face','caixa') for e in self.data['elementos']))
-        for prior in historical['elementos']:
-            curr=elements[prior['id']]
-            self.assertEqual(curr['tipo'], prior['tipo'])
-            self.assertEqual(curr['tag'], prior['tag'])
-            if prior['tipo']=='caixa':
-                x,y,z=prior['origem_mm'];w,d,h=prior['dimensoes_mm']
-                self.assertEqual(curr['origem_mm'],[10461-x-w,6621-y-d,z],prior['id'])
-                self.assertEqual(curr['dimensoes_mm'],prior['dimensoes_mm'],prior['id'])
-            else:
-                self.assertEqual(curr['pontos_mm'],[[10461-x,6621-y,z] for x,y,z in prior['pontos_mm']],prior['id'])
-        placement=self.data['parametros_estudo_mm']['implantacao_r05']
-        self.assertEqual(placement['recuo_frontal_direito_nominal_mm'],300)
-        self.assertEqual(placement['muro_BC']['altura_mm'],4800)
-        self.assertTrue(placement['telhado_inalterado_em_relacao_a_R04'])
+    def test_r06_preserves_terrain_and_roof_from_r05(self):
+        previous=json.loads((EXAMPLE.parent/'historico'/'model-R05.json').read_text(encoding='utf-8'))
+        self.assertEqual(previous['revisao'],'R05')
+        self.assertEqual(len(previous['elementos']),44)
+        self.assertEqual(self.data['envelope_mm'],previous['envelope_mm'])
+        refs={e['id']:e for e in self.data['elementos']}
+        self.assertEqual(refs['T01_TERRENO'],next(e for e in previous['elementos'] if e['id']=='T01_TERRENO'))
+        self.assertEqual(refs['MURO_BC'],next(e for e in previous['elementos'] if e['id']=='MURO_BC'))
+        self.assertEqual(refs['PASSE'],next(e for e in previous['elementos'] if e['id']=='PASSE'))
+        self.assertEqual(refs['COB_R03'],next(e for e in previous['elementos'] if e['id']=='COB_R03'))
+        for prior in previous['elementos']:
+            if prior['id'] in ('C04','C09'):
+                continue
+            self.assertEqual(refs[prior['id']],prior)
+        self.assertNotIn('C09',refs)
+        self.assertEqual(self.data['referencias_estruturais']['aliases_historicos']['C09'],'C04')
+        self.assertEqual(self.data['parametros_estudo_mm']['implantacao_r05']['muro_BC']['altura_mm'],4800)
+        self.assertEqual(self.data['parametros_estudo_mm']['implantacao_r05']['recuo_frontal_direito_nominal_mm'],300)
+
+    def test_r06_column_alignment_and_six_face_sloped_beam(self):
+        refs={e['id']:e for e in self.data['elementos']}
+        self.assertEqual(refs['C04']['origem_mm'],[6461,5521,0])
+        self.assertEqual(refs['C04']['dimensoes_mm'],[100,100,5225])
+        self.assertEqual(refs['C10']['origem_mm'],[10361,5521,0])
+        self.assertEqual(refs['C10']['dimensoes_mm'],[100,100,5420])
+        self.assertEqual(refs['C04']['tag'],'PILARES_ESTUDO')
+        self.assertEqual(refs['C10']['tag'],'PILARES_ESTUDO')
+        parts={'SIDEA','SIDEB','TOP','BOTTOM','ENDL','ENDR'}
+        for part in parts:
+            item=refs['V13_'+part]
+            self.assertEqual(item['tipo'],'face')
+            self.assertEqual(item['numero_logico'],'V13')
+            self.assertEqual(item['tag'],'TRAVESSAS_BALANCO_ESTUDO')
+            self.assertEqual({p[1] for p in item['pontos_mm']}.issubset({5521,5621}),True)
+            self.assertTrue(all(6461<=p[0]<=10461 for p in item['pontos_mm']))
+            self.assertTrue(all(5210<=p[2]<=5585 for p in item['pontos_mm']))
+        self.assertIn([6461,5621,5385],refs['V13_TOP']['pontos_mm'])
+        self.assertIn([10461,5621,5585],refs['V13_TOP']['pontos_mm'])
+        self.assertIn([6461,5521,5210],refs['V13_BOTTOM']['pontos_mm'])
+        self.assertIn([10461,5521,5410],refs['V13_BOTTOM']['pontos_mm'])
+        self.assertEqual(self.data['parametros_estudo_mm']['estrutura_r06']['viga_V13']['apoios'],['C04','C10'])
+        self.assertFalse(any(e['id']=='C09' for e in self.data['elementos']))
 
     def test_dxf_ascii_r12_contains_geometry(self):
         for view in ('planta','elevacoes'):
@@ -79,7 +97,9 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertIn(b'37341',bp.dxf(self.data,'planta'))
         plan = bp.dxf(self.data,'planta')
         self.assertIn(b'\nC01\n',plan)
-        self.assertIn(b'\nC09\n',plan)
+        self.assertNotIn(b'\nC09\n',plan)
+        self.assertIn(b'\nC10\n',plan)
+        self.assertIn(b'\nV13\n',plan)
         self.assertIn(b'\nV01\n',plan)
         self.assertIn(b'\nV09\n',plan)
         self.assertIn(b'\nV12\n',plan)
@@ -92,9 +112,9 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
         nodes=tree.findall('.//c:visual_scene/c:node',ns)
-        self.assertEqual(len(nodes),44)
+        self.assertEqual(len(nodes),50)
         triangles=tree.findall('.//c:mesh/c:triangles',ns)
-        self.assertEqual(sum(int(tr.attrib['count']) for tr in triangles),288)
+        self.assertEqual(sum(int(tr.attrib['count']) for tr in triangles),300)
 
     def test_rejects_missing_units(self):
         self.data['unidades']='m'
