@@ -70,7 +70,7 @@ class ProjectGenerationTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'duplicado'):bp.validate(self.data)
 
     def test_rejects_non_coplanar_face(self):
-        self.data['elementos'][-1]['pontos_mm'][0][2]+=45
+        self.data['elementos'][-1]['pontos_mm'][0][0]-=45
         with self.assertRaisesRegex(ValueError,'nao coplanar'):bp.validate(self.data)
 
     def test_build_manifest_integrity_and_check_mode(self):
