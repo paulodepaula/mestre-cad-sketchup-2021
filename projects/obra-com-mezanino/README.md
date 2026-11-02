@@ -16,3 +16,7 @@
 - Modelo anterior: `historico/model-R05.json`.
 - R05 antiga de fachada, desfeita, permanece em `historico/model-R05-desfeito.json`.
 - Contrato de producao GitHub em [AGENTS.md](AGENTS.md).
+
+## Hipotese em analise - colunas 150x150mm
+
+Proposta de estudo dos pilares **C02, C03, C04, C05 e C06** com dimensoes externas **150x150mm**, sem espessura definida ou calculo estrutural: [PROPOSTA-PILARES-150X150.md](PROPOSTA-PILARES-150X150.md). **R06 permanece ativa e inalterada** ate escolha formal desta alternativa.
