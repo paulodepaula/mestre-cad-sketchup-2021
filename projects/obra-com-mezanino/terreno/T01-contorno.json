@@ -1,0 +1,46 @@
+{
+  "schema": "mestre-cad-terreno-v1",
+  "revisao": "T01",
+  "titulo": "Terreno - levantamento geometrico de referencia (KMZ revisado)",
+  "unidades": "mm",
+  "datum_origem": "Vertice A = (0,0); eixo X acompanha A->B; eixo Y fica voltado para C,D; sem norte geodesico nem identificacao da frente da rua",
+  "metodo": "WGS84 - comprimentos e area geodesicos; coordenadas cartesianas locais obtidas por azimute/distancia a partir do vertice A e eixo AB",
+  "vertices": [
+    {
+      "id": "A",
+      "x_mm": 0,
+      "y_mm": 0
+    },
+    {
+      "id": "B",
+      "x_mm": 10196,
+      "y_mm": 0
+    },
+    {
+      "id": "C",
+      "x_mm": 11363,
+      "y_mm": 37001
+    },
+    {
+      "id": "D",
+      "x_mm": 896,
+      "y_mm": 36980
+    }
+  ],
+  "fechado": true,
+  "segmentos_m": {
+    "AB": 10.195656,
+    "BC": 37.019471,
+    "CD": 10.466967,
+    "DA": 36.991236
+  },
+  "area_m2_geodesica": 382.151585,
+  "perimetro_m_geodesico": 94.67333,
+  "sem_coordenadas_geograficas_publicas": true,
+  "notas": [
+    "O KMZ novo substitui como referencia dimensional os dois anteriores (que indicavam area aproximada de 271,31 m2 e lados longos de 26,0 m).",
+    "Os vertices sao medidas de tela no Google Earth, nao marcos levantados por topografia; arredondamento para milimetros no desenho local nao implica precisao milimetrica.",
+    "Nao presumir que AB corresponda a frente da rua sem confirmacao.",
+    "Nao associar o contorno do lote as coordenadas locais da oficina do model.json enquanto a orientacao e implantacao nao forem determinadas."
+  ]
+}

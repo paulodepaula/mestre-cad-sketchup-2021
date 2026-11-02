@@ -965,5 +965,21 @@
       "tipo_modelagem": "casca fechada de seis faces por travessa; nao equivale a perfil calculado",
       "pendencias": "verificar ligacoes resistentes a momento, momento e flecha do balanco, sucção de vento, cargas, travamentos e fundacoes"
     }
+  },
+  "levantamento_terreno": {
+    "revisao": "T01",
+    "origem": "KMZ corrigido enviado pelo proprietario (Caminho sem titulo(2).kmz)",
+    "metodo": "distancias e area geodesicas WGS84; poligono local no arquivo terreno/T01-contorno.json",
+    "area_m2": 382.152,
+    "perimetro_m": 94.673,
+    "segmentos_m": {
+      "AB": 10.196,
+      "BC": 37.019,
+      "CD": 10.467,
+      "DA": 36.991
+    },
+    "status": "levantamento geoespacial estimativo, nao topografico",
+    "lado_frontal": "ainda_nao_identificado",
+    "impacto_na_geometria_R03": "nenhum; a oficina continua em coordenadas locais"
   }
 }

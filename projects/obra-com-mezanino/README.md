@@ -17,3 +17,10 @@ O `model.json` e a fonte de geometria em mm. GitHub Actions gera `cadcraft/plant
 ## Historico e integracao
 R00/R01/R02 preservados em `historico/`. Detalhes em [R03-BALANCO-COBERTURA.md](R03-BALANCO-COBERTURA.md).
 Extensoes > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub > Importar projeto sincronizado > Conferir grupo selecionado. O arquivo SKP fica apenas local no SketchUp.
+
+## Terreno - levantamento T01 (KMZ revisado)
+
+- **Area geodesica de referencia: 382,15 m2.** Lados: AB 10,20 m, BC 37,02 m, CD 10,47 m, DA 36,99 m.
+- Este levantamento **substitui o de 271,31 m2**; os limites sao estimados a partir de Google Earth, sem certidao topografica.
+- Dados e contorno local sem coordenadas GPS em [TERRENO-T01.md](TERRENO-T01.md) e [`terreno/T01-contorno.json`](terreno/T01-contorno.json).
+- A geometria da R03 nao foi movida; falta confirmar qual extremidade do poligono esta na rua para posicionar a obra.
