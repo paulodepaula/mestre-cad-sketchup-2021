@@ -76,7 +76,7 @@ class ProjectGenerationTest(unittest.TestCase):
             self.assertIn(b'\nLINE\n',dxf)
             self.assertTrue(dxf.endswith(b'\nEOF\n'))
             self.assertIn(b'OFICINA_REFERENCIA',dxf)
-        self.assertIn(b'6000',bp.dxf(self.data,'planta'))
+        self.assertIn(b'37341',bp.dxf(self.data,'planta'))
         plan = bp.dxf(self.data,'planta')
         self.assertIn(b'\nC01\n',plan)
         self.assertIn(b'\nC09\n',plan)
