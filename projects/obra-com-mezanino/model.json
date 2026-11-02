@@ -125,5 +125,15 @@
       ],
       "status": "posicao_area_e_nivel_hipotese"
     }
-  ]
+  ],
+  "levantamento_campo_mm": {
+    "portao": {
+      "referencia": "Distancia da face interna do muro frontal ate a extremidade mais interna ocupada pelo portao totalmente aberto, incluindo motor",
+      "avanco_para_dentro_do_lote": 300,
+      "fonte": "Medida informada pelo proprietario (30 cm)",
+      "status": "medida_informada; posicao exata em X ainda nao levantada"
+    },
+    "recuo_da_edificacao_em_relacao_ao_muro": null,
+    "nota": "300 mm representam ocupacao observada do portao, nao recuo aprovado; deve ser acrescentada folga tecnica e atendidos afastamentos legais. O sistema local da geometria R01 usa Y=0 na frente da oficina e nao foi deslocado."
+  }
 }

@@ -21,3 +21,7 @@ Alteracoes em `model.json` na branch `main` acionam GitHub Actions, que gera `ca
 SketchUp 2021: Extensoes > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub; Importar projeto sincronizado; Conferir grupo selecionado; Salvar copia SKP do projeto sincronizado. O SKP permanece local.
 
 Detalhes e pendencias: [R01-PLANTA-E-MEZANINO.md](R01-PLANTA-E-MEZANINO.md).
+
+## Levantamento adicional: interferencia do portao
+
+O proprietario informou que o portao deslizante para a direita ocupa **300 mm** do lado interno do muro frontal, ate sua extremidade mais interna incluindo motor (portao totalmente aberto). Esse valor esta registrado em `model.json > levantamento_campo_mm` e **nao e o recuo final da edificacao**. A geometria e seu envelope continuam locais (X=0 a esquerda da oficina, Y=0 na fachada proposta), sem deslocamento no terreno; faltam folga de manutencao, posicao lateral e verificacao de afastamentos obrigatorios. Consulte `R01-PLANTA-E-MEZANINO.md`.
