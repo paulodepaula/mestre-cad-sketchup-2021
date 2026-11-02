@@ -1,22 +1,15 @@
-# Obra com mezanino - R06 (C04/C09 unificadas e V13 entre apoios)
+# Obra com mezanino R07 - pilares 150x150x3 mm
 
-**Fonte unica: GitHub/model.json.** Sincronizacao no SketchUp 2021 via plugin Mestre CAD. Nao ha procedimentos manuais de modelagem.
+**Fonte de verdade:** `model.json`, versionado e construido automaticamente pelo GitHub Actions. SketchUp 2021 importa pela extensao Mestre CAD 2021, sem desenho manual.
 
-## R06
-- **C04** agora ocupa a posicao antes usada por **C09**, mas sobe ate a cobertura (topo Z5225mm).
-- **C09 eliminada** como coluna independente; seu nome aponta historicamente para C04.
-- **C10 nova coluna** a direita, junto a B-C, ate o telhado (topo Z5420mm).
-- **V13 nova viga transversal de cobertura** sobre C04/C10 (seis faces, inclinacao de 5% conforme cobertura existente).
-- Superficie do telhado e vigas preexistentes **nao alteradas**; terreno T01, muro B-C de 4,8m, passarela de 1m e recuo frontal do portao 300mm mantidos.
-- **50 grupos** no projeto sincronizado. Envelope X10461 x Y37341 x Z5600mm.
-- Todas as secoes de pilares/vigas sao representacoes para estudo; sem calculo estrutural ou autorizacao de construir junto a divisa.
+## Mudanca R07
+- C02, C03, C04, C05 e C06: agora **tubos quadrados com dimensao externa 150x150mm e parede nominal 3mm**, registrados no campo `perfil_referencia`; envelope visivel no SketchUp como caixa (modelo NAO representa o vazado do tubo).
+- C02 e C03 mantem a face externa em X10461, alinhada a referencia B-C do lote. C04/C05/C06 crescem para o interior da oficina, sem ocupar a passarela.
+- Os outros pilares, mezanino, vigas V01-V13, telhado, terreno T01 e muro de 4800mm permanecem sem alteracao.
+- Nao ha dimensionamento estrutural, nem garantia de que espessura 3mm seja adequada para pilares com mais de 5m e mezanino.
+- 50 elementos; sistema do terreno em X10461, Y37341, Z5600mm.
 
-## Historico e referencia
-- [R06-APOIOS-V13.md](R06-APOIOS-V13.md) descreve pontos, alturas e viga nova.
-- Modelo anterior: `historico/model-R05.json`.
-- R05 antiga de fachada, desfeita, permanece em `historico/model-R05-desfeito.json`.
-- Contrato de producao GitHub em [AGENTS.md](AGENTS.md).
-
-## Hipotese em analise - colunas 150x150mm
-
-Proposta de estudo dos pilares **C02, C03, C04, C05 e C06** com dimensoes externas **150x150mm**, sem espessura definida ou calculo estrutural: [PROPOSTA-PILARES-150X150.md](PROPOSTA-PILARES-150X150.md). **R06 permanece ativa e inalterada** ate escolha formal desta alternativa.
+## Documentacao e referencia
+- [R07-PILARES-150X150X3.md](R07-PILARES-150X150X3.md): posicoes, status e pesquisa de precos de referencia.
+- [historico/model-R06.json](historico/model-R06.json): geometria anterior.
+- [AGENTS.md](AGENTS.md): fluxo de projeto exclusivamente via GitHub.

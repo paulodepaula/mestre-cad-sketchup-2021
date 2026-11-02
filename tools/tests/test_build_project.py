@@ -17,10 +17,10 @@ class ProjectGenerationTest(unittest.TestCase):
     def setUp(self):
         self.data=json.loads(EXAMPLE.read_text(encoding='utf-8'))
 
-    def test_r06_columns_C04_C10_and_beam_V13(self):
+    def test_r07_five_150x150x3_columns_and_beam_V13(self):
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
         self.assertEqual(len(self.data['elementos']),50)
-        self.assertEqual(self.data['revisao'],'R06')
+        self.assertEqual(self.data['revisao'],'R07')
         self.assertEqual({e['tipo'] for e in self.data['elementos']},{'face','caixa'})
         self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_ESTUDO'),7)
         self.assertEqual(sum(1 for e in self.data['elementos'] if e['tag']=='PILARES_MEZ_ESTUDO'),2)
@@ -43,6 +43,29 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(min(v[0] for v in stair['pontos_mm']),9461)
         self.assertEqual(self.data['parametros_estudo_mm']['balanco_direito']['balanco_nominal'],1000)
 
+
+    def test_r07_selected_tubes_150x150x3_and_r06_preserved(self):
+        previous=json.loads((EXAMPLE.parent/'historico'/'model-R06.json').read_text(encoding='utf-8'))
+        self.assertEqual(previous['revisao'],'R06')
+        self.assertEqual(len(previous['elementos']),50)
+        current={e['id']:e for e in self.data['elementos']}
+        changed={'C02','C03','C04','C05','C06'}
+        self.assertEqual(set(current),{e['id'] for e in previous['elementos']})
+        for old in previous['elementos']:
+            new=current[old['id']]
+            if old['id'] not in changed:
+                self.assertEqual(old,new,old['id'])
+            else:
+                self.assertEqual(new['dimensoes_mm'],[150,150,old['dimensoes_mm'][2]])
+                self.assertEqual(new['perfil_referencia']['parede_mm'],3)
+                self.assertEqual(new['perfil_referencia']['tipo'],'tubo_quadrado')
+                self.assertEqual(new['origem_mm'][1:],old['origem_mm'][1:])
+                self.assertEqual(new['origem_mm'][0],10311 if old['id'] in ('C02','C03') else 6461)
+        self.assertEqual(current['C02']['origem_mm'][0]+current['C02']['dimensoes_mm'][0],10461)
+        self.assertEqual(current['C03']['origem_mm'][0]+current['C03']['dimensoes_mm'][0],10461)
+        self.assertTrue(all(current[k]['origem_mm'][0]==6461 for k in ('C04','C05','C06')))
+        self.assertFalse(self.data['parametros_estudo_mm']['pilares_r07']['aprovacao_estrutural'])
+        self.assertEqual(self.data['parametros_estudo_mm']['pilares_r07']['colunas_alteradas'],['C02','C03','C04','C05','C06'])
 
     def test_r06_preserves_terrain_and_roof_from_r05(self):
         previous=json.loads((EXAMPLE.parent/'historico'/'model-R05.json').read_text(encoding='utf-8'))
