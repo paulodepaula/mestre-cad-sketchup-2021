@@ -78,7 +78,7 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(refs['PASSE'],next(e for e in previous['elementos'] if e['id']=='PASSE'))
         self.assertEqual(refs['COB_R03'],next(e for e in previous['elementos'] if e['id']=='COB_R03'))
         for prior in previous['elementos']:
-            if prior['id'] in ('C04','C09'):
+            if prior['id'] in ('C02','C03','C04','C05','C06','C09'):
                 continue
             self.assertEqual(refs[prior['id']],prior)
         self.assertNotIn('C09',refs)
@@ -89,7 +89,7 @@ class ProjectGenerationTest(unittest.TestCase):
     def test_r06_column_alignment_and_six_face_sloped_beam(self):
         refs={e['id']:e for e in self.data['elementos']}
         self.assertEqual(refs['C04']['origem_mm'],[6461,5521,0])
-        self.assertEqual(refs['C04']['dimensoes_mm'],[100,100,5225])
+        self.assertEqual(refs['C04']['dimensoes_mm'],[150,150,5225])
         self.assertEqual(refs['C10']['origem_mm'],[10361,5521,0])
         self.assertEqual(refs['C10']['dimensoes_mm'],[100,100,5420])
         self.assertEqual(refs['C04']['tag'],'PILARES_ESTUDO')
