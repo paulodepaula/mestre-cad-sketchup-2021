@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Obra com mezanino - R02 volumetria de estudo (NAO EXECUTIVA)",
-  "revisao": "R02",
+  "nome": "Oficina 4x6 R03 - cobertura em balanco sem pilar lateral - estudo",
+  "revisao": "R03",
   "unidades": "mm",
   "envelope_mm": {
     "x": 5000,
@@ -216,57 +216,6 @@
       "status": "hipotese_geometrica_nao_dimensionada"
     },
     {
-      "id": "P_PF",
-      "nome": "Marcador volumetrico pilar P-F 100x100 mm NAO calculado",
-      "tipo": "caixa",
-      "tag": "PILARES_ESTUDO",
-      "origem_mm": [
-        4900,
-        0,
-        0
-      ],
-      "dimensoes_mm": [
-        100,
-        100,
-        5175
-      ],
-      "status": "hipotese_geometrica_nao_dimensionada"
-    },
-    {
-      "id": "P_PM",
-      "nome": "Marcador volumetrico pilar P-M 100x100 mm NAO calculado",
-      "tipo": "caixa",
-      "tag": "PILARES_ESTUDO",
-      "origem_mm": [
-        4900,
-        2950,
-        0
-      ],
-      "dimensoes_mm": [
-        100,
-        100,
-        5175
-      ],
-      "status": "hipotese_geometrica_nao_dimensionada"
-    },
-    {
-      "id": "P_PT",
-      "nome": "Marcador volumetrico pilar P-T 100x100 mm NAO calculado",
-      "tipo": "caixa",
-      "tag": "PILARES_ESTUDO",
-      "origem_mm": [
-        4900,
-        5900,
-        0
-      ],
-      "dimensoes_mm": [
-        100,
-        100,
-        5175
-      ],
-      "status": "hipotese_geometrica_nao_dimensionada"
-    },
-    {
       "id": "V_COB_E",
       "nome": "Viga longitudinal teto E 100x175 mm NAO calculada",
       "tipo": "caixa",
@@ -292,23 +241,6 @@
         3900,
         0,
         5225
-      ],
-      "dimensoes_mm": [
-        100,
-        6000,
-        175
-      ],
-      "status": "hipotese_geometrica_nao_dimensionada"
-    },
-    {
-      "id": "V_COB_P",
-      "nome": "Viga longitudinal teto P 100x175 mm NAO calculada",
-      "tipo": "caixa",
-      "tag": "VIGAS_COB_ESTUDO",
-      "origem_mm": [
-        4900,
-        0,
-        5175
       ],
       "dimensoes_mm": [
         100,
@@ -437,7 +369,7 @@
       "status": "hipotese_geometrica_nao_dimensionada"
     },
     {
-      "id": "COB_R02",
+      "id": "COB_R03",
       "nome": "Plano de cobertura de estudo 5% para direita - SEM espessura nem calha",
       "tipo": "face",
       "tag": "COBERTURA_ESTUDO",
@@ -464,6 +396,528 @@
         ]
       ],
       "status": "hipotese_geometrica_nao_dimensionada"
+    },
+    {
+      "id": "TR1_SIDEA",
+      "nome": "Travessa inclinada de estudo 1 SIDEA - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          5585
+        ],
+        [
+          5000,
+          0,
+          5335
+        ],
+        [
+          5000,
+          0,
+          5160
+        ],
+        [
+          0,
+          0,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR1_SIDEB",
+      "nome": "Travessa inclinada de estudo 1 SIDEB - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          100,
+          5585
+        ],
+        [
+          5000,
+          100,
+          5335
+        ],
+        [
+          5000,
+          100,
+          5160
+        ],
+        [
+          0,
+          100,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR1_TOP",
+      "nome": "Travessa inclinada de estudo 1 TOP - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          5585
+        ],
+        [
+          5000,
+          0,
+          5335
+        ],
+        [
+          5000,
+          100,
+          5335
+        ],
+        [
+          0,
+          100,
+          5585
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR1_BOTTOM",
+      "nome": "Travessa inclinada de estudo 1 BOTTOM - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          5410
+        ],
+        [
+          5000,
+          0,
+          5160
+        ],
+        [
+          5000,
+          100,
+          5160
+        ],
+        [
+          0,
+          100,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR1_ENDL",
+      "nome": "Travessa inclinada de estudo 1 ENDL - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          0,
+          5585
+        ],
+        [
+          0,
+          100,
+          5585
+        ],
+        [
+          0,
+          100,
+          5410
+        ],
+        [
+          0,
+          0,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR1_ENDR",
+      "nome": "Travessa inclinada de estudo 1 ENDR - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5000,
+          0,
+          5335
+        ],
+        [
+          5000,
+          100,
+          5335
+        ],
+        [
+          5000,
+          100,
+          5160
+        ],
+        [
+          5000,
+          0,
+          5160
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR2_SIDEA",
+      "nome": "Travessa inclinada de estudo 2 SIDEA - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          2950,
+          5585
+        ],
+        [
+          5000,
+          2950,
+          5335
+        ],
+        [
+          5000,
+          2950,
+          5160
+        ],
+        [
+          0,
+          2950,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR2_SIDEB",
+      "nome": "Travessa inclinada de estudo 2 SIDEB - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          3050,
+          5585
+        ],
+        [
+          5000,
+          3050,
+          5335
+        ],
+        [
+          5000,
+          3050,
+          5160
+        ],
+        [
+          0,
+          3050,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR2_TOP",
+      "nome": "Travessa inclinada de estudo 2 TOP - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          2950,
+          5585
+        ],
+        [
+          5000,
+          2950,
+          5335
+        ],
+        [
+          5000,
+          3050,
+          5335
+        ],
+        [
+          0,
+          3050,
+          5585
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR2_BOTTOM",
+      "nome": "Travessa inclinada de estudo 2 BOTTOM - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          2950,
+          5410
+        ],
+        [
+          5000,
+          2950,
+          5160
+        ],
+        [
+          5000,
+          3050,
+          5160
+        ],
+        [
+          0,
+          3050,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR2_ENDL",
+      "nome": "Travessa inclinada de estudo 2 ENDL - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          2950,
+          5585
+        ],
+        [
+          0,
+          3050,
+          5585
+        ],
+        [
+          0,
+          3050,
+          5410
+        ],
+        [
+          0,
+          2950,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR2_ENDR",
+      "nome": "Travessa inclinada de estudo 2 ENDR - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5000,
+          2950,
+          5335
+        ],
+        [
+          5000,
+          3050,
+          5335
+        ],
+        [
+          5000,
+          3050,
+          5160
+        ],
+        [
+          5000,
+          2950,
+          5160
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR3_SIDEA",
+      "nome": "Travessa inclinada de estudo 3 SIDEA - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          5900,
+          5585
+        ],
+        [
+          5000,
+          5900,
+          5335
+        ],
+        [
+          5000,
+          5900,
+          5160
+        ],
+        [
+          0,
+          5900,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR3_SIDEB",
+      "nome": "Travessa inclinada de estudo 3 SIDEB - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          6000,
+          5585
+        ],
+        [
+          5000,
+          6000,
+          5335
+        ],
+        [
+          5000,
+          6000,
+          5160
+        ],
+        [
+          0,
+          6000,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR3_TOP",
+      "nome": "Travessa inclinada de estudo 3 TOP - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          5900,
+          5585
+        ],
+        [
+          5000,
+          5900,
+          5335
+        ],
+        [
+          5000,
+          6000,
+          5335
+        ],
+        [
+          0,
+          6000,
+          5585
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR3_BOTTOM",
+      "nome": "Travessa inclinada de estudo 3 BOTTOM - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          5900,
+          5410
+        ],
+        [
+          5000,
+          5900,
+          5160
+        ],
+        [
+          5000,
+          6000,
+          5160
+        ],
+        [
+          0,
+          6000,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR3_ENDL",
+      "nome": "Travessa inclinada de estudo 3 ENDL - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          0,
+          5900,
+          5585
+        ],
+        [
+          0,
+          6000,
+          5585
+        ],
+        [
+          0,
+          6000,
+          5410
+        ],
+        [
+          0,
+          5900,
+          5410
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
+    },
+    {
+      "id": "TR3_ENDR",
+      "nome": "Travessa inclinada de estudo 3 ENDR - sem dimensionamento",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5000,
+          5900,
+          5335
+        ],
+        [
+          5000,
+          6000,
+          5335
+        ],
+        [
+          5000,
+          6000,
+          5160
+        ],
+        [
+          5000,
+          5900,
+          5160
+        ]
+      ],
+      "status": "hipotese_geometrica_nao_executiva"
     }
   ],
   "levantamento_campo_mm": {
@@ -496,6 +950,20 @@
       "orientacao": "caimento para direita (X crescente)",
       "status": "hipotese"
     },
-    "observacao": "Sem fechamento, esquadrias, guarda-corpos, escada executiva, contraventamentos, calha ou fundacao."
+    "observacao": "R03 sem pilares na borda externa. Todas as secoes metalicas, nivel da cobertura e inclinacao continuam hipoteses visuais.",
+    "balanco_direito": {
+      "x_apoio_referencia": 4000,
+      "x_borda": 5000,
+      "balanco_nominal": 1000,
+      "travessas_posicoes_y": [
+        0,
+        2950,
+        5900
+      ],
+      "largura_representativa_y": 100,
+      "altura_representativa_z": 175,
+      "tipo_modelagem": "casca fechada de seis faces por travessa; nao equivale a perfil calculado",
+      "pendencias": "verificar ligacoes resistentes a momento, momento e flecha do balanco, sucção de vento, cargas, travamentos e fundacoes"
+    }
   }
 }

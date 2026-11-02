@@ -1,18 +1,19 @@
-# Obra com mezanino - R02 (estudo dimensional, NAO EXECUTIVO)
+# Obra com mezanino - R03 (estudo, NAO EXECUTIVO)
 
-**Fonte de verdade:** `model.json` em milimetros. O pipeline gera `cadcraft/planta.dxf`, `cadcraft/elevacoes.dxf`, `sketchup/modelo.dae` e `manifest.json`.
+O `model.json` e a fonte de geometria em mm. GitHub Actions gera `cadcraft/planta.dxf`, `cadcraft/elevacoes.dxf`, `sketchup/modelo.dae` e `manifest.json`.
 
-## Medidas definidas vs hipoteses
-- Dimensoes principais informadas: 4000 x 6000 mm (24 m2), passarela a direita de 1000 mm de largura.
-- Mezanino 3000 x 4000 mm em Z=2850: hipotese. Escada 900 x 4200: reserva sem calculo.
-- Altura de referencia do modelo 5600 mm, marcadores de pilares e vigas de 100 mm, cobertura a 5% e laje de 160 mm: **hipoteses apenas de representacao volumetrica**.
-- Portao com interferencia de 300 mm apos muro: medida informada; nao equivale a recuo aprovado.
-- Planta, posicoes, alturas, pilares e cobertura **nao foram liberados para construcao**. Engenharia, arquitetura e ART/RRT devem validar.
+## Dimensoes e hipoteses
+- Oficina 4000 x 6000 mm e passarela direita de 1000 mm de largura: definidas pelo proprietario.
+- Portao existente avanca 300 mm para dentro do muro frontal (medida informada). Nao equivale a recuo aprovado.
+- Mezanino proposto 3000 x 4000 mm, topo Z2850, piso representativo 160 mm; escada somente reserva 900 x 4200.
+- Altura de estudo Z5600, inclinacao ilustrativa 5%, marcadores de secoes e vigas: nao dimensionados.
 
-## Historico e pendencias
-- R00 em `historico/model-R00.json`, R01 em `historico/model-R01.json`.
-- Especificacao, coordenadas e alertas em [R02-VOLUMETRIA-ESTUDO.md](R02-VOLUMETRIA-ESTUDO.md).
-- Aspectos do terreno e as medidas de implantacao seguem pendentes.
+## Cobertura em balanco
+- Retirados os tres pilares e viga longitudinal externos da passarela do modelo R02.
+- R03 modela tres travessas transversais inclinadas de estudo ate X5000, a partir de uma linha de apoio de referencia no limite X4000 da oficina. Balanco nominal 1000 mm, **sem coluna na extremidade**.
+- Com a extensao 1.4.1 as travessas inclinadas sao representadas por 6 faces por elemento formando casca, nao perfis estruturais.
+- Nao utilizar para fabricar: capacidade de vigas, rigidez de ligacoes, vento, deflexao e fundacoes pendentes de projeto e ART/RRT.
 
-## SketchUp 2021 / CadCraft
-Extensoes > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub; Importar projeto sincronizado; Conferir grupo selecionado; Salvar copia SKP do projeto sincronizado. O SKP so fica no computador. Abrir DXF no CadCraft. A auditoria mede posicoes e envelopes e nao valida estrutura.
+## Historico e integracao
+R00/R01/R02 preservados em `historico/`. Detalhes em [R03-BALANCO-COBERTURA.md](R03-BALANCO-COBERTURA.md).
+Extensoes > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub > Importar projeto sincronizado > Conferir grupo selecionado. O arquivo SKP fica apenas local no SketchUp.
