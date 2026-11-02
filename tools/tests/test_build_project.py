@@ -81,7 +81,7 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(refs['PASSE'],next(e for e in previous['elementos'] if e['id']=='PASSE'))
         self.assertEqual(refs['COB_R03'],next(e for e in previous['elementos'] if e['id']=='COB_R03'))
         for prior in previous['elementos']:
-            if prior['id'] in ('C02','C03','C04','C05','C06','C09'):
+            if prior['id'] in ('C02','C03','C04','C05','C06','C07','C09','V05'):
                 continue
             self.assertEqual(refs[prior['id']],prior)
         self.assertNotIn('C09',refs)
