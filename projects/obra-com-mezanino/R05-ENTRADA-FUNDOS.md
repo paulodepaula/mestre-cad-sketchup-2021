@@ -1,3 +1,5 @@
+> **REVISAO HISTORICA CANCELADA (reversao solicitada em 2026-11-02).** Este documento descreve a R05 antiga e NAO a geometria atualmente ativa. O projeto foi restaurado para R04 antes da definicao de frente/fundos no terreno. Nao utilizar este estudo como fonte da implantacao.
+
 # R05 - Entrada pelos fundos, fachada recuada, piso de mezanino e pilar compartilhado
 
 **Modelo de estudo, NAO executivo. A geometria da cobertura foi preservada integralmente da R04.**
