@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Obra com mezanino R07 - cinco colunas 150x150x3mm (estudo)",
-  "revisao": "R07",
+  "nome": "Oficina com mezanino R08 - V05 ate C10, C07 ate teto, fachada envidracada em estudo",
+  "revisao": "R08",
   "unidades": "mm",
   "envelope_mm": {
     "x": 10461,
@@ -328,7 +328,7 @@
     },
     {
       "id": "C07",
-      "nome": "C07 - apoio frontal hipotetico mezanino em Y1000 (NAO dimensionado)",
+      "nome": "C07 - pilar montante do piso ate V13, eixo das esquadrias superiores, ALT 5355 mm (estudo)",
       "tipo": "caixa",
       "tag": "PILARES_MEZ_ESTUDO",
       "origem_mm": [
@@ -339,9 +339,14 @@
       "dimensoes_mm": [
         100,
         100,
-        2510
+        5355
       ],
-      "status": "hipotese_geometrica_nao_dimensionada"
+      "status": "montante_continuo_ao_telhado_sem_calculo_de_carga_ou_ligacao",
+      "funcoes": [
+        "suporte_viga_V05_mezanino",
+        "referencia_montante_esquadrias_superiores",
+        "encontro_geometrico_com_viga_V13"
+      ]
     },
     {
       "id": "C08",
@@ -396,7 +401,7 @@
     },
     {
       "id": "V05",
-      "nome": "V05 - viga frontal mezanino em Y1000 (estudo nao executivo)",
+      "nome": "V05 - viga transversal mezanino 4m, apoios C04 C07 C10, termina sobre C10 (estudo)",
       "tipo": "caixa",
       "tag": "VIGAS_MEZ_ESTUDO",
       "origem_mm": [
@@ -405,11 +410,11 @@
         2510
       ],
       "dimensoes_mm": [
-        3000,
+        4000,
         100,
         180
       ],
-      "status": "hipotese_geometrica_nao_dimensionada"
+      "status": "geometria_expandida_nao_aprovada_apoio_viga_sobre_C10"
     },
     {
       "id": "V06",
@@ -1302,6 +1307,70 @@
       ],
       "status": "hipotese_geometrica_nova_viga_entre_colunas_nao_executiva",
       "numero_logico": "V13"
+    },
+    {
+      "id": "VF08_SUP_ESQ",
+      "nome": "VF08_SUP_ESQ - vidro superior entre C04 e C07, sem porta (estudo)",
+      "tipo": "face",
+      "tag": "VIDRO_FUNDOS_ESTUDO",
+      "pontos_mm": [
+        [
+          6611,
+          5621,
+          2850
+        ],
+        [
+          9361,
+          5621,
+          2850
+        ],
+        [
+          9361,
+          5621,
+          5355
+        ],
+        [
+          6611,
+          5621,
+          5217.5
+        ]
+      ],
+      "status": "fechamento_superior_em_vidro_apenas_representativo_sem_esquadria_dimensionada_sem_vidro_especificado",
+      "material_conceitual": "VIDRO; no importador 2021 esta face pode aparecer opaca",
+      "orientacao": "Y5621, no alinhamento do piso recuado e viga V05; nao e fechamento completo da frente do lote",
+      "observacao": "nao e placa estrutural; confirmar espessura do vidro, esquadria, vento, dilatacoes, folgas e fixacoes"
+    },
+    {
+      "id": "VF08_SUP_DIR",
+      "nome": "VF08_SUP_DIR - vidro superior entre C07 e C10, sem porta (estudo)",
+      "tipo": "face",
+      "tag": "VIDRO_FUNDOS_ESTUDO",
+      "pontos_mm": [
+        [
+          9461,
+          5621,
+          2850
+        ],
+        [
+          10361,
+          5621,
+          2850
+        ],
+        [
+          10361,
+          5621,
+          5405
+        ],
+        [
+          9461,
+          5621,
+          5360
+        ]
+      ],
+      "status": "fechamento_superior_em_vidro_apenas_representativo_sem_esquadria_dimensionada_sem_vidro_especificado",
+      "material_conceitual": "VIDRO; no importador 2021 esta face pode aparecer opaca",
+      "orientacao": "Y5621, no alinhamento do piso recuado e viga V05; nao e fechamento completo da frente do lote",
+      "observacao": "nao e placa estrutural; confirmar espessura do vidro, esquadria, vento, dilatacoes, folgas e fixacoes"
     }
   ],
   "levantamento_campo_mm": {
@@ -1335,7 +1404,7 @@
       "orientacao": "caimento para direita (X crescente)",
       "status": "hipotese"
     },
-    "observacao": "R07: pilares C02, C03, C04, C05, C06 com secao EXTERNA tubular 150x150mm e espessura 3mm informada. Geometria de caixa sem vazado para SketchUp; colunas restantes e telhado mantidos. Sem dimensionamento.",
+    "observacao": "R08: V05 estendida ate C10, C07 prolongada ate sob V13 e dois paineis planos de vidro superior como referencia de esquadria. Piso 160mm permanece reserva de estudo: placa cimenticia especifica para piso ainda nao escolhida. Sem calculo estrutural.",
     "balanco_direito": {
       "x_apoio_referencia": 4000,
       "x_borda": 5000,
@@ -1558,6 +1627,97 @@
         "vento sobre cobertura",
         "folga de divisa BC"
       ]
+    },
+    "estrutura_r08": {
+      "revisao_base": "R07",
+      "viga_V05": {
+        "origem_mm": [
+          6461,
+          5521,
+          2510
+        ],
+        "dimensoes_externas_representativas_mm": [
+          4000,
+          100,
+          180
+        ],
+        "comprimento_anterior_mm": 3000,
+        "comprimento_novo_mm": 4000,
+        "extremidade_final_X_mm": 10461,
+        "coluna_C10": {
+          "inicio_X_mm": 10361,
+          "termino_X_mm": 10461
+        },
+        "apoios_hipoteticos": [
+          "C04",
+          "C07",
+          "C10"
+        ],
+        "observacao": "V05 termina ate a face externa de C10, sobrepondo-se a sua secao em planta para representar apoio; conexao precisa de engenharia."
+      },
+      "coluna_C07": {
+        "origem_mm": [
+          9361,
+          5521,
+          0
+        ],
+        "altura_anterior_mm": 2510,
+        "altura_nova_mm": 5355,
+        "teto_referencia": "face inferior da V13 no ponto X=9361",
+        "encontro_inclinacao": "V13 sobe 5mm ao longo da largura da coluna C07 de 100mm; apoio e topo da coluna simplificados em horizontal; detalhar chapa de topo/recorte.",
+        "funcao": "apoio do mezanino e montante das esquadrias superiores",
+        "validacao_estrutural": false
+      },
+      "fachada_envidracada_superior": {
+        "plano_y_mm": 5621,
+        "nivel_inferior_z_mm": 2850,
+        "alinhamento": "linha V05 e colunas C04-C07-C10, 1m recuada da borda da oficina voltada para C-D",
+        "paineis": [
+          "VF08_SUP_ESQ",
+          "VF08_SUP_DIR"
+        ],
+        "espessura_vidro_mm": null,
+        "tipo_vidro": null,
+        "status": "volumes de face sem vidro translúcido ou detalhamento de esquadrias; parte do piso ao telhado acima da cota 2,85m",
+        "fechamento_inferior": "nao definido, manter acesso e abertura de entrada sem bloquear"
+      },
+      "piso_mezanino": {
+        "area_bruta_m2": 16.8,
+        "espessura_geometrica_reservada_mm": 160,
+        "composicao_final": null,
+        "alternativas_em_estudo": [
+          {
+            "material": "placa cimenticia especifica de piso",
+            "exemplo": "Superboard Piso 14 mm",
+            "observacao": "exige trama secundaria de apoio e depende de cargas e ficha do fabricante; nao aplicar como placa unica no vao 3-5m"
+          },
+          {
+            "material": "placa cimenticia NTF para mezanino",
+            "espessuras_referencias_mm": [
+              20,
+              25,
+              30
+            ],
+            "observacao": "fabricante aponta 400mm para 20mm e 400-600mm para 25-30mm; confirmar tabela de carga"
+          },
+          {
+            "material": "painel composto para mezanino",
+            "exemplo": "painel wall ou painel multicamada de mezanino",
+            "observacao": "definir travessas e peso antes de escolher"
+          }
+        ],
+        "status": "nao selecionar placa final nem substituir 160mm do volume atual sem composicao, carga e espacamento calculados",
+        "nota": "os 160mm sao reserva visual e nao espessura fisica de placa cimenticia"
+      },
+      "telhado_original_preservado": true,
+      "terreno_e_muro_preservados": true,
+      "necessita_validar": [
+        "dimensionamento V05 com apoio em C10 e continuidade dos apoios",
+        "flambagem/estabilidade C07",
+        "esquadria e tipo de vidro conforme pressao de vento, seguranca e altura",
+        "composicao piso por cargas e detalhamento de travessas secundarias",
+        "juntas, umidade e acabamento da placa cimenticia"
+      ]
     }
   },
   "levantamento_terreno": {
@@ -1607,7 +1767,7 @@
     "alertas_implantacao": "Zero afastamento BC e so referencia geometrica; verificar lei, espessura do muro, drenagem, calha, portao, topografia. O muro nao recebe cargas da oficina."
   },
   "referencias_estruturais": {
-    "revisao": "R07",
+    "revisao": "R08",
     "convencao": "C=coluna; V=viga. IDs persistem em revisoes futuras e no nome do grupo SketchUp. Geometria da R04 girada e transladada sem alteracao de secoes. Os metadados parametros_estudo_mm com referencias XY sao locais da R04. Em R07 C02-C06 sao tubos 150x150mm com parede nominal 3mm; modelo usa caixa cheia apenas como invólucro externo, sem simular a parede. Nao confundir com secao macica ou calculada.",
     "codigos": {
       "C01": {
@@ -1696,7 +1856,13 @@
       "C07": {
         "id_original": "PM_F_E",
         "categoria": "coluna",
-        "tipo": "PILARES_MEZ_ESTUDO"
+        "tipo": "PILARES_MEZ_ESTUDO",
+        "altura_mm": 5355,
+        "funcoes": [
+          "apoio mezanino",
+          "montante da esquadria envidracada superior"
+        ],
+        "nota": "coluna continua do chao ate o encontro com V13, nao dimensionada"
       },
       "C08": {
         "id_original": "PM_T_E",
@@ -1716,7 +1882,13 @@
       "V05": {
         "id_original": "VM_X2000",
         "categoria": "viga",
-        "tipo": "VIGAS_MEZ_ESTUDO"
+        "tipo": "VIGAS_MEZ_ESTUDO",
+        "comprimento_mm": 4000,
+        "apoios_hipoteticos": [
+          "C04",
+          "C07",
+          "C10"
+        ]
       },
       "V06": {
         "id_original": "VM_X5900",

@@ -1,15 +1,14 @@
-# Obra com mezanino R07 - pilares 150x150x3 mm
+# Obra com mezanino - R08 (viga V05, C07 e vidro superior)
 
-**Fonte de verdade:** `model.json`, versionado e construido automaticamente pelo GitHub Actions. SketchUp 2021 importa pela extensao Mestre CAD 2021, sem desenho manual.
+**Fonte unica:** `model.json` no GitHub, sincronizado pelo plugin Mestre CAD no SketchUp 2021. Nada de desenho manual.
 
-## Mudanca R07
-- C02, C03, C04, C05 e C06: agora **tubos quadrados com dimensao externa 150x150mm e parede nominal 3mm**, registrados no campo `perfil_referencia`; envelope visivel no SketchUp como caixa (modelo NAO representa o vazado do tubo).
-- C02 e C03 mantem a face externa em X10461, alinhada a referencia B-C do lote. C04/C05/C06 crescem para o interior da oficina, sem ocupar a passarela.
-- Os outros pilares, mezanino, vigas V01-V13, telhado, terreno T01 e muro de 4800mm permanecem sem alteracao.
-- Nao ha dimensionamento estrutural, nem garantia de que espessura 3mm seja adequada para pilares com mais de 5m e mezanino.
-- 50 elementos; sistema do terreno em X10461, Y37341, Z5600mm.
+## R08 no CAD
+- V05 foi prolongada de 3m para **4m**, terminando na largura da coluna **C10**.
+- **C07** vai do piso a **5,355m** para encontrar geometricamente a viga inclinada V13 e servir de **montante das esquadrias**.
+- Dois planos de vidro de estudo foram acrescentados na porcao superior dos fundos, ao longo da linha recuada Y5621: `VF08_SUP_ESQ` e `VF08_SUP_DIR`. As faces podem parecer opacas no SketchUp atual: sua TAG e metadados indicam material de vidro, **sem sistema de esquadrias definido**.
+- O **fechamento inferior e a porta** ainda nao foram modelados para nao bloquear o acesso.
+- **Piso do mezanino 160mm**: permanece reserva geometrica. Alternativas de **placas cimenticias ESPECIFICAS para mezanino** em analise; nao se escolheu produto/espessura de placa.
+- C02-C06 continuam como tubos de estudo 150x150x3mm, telhado e lote intactos. 52 elementos totais, sem dimensionamento estrutural.
 
-## Documentacao e referencia
-- [R07-PILARES-150X150X3.md](R07-PILARES-150X150X3.md): posicoes, status e pesquisa de precos de referencia.
-- [historico/model-R06.json](historico/model-R06.json): geometria anterior.
-- [AGENTS.md](AGENTS.md): fluxo de projeto exclusivamente via GitHub.
+Mais informacoes: [R08-VIDRO-PISO-CIMENTICIO.md](R08-VIDRO-PISO-CIMENTICIO.md).
+Historico preservado: `historico/model-R07.json`.
