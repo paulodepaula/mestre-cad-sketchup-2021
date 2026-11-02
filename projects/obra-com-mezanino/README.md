@@ -22,3 +22,9 @@ SketchUp 2021 > Mestre CAD 2021 > Sincronizar arquivos CAD do GitHub > Importar 
 - O estudo desfeito foi preservado no historico em `historico/model-R05-desfeito.json` e em `R05-ENTRADA-FUNDOS.md`, marcado como CANCELADO.
 - **Frente da RUA no terreno T01**: A-B (10,20 m); fundos do TERRENO: C-D (10,47 m); lateral direita olhando da rua: B-C (37,02 m).
 - A palavra frente/fundos da **oficina** deve ser definida separadamente da frente/fundos do terreno antes de fazer qualquer fachada, alinhamento, deslocamento ou nova implantacao.
+
+## I01 - Implantacao de estudo (futura R05)
+
+A frente do terreno e A-B, o muro alto da direita e B-C, e a oficina R04 foi **posicionada em estudo girada 180 graus**: oficina 4x6 na direita, passarela de 1m a esquerda, frente funcional para C-D e recuo frontal nominal 300mm do muro da rua. O telhado fica alinhado em B-C e avanca 1m para a esquerda. **Nenhuma geometria do model.json R04 foi alterada.** Antiga R05 continua desfeita. Alinhamento nominal zero em B-C nao e afastamento legal validado.
+
+Arquivos: [planta DXF](terreno/R05-implantacao-estudo.dxf), [dados JSON](terreno/R05-implantacao-estudo.json) e [notas I01](terreno/R05-IMPLANTACAO-ESTUDO.md).
