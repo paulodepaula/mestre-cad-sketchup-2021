@@ -1,14 +1,15 @@
-# Obra com mezanino - R09 (piso liberado para esquadrias de vidro)
+# Obra com mezanino - R10: base metalica e vidro sem vao, sem fume
 
-Fonte de verdade: `model.json` no GitHub. SketchUp 2021 apenas sincroniza/importa pelo plugin Mestre CAD, sem desenho manual.
+Fonte central: model.json no GitHub. SketchUp 2021 e CadCraft recebem o projeto sincronizado. Nenhum desenho manual e necessario.
 
-## Correcao R09
-- **MEZ_PRINCIPAL** e **MEZ_PATAMAR** reduzidos visualmente de **160mm para 25mm** como estudo de placa cimenticia para piso, **sem escolha final do material**.
-- Topo do piso permanece em **Z=2850mm**, conservando a chegada da escada e nivel dos paineis de vidro.
-- Borda do piso principal recuada ate **Y=5596mm**, criando **25mm de folga** em relacao aos vidros superiores `VF08_SUP_ESQ` e `VF08_SUP_DIR` em Y5621mm.
-- As vigas existentes terminam em Z2690mm, portanto **faltam 135mm de subestrutura de apoio nao modelada**. A R09 nao define piso executavel nem autoriza placa sem travessas.
-- V05, C07, vidro superior, telhado, terreno e as outras geometrias **inalterados**.
-- 52 elementos no modelo principal, revisao R08 arquivada.
-- Detalhe: [R09-CORRECAO-PISO-VIDRO.md](R09-CORRECAO-PISO-VIDRO.md).
+## R10
+- Grade metalica de estudo sob piso principal e patamar, com barras separadas em vez de blocos macicos.
+- Nivel inferior da grade Z2690mm; topo Z2825mm; painel de piso 25mm; nivel acabado Z2850mm.
+- Soleiras e apoios sob os dois vidros fecham a folga visual inferior. Vidros mantidos nas mesmas coordenadas, sem mudar cor/transparencia.
+- 80 elementos: 52 existentes e 28 novos. Envelope X10461 Y37341 Z5600mm.
+- Telhado, vigas principais, colunas 150x150x3 de estudo, terreno e muro preservados. Historico integral R09 em historico/model-R09.json.
+- Extensao, gerador e workflows nao alterados; esta revisao nao publica RBZ.
 
-**AVISO:** espessura visual 25mm NAO equivale a especificacao estrutural ou a um produto escolhido; fechamento da folga junto a esquadria exige detalhe tecnico.
+As secoes da grade e o painel sao referencias geometricas, sem dimensionamento. Verificar cargas, perfis, apoios, juntas, ligacoes, vidro e fundacoes com profissional habilitado.
+
+Detalhes: [R10-BASE-PISO-SEM-FUME.md](R10-BASE-PISO-SEM-FUME.md). Fluxo de trabalho: [AGENTS.md](AGENTS.md).
