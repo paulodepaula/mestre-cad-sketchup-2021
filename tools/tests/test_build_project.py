@@ -15,6 +15,7 @@ class ProjectGenerationTest(unittest.TestCase):
         self.data=json.loads(EXAMPLE.read_text(encoding='utf-8'))
         self.refs={e['id']:e for e in self.data['elementos']}
         self.prior=json.loads((EXAMPLE.parent/'historico'/'model-R10.json').read_text(encoding='utf-8'))
+        self.r11=json.loads((EXAMPLE.parent/'historico'/'model-R11.json').read_text(encoding='utf-8'))
         self.grid=[e for e in self.refs.values() if e['id'].startswith('G11_')]
         self.sills=[self.refs[k] for k in ('SG_ESQ','SG_DIR')]
         self.prim=[e for e in self.refs.values() if e['tag']=='VIGAS_MEZ_ESTUDO']
@@ -33,8 +34,8 @@ class ProjectGenerationTest(unittest.TestCase):
         ds=cls.overlap(a,b)
         return min(ds)>=-1e-6 and sum(d>1e-6 for d in ds)>=2
 
-    def test_r11_contract_and_importer_limits(self):
-        self.assertEqual(self.data['revisao'],'R11')
+    def test_r12_contract_and_importer_limits(self):
+        self.assertEqual(self.data['revisao'],'R12')
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
         self.assertEqual(len(self.refs),101)
         self.assertEqual(len(self.grid),47)
@@ -43,12 +44,60 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertTrue(all(len(e['nome'])<=120 and len(e['tag'])<=40 for e in self.refs.values()))
         self.assertEqual(self.data['parametros_estudo_mm']['implantacao']['oficina'],[4000,6000])
 
+    def test_r12_changes_only_stair_reservation_from_r11(self):
+        self.assertEqual(self.r11['revisao'],'R11')
+        oldrefs={e['id']:e for e in self.r11['elementos']}
+        self.assertEqual(set(oldrefs),set(self.refs))
+        self.assertEqual(len(oldrefs),101)
+        changed=[key for key in oldrefs if oldrefs[key]!=self.refs[key]]
+        self.assertEqual(changed,['ESCADA_RES'])
+        for key,value in self.r11['parametros_estudo_mm'].items():
+            self.assertEqual(value,self.data['parametros_estudo_mm'][key],key)
+        self.assertEqual(self.data['levantamento_campo_mm'],self.r11['levantamento_campo_mm'])
+        self.assertEqual(self.data['levantamento_terreno'],self.r11['levantamento_terreno'])
+        self.assertEqual(self.data['perfis_estudo'],self.r11['perfis_estudo'])
+        self.assertEqual(self.data['envelope_mm'],self.r11['envelope_mm'])
+
+    def test_r12_stair_stops_at_C07_face_and_keeps_landing(self):
+        e=self.refs['ESCADA_RES'];c=self.refs['C07'];c10=self.refs['C10'];p=self.refs['MEZ_PATAMAR']
+        self.assertEqual(e['tipo'],'face')
+        self.assertEqual(e['tag'],'ESCADA_HIPOTESE')
+        self.assertEqual(e['pontos_mm'],[[10361,5621,0],[9461,5621,0],[9461,2421,0],[10361,2421,0]])
+        xs=[v[0] for v in e['pontos_mm']];ys=[v[1] for v in e['pontos_mm']]
+        self.assertEqual(max(ys),c['origem_mm'][1]+c['dimensoes_mm'][1])
+        self.assertEqual(max(ys),c10['origem_mm'][1]+c10['dimensoes_mm'][1])
+        self.assertEqual(max(ys),self.refs['VF08_SUP_DIR']['pontos_mm'][0][1])
+        self.assertEqual(min(ys),p['origem_mm'][1]+p['dimensoes_mm'][1])
+        self.assertEqual(max(xs)-min(xs),900)
+        self.assertEqual(max(ys)-min(ys),3200)
+        old=next(x for x in self.r11['elementos'] if x['id']=='ESCADA_RES')
+        self.assertEqual(max(v[1] for v in old['pontos_mm'])-max(ys),1000)
+        self.assertEqual(e['nivel_chegada_mm'],p['origem_mm'][2]+p['dimensoes_mm'][2])
+        self.assertEqual(e['nivel_chegada_mm'],2715)
+        params=self.data['parametros_estudo_mm']['escada_r12']
+        self.assertEqual(params['comprimento_disponivel_mm'],3200)
+        self.assertFalse(params['escada_executiva_dimensionada'])
+        self.assertIsNone(params['geometria_dos_degraus'])
+
+    def test_r12_existing_C02_obstruction_is_reported_not_hidden(self):
+        points=self.refs['ESCADA_RES']['pontos_mm']
+        sx0=min(p[0] for p in points);sx1=max(p[0] for p in points)
+        sy0=min(p[1] for p in points);sy1=max(p[1] for p in points)
+        clo,chi=self.bounds(self.refs['C02'])
+        overlap_x=min(sx1,chi[0])-max(sx0,clo[0])
+        overlap_y=min(sy1,chi[1])-max(sy0,clo[1])
+        self.assertEqual((overlap_x,overlap_y),(50,150))
+        note=self.data['parametros_estudo_mm']['escada_r12']['interferencia_preexistente_C02']
+        self.assertEqual(note['invasao_lateral_mm'],overlap_x)
+        self.assertEqual(note['largura_restante_nominal_mm'],sx1-sx0-overlap_x)
+        self.assertFalse(note['resolvida'])
+
     def test_preserve_every_unrelated_member_from_R10(self):
         self.assertEqual(self.prior['revisao'],'R10')
         self.assertEqual(len(self.prior['elementos']),80)
         oldrefs={e['id']:e for e in self.prior['elementos']}
         removed={k for k in oldrefs if k.startswith(('BM_','BP_'))}
-        changed={'MEZ_PRINCIPAL','MEZ_PATAMAR','VF08_SUP_ESQ','VF08_SUP_DIR','SG_ESQ','SG_DIR'}
+        changed={'MEZ_PRINCIPAL','MEZ_PATAMAR','VF08_SUP_ESQ','VF08_SUP_DIR','SG_ESQ','SG_DIR','ESCADA_RES'}
         self.assertEqual(len(removed),26)
         self.assertEqual(set(self.refs)-set(oldrefs),{e['id'] for e in self.grid})
         self.assertEqual(set(oldrefs)-set(self.refs),removed)
@@ -147,7 +196,7 @@ class ProjectGenerationTest(unittest.TestCase):
         for view in ('planta','elevacoes'):
             raw=bp.dxf(self.data,view)
             self.assertIn(b'AC1009',raw);self.assertIn(b'\nLINE\n',raw);self.assertTrue(raw.endswith(b'\nEOF\n'))
-            for tag in ('OFICINA_REFERENCIA','GRADE_MEZ_50X50','GRADE_PATAMAR_50X50','SOLEIRA_VIDRO','T01_MURO_BC'):
+            for tag in ('OFICINA_REFERENCIA','GRADE_MEZ_50X50','GRADE_PATAMAR_50X50','SOLEIRA_VIDRO','T01_MURO_BC','ESCADA_HIPOTESE'):
                 self.assertIn(tag.encode(),raw)
         plan=bp.dxf(self.data,'planta')
         for code in ('C01','C10','V05','V13'):self.assertIn(('\n'+code+'\n').encode(),plan)
