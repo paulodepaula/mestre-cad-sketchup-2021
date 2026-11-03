@@ -14,8 +14,8 @@ class ProjectGenerationTest(unittest.TestCase):
     def setUp(self):
         self.data=json.loads(EXAMPLE.read_text(encoding='utf-8'))
         self.refs={e['id']:e for e in self.data['elementos']}
-        self.prior=json.loads((EXAMPLE.parent/'historico'/'model-R10.json').read_text(encoding='utf-8'))
-        self.r11=json.loads((EXAMPLE.parent/'historico'/'model-R11.json').read_text(encoding='utf-8'))
+        self.prior=json.loads((EXAMPLE.parent/'historico'/'model-R12.json').read_text(encoding='utf-8'))
+        self.oldrefs={e['id']:e for e in self.prior['elementos']}
         self.grid=[e for e in self.refs.values() if e['id'].startswith('G11_')]
         self.sills=[self.refs[k] for k in ('SG_ESQ','SG_DIR')]
         self.prim=[e for e in self.refs.values() if e['tag']=='VIGAS_MEZ_ESTUDO']
@@ -34,8 +34,8 @@ class ProjectGenerationTest(unittest.TestCase):
         ds=cls.overlap(a,b)
         return min(ds)>=-1e-6 and sum(d>1e-6 for d in ds)>=2
 
-    def test_r12_contract_and_importer_limits(self):
-        self.assertEqual(self.data['revisao'],'R12')
+    def test_r13_contract_and_importer_limits(self):
+        self.assertEqual(self.data['revisao'],'R13')
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
         self.assertEqual(len(self.refs),101)
         self.assertEqual(len(self.grid),47)
@@ -44,73 +44,83 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertTrue(all(len(e['nome'])<=120 and len(e['tag'])<=40 for e in self.refs.values()))
         self.assertEqual(self.data['parametros_estudo_mm']['implantacao']['oficina'],[4000,6000])
 
-    def test_r12_changes_only_stair_reservation_from_r11(self):
-        self.assertEqual(self.r11['revisao'],'R11')
-        oldrefs={e['id']:e for e in self.r11['elementos']}
-        self.assertEqual(set(oldrefs),set(self.refs))
-        self.assertEqual(len(oldrefs),101)
-        changed=[key for key in oldrefs if oldrefs[key]!=self.refs[key]]
-        self.assertEqual(changed,['ESCADA_RES'])
-        for key,value in self.r11['parametros_estudo_mm'].items():
-            self.assertEqual(value,self.data['parametros_estudo_mm'][key],key)
-        self.assertEqual(self.data['levantamento_campo_mm'],self.r11['levantamento_campo_mm'])
-        self.assertEqual(self.data['levantamento_terreno'],self.r11['levantamento_terreno'])
-        self.assertEqual(self.data['perfis_estudo'],self.r11['perfis_estudo'])
-        self.assertEqual(self.data['envelope_mm'],self.r11['envelope_mm'])
+    def test_r13_changes_only_C02_and_preserves_other_100_elements(self):
+        self.assertEqual(self.prior['revisao'],'R12')
+        self.assertEqual(len(self.oldrefs),101)
+        self.assertEqual(list(self.refs),list(self.oldrefs))
+        changed=[key for key in self.oldrefs if self.oldrefs[key]!=self.refs[key]]
+        self.assertEqual(changed,['C02'])
+        self.assertEqual(self.data['levantamento_campo_mm'],self.prior['levantamento_campo_mm'])
+        self.assertEqual(self.data['levantamento_terreno'],self.prior['levantamento_terreno'])
+        self.assertEqual(self.data['perfis_estudo'],self.prior['perfis_estudo'])
+        self.assertEqual(self.data['envelope_mm'],self.prior['envelope_mm'])
+        for key,value in self.prior['parametros_estudo_mm'].items():
+            if key not in ('pilares_r07','escada_r12'):
+                self.assertEqual(value,self.data['parametros_estudo_mm'][key],key)
+        for key,value in self.prior['referencias_estruturais'].items():
+            if key!='revisao':self.assertEqual(value,self.data['referencias_estruturais'][key],key)
+        self.assertEqual(self.data['historico']['base'],'R12')
+        for key in ('C03','C04','C05','C06'):
+            self.assertEqual(self.refs[key]['dimensoes_mm'][:2],[150,150])
+            self.assertEqual(self.refs[key]['perfil_referencia']['parede_mm'],3)
+        self.assertNotIn('C09',self.refs)
 
-    def test_r12_stair_stops_at_C07_face_and_keeps_landing(self):
+    def test_C02_100x100x3_keeps_height_and_outside_face(self):
+        c=self.refs['C02'];old=self.oldrefs['C02']
+        self.assertEqual(c['origem_mm'],[10361,3571,0])
+        self.assertEqual(c['dimensoes_mm'],[100,100,5420])
+        self.assertEqual(old['dimensoes_mm'],[150,150,5420])
+        self.assertEqual(c['perfil_referencia']['dimensao_externa_mm'],[100,100])
+        self.assertEqual(c['perfil_referencia']['parede_mm'],3)
+        self.assertEqual(self.bounds(c)[1][0],self.bounds(old)[1][0])
+        self.assertEqual(self.bounds(c)[1][0],10461)
+        self.assertEqual(c['origem_mm'][1:],old['origem_mm'][1:])
+        self.assertEqual(c['tag'],old['tag'])
+        self.assertEqual(c['tipo'],old['tipo'])
+
+    def test_C02_stair_intrusion_removed_not_stair_dimension_certification(self):
+        points=self.refs['ESCADA_RES']['pontos_mm']
+        sx0=min(p[0] for p in points);sx1=max(p[0] for p in points)
+        sy0=min(p[1] for p in points);sy1=max(p[1] for p in points)
+        lo,hi=self.bounds(self.refs['C02'])
+        intrusion=max(0,min(sx1,hi[0])-max(sx0,lo[0]))
+        overlap_y=min(sy1,hi[1])-max(sy0,lo[1])
+        self.assertEqual((intrusion,overlap_y),(0,100))
+        self.assertEqual(sx1-sx0-intrusion,900)
+        oldlo,oldhi=self.bounds(self.oldrefs['C02'])
+        self.assertEqual(min(sx1,oldhi[0])-max(sx0,oldlo[0]),50)
+        note=self.data['parametros_estudo_mm']['escada_r12']['interferencia_preexistente_C02']
+        self.assertEqual(note['invasao_lateral_mm'],0)
+        self.assertEqual(note['largura_restante_nominal_mm'],900)
+        self.assertTrue(note['resolvida'])
+        self.assertEqual(note['revisao_resolucao'],'R13')
+        self.assertFalse(self.data['parametros_estudo_mm']['escada_r12']['escada_executiva_dimensionada'])
+
+    def test_C02_contact_V01_and_encounter_V10_does_not_imply_zero_load(self):
+        c=self.refs['C02']
+        self.assertEqual(self.overlap(c,self.refs['V01']),[100,100,0])
+        self.assertEqual(self.overlap(c,self.refs['V10']),[100,100,180])
+        self.assertTrue(self.contact(c,self.refs['V01']))
+        params=self.data['parametros_estudo_mm']['coluna_C02_r13']
+        self.assertFalse(params['cargas_nulas_confirmadas'])
+        self.assertFalse(params['dimensionamento_estrutural'])
+        self.assertIn('V01 - cobertura',params['encontros_geometricos'])
+        self.assertIn('V10 - mezanino',params['encontros_geometricos'])
+        self.assertIn('NAO',c['nota_cargas'])
+
+    def test_stair_still_stops_at_C07_face_and_keeps_landing(self):
         e=self.refs['ESCADA_RES'];c=self.refs['C07'];c10=self.refs['C10'];p=self.refs['MEZ_PATAMAR']
-        self.assertEqual(e['tipo'],'face')
-        self.assertEqual(e['tag'],'ESCADA_HIPOTESE')
+        self.assertEqual(e,self.oldrefs['ESCADA_RES'])
         self.assertEqual(e['pontos_mm'],[[10361,5621,0],[9461,5621,0],[9461,2421,0],[10361,2421,0]])
         xs=[v[0] for v in e['pontos_mm']];ys=[v[1] for v in e['pontos_mm']]
         self.assertEqual(max(ys),c['origem_mm'][1]+c['dimensoes_mm'][1])
         self.assertEqual(max(ys),c10['origem_mm'][1]+c10['dimensoes_mm'][1])
         self.assertEqual(max(ys),self.refs['VF08_SUP_DIR']['pontos_mm'][0][1])
         self.assertEqual(min(ys),p['origem_mm'][1]+p['dimensoes_mm'][1])
-        self.assertEqual(max(xs)-min(xs),900)
-        self.assertEqual(max(ys)-min(ys),3200)
-        old=next(x for x in self.r11['elementos'] if x['id']=='ESCADA_RES')
-        self.assertEqual(max(v[1] for v in old['pontos_mm'])-max(ys),1000)
+        self.assertEqual((max(xs)-min(xs),max(ys)-min(ys)),(900,3200))
         self.assertEqual(e['nivel_chegada_mm'],p['origem_mm'][2]+p['dimensoes_mm'][2])
         self.assertEqual(e['nivel_chegada_mm'],2715)
-        params=self.data['parametros_estudo_mm']['escada_r12']
-        self.assertEqual(params['comprimento_disponivel_mm'],3200)
-        self.assertFalse(params['escada_executiva_dimensionada'])
-        self.assertIsNone(params['geometria_dos_degraus'])
-
-    def test_r12_existing_C02_obstruction_is_reported_not_hidden(self):
-        points=self.refs['ESCADA_RES']['pontos_mm']
-        sx0=min(p[0] for p in points);sx1=max(p[0] for p in points)
-        sy0=min(p[1] for p in points);sy1=max(p[1] for p in points)
-        clo,chi=self.bounds(self.refs['C02'])
-        overlap_x=min(sx1,chi[0])-max(sx0,clo[0])
-        overlap_y=min(sy1,chi[1])-max(sy0,clo[1])
-        self.assertEqual((overlap_x,overlap_y),(50,150))
-        note=self.data['parametros_estudo_mm']['escada_r12']['interferencia_preexistente_C02']
-        self.assertEqual(note['invasao_lateral_mm'],overlap_x)
-        self.assertEqual(note['largura_restante_nominal_mm'],sx1-sx0-overlap_x)
-        self.assertFalse(note['resolvida'])
-
-    def test_preserve_every_unrelated_member_from_R10(self):
-        self.assertEqual(self.prior['revisao'],'R10')
-        self.assertEqual(len(self.prior['elementos']),80)
-        oldrefs={e['id']:e for e in self.prior['elementos']}
-        removed={k for k in oldrefs if k.startswith(('BM_','BP_'))}
-        changed={'MEZ_PRINCIPAL','MEZ_PATAMAR','VF08_SUP_ESQ','VF08_SUP_DIR','SG_ESQ','SG_DIR','ESCADA_RES'}
-        self.assertEqual(len(removed),26)
-        self.assertEqual(set(self.refs)-set(oldrefs),{e['id'] for e in self.grid})
-        self.assertEqual(set(oldrefs)-set(self.refs),removed)
-        for code,old in oldrefs.items():
-            if code not in removed|changed:self.assertEqual(self.refs[code],old,code)
-        for code in ('MEZ_PRINCIPAL','MEZ_PATAMAR','SG_ESQ','SG_DIR'):
-            self.assertEqual(self.refs[code]['origem_mm'][:2],oldrefs[code]['origem_mm'][:2])
-            self.assertEqual(self.refs[code]['dimensoes_mm'],oldrefs[code]['dimensoes_mm'])
-            self.assertEqual(self.refs[code]['origem_mm'][2],oldrefs[code]['origem_mm'][2]-135)
-        for code in ('C02','C03','C04','C05','C06'):
-            self.assertEqual(self.refs[code]['perfil_referencia']['parede_mm'],3)
-        self.assertNotIn('C09',self.refs)
-        self.assertEqual(self.data['referencias_estruturais']['aliases_historicos']['C09'],'C04')
+        self.assertIsNone(self.data['parametros_estudo_mm']['escada_r12']['geometria_dos_degraus'])
 
     def test_grid_section_inside_frame_and_unknown_wall(self):
         self.assertIsNone(self.data['perfis_estudo']['GRADE_50X50']['parede_mm'])
@@ -165,7 +175,6 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(self.refs['MEZ_PATAMAR']['dimensoes_mm'],[1000,1800,25])
 
     def test_glass_sill_contact_no_fume_no_top_change(self):
-        oldrefs={e['id']:e for e in self.prior['elementos']}
         for glass,sill in [('VF08_SUP_ESQ','SG_ESQ'),('VF08_SUP_DIR','SG_DIR')]:
             g=self.refs[glass];s=self.refs[sill];lo,hi=self.bounds(s)
             self.assertEqual((lo[2],hi[2]),(2690,2715))
@@ -173,8 +182,7 @@ class ProjectGenerationTest(unittest.TestCase):
             self.assertTrue(self.contact(s,self.refs['V05']))
             for x,y,z in g['pontos_mm'][:2]:
                 self.assertEqual(z,hi[2]);self.assertTrue(lo[0]<=x<=hi[0] and lo[1]<=y<=hi[1])
-            self.assertEqual(g['pontos_mm'][2:],oldrefs[glass]['pontos_mm'][2:])
-            self.assertEqual(g.get('material_conceitual'),oldrefs[glass].get('material_conceitual'))
+            self.assertEqual(g,self.oldrefs[glass])
             self.assertFalse(any(k in g for k in ('material','alpha','opacity','transparencia','cor')))
         self.assertEqual(self.bounds(self.refs['MEZ_PRINCIPAL'])[1][1],self.bounds(self.refs['SG_ESQ'])[0][1])
         self.assertFalse(self.data['parametros_estudo_mm']['escopo']['material_fume_aplicado'])
@@ -189,7 +197,7 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(sum(e['id'].startswith('G11_PL') for e in self.grid),5)
         for e in self.grid:
             lo,hi=self.bounds(e)
-            self.assertFalse(min(hi[0],10361)>max(lo[0],9461) and min(hi[1],6621)>max(lo[1],2421),e['id'])
+            self.assertFalse(min(hi[0],10361)>max(lo[0],9461) and min(hi[1],5621)>max(lo[1],2421),e['id'])
         self.assertFalse(self.data['parametros_estudo_mm']['escopo']['dimensionamento_estrutural'])
 
     def test_dxf_ascii_r12_contains_geometry(self):
@@ -199,7 +207,7 @@ class ProjectGenerationTest(unittest.TestCase):
             for tag in ('OFICINA_REFERENCIA','GRADE_MEZ_50X50','GRADE_PATAMAR_50X50','SOLEIRA_VIDRO','T01_MURO_BC','ESCADA_HIPOTESE'):
                 self.assertIn(tag.encode(),raw)
         plan=bp.dxf(self.data,'planta')
-        for code in ('C01','C10','V05','V13'):self.assertIn(('\n'+code+'\n').encode(),plan)
+        for code in ('C01','C02','C10','V05','V13'):self.assertIn(('\n'+code+'\n').encode(),plan)
         self.assertNotIn(b'\nC09\n',plan)
 
     def test_collada_valid_xml_and_metric_units(self):

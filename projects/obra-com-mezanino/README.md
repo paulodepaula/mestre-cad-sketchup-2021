@@ -1,16 +1,18 @@
-# Obra com mezanino - R12
+# Obra com mezanino - R13
 
-Fonte unica: `model.json` no GitHub, sincronizado pelo plugin Mestre CAD 2021. Revisao de estudo, NAO executiva.
+Fonte unica: model.json no GitHub. SketchUp 2021 e CadCraft recebem os arquivos sincronizados. Modelo de estudo, NAO executivo.
 
-## Escada limitada a coluna do mezanino
-- A reserva `ESCADA_RES` agora termina na **face externa da C07, alinhada a C10 e ao vidro: Y5621mm**. Antes terminava em Y6621.
-- Espaco de estudo: **900 x 3200mm**, no intervalo X9461..10361 e Y2421..5621. A extremidade de acesso recua 1000mm; a chegada ao patamar em Y2421 permanece.
-- O piso acabado do mezanino continua em **Z2715mm**. A escada ainda e somente uma reserva em planta, sem degraus dimensionados; nao e uma escada pronta para fabricar.
-- Interferencia preexistente a resolver: **C02 ocupa 50mm da faixa nominal**, deixando 850mm localmente antes de corrimaos. Nao se moveu nenhum pilar nesta revisao.
-- Todos os demais **100 elementos da R11** preservados, inclusive grade interna 50x50, piso, patamar, vidros/soleiras, V01-V13, colunas, cobertura, terreno e muro. **101 elementos** no total.
-- Oficina 4000x6000mm mais passarela de 1000mm. Vidro sem fume. Nenhuma alteracao da extensao ou dos workflows.
+## Alteracao R13
+- Somente **C02** foi reduzida de 150x150mm para **100x100mm**, mantendo parede nominal **3mm** e altura **5420mm**.
+- Origem passa de X10311 para X10361, preservando a face externa X10461 junto a B-C; Y inicial 3571 mantido.
+- Eliminada a invasao de 50mm da C02 na reserva da escada. A reserva permanece **900x3200mm**, limitada a face C07/C10 em Y5621, com chegada no patamar a Z2715.
+- C02 encontra a viga **V01 da cobertura** e a **V10 do mezanino**. NAO foi classificada como sem carga; a reducao precisa de verificacao estrutural.
+- Os outros **100 elementos** permanecem identicos a R12. C03-C06 continuam 150x150x3mm, grade secundaria 50x50 entre vigas, piso 25mm de estudo em Z2690..2715 e vidros sem fume.
+- Oficina **4000x6000mm** mais passarela de 1000mm; telhado, lote e muro inalterados. Total **101 elementos**.
 
-## Historico e limites
-R11 integral arquivada em `historico/model-R11.json`. Grade 50x50 e espessura de piso 25mm permanecem hipoteses sem verificacao estrutural. Escada, guardas, soldas, estabilidade, fundacoes e recuos requerem projeto tecnico.
+Detalhamento: [R13-C02-100X100.md](R13-C02-100X100.md).
+Historico integral: [historico/model-R12.json](historico/model-R12.json).
+Metodo de trabalho: [AGENTS.md](AGENTS.md).
 
-Detalhe da mudanca: [R12-ESCADA-LIMITE-C07.md](R12-ESCADA-LIMITE-C07.md). Grade anterior: [R11-GRADE-INTERNA-50X50.md](R11-GRADE-INTERNA-50X50.md). Metodo permanente: [AGENTS.md](AGENTS.md).
+## Limites
+Nao executar a estrutura a partir das secoes ilustrativas. Calcular cargas, flambagem, estabilidade, vigas, soldas, bases, fundacoes e escada. A ausencia de interferencia geometrica nao constitui aprovacao de seguranca ou de uso.
