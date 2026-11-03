@@ -6,24 +6,24 @@
   },
   "files": {
     "cadcraft/elevacoes.dxf": {
-      "sha256": "f1385723b705356f4789be46d68cf0a00ae56cef29462da09143471f1edc7e6f",
+      "sha256": "138f13dbc64f305f7f59a35a069d27baad5e49ca63e83a58a8118073c91d51d7",
       "size": 53394
     },
     "cadcraft/planta.dxf": {
-      "sha256": "4e169b1abf451bab94cb823698627806aaf4f6ed577eff102739ae89ece520bd",
+      "sha256": "b695a758ea102dd2f8a8b3e7456da6fdca6b8d7a635be286a1643dc8d16aef8d",
       "size": 26837
     },
     "model.json": {
-      "sha256": "0a7240e6e2d25a44041fe3391019437f5d1c0195c738a5790529d4fcdefbcda9",
-      "size": 30910
+      "sha256": "21ec1dc2d6840cad2623dc433d0f04882b7c28571fdd0c12e5232085fbe2e3da",
+      "size": 32071
     },
     "sketchup/modelo.dae": {
-      "sha256": "52d3a335b529a219523ca17a61c86156dcffefd4f461bb89752d9db611e2f285",
-      "size": 100038
+      "sha256": "41b56484454550ab91e901fb6f9cda8953a7afeef5cd45b769de82f58b92c4a1",
+      "size": 100108
     }
   },
   "projeto": "obra-com-mezanino",
-  "revisao": "R12",
+  "revisao": "R13",
   "schema": "mestre-cad-sync-v1",
-  "source_sha256": "0a7240e6e2d25a44041fe3391019437f5d1c0195c738a5790529d4fcdefbcda9"
+  "source_sha256": "21ec1dc2d6840cad2623dc433d0f04882b7c28571fdd0c12e5232085fbe2e3da"
 }
