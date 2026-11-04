@@ -32,11 +32,11 @@ class ProjectGenerationTest(unittest.TestCase):
         return [min(ah[j],bh[j])-max(al[j],bl[j]) for j in range(3)]
 
     def test_r15_contract(self):
-        self.assertEqual(self.data['revisao'],'R21')
+        self.assertEqual(self.data['revisao'],'R22')
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
-        self.assertEqual(len(self.refs),175)
+        self.assertEqual(len(self.refs),185)
         self.assertEqual(sum(e['tipo']=='caixa' for e in self.refs.values()),125)
-        self.assertEqual(sum(e['tipo']=='face' for e in self.refs.values()),50)
+        self.assertEqual(sum(e['tipo']=='face' for e in self.refs.values()),60)
         self.assertEqual(self.data['parametros_estudo_mm']['implantacao']['oficina'],[4000,6000])
         self.assertFalse(self.p['escada_executiva_dimensionada'])
         self.assertFalse(self.p['conformidade_integral_aprovada'])
@@ -54,8 +54,8 @@ class ProjectGenerationTest(unittest.TestCase):
         changed={'ESCADA_RES','MEZ_PATAMAR','V11','G11_PL01_03','COB_R03'}
         removed={'G11_PT03','G11_PT04','G11_PL01_04','G11_PL01_05'}
         added={k for k in self.refs if k not in old}
-        self.assertEqual(len(added),78)
-        self.assertTrue(all(k.startswith('E15_') or k.startswith('MAD17_') or k.startswith('P18_') or k.startswith('P21_') for k in added))
+        self.assertEqual(len(added),88)
+        self.assertTrue(all(k.startswith('E15_') or k.startswith('MAD17_') or k.startswith('P18_') or k.startswith('P21_') or k.startswith('SOL22_') for k in added))
         self.assertEqual(set(old)-set(self.refs),removed)
         for k,e in old.items():
             if k not in changed|removed:
@@ -211,17 +211,37 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(p['laminas']['quantidade'],25)
         self.assertFalse(p['executivo'])
 
+    def test_r22_solar_modules_fit_roof_with_real_dimensions(self):
+        mods=[e for e in self.refs.values() if e['id'].startswith('SOL22_')]
+        self.assertEqual(len(mods),10)
+        self.assertTrue(all(e['tag']=='PAINEL_SOLAR_ESTUDO' for e in mods))
+        self.assertTrue(all(e['dimensoes_modulo_mm']==[2278,1134,30] for e in mods))
+        dist=lambda a,b:sum((a[i]-b[i])**2 for i in range(3))**0.5
+        for e in mods:
+            p=e['pontos_mm']
+            self.assertAlmostEqual(dist(p[0],p[1]),2278,places=2)
+            self.assertAlmostEqual(dist(p[0],p[3]),1134,places=2)
+            self.assertTrue(all(5461<=q[0]<=10461 and 621<=q[1]<=6621 and q[2]<=5600 for q in p))
+        rows=sorted(set(round(e['pontos_mm'][0][0],3) for e in mods))
+        cols=sorted(set(round(e['pontos_mm'][0][1],3) for e in mods))
+        self.assertEqual(len(rows),2)
+        self.assertEqual(len(cols),5)
+        p=self.data['parametros_estudo_mm']['solar_r22']
+        self.assertEqual(p['quantidade'],10)
+        self.assertEqual(p['arranjo'],'2 fileiras no caimento X x 5 colunas no eixo Y')
+        self.assertFalse(p['estrutural'])
+
     def test_dxf_and_collada(self):
         for view in ('planta','elevacoes'):
             raw=bp.dxf(self.data,view)
             self.assertIn(b'AC1009',raw); self.assertTrue(raw.endswith(b'\nEOF\n'))
-            for tag in ('ESCADA_DEGRAUS','ESCADA_ESPELHOS','ESCADA_LONGARINAS','ESCADA_GUARDAS','T01_MURO_BC','PORTA_ENROLAR_MICROPERF'):
+            for tag in ('ESCADA_DEGRAUS','ESCADA_ESPELHOS','ESCADA_LONGARINAS','ESCADA_GUARDAS','T01_MURO_BC','PORTA_ENROLAR_MICROPERF','PAINEL_SOLAR_ESTUDO'):
                 self.assertIn(tag.encode(),raw)
         tree=ET.fromstring(bp.dae(self.data)); ns={'c':bp.NS}
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
-        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),175)
-        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1600)
+        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),185)
+        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1620)
 
     def test_rejects_invalid_geometry(self):
         d=copy.deepcopy(self.data); d['unidades']='m'
@@ -236,7 +256,7 @@ class ProjectGenerationTest(unittest.TestCase):
             path=Path(tmp)/'obra-com-mezanino'/'model.json'; path.parent.mkdir(); path.write_bytes(EXAMPLE.read_bytes())
             bp.build(path); self.assertTrue(bp.build(path,check=True))
             manifest=json.loads((path.parent/'manifest.json').read_text())
-            self.assertEqual(manifest['revisao'],'R21')
+            self.assertEqual(manifest['revisao'],'R22')
             for rel,meta in manifest['files'].items():
                 b=(path.parent/rel).read_bytes()
                 self.assertEqual(meta['sha256'],hashlib.sha256(b).hexdigest())

@@ -1,15 +1,16 @@
-# Obra com mezanino - R21
+# Obra com mezanino - R22
 
-Fonte central: `model.json` no GitHub. **ESTUDO GEOMETRICO, NAO EXECUTIVO.**
+Fonte central: `model.json` no GitHub. **ESTUDO GEOMÉTRICO, NÃO EXECUTIVO.**
+
+## Solar R22
+- Módulo: **2278 x 1134 x 30 mm**, monocristalino N-type.
+- Quantidade que cabe na cobertura atual: **10 placas**.
+- Arranjo: **2 x 5**.
+- Placas acompanham o caimento real da cobertura.
+- Dimensões superficiais 2278 x 1134 mm modeladas no SketchUp; espessura nominal 30 mm registrada no elemento.
+- Cobertura original preservada.
 
 ## Porta R21
-- Entre C04 e C07: **2750 x 2510 mm**.
-- Agora modelada como **porta de enrolar de laminas horizontais microperfuradas**.
-- 25 laminas horizontais.
-- Sem montantes verticais aparentes.
-- Guias laterais e caixa superior preservadas.
-- Microperfuracao representada por material/textura, nao furo a furo.
+A porta de enrolar microperfurada e os demais elementos da R21 foram preservados.
 
-Demais elementos do projeto preservados.
-
-Detalhes: [R21-PORTA-MICROPERFURADA.md](R21-PORTA-MICROPERFURADA.md).
+Detalhes: [R22-SOLAR.md](R22-SOLAR.md).
