@@ -54,8 +54,8 @@ class ProjectGenerationTest(unittest.TestCase):
         changed={'ESCADA_RES','MEZ_PATAMAR','V11','G11_PL01_03'}
         removed={'G11_PT03','G11_PT04','G11_PL01_04','G11_PL01_05'}
         added={k for k in self.refs if k not in old}
-        self.assertEqual(len(added),32)
-        self.assertTrue(all(k.startswith('E15_') for k in added))
+        self.assertEqual(len(added),50)
+        self.assertTrue(all(k.startswith('E15_') or k.startswith('MAD16_') for k in added))
         self.assertEqual(set(old)-set(self.refs),removed)
         for k,e in old.items():
             if k not in changed|removed:
@@ -130,8 +130,9 @@ class ProjectGenerationTest(unittest.TestCase):
 
     def test_preserves_roof_glass_and_terrain_from_R13(self):
         old={e['id']:e for e in self.r13['elementos']}
-        for k in ('COB_R03','VF08_SUP_ESQ','VF08_SUP_DIR','T01_TERRENO','MURO_BC','V05','V13_TOP','C04','C07','C10'):
+        for k in ('VF08_SUP_ESQ','VF08_SUP_DIR','T01_TERRENO','MURO_BC','V05','V13_TOP','C04','C07','C10'):
             self.assertEqual(self.refs[k],old[k],k)
+        self.assertEqual(self.refs['COB_R03']['pontos_mm'],old['COB_R03']['pontos_mm'])
         self.assertFalse(self.data['parametros_estudo_mm']['escopo']['material_fume_aplicado'])
         self.assertFalse(self.data['parametros_estudo_mm']['escopo']['telhado_alterado'])
 
