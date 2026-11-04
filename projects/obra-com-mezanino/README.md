@@ -1,12 +1,15 @@
-# Obra com mezanino - R19
+# Obra com mezanino - R20
 
 Fonte central: `model.json` no GitHub. **ESTUDO GEOMETRICO, NAO EXECUTIVO.**
 
-## Correção R19
-- Porta metálica vazada entre C04 e C07 mantida em **2750 x 2510mm**.
-- A folha agora possui **20mm de espessura visual**, para aparecer claramente no SketchUp.
-- Guias laterais preservadas.
-- Malha vazada continua conceitual; aplique o material visual desejado no SketchUp.
-- Com a extensão v1.5.0, esse acabamento manual será preservado nas próximas atualizações por ID.
+## Porta vazada R20
+- Entre C04 e C07: **2750 x 2510mm**.
+- A folha solida da R19 foi removida.
+- Agora ha **12 barras horizontais + 8 montantes verticais**, criando vazios reais.
+- Guias laterais e caixa superior modeladas.
+- A porta passa a ser visualmente reconhecivel como grade metalica vazada no SketchUp.
+- Demais elementos do projeto preservados.
 
-Detalhes: [R19-PORTA-ENROLAR-VISIVEL.md](R19-PORTA-ENROLAR-VISIVEL.md).
+A extensao Mestre CAD passa para **v1.5.1**, com limite de 220 elementos para suportar esse nivel de detalhe.
+
+Detalhes: [R20-PORTA-VAZADA-GRADE.md](R20-PORTA-VAZADA-GRADE.md).

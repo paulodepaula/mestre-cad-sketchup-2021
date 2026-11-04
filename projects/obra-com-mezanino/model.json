@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina R19 - porta de enrolar vazada com cortina visivel",
-  "revisao": "R19",
+  "nome": "Oficina R20 - porta de enrolar vazada modelada como grade real",
+  "revisao": "R20",
   "unidades": "mm",
   "envelope_mm": {
     "x": 10461,
@@ -3212,28 +3212,6 @@
       "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
     },
     {
-      "id": "P18_FOLHA",
-      "nome": "P18_FOLHA - cortina metalica vazada de enrolar, volume visivel entre C04 e C07",
-      "tipo": "caixa",
-      "tag": "PORTA_ENROLAR_VAZADA",
-      "sistema_conceitual": "porta de enrolar vazada tipo grade/transvision; padrao exato a definir com fabricante",
-      "operacao": "enrolamento vertical",
-      "material_conceitual": "ACO ESCURO / GRADE VAZADA; aplicar material visual no SketchUp",
-      "estado_modelado": "fechada",
-      "observacao": "R19 corrige a invisibilidade da face plana da R18; perfuracoes/malha nao modeladas individualmente",
-      "origem_mm": [
-        6611,
-        5601,
-        0
-      ],
-      "dimensoes_mm": [
-        2750,
-        20,
-        2510
-      ],
-      "representacao_visual": "volume fino de 20mm para ficar visivel no SketchUp; vazamento/malha continua conceitual"
-    },
-    {
       "id": "P18_GUIA_C04",
       "nome": "P18_GUIA_C04 - guia lateral da porta junto a C04",
       "tipo": "caixa",
@@ -3268,13 +3246,391 @@
       ],
       "material_conceitual": "ACO",
       "observacao": "dimensao de estudo; perfil/fixacao a definir com fabricante"
+    },
+    {
+      "id": "P20_H01",
+      "nome": "P20_H01 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H02",
+      "nome": "P20_H02 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        200
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H03",
+      "nome": "P20_H03 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        400
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H04",
+      "nome": "P20_H04 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        600
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H05",
+      "nome": "P20_H05 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        800
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H06",
+      "nome": "P20_H06 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        1000
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H07",
+      "nome": "P20_H07 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        1200
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H08",
+      "nome": "P20_H08 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        1400
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H09",
+      "nome": "P20_H09 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        1600
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H10",
+      "nome": "P20_H10 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        1800
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H11",
+      "nome": "P20_H11 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        2000
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_H12",
+      "nome": "P20_H12 - travessa horizontal da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6611,
+        5601,
+        2200
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        40
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "travessa horizontal da grade vazada"
+    },
+    {
+      "id": "P20_V01",
+      "nome": "P20_V01 - montante vertical da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        6870,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        30,
+        20,
+        2310
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "montante vertical da grade vazada"
+    },
+    {
+      "id": "P20_V02",
+      "nome": "P20_V02 - montante vertical da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        7170,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        30,
+        20,
+        2310
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "montante vertical da grade vazada"
+    },
+    {
+      "id": "P20_V03",
+      "nome": "P20_V03 - montante vertical da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        7470,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        30,
+        20,
+        2310
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "montante vertical da grade vazada"
+    },
+    {
+      "id": "P20_V04",
+      "nome": "P20_V04 - montante vertical da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        7770,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        30,
+        20,
+        2310
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "montante vertical da grade vazada"
+    },
+    {
+      "id": "P20_V05",
+      "nome": "P20_V05 - montante vertical da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        8070,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        30,
+        20,
+        2310
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "montante vertical da grade vazada"
+    },
+    {
+      "id": "P20_V06",
+      "nome": "P20_V06 - montante vertical da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        8370,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        30,
+        20,
+        2310
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "montante vertical da grade vazada"
+    },
+    {
+      "id": "P20_V07",
+      "nome": "P20_V07 - montante vertical da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        8670,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        30,
+        20,
+        2310
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "montante vertical da grade vazada"
+    },
+    {
+      "id": "P20_V08",
+      "nome": "P20_V08 - montante vertical da porta vazada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "origem_mm": [
+        8970,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        30,
+        20,
+        2310
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "funcao_visual": "montante vertical da grade vazada"
+    },
+    {
+      "id": "P20_CAIXA_SUP",
+      "nome": "P20_CAIXA_SUP - caixa superior do enrolamento",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_CAIXA",
+      "origem_mm": [
+        6611,
+        5481,
+        2310
+      ],
+      "dimensoes_mm": [
+        2750,
+        140,
+        200
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "observacao": "volume de estudo para representar eixo/rolo; dimensoes finais dependem do fabricante"
     }
   ],
   "historico": {
-    "base": "R18",
-    "commit_base": "72c5e4cfd3a57dd97cb61fafc93ee2e9987b6da5",
-    "arquivo_integral_anterior": "historico/model-R18.json",
-    "nota": "R19 substitui somente a folha plana P18_FOLHA por caixa de 20mm para garantir visibilidade no SketchUp."
+    "base": "R19",
+    "commit_base": "6141758836beb4a3aa673c61af62384cb3eae748",
+    "arquivo_integral_anterior": "historico/model-R19.json",
+    "nota": "R20 substitui a folha solida P18_FOLHA por grade vazada geometrica e caixa superior; demais elementos preservados."
   },
   "levantamento_campo_mm": {
     "recuo_muro_rua_informado": 300,
@@ -3679,10 +4035,67 @@
         "P18_GUIA_C07"
       ],
       "nota": "Malha vazada permanece conceitual; volume foi adotado para garantir visualizacao no importador SketchUp 2021."
+    },
+    "porta_enrolar_r20": {
+      "entre_colunas": [
+        "C04",
+        "C07"
+      ],
+      "vao_bruto_mm": {
+        "largura": 2750,
+        "altura": 2510
+      },
+      "grade": {
+        "plano_y_mm": [
+          5601,
+          5621
+        ],
+        "travessas_horizontais": 12,
+        "espacamento_vertical_mm": 200,
+        "secao_travessa_mm": [
+          2750,
+          20,
+          40
+        ],
+        "montantes_verticais": 8,
+        "secao_montante_mm": [
+          30,
+          20,
+          2310
+        ],
+        "x_montantes_mm": [
+          6870,
+          7170,
+          7470,
+          7770,
+          8070,
+          8370,
+          8670,
+          8970
+        ]
+      },
+      "caixa_superior": {
+        "origem_mm": [
+          6611,
+          5481,
+          2310
+        ],
+        "dimensoes_mm": [
+          2750,
+          140,
+          200
+        ]
+      },
+      "guias": [
+        "P18_GUIA_C04",
+        "P18_GUIA_C07"
+      ],
+      "representacao": "grade vazada geometricamente visivel no SketchUp; nao depende de textura para parecer vazada",
+      "executivo": false
     }
   },
   "referencias_estruturais": {
-    "revisao": "R19",
+    "revisao": "R20",
     "aliases_historicos": {
       "C09": "C04"
     },

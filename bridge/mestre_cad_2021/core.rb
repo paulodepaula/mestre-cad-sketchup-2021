@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# Mestre CAD Bridge 1.5.0 - SketchUp Desktop 2021 / Ruby 2.7.
+# Mestre CAD Bridge 1.5.1 - SketchUp Desktop 2021 / Ruby 2.7.
 # Sem rede, sem execucao arbitraria de JSON, sem alterar/apagar entidades existentes.
 require 'sketchup.rb'
 require 'json'
@@ -13,7 +13,7 @@ module MestreCAD
     SCHEMA = 'mestre-cad-geometria-v1'.freeze
     DICT = 'MestreCAD2021'.freeze
     TOL_MM = 0.5
-    MAX_ELEMENTS = 150
+    MAX_ELEMENTS = 220
     MAX_ENVELOPE_MM = 500_000.0
 
     def check_version!

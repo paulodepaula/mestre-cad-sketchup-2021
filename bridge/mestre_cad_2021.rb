@@ -8,7 +8,7 @@ module MestreCAD
     unless defined?(EXTENSION_REGISTERED)
       ext = SketchupExtension.new('Mestre CAD - Geometria 2021', 'mestre_cad_2021/core')
       ext.description = 'Importa, atualiza preservando acabamentos, audita geometria e sincroniza arquivos CAD do GitHub.'
-      ext.version = '1.5.0'
+      ext.version = '1.5.1'
       ext.creator = 'Mestre CAD & SketchUp 2021'
       Sketchup.register_extension(ext, true)
       EXTENSION_REGISTERED = true
