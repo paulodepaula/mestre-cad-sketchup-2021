@@ -1,8 +1,8 @@
 {
   "envelope_mm": {
-    "x": 10461.0,
-    "y": 37341.0,
-    "z": 5600.0
+    "x": 10461,
+    "y": 37341,
+    "z": 5600
   },
   "files": {
     "cadcraft/elevacoes.dxf": {
@@ -14,8 +14,8 @@
       "size": 45967
     },
     "model.json": {
-      "sha256": "4f6a0e665c1cd285716909f1cf6d5c296b9b6833801eac06ad74c3a1a88a743a",
-      "size": 98908
+      "sha256": "bf65992db90dd8fa54d1c78f8947fff981453414c3495721a4fb11e403ac18ce",
+      "size": 100863
     },
     "sketchup/modelo.dae": {
       "sha256": "722ffcf3e434ad8a2254fd6aa261bed6e0902af247331c4270a05ccc09f9f6b4",
@@ -23,7 +23,7 @@
     }
   },
   "projeto": "obra-com-mezanino",
-  "revisao": "R25",
+  "revisao": "R26",
   "schema": "mestre-cad-sync-v1",
-  "source_sha256": "4f6a0e665c1cd285716909f1cf6d5c296b9b6833801eac06ad74c3a1a88a743a"
+  "source_sha256": "bf65992db90dd8fa54d1c78f8947fff981453414c3495721a4fb11e403ac18ce"
 }
