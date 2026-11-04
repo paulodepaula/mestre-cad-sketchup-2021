@@ -41,8 +41,11 @@ module Sketchup
   end
   class Face
     attr_reader :vertices
+    attr_accessor :material, :back_material
     def initialize(coords)
       @vertices = coords.map(&:dup)
+      @material = nil
+      @back_material = nil
       # SketchUp forces faces on the ground plane to point DOWN (-Z).
       @normal_z = coords.length >= 3 && coords.all? { |p| p[2].abs < 1e-9 } ? -1.0 : 1.0
     end
@@ -68,9 +71,12 @@ module Sketchup
       @faces=[]
     end
     def add_group
-      group = Group.new
+      group = Group.new(self)
       @groups << group
       group
+    end
+    def remove_group(group)
+      @groups.delete(group)
     end
     def add_face(pts)
       face = Face.new(pts)
@@ -90,15 +96,24 @@ module Sketchup
     def groups; @groups; end
   end
   class Group
-    attr_accessor :name, :layer
+    attr_accessor :name, :layer, :material
     attr_reader :entities
-    def initialize
+    def initialize(owner = nil)
+      @owner = owner
       @entities = Entities.new
       @attrs = Hash.new { |h,k| h[k] = {} }
+      @material = nil
+      @erased = false
     end
     def set_attribute(d,k,v); @attrs[d][k] = v; end
     def get_attribute(d,k); @attrs[d][k]; end
     def bounds; FakeBounds.new(@entities.all_points); end
+    def erase!
+      @owner.remove_group(self) if @owner
+      @erased = true
+      true
+    end
+    def erased?; @erased; end
   end
   class Layers < Hash
     def add(name); self[name] = name; end
@@ -207,6 +222,54 @@ class TestMestreCAD < Minitest::Test
         assert File.file?(file)
         assert_equal 1,Sketchup.active_model.entities.groups.length
         assert_equal [:start,:commit,:save_copy],Sketchup.active_model.history
+      end
+    end
+  end
+
+  def test_update_preserves_group_face_material_and_transparency_object
+    root=MestreCAD::SketchUp2021.build(@data)
+    p1=root.entities.groups.find { |g| g.get_attribute('MestreCAD2021','id')=='P1' }
+    glass=Struct.new(:name,:alpha,:texture).new('Vidro Fume',0.45,'vidro.png')
+    wood=Struct.new(:name,:alpha,:texture).new('Madeira',1.0,'madeira.jpg')
+    p1.material=wood
+    first_face=p1.entities.grep(Sketchup::Face).first
+    first_face.material=glass
+    first_face.back_material=glass
+
+    updated=Marshal.load(Marshal.dump(@data))
+    updated['revisao']='R01'
+    fresh,preserved=MestreCAD::SketchUp2021.update_group_preserving_finishes(root,updated)
+    refute root == fresh
+    assert root.erased?
+    assert_equal 1,Sketchup.active_model.entities.groups.length
+    new_p1=fresh.entities.groups.find { |g| g.get_attribute('MestreCAD2021','id')=='P1' }
+    assert_same wood,new_p1.material
+    new_face=new_p1.entities.grep(Sketchup::Face).first
+    assert_same glass,new_face.material
+    assert_same glass,new_face.back_material
+    assert_equal 0.45,new_face.material.alpha
+    assert_equal 'vidro.png',new_face.material.texture
+    assert_operator preserved,:>=,3
+    assert_equal [:start,:commit,:start,:commit],Sketchup.active_model.history
+  end
+
+  def test_update_command_uses_selected_root_and_saves_copy
+    Dir.mktmpdir do |local|
+      source=File.join(local,'model.json')
+      root=MestreCAD::SketchUp2021.build(@data)
+      p1=root.entities.groups.find { |g| g.get_attribute('MestreCAD2021','id')=='P1' }
+      finish=Struct.new(:name,:alpha,:texture).new('Manual',0.60,'manual.jpg')
+      p1.material=finish
+      newer=Marshal.load(Marshal.dump(@data)); newer['revisao']='R02'
+      File.write(source,JSON.generate(newer))
+      ps=MestreCAD::SketchUp2021::ProjectSync
+      ps.stub(:local_root,local) do
+        dest=ps.update_synced_preserving_finishes
+        assert File.file?(dest)
+        selected=Sketchup.active_model.selection.first
+        new_p1=selected.entities.groups.find { |g| g.get_attribute('MestreCAD2021','id')=='P1' }
+        assert_same finish,new_p1.material
+        assert_equal 'R02',JSON.parse(selected.get_attribute('MestreCAD2021','data'))['revisao']
       end
     end
   end

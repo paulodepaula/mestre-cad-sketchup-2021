@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# Mestre CAD Bridge 1.4.1 - SketchUp Desktop 2021 / Ruby 2.7.
+# Mestre CAD Bridge 1.5.0 - SketchUp Desktop 2021 / Ruby 2.7.
 # Sem rede, sem execucao arbitraria de JSON, sem alterar/apagar entidades existentes.
 require 'sketchup.rb'
 require 'json'
@@ -208,6 +208,111 @@ module MestreCAD
       [issues.empty?, issues, "X/Y/Z: #{root_size.map { |v| v.round(1) }.join(' / ')} mm; #{children.length} grupos"]
     end
 
+    # Captura apenas acabamentos. Geometria manual nao e mesclada.
+    # Materiais sao objetos do modelo SketchUp; por isso textura, cor e alpha
+    # permanecem associados quando o mesmo objeto e reaplicado.
+    def finish_snapshot(group)
+      faces = group.entities.grep(Sketchup::Face)
+      {
+        group_material: (group.respond_to?(:material) ? group.material : nil),
+        faces: faces.map do |face|
+          [
+            (face.respond_to?(:material) ? face.material : nil),
+            (face.respond_to?(:back_material) ? face.back_material : nil)
+          ]
+        end
+      }
+    end
+
+    def apply_finish_snapshot(group, snapshot)
+      return 0 unless snapshot.is_a?(Hash)
+      applied = 0
+      if group.respond_to?(:material=) && snapshot[:group_material]
+        group.material = snapshot[:group_material]
+        applied += 1
+      end
+      faces = group.entities.grep(Sketchup::Face)
+      prior = snapshot[:faces].is_a?(Array) ? snapshot[:faces] : []
+      if faces.length == prior.length
+        faces.each_with_index do |face, i|
+          front, back = prior[i]
+          if front && face.respond_to?(:material=)
+            face.material = front
+            applied += 1
+          end
+          if back && face.respond_to?(:back_material=)
+            face.back_material = back
+            applied += 1
+          end
+        end
+      else
+        front = prior.map(&:first).compact.first
+        back = prior.map(&:last).compact.first
+        faces.each do |face|
+          if front && face.respond_to?(:material=)
+            face.material = front
+            applied += 1
+          end
+          if back && face.respond_to?(:back_material=)
+            face.back_material = back
+            applied += 1
+          end
+        end
+      end
+      applied
+    end
+
+    def update_group_preserving_finishes(root, data)
+      check_version!
+      resumo = validate!(data)
+      raise ArgumentError, 'Grupo nao foi gerado pelo Mestre CAD.' unless root && root.respond_to?(:get_attribute)
+      raise ArgumentError, 'Grupo Mestre CAD invalido.' unless root.get_attribute(DICT, 'schema') == SCHEMA
+      model = Sketchup.active_model
+      raise 'Nao ha modelo aberto.' unless model
+
+      old_data = JSON.parse(root.get_attribute(DICT, 'data').to_s)
+      validate!(old_data)
+      finishes = {}
+      root.entities.grep(Sketchup::Group).each do |child|
+        id = child.get_attribute(DICT, 'id')
+        finishes[id] = finish_snapshot(child) if id.is_a?(String) && !id.empty?
+      end
+      root_finish = finish_snapshot(root)
+      old_transform = root.respond_to?(:transformation) ? root.transformation : nil
+
+      model.start_operation('Mestre CAD: atualizar preservando acabamentos', true)
+      begin
+        fresh = model.entities.add_group
+        fresh.name = "MESTRE_CAD_#{data['revisao']} - #{data['nome']}"
+        fresh.layer = model.layers['MC21_CONJUNTOS'] || model.layers.add('MC21_CONJUNTOS')
+        fresh.set_attribute(DICT, 'schema', SCHEMA)
+        fresh.set_attribute(DICT, 'data', JSON.generate(data))
+        preserved = 0
+        data['elementos'].each do |e|
+          child = add_element(fresh.entities, e, model.layers)
+          snapshot = finishes[e['id']]
+          preserved += apply_finish_snapshot(child, snapshot) if snapshot
+        end
+        preserved += apply_finish_snapshot(fresh, root_finish)
+
+        ok, issues, details = verify_group(fresh)
+        raise "Falha na auditoria: #{issues.first(8).join('; ')}" unless ok
+
+        fresh.move!(old_transform) if old_transform && fresh.respond_to?(:move!)
+        raise 'Grupo antigo nao pode ser removido.' unless root.respond_to?(:erase!)
+        root.erase!
+
+        model.commit_operation
+        model.selection.clear
+        model.selection.add(fresh)
+        puts "MESTRE CAD UPDATE PASS: #{resumo} - #{details}; acabamentos reaplicados: #{preserved}"
+        [fresh, preserved]
+      rescue StandardError => e
+        model.abort_operation
+        raise e
+      end
+    end
+
     def build(data, auto_save: false)
       check_version!
       resumo = validate!(data)
@@ -293,6 +398,7 @@ module MestreCAD
       menu.add_separator
       menu.add_item('Sincronizar arquivos CAD do GitHub...') { ProjectSync.sync_dialog }
       menu.add_item('Importar projeto sincronizado...') { ProjectSync.import_synced }
+      menu.add_item('Atualizar projeto preservando acabamentos...') { ProjectSync.update_synced_preserving_finishes }
       menu.add_item('Salvar copia SKP do projeto sincronizado...') { ProjectSync.save_selected_skp }
       menu.add_separator
       menu.add_item('Configurar repositorio GitHub...') { Updater.configure_repository }

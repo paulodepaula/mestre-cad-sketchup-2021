@@ -61,5 +61,5 @@ jobs:
           if gh release view "$TAG" >/dev/null 2>&1; then
             echo "Release $TAG ja existe; nao sobrescrever."
           else
-            gh release create "$TAG" "$ASSET" --target "$GITHUB_SHA" --title "Mestre CAD SketchUp 2021 $TAG" --notes "Inclui salvamento local de copia SKP apos importar JSON sincronizado. Testes offline aprovados; teste no SketchUp 2021 ainda necessario."
+            gh release create "$TAG" "$ASSET" --target "$GITHUB_SHA" --title "Mestre CAD SketchUp 2021 $TAG" --notes "v1.5.0: adiciona Atualizar projeto preservando acabamentos por ID (material do grupo, materiais das faces, textura do material e transparencia). Geometria manual e UV personalizado nao sao mesclados. Testes offline aprovados; validar no SketchUp 2021 antes de uso em producao."
           fi

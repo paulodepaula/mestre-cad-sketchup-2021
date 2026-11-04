@@ -16,7 +16,7 @@ module MestreCAD
     module Updater
       extend self
 
-      VERSION = '1.4.1'.freeze
+      VERSION = '1.5.0'.freeze
       DEFAULT_REPOSITORY = 'paulodepaula/mestre-cad-sketchup-2021'.freeze
       SETTINGS_KEY = 'MestreCAD2021'.freeze
       MAX_RBZ_BYTES = 20 * 1024 * 1024

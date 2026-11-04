@@ -44,7 +44,7 @@ module MestreCAD
         raise 'Host de projeto nao autorizado.' unless url.host == 'raw.githubusercontent.com' && url.scheme == 'https' && url.port == 443
         max = relative == MANIFEST ? MAX_MANIFEST_BYTES : MAX_FILE_BYTES
         response = Net::HTTP.start(url.host, url.port, use_ssl: true, open_timeout: 8, read_timeout: 25) do |http|
-          http.request(Net::HTTP::Get.new(url.request_uri, {'User-Agent'=>'MestreCAD-2021-Sync/1.3'}))
+          http.request(Net::HTTP::Get.new(url.request_uri, {'User-Agent'=>'MestreCAD-2021-Sync/1.5'}))
         end
         raise "GitHub retornou HTTP #{response.code} para #{relative}." unless response.is_a?(Net::HTTPSuccess)
         body = response.body.to_s.b
@@ -277,6 +277,46 @@ module MestreCAD
       rescue StandardError => e
         warn "MESTRE CAD SAVE SKP ERRO: #{e.class}: #{e.message}"
         UI.messagebox("Nao foi possivel salvar copia SKP: #{e.message}")
+        nil
+      end
+
+      def update_synced_preserving_finishes
+        raise 'Extensao requer SketchUp 2021.' unless Sketchup.version.to_i == 21
+        model = Sketchup.active_model
+        raise 'Nao ha modelo SketchUp aberto.' unless model
+        groups = model.selection.grep(Sketchup::Group)
+        raise 'Selecione somente o grupo principal importado do Mestre CAD.' unless groups.length == 1 && model.selection.length == 1
+        root = groups.first
+        raise 'Grupo selecionado nao pertence ao Mestre CAD.' unless root.get_attribute('MestreCAD2021', 'schema') == 'mestre-cad-geometria-v1'
+
+        path = File.join(local_root, 'model.json')
+        raise 'Projeto nao sincronizado. Execute Sincronizar arquivos CAD do GitHub primeiro.' unless File.file?(path)
+        data = MestreCAD::SketchUp2021.read_json(path)
+        old_data = JSON.parse(root.get_attribute('MestreCAD2021', 'data').to_s)
+        old_revision = old_data['revisao'].to_s
+        new_revision = data['revisao'].to_s
+
+        question = "Atualizar o grupo selecionado?\n#{old_revision} -> #{new_revision}\n\n" \
+                   "Sera preservado por ID: material do grupo, materiais das faces, textura do material e transparencia.\n" \
+                   "Geometria manual, UV personalizado por face e elementos sem o mesmo ID NAO sao mesclados.\n\n" \
+                   "Continuar?"
+        return nil unless UI.messagebox(question, MB_YESNO) == IDYES
+
+        updated_group, preserved = MestreCAD::SketchUp2021.update_group_preserving_finishes(root, data)
+        begin
+          result = save_synced_skp!(model, updated_group, path)
+          UI.messagebox("Projeto atualizado e auditado.\nAcabamentos reaplicados: #{preserved}\n\nCopia SKP salva em:\n#{result}\n\n" \
+                        "Materiais/texturas permanecem no SKP local; nenhum SKP foi enviado ao GitHub.")
+          result
+        rescue StandardError => save_error
+          warn "MESTRE CAD SAVE SKP ERRO: #{save_error.class}: #{save_error.message}"
+          UI.messagebox("Projeto atualizado e auditado, mas a copia SKP nao foi salva: #{save_error.message}\n" \
+                        'Use Salvar copia SKP do projeto sincronizado ou Arquivo > Salvar como.')
+          nil
+        end
+      rescue StandardError => e
+        warn "MESTRE CAD UPDATE PROJECT ERRO: #{e.class}: #{e.message}"
+        UI.messagebox("Atualizacao do projeto nao concluida: #{e.message}")
         nil
       end
 
