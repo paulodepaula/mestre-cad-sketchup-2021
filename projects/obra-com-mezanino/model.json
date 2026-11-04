@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina R23 - modulos solares detalhados com moldura e trilhos",
-  "revisao": "R23",
+  "nome": "Oficina R24 - escada em L compacto para liberar acesso a porta",
+  "revisao": "R24",
   "unidades": "mm",
   "envelope_mm": {
     "x": 10461,
@@ -64,37 +64,6 @@
           0
         ]
       ]
-    },
-    {
-      "id": "ESCADA_RES",
-      "nome": "Escada reta lateral 900x3892; 15 espelhos; termina antes da linha C07",
-      "tipo": "face",
-      "tag": "ESCADA_HIPOTESE",
-      "pontos_mm": [
-        [
-          10361,
-          5521,
-          0
-        ],
-        [
-          9461,
-          5521,
-          0
-        ],
-        [
-          9461,
-          1629,
-          0
-        ],
-        [
-          10361,
-          1629,
-          0
-        ]
-      ],
-      "status": "envelope_da_escada_reta_R15; estudo_nao_executivo",
-      "referencia_limite": "Y5521, alinhado ao inicio de C07/C10; nao ultrapassa a linha das colunas",
-      "nivel_chegada_mm": 2715
     },
     {
       "id": "MEZ_PRINCIPAL",
@@ -2105,769 +2074,6 @@
         50
       ],
       "perfil_ref": "GRADE_50X50"
-    },
-    {
-      "id": "E15_D01",
-      "nome": "E15_D01 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        5243,
-        151
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D02",
-      "nome": "E15_D02 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        4965,
-        332
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D03",
-      "nome": "E15_D03 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        4687,
-        513
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D04",
-      "nome": "E15_D04 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        4409,
-        694
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D05",
-      "nome": "E15_D05 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        4131,
-        875
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D06",
-      "nome": "E15_D06 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        3853,
-        1056
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D07",
-      "nome": "E15_D07 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        3575,
-        1237
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D08",
-      "nome": "E15_D08 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        3297,
-        1418
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D09",
-      "nome": "E15_D09 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        3019,
-        1599
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D10",
-      "nome": "E15_D10 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        2741,
-        1780
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D11",
-      "nome": "E15_D11 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        2463,
-        1961
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D12",
-      "nome": "E15_D12 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        2185,
-        2142
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D13",
-      "nome": "E15_D13 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        1907,
-        2323
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_D14",
-      "nome": "E15_D14 - piso degrau 900x278; estudo",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        1629,
-        2504
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
-    },
-    {
-      "id": "E15_R01",
-      "nome": "E15_R01 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          5521,
-          0
-        ],
-        [
-          10361,
-          5521,
-          0
-        ],
-        [
-          10361,
-          5521,
-          181
-        ],
-        [
-          9461,
-          5521,
-          181
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R02",
-      "nome": "E15_R02 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          5243,
-          181
-        ],
-        [
-          10361,
-          5243,
-          181
-        ],
-        [
-          10361,
-          5243,
-          362
-        ],
-        [
-          9461,
-          5243,
-          362
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R03",
-      "nome": "E15_R03 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          4965,
-          362
-        ],
-        [
-          10361,
-          4965,
-          362
-        ],
-        [
-          10361,
-          4965,
-          543
-        ],
-        [
-          9461,
-          4965,
-          543
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R04",
-      "nome": "E15_R04 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          4687,
-          543
-        ],
-        [
-          10361,
-          4687,
-          543
-        ],
-        [
-          10361,
-          4687,
-          724
-        ],
-        [
-          9461,
-          4687,
-          724
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R05",
-      "nome": "E15_R05 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          4409,
-          724
-        ],
-        [
-          10361,
-          4409,
-          724
-        ],
-        [
-          10361,
-          4409,
-          905
-        ],
-        [
-          9461,
-          4409,
-          905
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R06",
-      "nome": "E15_R06 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          4131,
-          905
-        ],
-        [
-          10361,
-          4131,
-          905
-        ],
-        [
-          10361,
-          4131,
-          1086
-        ],
-        [
-          9461,
-          4131,
-          1086
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R07",
-      "nome": "E15_R07 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3853,
-          1086
-        ],
-        [
-          10361,
-          3853,
-          1086
-        ],
-        [
-          10361,
-          3853,
-          1267
-        ],
-        [
-          9461,
-          3853,
-          1267
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R08",
-      "nome": "E15_R08 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3575,
-          1267
-        ],
-        [
-          10361,
-          3575,
-          1267
-        ],
-        [
-          10361,
-          3575,
-          1448
-        ],
-        [
-          9461,
-          3575,
-          1448
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R09",
-      "nome": "E15_R09 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3297,
-          1448
-        ],
-        [
-          10361,
-          3297,
-          1448
-        ],
-        [
-          10361,
-          3297,
-          1629
-        ],
-        [
-          9461,
-          3297,
-          1629
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R10",
-      "nome": "E15_R10 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3019,
-          1629
-        ],
-        [
-          10361,
-          3019,
-          1629
-        ],
-        [
-          10361,
-          3019,
-          1810
-        ],
-        [
-          9461,
-          3019,
-          1810
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R11",
-      "nome": "E15_R11 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          2741,
-          1810
-        ],
-        [
-          10361,
-          2741,
-          1810
-        ],
-        [
-          10361,
-          2741,
-          1991
-        ],
-        [
-          9461,
-          2741,
-          1991
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R12",
-      "nome": "E15_R12 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          2463,
-          1991
-        ],
-        [
-          10361,
-          2463,
-          1991
-        ],
-        [
-          10361,
-          2463,
-          2172
-        ],
-        [
-          9461,
-          2463,
-          2172
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R13",
-      "nome": "E15_R13 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          2185,
-          2172
-        ],
-        [
-          10361,
-          2185,
-          2172
-        ],
-        [
-          10361,
-          2185,
-          2353
-        ],
-        [
-          9461,
-          2185,
-          2353
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R14",
-      "nome": "E15_R14 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          1907,
-          2353
-        ],
-        [
-          10361,
-          1907,
-          2353
-        ],
-        [
-          10361,
-          1907,
-          2534
-        ],
-        [
-          9461,
-          1907,
-          2534
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_R15",
-      "nome": "E15_R15 - espelho 181mm; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          1629,
-          2534
-        ],
-        [
-          10361,
-          1629,
-          2534
-        ],
-        [
-          10361,
-          1629,
-          2715
-        ],
-        [
-          9461,
-          1629,
-          2715
-        ]
-      ],
-      "status": "geometria_de_estudo"
-    },
-    {
-      "id": "E15_L01",
-      "nome": "E15_L01 - longarina lateral reta; perfil a dimensionar",
-      "tipo": "face",
-      "tag": "ESCADA_LONGARINAS",
-      "pontos_mm": [
-        [
-          9461,
-          5521,
-          0
-        ],
-        [
-          9461,
-          5521,
-          205
-        ],
-        [
-          9461,
-          1629,
-          2715
-        ],
-        [
-          9461,
-          1629,
-          2510
-        ]
-      ],
-      "espessura_chapa_mm": null,
-      "status": "face_representativa_nao_executiva"
-    },
-    {
-      "id": "E15_L02",
-      "nome": "E15_L02 - longarina lateral reta; perfil a dimensionar",
-      "tipo": "face",
-      "tag": "ESCADA_LONGARINAS",
-      "pontos_mm": [
-        [
-          10361,
-          5521,
-          0
-        ],
-        [
-          10361,
-          5521,
-          205
-        ],
-        [
-          10361,
-          1629,
-          2715
-        ],
-        [
-          10361,
-          1629,
-          2510
-        ]
-      ],
-      "espessura_chapa_mm": null,
-      "status": "face_representativa_nao_executiva"
-    },
-    {
-      "id": "E15_G01",
-      "nome": "E15_G01 - plano de guarda lateral da escada reta; estudo",
-      "tipo": "face",
-      "tag": "ESCADA_GUARDAS",
-      "pontos_mm": [
-        [
-          9461,
-          5521,
-          181
-        ],
-        [
-          9461,
-          1629,
-          2715
-        ],
-        [
-          9461,
-          1629,
-          3815
-        ],
-        [
-          9461,
-          5521,
-          1281
-        ]
-      ],
-      "altura_referencia_mm": 1100,
-      "status": "plano_representativo; corrimao_montantes_e_fixacoes_pendentes"
     },
     {
       "id": "MAD17_01",
@@ -5673,13 +4879,853 @@
       "material_conceitual": "ALUMINIO_TRILHO_FOTOVOLTAICO",
       "largura_visual_mm": 50,
       "observacao": "posicao/quantidade de estudo; fabricante e calculo de fixacao pendentes"
+    },
+    {
+      "id": "ESCADA_RES",
+      "nome": "Escada R24 em L compacto; trecho inferior ~1m e lance principal lateral",
+      "tipo": "face",
+      "tag": "ESCADA_HIPOTESE",
+      "pontos_mm": [
+        [
+          8462,
+          5521,
+          0
+        ],
+        [
+          10361,
+          5521,
+          0
+        ],
+        [
+          10361,
+          1629,
+          0
+        ],
+        [
+          9461,
+          1629,
+          0
+        ]
+      ],
+      "status": "envelope conceitual R24; nao representa poligono completo do L",
+      "referencia_limite": "faixa de acesso junto Y4687..5521 mantida livre de degraus no eixo principal",
+      "nivel_chegada_mm": 2715
+    },
+    {
+      "id": "E24_LD01",
+      "nome": "E24_LD01 - piso trecho curto do L",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8462,
+        3787,
+        151
+      ],
+      "dimensoes_mm": [
+        333,
+        900,
+        30
+      ],
+      "trecho": "inferior_L",
+      "pisada_mm": 333
+    },
+    {
+      "id": "E24_LR01",
+      "nome": "E24_LR01 - espelho trecho curto do L",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8462,
+          3787,
+          0
+        ],
+        [
+          8462,
+          4687,
+          0
+        ],
+        [
+          8462,
+          4687,
+          181
+        ],
+        [
+          8462,
+          3787,
+          181
+        ]
+      ],
+      "trecho": "inferior_L",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_LD02",
+      "nome": "E24_LD02 - piso trecho curto do L",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8795,
+        3787,
+        332
+      ],
+      "dimensoes_mm": [
+        333,
+        900,
+        30
+      ],
+      "trecho": "inferior_L",
+      "pisada_mm": 333
+    },
+    {
+      "id": "E24_LR02",
+      "nome": "E24_LR02 - espelho trecho curto do L",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8795,
+          3787,
+          181
+        ],
+        [
+          8795,
+          4687,
+          181
+        ],
+        [
+          8795,
+          4687,
+          362
+        ],
+        [
+          8795,
+          3787,
+          362
+        ]
+      ],
+      "trecho": "inferior_L",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_LD03",
+      "nome": "E24_LD03 - piso trecho curto do L",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9128,
+        3787,
+        513
+      ],
+      "dimensoes_mm": [
+        333,
+        900,
+        30
+      ],
+      "trecho": "inferior_L",
+      "pisada_mm": 333
+    },
+    {
+      "id": "E24_LR03",
+      "nome": "E24_LR03 - espelho trecho curto do L",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9128,
+          3787,
+          362
+        ],
+        [
+          9128,
+          4687,
+          362
+        ],
+        [
+          9128,
+          4687,
+          543
+        ],
+        [
+          9128,
+          3787,
+          543
+        ]
+      ],
+      "trecho": "inferior_L",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_CANTO",
+      "nome": "E24_CANTO - apoio visual da mudanca de direcao 90 graus",
+      "tipo": "caixa",
+      "tag": "ESCADA_PATAMAR",
+      "origem_mm": [
+        9461,
+        3787,
+        513
+      ],
+      "dimensoes_mm": [
+        300,
+        900,
+        30
+      ],
+      "status": "conector visual compacto; nao e patamar normativo de 900mm"
+    },
+    {
+      "id": "E24_MD01",
+      "nome": "E24_MD01 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        4409,
+        694
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD02",
+      "nome": "E24_MD02 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        4131,
+        875
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD03",
+      "nome": "E24_MD03 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3853,
+        1056
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD04",
+      "nome": "E24_MD04 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3575,
+        1237
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD05",
+      "nome": "E24_MD05 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3297,
+        1418
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD06",
+      "nome": "E24_MD06 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3019,
+        1599
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD07",
+      "nome": "E24_MD07 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        2741,
+        1780
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD08",
+      "nome": "E24_MD08 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        2463,
+        1961
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD09",
+      "nome": "E24_MD09 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        2185,
+        2142
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD10",
+      "nome": "E24_MD10 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        1907,
+        2323
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD11",
+      "nome": "E24_MD11 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        1629,
+        2504
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MR01",
+      "nome": "E24_MR01 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4687,
+          543
+        ],
+        [
+          10361,
+          4687,
+          543
+        ],
+        [
+          10361,
+          4687,
+          724
+        ],
+        [
+          9461,
+          4687,
+          724
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR02",
+      "nome": "E24_MR02 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4409,
+          724
+        ],
+        [
+          10361,
+          4409,
+          724
+        ],
+        [
+          10361,
+          4409,
+          905
+        ],
+        [
+          9461,
+          4409,
+          905
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR03",
+      "nome": "E24_MR03 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4131,
+          905
+        ],
+        [
+          10361,
+          4131,
+          905
+        ],
+        [
+          10361,
+          4131,
+          1086
+        ],
+        [
+          9461,
+          4131,
+          1086
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR04",
+      "nome": "E24_MR04 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3853,
+          1086
+        ],
+        [
+          10361,
+          3853,
+          1086
+        ],
+        [
+          10361,
+          3853,
+          1267
+        ],
+        [
+          9461,
+          3853,
+          1267
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR05",
+      "nome": "E24_MR05 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3575,
+          1267
+        ],
+        [
+          10361,
+          3575,
+          1267
+        ],
+        [
+          10361,
+          3575,
+          1448
+        ],
+        [
+          9461,
+          3575,
+          1448
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR06",
+      "nome": "E24_MR06 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3297,
+          1448
+        ],
+        [
+          10361,
+          3297,
+          1448
+        ],
+        [
+          10361,
+          3297,
+          1629
+        ],
+        [
+          9461,
+          3297,
+          1629
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR07",
+      "nome": "E24_MR07 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3019,
+          1629
+        ],
+        [
+          10361,
+          3019,
+          1629
+        ],
+        [
+          10361,
+          3019,
+          1810
+        ],
+        [
+          9461,
+          3019,
+          1810
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR08",
+      "nome": "E24_MR08 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2741,
+          1810
+        ],
+        [
+          10361,
+          2741,
+          1810
+        ],
+        [
+          10361,
+          2741,
+          1991
+        ],
+        [
+          9461,
+          2741,
+          1991
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR09",
+      "nome": "E24_MR09 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2463,
+          1991
+        ],
+        [
+          10361,
+          2463,
+          1991
+        ],
+        [
+          10361,
+          2463,
+          2172
+        ],
+        [
+          9461,
+          2463,
+          2172
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR10",
+      "nome": "E24_MR10 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2185,
+          2172
+        ],
+        [
+          10361,
+          2185,
+          2172
+        ],
+        [
+          10361,
+          2185,
+          2353
+        ],
+        [
+          9461,
+          2185,
+          2353
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR11",
+      "nome": "E24_MR11 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          1907,
+          2353
+        ],
+        [
+          10361,
+          1907,
+          2353
+        ],
+        [
+          10361,
+          1907,
+          2534
+        ],
+        [
+          9461,
+          1907,
+          2534
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR12",
+      "nome": "E24_MR12 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          1629,
+          2534
+        ],
+        [
+          10361,
+          1629,
+          2534
+        ],
+        [
+          10361,
+          1629,
+          2715
+        ],
+        [
+          9461,
+          1629,
+          2715
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_ML01",
+      "nome": "E24_ML01 - referencia longarina esquerda lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_LONGARINAS",
+      "pontos_mm": [
+        [
+          9461,
+          4687,
+          543
+        ],
+        [
+          9461,
+          4687,
+          748
+        ],
+        [
+          9461,
+          1629,
+          2715
+        ],
+        [
+          9461,
+          1629,
+          2510
+        ]
+      ],
+      "espessura_chapa_mm": null,
+      "status": "referencia geometrica; dimensionamento pendente"
+    },
+    {
+      "id": "E24_ML02",
+      "nome": "E24_ML02 - referencia longarina direita lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_LONGARINAS",
+      "pontos_mm": [
+        [
+          10361,
+          4687,
+          543
+        ],
+        [
+          10361,
+          4687,
+          748
+        ],
+        [
+          10361,
+          1629,
+          2715
+        ],
+        [
+          10361,
+          1629,
+          2510
+        ]
+      ],
+      "espessura_chapa_mm": null,
+      "status": "referencia geometrica; dimensionamento pendente"
+    },
+    {
+      "id": "E24_G01",
+      "nome": "E24_G01 - plano referencia guarda-corpo lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_GUARDAS",
+      "pontos_mm": [
+        [
+          9461,
+          4687,
+          724
+        ],
+        [
+          9461,
+          1629,
+          2715
+        ],
+        [
+          9461,
+          1629,
+          3815
+        ],
+        [
+          9461,
+          4687,
+          1824
+        ]
+      ],
+      "altura_referencia_mm": 1100,
+      "status": "apenas plano de referencia; detalhamento pendente"
     }
   ],
   "historico": {
-    "base": "R22",
-    "commit_base": "1970152c5ab1d8547d58f1fc51f3815533af3bbb",
-    "arquivo_integral_anterior": "historico/model-R22.json",
-    "nota": "R23 substitui as 10 faces solares simples por modulos detalhados com superficie interna, moldura perimetral e quatro trilhos, mantendo 2278x1134x30mm."
+    "base": "R23",
+    "commit_base": "7ef28a45338172937e2315db57a76310bbf4d241",
+    "arquivo_integral_anterior": "historico/model-R23.json",
+    "nota": "R24 substitui a escada reta R15 por estudo em L: 3 pisos em ~1m + 11 pisos no lance principal, mantendo chegada superior."
   },
   "levantamento_campo_mm": {
     "recuo_muro_rua_informado": 300,
@@ -6247,10 +6293,68 @@
         "aterramento",
         "cabos/inversor"
       ]
+    },
+    "escada_r24": {
+      "tipo": "L compacto inferior + lance principal",
+      "desnivel_mm": 2715,
+      "numero_espelhos": 15,
+      "espelho_mm": 181,
+      "numero_pisos_total": 14,
+      "largura_nominal_mm": 900,
+      "trecho_inferior": {
+        "quantidade_pisos": 3,
+        "desenvolvimento_mm": 999,
+        "pisada_mm": 333,
+        "x_mm": [
+          8462,
+          9461
+        ],
+        "y_mm": [
+          3787,
+          4687
+        ],
+        "sentido_subida": "+X"
+      },
+      "canto": {
+        "elemento": "E24_CANTO",
+        "mudanca_direcao_graus": 90,
+        "observacao": "conector visual compacto; nao substitui patamar normativo"
+      },
+      "lance_principal": {
+        "quantidade_pisos": 11,
+        "desenvolvimento_mm": 3058,
+        "pisada_mm": 278,
+        "x_mm": [
+          9461,
+          10361
+        ],
+        "y_mm": [
+          1629,
+          4687
+        ],
+        "sentido_subida": "-Y"
+      },
+      "faixa_livre_junto_porta_mm": {
+        "x": [
+          9461,
+          10361
+        ],
+        "y": [
+          4687,
+          5521
+        ],
+        "profundidade": 834
+      },
+      "nivel_chegada_mm": 2715,
+      "blondel_principal_mm": 640,
+      "blondel_trecho_inferior_mm": 695,
+      "escada_executiva_dimensionada": false,
+      "conformidade_integral_aprovada": false,
+      "observacao": "estudo para liberar a zona do inicio da antiga escada; conferir porta, altura livre, ergonomia, corrimaos, estrutura e normas antes de executar"
     }
   },
   "referencias_estruturais": {
-    "revisao": "R23",
+    "revisao": "R24",
     "aliases_historicos": {
       "C09": "C04"
     },
