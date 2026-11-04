@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina R18 - porta metalica de enrolar vazada entre C04 e C07",
-  "revisao": "R18",
+  "nome": "Oficina R19 - porta de enrolar vazada com cortina visivel",
+  "revisao": "R19",
   "unidades": "mm",
   "envelope_mm": {
     "x": 10461,
@@ -3213,36 +3213,25 @@
     },
     {
       "id": "P18_FOLHA",
-      "nome": "P18_FOLHA - porta metalica de enrolar vazada entre C04 e C07",
-      "tipo": "face",
+      "nome": "P18_FOLHA - cortina metalica vazada de enrolar, volume visivel entre C04 e C07",
+      "tipo": "caixa",
       "tag": "PORTA_ENROLAR_VAZADA",
-      "pontos_mm": [
-        [
-          6611,
-          5621,
-          0
-        ],
-        [
-          9361,
-          5621,
-          0
-        ],
-        [
-          9361,
-          5621,
-          2510
-        ],
-        [
-          6611,
-          5621,
-          2510
-        ]
-      ],
       "sistema_conceitual": "porta de enrolar vazada tipo grade/transvision; padrao exato a definir com fabricante",
       "operacao": "enrolamento vertical",
-      "material_conceitual": "ACO; acabamento/cor pendentes",
+      "material_conceitual": "ACO ESCURO / GRADE VAZADA; aplicar material visual no SketchUp",
       "estado_modelado": "fechada",
-      "observacao": "face representa o plano da cortina vazada; perfuracoes/malha nao modeladas individualmente nesta revisao"
+      "observacao": "R19 corrige a invisibilidade da face plana da R18; perfuracoes/malha nao modeladas individualmente",
+      "origem_mm": [
+        6611,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        2510
+      ],
+      "representacao_visual": "volume fino de 20mm para ficar visivel no SketchUp; vazamento/malha continua conceitual"
     },
     {
       "id": "P18_GUIA_C04",
@@ -3282,10 +3271,10 @@
     }
   ],
   "historico": {
-    "base": "R17",
-    "commit_base": "806e9238796847883da348d6a89d6b3740eb82a7",
-    "arquivo_integral_anterior": "historico/model-R17.json",
-    "nota": "R18 adiciona porta metalica de enrolar vazada no vao C04-C07 sem alterar a estrutura existente."
+    "base": "R18",
+    "commit_base": "72c5e4cfd3a57dd97cb61fafc93ee2e9987b6da5",
+    "arquivo_integral_anterior": "historico/model-R18.json",
+    "nota": "R19 substitui somente a folha plana P18_FOLHA por caixa de 20mm para garantir visibilidade no SketchUp."
   },
   "levantamento_campo_mm": {
     "recuo_muro_rua_informado": 300,
@@ -3661,10 +3650,39 @@
       "acionamento": "nao definido",
       "perfis_fixacoes_motorizacao": "pendentes de fabricante/projeto executivo",
       "estrutural": false
+    },
+    "porta_enrolar_r19": {
+      "entre_colunas": [
+        "C04",
+        "C07"
+      ],
+      "vao_bruto_mm": {
+        "largura": 2750,
+        "altura": 2510
+      },
+      "folha": {
+        "origem_mm": [
+          6611,
+          5601,
+          0
+        ],
+        "dimensoes_mm": [
+          2750,
+          20,
+          2510
+        ],
+        "representacao": "volume fino visivel",
+        "vazada": true
+      },
+      "guias": [
+        "P18_GUIA_C04",
+        "P18_GUIA_C07"
+      ],
+      "nota": "Malha vazada permanece conceitual; volume foi adotado para garantir visualizacao no importador SketchUp 2021."
     }
   },
   "referencias_estruturais": {
-    "revisao": "R18",
+    "revisao": "R19",
     "aliases_historicos": {
       "C09": "C04"
     },

@@ -1,13 +1,12 @@
-# Obra com mezanino - R18
+# Obra com mezanino - R19
 
-Fonte central: `model.json` no GitHub. Sincronizacao pelo plugin Mestre CAD 2021. **ESTUDO GEOMETRICO, NAO EXECUTIVO.**
+Fonte central: `model.json` no GitHub. **ESTUDO GEOMETRICO, NAO EXECUTIVO.**
 
-## Porta de enrolar R18
-- Porta metalica de enrolar **vazada** entre **C04 e C07**.
-- Vao bruto geometrico: **2750 x 2510mm**.
-- Folha no plano Y5621, estado fechado.
-- Duas guias laterais modeladas, 40 x 60mm (estudo).
-- Malha/grade vazada representada conceitualmente; padrao exato, caixa, motor e fixacoes dependem do fabricante.
-- Estrutura, escada, mezanino, vidro, painel amadeirado, cobertura, terreno e muro preservados.
+## Correção R19
+- Porta metálica vazada entre C04 e C07 mantida em **2750 x 2510mm**.
+- A folha agora possui **20mm de espessura visual**, para aparecer claramente no SketchUp.
+- Guias laterais preservadas.
+- Malha vazada continua conceitual; aplique o material visual desejado no SketchUp.
+- Com a extensão v1.5.0, esse acabamento manual será preservado nas próximas atualizações por ID.
 
-Detalhes: [R18-PORTA-ENROLAR-VAZADA.md](R18-PORTA-ENROLAR-VAZADA.md).
+Detalhes: [R19-PORTA-ENROLAR-VISIVEL.md](R19-PORTA-ENROLAR-VISIVEL.md).

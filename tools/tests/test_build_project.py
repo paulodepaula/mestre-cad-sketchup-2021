@@ -32,11 +32,11 @@ class ProjectGenerationTest(unittest.TestCase):
         return [min(ah[j],bh[j])-max(al[j],bl[j]) for j in range(3)]
 
     def test_r15_contract(self):
-        self.assertEqual(self.data['revisao'],'R18')
+        self.assertEqual(self.data['revisao'],'R19')
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
         self.assertEqual(len(self.refs),150)
-        self.assertEqual(sum(e['tipo']=='caixa' for e in self.refs.values()),99)
-        self.assertEqual(sum(e['tipo']=='face' for e in self.refs.values()),51)
+        self.assertEqual(sum(e['tipo']=='caixa' for e in self.refs.values()),100)
+        self.assertEqual(sum(e['tipo']=='face' for e in self.refs.values()),50)
         self.assertEqual(self.data['parametros_estudo_mm']['implantacao']['oficina'],[4000,6000])
         self.assertFalse(self.p['escada_executiva_dimensionada'])
         self.assertFalse(self.p['conformidade_integral_aprovada'])
@@ -183,9 +183,10 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual((x0,x1,x1-x0),(6611,9361,2750))
         self.assertEqual(v05['origem_mm'][2],2510)
         leaf=self.refs['P18_FOLHA']
-        self.assertEqual(leaf['tipo'],'face')
+        self.assertEqual(leaf['tipo'],'caixa')
         self.assertEqual(leaf['tag'],'PORTA_ENROLAR_VAZADA')
-        self.assertEqual(leaf['pontos_mm'],[[6611,5621,0],[9361,5621,0],[9361,5621,2510],[6611,5621,2510]])
+        self.assertEqual(leaf['origem_mm'],[6611,5601,0])
+        self.assertEqual(leaf['dimensoes_mm'],[2750,20,2510])
         self.assertIn('vazada',leaf['sistema_conceitual'])
         g1=self.refs['P18_GUIA_C04']; g2=self.refs['P18_GUIA_C07']
         self.assertEqual(g1['origem_mm'],[6611,5561,0])
@@ -210,7 +211,7 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
         self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),150)
-        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1290)
+        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1300)
 
     def test_rejects_invalid_geometry(self):
         d=copy.deepcopy(self.data); d['unidades']='m'
@@ -225,7 +226,7 @@ class ProjectGenerationTest(unittest.TestCase):
             path=Path(tmp)/'obra-com-mezanino'/'model.json'; path.parent.mkdir(); path.write_bytes(EXAMPLE.read_bytes())
             bp.build(path); self.assertTrue(bp.build(path,check=True))
             manifest=json.loads((path.parent/'manifest.json').read_text())
-            self.assertEqual(manifest['revisao'],'R18')
+            self.assertEqual(manifest['revisao'],'R19')
             for rel,meta in manifest['files'].items():
                 b=(path.parent/rel).read_bytes()
                 self.assertEqual(meta['sha256'],hashlib.sha256(b).hexdigest())
