@@ -168,16 +168,6 @@
         ],
         [
           10361,
-          3787,
-          0
-        ],
-        [
-          9361,
-          3787,
-          0
-        ],
-        [
-          9361,
           1629,
           0
         ],
@@ -187,7 +177,7 @@
           0
         ]
       ],
-      "status": "envelope conceitual R26; abertura do piso ajustada para o lance principal",
+      "status": "envelope retangular conceitual R26; geometria detalhada do L representada pelos elementos E26_*",
       "referencia_limite": "trecho curto termina no alinhamento interno x=10361; lance principal ocupa x=8461..9361",
       "nivel_chegada_mm": 2715
     },
@@ -4420,6 +4410,56 @@
       },
       "conclusao": "nao cabe inverter apenas o trecho curto mantendo o lance principal; deslocar o lance principal cerca de 900-1000mm para a esquerda invade a projecao do mezanino atual",
       "status": "pendente de nova configuracao geometrica; R24 preservada para evitar solucao fisicamente incoerente"
+    },
+    "escada_r26": {
+      "tipo": "L invertido com trecho curto junto a parede direita e lance principal deslocado para a esquerda",
+      "desnivel_mm": 2715,
+      "numero_espelhos": 15,
+      "espelho_mm": 181,
+      "numero_pisos_total": 14,
+      "largura_nominal_mm": 900,
+      "trecho_inferior": {
+        "quantidade_pisos": 3,
+        "desenvolvimento_mm": 999,
+        "pisada_mm": 333,
+        "x_mm": [
+          9362,
+          10361
+        ],
+        "y_mm": [
+          3787,
+          4687
+        ],
+        "sentido_subida": "-X"
+      },
+      "lance_principal": {
+        "quantidade_pisos": 11,
+        "desenvolvimento_mm": 3058,
+        "pisada_mm": 278,
+        "x_mm": [
+          8461,
+          9361
+        ],
+        "y_mm": [
+          1629,
+          4687
+        ],
+        "sentido_subida": "-Y"
+      },
+      "abertura_mezanino_mm": {
+        "x": [
+          8461,
+          9361
+        ],
+        "y": [
+          1529,
+          4687
+        ]
+      },
+      "nivel_chegada_mm": 2715,
+      "escada_executiva_dimensionada": false,
+      "conformidade_integral_aprovada": false,
+      "observacao": "R26 geometrica; perfis, ligacoes, corrimaos, altura livre e verificacao normativa/estrutural continuam pendentes."
     }
   },
   "referencias_estruturais": {
