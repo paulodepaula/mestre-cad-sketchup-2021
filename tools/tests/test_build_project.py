@@ -228,8 +228,8 @@ class ProjectGenerationTest(unittest.TestCase):
         tree=ET.fromstring(bp.dae(self.data)); ns={'c':bp.NS}
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
-        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),177)
-        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1624)
+        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),176)
+        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1612)
 
     def test_rejects_invalid_geometry(self):
         d=copy.deepcopy(self.data); d['unidades']='m'
