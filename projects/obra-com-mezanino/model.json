@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina R25 - solar removido; escada R24 preservada para nova inversao",
-  "revisao": "R25",
+  "nome": "Oficina R26 - escada invertida; trecho curto junto a parede oposta; solar externo",
+  "revisao": "R26",
   "unidades": "mm",
   "envelope_mm": {
     "x": 10461,
@@ -66,24 +66,6 @@
       ]
     },
     {
-      "id": "MEZ_PRINCIPAL",
-      "nome": "Piso principal 25mm de estudo, topo Z2715; nao especificado para compra",
-      "tipo": "caixa",
-      "tag": "MEZANINO_ESTUDO",
-      "origem_mm": [
-        6461,
-        621,
-        2690
-      ],
-      "dimensoes_mm": [
-        3000,
-        4975,
-        25
-      ],
-      "material_conceitual": "placa especifica para piso de mezanino, fornecedor e capacidade ainda indefinidos",
-      "folga_esquadria_mm": 25
-    },
-    {
       "id": "MEZ_PATAMAR",
       "nome": "Corredor/patamar superior aprox 1m, painel 25mm; topo Z2715",
       "tipo": "caixa",
@@ -99,6 +81,924 @@
         25
       ],
       "material_conceitual": "placa especifica para piso de mezanino, fornecedor e capacidade ainda indefinidos"
+    },
+    {
+      "id": "MEZ_PRINCIPAL_A",
+      "nome": "Piso principal R26 - faixa esquerda continua; topo Z2715",
+      "tipo": "caixa",
+      "tag": "MEZANINO_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        2690
+      ],
+      "dimensoes_mm": [
+        2000,
+        4975,
+        25
+      ],
+      "material_conceitual": "placa especifica para piso de mezanino; fornecedor e capacidade pendentes"
+    },
+    {
+      "id": "MEZ_PRINCIPAL_B",
+      "nome": "Piso principal R26 - faixa de chegada antes da abertura da escada; topo Z2715",
+      "tipo": "caixa",
+      "tag": "MEZANINO_ESTUDO",
+      "origem_mm": [
+        8461,
+        621,
+        2690
+      ],
+      "dimensoes_mm": [
+        1000,
+        908,
+        25
+      ],
+      "material_conceitual": "placa especifica para piso de mezanino; fornecedor e capacidade pendentes"
+    },
+    {
+      "id": "MEZ_PRINCIPAL_C",
+      "nome": "Piso principal R26 - faixa posterior apos a abertura da escada; topo Z2715",
+      "tipo": "caixa",
+      "tag": "MEZANINO_ESTUDO",
+      "origem_mm": [
+        8461,
+        4687,
+        2690
+      ],
+      "dimensoes_mm": [
+        1000,
+        909,
+        25
+      ],
+      "material_conceitual": "placa especifica para piso de mezanino; fornecedor e capacidade pendentes"
+    },
+    {
+      "id": "V26_CAB",
+      "nome": "V26_CAB - cabecalho conceitual da abertura da escada R26; perfil e ligacoes a dimensionar",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        8461,
+        1529,
+        2510
+      ],
+      "dimensoes_mm": [
+        900,
+        100,
+        180
+      ],
+      "status": "geometria de estudo; verificar dimensionamento estrutural"
+    },
+    {
+      "id": "ESCADA_RES",
+      "nome": "Escada R26 em L invertido; trecho curto junto ao alinhamento interno da parede direita e lance principal deslocado para a esquerda",
+      "tipo": "face",
+      "tag": "ESCADA_HIPOTESE",
+      "pontos_mm": [
+        [
+          8461,
+          4687,
+          0
+        ],
+        [
+          10361,
+          4687,
+          0
+        ],
+        [
+          10361,
+          3787,
+          0
+        ],
+        [
+          9361,
+          3787,
+          0
+        ],
+        [
+          9361,
+          1629,
+          0
+        ],
+        [
+          8461,
+          1629,
+          0
+        ]
+      ],
+      "status": "envelope conceitual R26; abertura do piso ajustada para o lance principal",
+      "referencia_limite": "trecho curto termina no alinhamento interno x=10361; lance principal ocupa x=8461..9361",
+      "nivel_chegada_mm": 2715
+    },
+    {
+      "id": "E26_LD01",
+      "nome": "E26_LD01 - piso trecho curto invertido, junto a parede oposta",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        10028,
+        3787,
+        151
+      ],
+      "dimensoes_mm": [
+        333,
+        900,
+        30
+      ],
+      "trecho": "inferior_L_invertido",
+      "pisada_mm": 333
+    },
+    {
+      "id": "E26_LD02",
+      "nome": "E26_LD02 - piso trecho curto invertido, junto a parede oposta",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9695,
+        3787,
+        332
+      ],
+      "dimensoes_mm": [
+        333,
+        900,
+        30
+      ],
+      "trecho": "inferior_L_invertido",
+      "pisada_mm": 333
+    },
+    {
+      "id": "E26_LD03",
+      "nome": "E26_LD03 - piso trecho curto invertido, junto a parede oposta",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9362,
+        3787,
+        513
+      ],
+      "dimensoes_mm": [
+        333,
+        900,
+        30
+      ],
+      "trecho": "inferior_L_invertido",
+      "pisada_mm": 333
+    },
+    {
+      "id": "E26_LR01",
+      "nome": "E26_LR01 - espelho trecho curto invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          10361,
+          3787,
+          0
+        ],
+        [
+          10361,
+          4687,
+          0
+        ],
+        [
+          10361,
+          4687,
+          181
+        ],
+        [
+          10361,
+          3787,
+          181
+        ]
+      ],
+      "trecho": "inferior_L_invertido",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_LR02",
+      "nome": "E26_LR02 - espelho trecho curto invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          10028,
+          3787,
+          181
+        ],
+        [
+          10028,
+          4687,
+          181
+        ],
+        [
+          10028,
+          4687,
+          362
+        ],
+        [
+          10028,
+          3787,
+          362
+        ]
+      ],
+      "trecho": "inferior_L_invertido",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_LR03",
+      "nome": "E26_LR03 - espelho trecho curto invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9695,
+          3787,
+          362
+        ],
+        [
+          9695,
+          4687,
+          362
+        ],
+        [
+          9695,
+          4687,
+          543
+        ],
+        [
+          9695,
+          3787,
+          543
+        ]
+      ],
+      "trecho": "inferior_L_invertido",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_CANTO",
+      "nome": "E26_CANTO - apoio visual da mudanca de direcao 90 graus",
+      "tipo": "caixa",
+      "tag": "ESCADA_PATAMAR",
+      "origem_mm": [
+        9061,
+        3787,
+        513
+      ],
+      "dimensoes_mm": [
+        300,
+        900,
+        30
+      ],
+      "status": "conector visual compacto; dimensionamento e adequacao normativa pendentes"
+    },
+    {
+      "id": "E26_MD01",
+      "nome": "E26_MD01 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        4409,
+        694
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MD02",
+      "nome": "E26_MD02 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        4131,
+        875
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MD03",
+      "nome": "E26_MD03 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        3853,
+        1056
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MD04",
+      "nome": "E26_MD04 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        3575,
+        1237
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MD05",
+      "nome": "E26_MD05 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        3297,
+        1418
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MD06",
+      "nome": "E26_MD06 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        3019,
+        1599
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MD07",
+      "nome": "E26_MD07 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        2741,
+        1780
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MD08",
+      "nome": "E26_MD08 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        2463,
+        1961
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MD09",
+      "nome": "E26_MD09 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        2185,
+        2142
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MD10",
+      "nome": "E26_MD10 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        1907,
+        2323
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MD11",
+      "nome": "E26_MD11 - piso lance principal invertido",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8461,
+        1629,
+        2504
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal_R26",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E26_MR01",
+      "nome": "E26_MR01 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          4687,
+          543
+        ],
+        [
+          9361,
+          4687,
+          543
+        ],
+        [
+          9361,
+          4687,
+          724
+        ],
+        [
+          8461,
+          4687,
+          724
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR02",
+      "nome": "E26_MR02 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          4409,
+          724
+        ],
+        [
+          9361,
+          4409,
+          724
+        ],
+        [
+          9361,
+          4409,
+          905
+        ],
+        [
+          8461,
+          4409,
+          905
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR03",
+      "nome": "E26_MR03 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          4131,
+          905
+        ],
+        [
+          9361,
+          4131,
+          905
+        ],
+        [
+          9361,
+          4131,
+          1086
+        ],
+        [
+          8461,
+          4131,
+          1086
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR04",
+      "nome": "E26_MR04 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          3853,
+          1086
+        ],
+        [
+          9361,
+          3853,
+          1086
+        ],
+        [
+          9361,
+          3853,
+          1267
+        ],
+        [
+          8461,
+          3853,
+          1267
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR05",
+      "nome": "E26_MR05 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          3575,
+          1267
+        ],
+        [
+          9361,
+          3575,
+          1267
+        ],
+        [
+          9361,
+          3575,
+          1448
+        ],
+        [
+          8461,
+          3575,
+          1448
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR06",
+      "nome": "E26_MR06 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          3297,
+          1448
+        ],
+        [
+          9361,
+          3297,
+          1448
+        ],
+        [
+          9361,
+          3297,
+          1629
+        ],
+        [
+          8461,
+          3297,
+          1629
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR07",
+      "nome": "E26_MR07 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          3019,
+          1629
+        ],
+        [
+          9361,
+          3019,
+          1629
+        ],
+        [
+          9361,
+          3019,
+          1810
+        ],
+        [
+          8461,
+          3019,
+          1810
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR08",
+      "nome": "E26_MR08 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          2741,
+          1810
+        ],
+        [
+          9361,
+          2741,
+          1810
+        ],
+        [
+          9361,
+          2741,
+          1991
+        ],
+        [
+          8461,
+          2741,
+          1991
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR09",
+      "nome": "E26_MR09 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          2463,
+          1991
+        ],
+        [
+          9361,
+          2463,
+          1991
+        ],
+        [
+          9361,
+          2463,
+          2172
+        ],
+        [
+          8461,
+          2463,
+          2172
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR10",
+      "nome": "E26_MR10 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          2185,
+          2172
+        ],
+        [
+          9361,
+          2185,
+          2172
+        ],
+        [
+          9361,
+          2185,
+          2353
+        ],
+        [
+          8461,
+          2185,
+          2353
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR11",
+      "nome": "E26_MR11 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          1907,
+          2353
+        ],
+        [
+          9361,
+          1907,
+          2353
+        ],
+        [
+          9361,
+          1907,
+          2534
+        ],
+        [
+          8461,
+          1907,
+          2534
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_MR12",
+      "nome": "E26_MR12 - espelho lance principal invertido",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8461,
+          1629,
+          2534
+        ],
+        [
+          9361,
+          1629,
+          2534
+        ],
+        [
+          9361,
+          1629,
+          2715
+        ],
+        [
+          8461,
+          1629,
+          2715
+        ]
+      ],
+      "trecho": "principal_R26",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E26_ML01",
+      "nome": "E26_ML01 - referencia longarina esquerda lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_LONGARINAS",
+      "pontos_mm": [
+        [
+          8461,
+          4687,
+          543
+        ],
+        [
+          8461,
+          4687,
+          748
+        ],
+        [
+          8461,
+          1629,
+          2715
+        ],
+        [
+          8461,
+          1629,
+          2510
+        ]
+      ],
+      "espessura_chapa_mm": null,
+      "status": "referencia geometrica; dimensionamento pendente"
+    },
+    {
+      "id": "E26_ML02",
+      "nome": "E26_ML02 - referencia longarina direita lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_LONGARINAS",
+      "pontos_mm": [
+        [
+          9361,
+          4687,
+          543
+        ],
+        [
+          9361,
+          4687,
+          748
+        ],
+        [
+          9361,
+          1629,
+          2715
+        ],
+        [
+          9361,
+          1629,
+          2510
+        ]
+      ],
+      "espessura_chapa_mm": null,
+      "status": "referencia geometrica; dimensionamento pendente"
+    },
+    {
+      "id": "E26_G01",
+      "nome": "E26_G01 - plano referencia guarda-corpo lado livre do lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_GUARDAS",
+      "pontos_mm": [
+        [
+          8461,
+          4687,
+          724
+        ],
+        [
+          8461,
+          1629,
+          2715
+        ],
+        [
+          8461,
+          1629,
+          3815
+        ],
+        [
+          8461,
+          4687,
+          1824
+        ]
+      ],
+      "altura_referencia_mm": 1100,
+      "status": "apenas plano de referencia; detalhamento pendente"
     },
     {
       "id": "C01",
@@ -2945,846 +3845,6 @@
       ],
       "material_conceitual": "ACO ESCURO",
       "observacao": "volume de estudo; dimensoes finais dependem do fabricante"
-    },
-    {
-      "id": "ESCADA_RES",
-      "nome": "Escada R24 em L compacto; trecho inferior ~1m e lance principal lateral",
-      "tipo": "face",
-      "tag": "ESCADA_HIPOTESE",
-      "pontos_mm": [
-        [
-          8462,
-          5521,
-          0
-        ],
-        [
-          10361,
-          5521,
-          0
-        ],
-        [
-          10361,
-          1629,
-          0
-        ],
-        [
-          9461,
-          1629,
-          0
-        ]
-      ],
-      "status": "envelope conceitual R24; nao representa poligono completo do L",
-      "referencia_limite": "faixa de acesso junto Y4687..5521 mantida livre de degraus no eixo principal",
-      "nivel_chegada_mm": 2715
-    },
-    {
-      "id": "E24_LD01",
-      "nome": "E24_LD01 - piso trecho curto do L",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        8462,
-        3787,
-        151
-      ],
-      "dimensoes_mm": [
-        333,
-        900,
-        30
-      ],
-      "trecho": "inferior_L",
-      "pisada_mm": 333
-    },
-    {
-      "id": "E24_LR01",
-      "nome": "E24_LR01 - espelho trecho curto do L",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          8462,
-          3787,
-          0
-        ],
-        [
-          8462,
-          4687,
-          0
-        ],
-        [
-          8462,
-          4687,
-          181
-        ],
-        [
-          8462,
-          3787,
-          181
-        ]
-      ],
-      "trecho": "inferior_L",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_LD02",
-      "nome": "E24_LD02 - piso trecho curto do L",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        8795,
-        3787,
-        332
-      ],
-      "dimensoes_mm": [
-        333,
-        900,
-        30
-      ],
-      "trecho": "inferior_L",
-      "pisada_mm": 333
-    },
-    {
-      "id": "E24_LR02",
-      "nome": "E24_LR02 - espelho trecho curto do L",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          8795,
-          3787,
-          181
-        ],
-        [
-          8795,
-          4687,
-          181
-        ],
-        [
-          8795,
-          4687,
-          362
-        ],
-        [
-          8795,
-          3787,
-          362
-        ]
-      ],
-      "trecho": "inferior_L",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_LD03",
-      "nome": "E24_LD03 - piso trecho curto do L",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9128,
-        3787,
-        513
-      ],
-      "dimensoes_mm": [
-        333,
-        900,
-        30
-      ],
-      "trecho": "inferior_L",
-      "pisada_mm": 333
-    },
-    {
-      "id": "E24_LR03",
-      "nome": "E24_LR03 - espelho trecho curto do L",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9128,
-          3787,
-          362
-        ],
-        [
-          9128,
-          4687,
-          362
-        ],
-        [
-          9128,
-          4687,
-          543
-        ],
-        [
-          9128,
-          3787,
-          543
-        ]
-      ],
-      "trecho": "inferior_L",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_CANTO",
-      "nome": "E24_CANTO - apoio visual da mudanca de direcao 90 graus",
-      "tipo": "caixa",
-      "tag": "ESCADA_PATAMAR",
-      "origem_mm": [
-        9461,
-        3787,
-        513
-      ],
-      "dimensoes_mm": [
-        300,
-        900,
-        30
-      ],
-      "status": "conector visual compacto; nao e patamar normativo de 900mm"
-    },
-    {
-      "id": "E24_MD01",
-      "nome": "E24_MD01 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        4409,
-        694
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MD02",
-      "nome": "E24_MD02 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        4131,
-        875
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MD03",
-      "nome": "E24_MD03 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        3853,
-        1056
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MD04",
-      "nome": "E24_MD04 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        3575,
-        1237
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MD05",
-      "nome": "E24_MD05 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        3297,
-        1418
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MD06",
-      "nome": "E24_MD06 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        3019,
-        1599
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MD07",
-      "nome": "E24_MD07 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        2741,
-        1780
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MD08",
-      "nome": "E24_MD08 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        2463,
-        1961
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MD09",
-      "nome": "E24_MD09 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        2185,
-        2142
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MD10",
-      "nome": "E24_MD10 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        1907,
-        2323
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MD11",
-      "nome": "E24_MD11 - piso lance principal",
-      "tipo": "caixa",
-      "tag": "ESCADA_DEGRAUS",
-      "origem_mm": [
-        9461,
-        1629,
-        2504
-      ],
-      "dimensoes_mm": [
-        900,
-        278,
-        30
-      ],
-      "trecho": "principal",
-      "pisada_mm": 278
-    },
-    {
-      "id": "E24_MR01",
-      "nome": "E24_MR01 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          4687,
-          543
-        ],
-        [
-          10361,
-          4687,
-          543
-        ],
-        [
-          10361,
-          4687,
-          724
-        ],
-        [
-          9461,
-          4687,
-          724
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR02",
-      "nome": "E24_MR02 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          4409,
-          724
-        ],
-        [
-          10361,
-          4409,
-          724
-        ],
-        [
-          10361,
-          4409,
-          905
-        ],
-        [
-          9461,
-          4409,
-          905
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR03",
-      "nome": "E24_MR03 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          4131,
-          905
-        ],
-        [
-          10361,
-          4131,
-          905
-        ],
-        [
-          10361,
-          4131,
-          1086
-        ],
-        [
-          9461,
-          4131,
-          1086
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR04",
-      "nome": "E24_MR04 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3853,
-          1086
-        ],
-        [
-          10361,
-          3853,
-          1086
-        ],
-        [
-          10361,
-          3853,
-          1267
-        ],
-        [
-          9461,
-          3853,
-          1267
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR05",
-      "nome": "E24_MR05 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3575,
-          1267
-        ],
-        [
-          10361,
-          3575,
-          1267
-        ],
-        [
-          10361,
-          3575,
-          1448
-        ],
-        [
-          9461,
-          3575,
-          1448
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR06",
-      "nome": "E24_MR06 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3297,
-          1448
-        ],
-        [
-          10361,
-          3297,
-          1448
-        ],
-        [
-          10361,
-          3297,
-          1629
-        ],
-        [
-          9461,
-          3297,
-          1629
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR07",
-      "nome": "E24_MR07 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3019,
-          1629
-        ],
-        [
-          10361,
-          3019,
-          1629
-        ],
-        [
-          10361,
-          3019,
-          1810
-        ],
-        [
-          9461,
-          3019,
-          1810
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR08",
-      "nome": "E24_MR08 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          2741,
-          1810
-        ],
-        [
-          10361,
-          2741,
-          1810
-        ],
-        [
-          10361,
-          2741,
-          1991
-        ],
-        [
-          9461,
-          2741,
-          1991
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR09",
-      "nome": "E24_MR09 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          2463,
-          1991
-        ],
-        [
-          10361,
-          2463,
-          1991
-        ],
-        [
-          10361,
-          2463,
-          2172
-        ],
-        [
-          9461,
-          2463,
-          2172
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR10",
-      "nome": "E24_MR10 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          2185,
-          2172
-        ],
-        [
-          10361,
-          2185,
-          2172
-        ],
-        [
-          10361,
-          2185,
-          2353
-        ],
-        [
-          9461,
-          2185,
-          2353
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR11",
-      "nome": "E24_MR11 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          1907,
-          2353
-        ],
-        [
-          10361,
-          1907,
-          2353
-        ],
-        [
-          10361,
-          1907,
-          2534
-        ],
-        [
-          9461,
-          1907,
-          2534
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_MR12",
-      "nome": "E24_MR12 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          1629,
-          2534
-        ],
-        [
-          10361,
-          1629,
-          2534
-        ],
-        [
-          10361,
-          1629,
-          2715
-        ],
-        [
-          9461,
-          1629,
-          2715
-        ]
-      ],
-      "trecho": "principal",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E24_ML01",
-      "nome": "E24_ML01 - referencia longarina esquerda lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_LONGARINAS",
-      "pontos_mm": [
-        [
-          9461,
-          4687,
-          543
-        ],
-        [
-          9461,
-          4687,
-          748
-        ],
-        [
-          9461,
-          1629,
-          2715
-        ],
-        [
-          9461,
-          1629,
-          2510
-        ]
-      ],
-      "espessura_chapa_mm": null,
-      "status": "referencia geometrica; dimensionamento pendente"
-    },
-    {
-      "id": "E24_ML02",
-      "nome": "E24_ML02 - referencia longarina direita lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_LONGARINAS",
-      "pontos_mm": [
-        [
-          10361,
-          4687,
-          543
-        ],
-        [
-          10361,
-          4687,
-          748
-        ],
-        [
-          10361,
-          1629,
-          2715
-        ],
-        [
-          10361,
-          1629,
-          2510
-        ]
-      ],
-      "espessura_chapa_mm": null,
-      "status": "referencia geometrica; dimensionamento pendente"
-    },
-    {
-      "id": "E24_G01",
-      "nome": "E24_G01 - plano referencia guarda-corpo lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_GUARDAS",
-      "pontos_mm": [
-        [
-          9461,
-          4687,
-          724
-        ],
-        [
-          9461,
-          1629,
-          2715
-        ],
-        [
-          9461,
-          1629,
-          3815
-        ],
-        [
-          9461,
-          4687,
-          1824
-        ]
-      ],
-      "altura_referencia_mm": 1100,
-      "status": "apenas plano de referencia; detalhamento pendente"
     }
   ],
   "historico": {
