@@ -54,7 +54,7 @@ class ProjectGenerationTest(unittest.TestCase):
         changed={'ESCADA_RES','MEZ_PATAMAR','V11','G11_PL01_03','COB_R03'}
         removed={'G11_PT03','G11_PT04','G11_PL01_04','G11_PL01_05'}
         added={k for k in self.refs if k not in old}
-        self.assertEqual(len(added),72)
+        self.assertEqual(len(added),73)
         self.assertTrue(all(k.startswith('E15_') or k.startswith('MAD17_') or k.startswith('P18_') or k.startswith('P20_') for k in added))
         self.assertEqual(set(old)-set(self.refs),removed)
         for k,e in old.items():
