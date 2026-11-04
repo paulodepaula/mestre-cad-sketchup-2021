@@ -1,14 +1,13 @@
-# Obra com mezanino - R16
+# Obra com mezanino - R17
 
 Fonte central: `model.json` no GitHub. Sincronizacao pelo plugin Mestre CAD 2021. **ESTUDO GEOMETRICO, NAO EXECUTIVO.**
 
-## Acabamentos R16
-- Painel de madeira **interno**, somente na lateral antes da entrada da escada.
-- Trecho com **1,00m de comprimento**, 20mm de espessura visual e 18 reguas horizontais ate a cobertura.
-- O painel fica fora dos 900mm nominais da escada e nao reduz sua largura geometrica.
-- Cobertura mantida na mesma geometria, agora registrada conceitualmente como **telha sanduiche com acabamento inferior amadeirado**.
-- Escada R15, mezanino, estrutura, vidros, terreno e muro preservados.
+## Correcao R17
+- Painel amadeirado interno reposicionado para o **vao livre entre C10 e C01**.
+- Vao: **900mm**, de Y5621 a Y6521.
+- 18 reguas horizontais, espessura visual 20mm, do piso ate aproximadamente Z5594mm.
+- Painel encaixado pela face interna das colunas e fora da largura da escada.
+- Teto continua especificado conceitualmente como **telha sanduiche com acabamento inferior amadeirado**.
+- Escada, mezanino, vidro, vigas, pilares, terreno e muro preservados.
 
-A textura real ainda depende do acabamento/material escolhido; a geometria das reguas esta presente no modelo sincronizado.
-
-Detalhes: [R16-PAINEL-MADEIRA-TETO.md](R16-PAINEL-MADEIRA-TETO.md).
+Detalhes: [R17-PAINEL-C10-C01.md](R17-PAINEL-C10-C01.md).
