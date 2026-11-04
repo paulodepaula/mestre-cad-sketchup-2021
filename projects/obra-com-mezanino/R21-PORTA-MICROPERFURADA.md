@@ -4,7 +4,7 @@ A R20 usava uma grade quadriculada, diferente da referencia enviada.
 
 ## Correcao
 - Porta entre C04 e C07 mantida em **2750 x 2510 mm**.
-- Cortina formada por **26 laminas horizontais**.
+- Cortina formada por **25 laminas horizontais**.
 - Cada lamina: **2750 x 20 x 78 mm**.
 - Passo vertical: **90 mm**, com junta visual de aproximadamente **12 mm**.
 - Guias laterais preservadas.

@@ -198,17 +198,17 @@ class ProjectGenerationTest(unittest.TestCase):
 
     def test_r21_rolling_door_uses_horizontal_microperforated_slats(self):
         slats=[e for e in self.refs.values() if e['id'].startswith('P21_L')]
-        self.assertEqual(len(slats),26)
+        self.assertEqual(len(slats),25)
         self.assertTrue(all(e['tag']=='PORTA_ENROLAR_MICROPERF' for e in slats))
         self.assertTrue(all(e['dimensoes_mm']==[2750,20,78] for e in slats))
-        self.assertEqual([e['origem_mm'][2] for e in slats],list(range(0,2251,90)))
+        self.assertEqual([e['origem_mm'][2] for e in slats],list(range(0,2161,90)))
         self.assertFalse(any(e['id'].startswith('P20_') for e in self.refs.values()))
         box=self.refs['P21_CAIXA_SUP']
         self.assertEqual(box['origem_mm'],[6611,5481,2310])
         self.assertEqual(box['dimensoes_mm'],[2750,140,200])
         p=self.data['parametros_estudo_mm']['porta_enrolar_r21']
         self.assertEqual(p['tipo'],'porta metalica de enrolar com laminas horizontais microperfuradas')
-        self.assertEqual(p['laminas']['quantidade'],26)
+        self.assertEqual(p['laminas']['quantidade'],25)
         self.assertFalse(p['executivo'])
 
     def test_dxf_and_collada(self):
@@ -221,7 +221,7 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
         self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),175)
-        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1612)
+        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1600)
 
     def test_rejects_invalid_geometry(self):
         d=copy.deepcopy(self.data); d['unidades']='m'
