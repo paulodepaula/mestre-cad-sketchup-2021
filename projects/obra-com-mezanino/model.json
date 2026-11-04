@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina R22 - 10 modulos fotovoltaicos na cobertura",
-  "revisao": "R22",
+  "nome": "Oficina R23 - modulos solares detalhados com moldura e trilhos",
+  "revisao": "R23",
   "unidades": "mm",
   "envelope_mm": {
     "x": 10461,
@@ -3741,15 +3741,88 @@
       "observacao": "volume de estudo; dimensoes finais dependem do fabricante"
     },
     {
-      "id": "SOL22_01",
-      "nome": "SOL22_01 - modulo fotovoltaico 2278x1134x30 mm",
+      "id": "PV23_01_GLASS",
+      "nome": "PV23_01 - superficie fotovoltaica interna",
       "tipo": "face",
-      "tag": "PAINEL_SOLAR_ESTUDO",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          751,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          751,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          1835,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          1835,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_01_F1",
+      "nome": "PV23_01 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
       "pontos_mm": [
         [
           5665.867,
           726,
           5365.243
+        ],
+        [
+          5690.835810359965,
+          726,
+          5366.4914416154525
+        ],
+        [
+          5690.835810359965,
+          1860,
+          5366.4914416154525
+        ],
+        [
+          5665.867,
+          1860,
+          5365.243
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_01_F2",
+      "nome": "PV23_01 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7916.056189640035,
+          726,
+          5477.752558384548
         ],
         [
           7941.025,
@@ -3762,33 +3835,175 @@
           5479.001
         ],
         [
-          5665.867,
+          7916.056189640035,
           1860,
-          5365.243
+          5477.752558384548
         ]
       ],
-      "dimensoes_modulo_mm": [
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
         2278,
         1134,
         30
       ],
-      "espessura_mm": 30,
-      "tecnologia": "Monocristalino N-type",
-      "orientacao": "retrato; lado 2278mm acompanhando o caimento X da cobertura",
-      "material_conceitual": "VIDRO_FOTOVOLTAICO_ESCURO_COM_MOLDURA_ALUMINIO",
-      "offset_visual_sobre_cobertura_mm": 5,
-      "observacao": "face superior modelada na inclinacao real; espessura de 30mm registrada em metadado, nao extrudada pelo schema atual"
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
     },
     {
-      "id": "SOL22_02",
-      "nome": "SOL22_02 - modulo fotovoltaico 2278x1134x30 mm",
+      "id": "PV23_01_F3",
+      "nome": "PV23_01 - moldura aluminio lateral Y baixo",
       "tipo": "face",
-      "tag": "PAINEL_SOLAR_ESTUDO",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          726,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          726,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          751,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          751,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_01_F4",
+      "nome": "PV23_01 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          1835,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          1835,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          1860,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          1860,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_02_GLASS",
+      "nome": "PV23_02 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          1915,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          1915,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          2999,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          2999,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_02_F1",
+      "nome": "PV23_02 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
       "pontos_mm": [
         [
           5665.867,
           1890,
           5365.243
+        ],
+        [
+          5690.835810359965,
+          1890,
+          5366.4914416154525
+        ],
+        [
+          5690.835810359965,
+          3024,
+          5366.4914416154525
+        ],
+        [
+          5665.867,
+          3024,
+          5365.243
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_02_F2",
+      "nome": "PV23_02 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7916.056189640035,
+          1890,
+          5477.752558384548
         ],
         [
           7941.025,
@@ -3801,33 +4016,175 @@
           5479.001
         ],
         [
-          5665.867,
+          7916.056189640035,
           3024,
-          5365.243
+          5477.752558384548
         ]
       ],
-      "dimensoes_modulo_mm": [
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
         2278,
         1134,
         30
       ],
-      "espessura_mm": 30,
-      "tecnologia": "Monocristalino N-type",
-      "orientacao": "retrato; lado 2278mm acompanhando o caimento X da cobertura",
-      "material_conceitual": "VIDRO_FOTOVOLTAICO_ESCURO_COM_MOLDURA_ALUMINIO",
-      "offset_visual_sobre_cobertura_mm": 5,
-      "observacao": "face superior modelada na inclinacao real; espessura de 30mm registrada em metadado, nao extrudada pelo schema atual"
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
     },
     {
-      "id": "SOL22_03",
-      "nome": "SOL22_03 - modulo fotovoltaico 2278x1134x30 mm",
+      "id": "PV23_02_F3",
+      "nome": "PV23_02 - moldura aluminio lateral Y baixo",
       "tipo": "face",
-      "tag": "PAINEL_SOLAR_ESTUDO",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          1890,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          1890,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          1915,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          1915,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_02_F4",
+      "nome": "PV23_02 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          2999,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          2999,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          3024,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          3024,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_03_GLASS",
+      "nome": "PV23_03 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          3079,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          3079,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          4163,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          4163,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_03_F1",
+      "nome": "PV23_03 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
       "pontos_mm": [
         [
           5665.867,
           3054,
           5365.243
+        ],
+        [
+          5690.835810359965,
+          3054,
+          5366.4914416154525
+        ],
+        [
+          5690.835810359965,
+          4188,
+          5366.4914416154525
+        ],
+        [
+          5665.867,
+          4188,
+          5365.243
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_03_F2",
+      "nome": "PV23_03 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7916.056189640035,
+          3054,
+          5477.752558384548
         ],
         [
           7941.025,
@@ -3840,33 +4197,175 @@
           5479.001
         ],
         [
-          5665.867,
+          7916.056189640035,
           4188,
-          5365.243
+          5477.752558384548
         ]
       ],
-      "dimensoes_modulo_mm": [
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
         2278,
         1134,
         30
       ],
-      "espessura_mm": 30,
-      "tecnologia": "Monocristalino N-type",
-      "orientacao": "retrato; lado 2278mm acompanhando o caimento X da cobertura",
-      "material_conceitual": "VIDRO_FOTOVOLTAICO_ESCURO_COM_MOLDURA_ALUMINIO",
-      "offset_visual_sobre_cobertura_mm": 5,
-      "observacao": "face superior modelada na inclinacao real; espessura de 30mm registrada em metadado, nao extrudada pelo schema atual"
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
     },
     {
-      "id": "SOL22_04",
-      "nome": "SOL22_04 - modulo fotovoltaico 2278x1134x30 mm",
+      "id": "PV23_03_F3",
+      "nome": "PV23_03 - moldura aluminio lateral Y baixo",
       "tipo": "face",
-      "tag": "PAINEL_SOLAR_ESTUDO",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          3054,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          3054,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          3079,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          3079,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_03_F4",
+      "nome": "PV23_03 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          4163,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          4163,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          4188,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          4188,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_04_GLASS",
+      "nome": "PV23_04 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          4243,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          4243,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          5327,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          5327,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_04_F1",
+      "nome": "PV23_04 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
       "pontos_mm": [
         [
           5665.867,
           4218,
           5365.243
+        ],
+        [
+          5690.835810359965,
+          4218,
+          5366.4914416154525
+        ],
+        [
+          5690.835810359965,
+          5352,
+          5366.4914416154525
+        ],
+        [
+          5665.867,
+          5352,
+          5365.243
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_04_F2",
+      "nome": "PV23_04 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7916.056189640035,
+          4218,
+          5477.752558384548
         ],
         [
           7941.025,
@@ -3879,28 +4378,134 @@
           5479.001
         ],
         [
-          5665.867,
+          7916.056189640035,
           5352,
-          5365.243
+          5477.752558384548
         ]
       ],
-      "dimensoes_modulo_mm": [
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
         2278,
         1134,
         30
       ],
-      "espessura_mm": 30,
-      "tecnologia": "Monocristalino N-type",
-      "orientacao": "retrato; lado 2278mm acompanhando o caimento X da cobertura",
-      "material_conceitual": "VIDRO_FOTOVOLTAICO_ESCURO_COM_MOLDURA_ALUMINIO",
-      "offset_visual_sobre_cobertura_mm": 5,
-      "observacao": "face superior modelada na inclinacao real; espessura de 30mm registrada em metadado, nao extrudada pelo schema atual"
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
     },
     {
-      "id": "SOL22_05",
-      "nome": "SOL22_05 - modulo fotovoltaico 2278x1134x30 mm",
+      "id": "PV23_04_F3",
+      "nome": "PV23_04 - moldura aluminio lateral Y baixo",
       "tipo": "face",
-      "tag": "PAINEL_SOLAR_ESTUDO",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          4218,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          4218,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          4243,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          4243,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_04_F4",
+      "nome": "PV23_04 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          5327,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          5327,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          5352,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          5352,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_05_GLASS",
+      "nome": "PV23_05 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          5407,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          5407,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          6491,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          6491,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_05_F1",
+      "nome": "PV23_05 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
       "pontos_mm": [
         [
           5665.867,
@@ -3908,6 +4513,42 @@
           5365.243
         ],
         [
+          5690.835810359965,
+          5382,
+          5366.4914416154525
+        ],
+        [
+          5690.835810359965,
+          6516,
+          5366.4914416154525
+        ],
+        [
+          5665.867,
+          6516,
+          5365.243
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_05_F2",
+      "nome": "PV23_05 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7916.056189640035,
+          5382,
+          5477.752558384548
+        ],
+        [
           7941.025,
           5382,
           5479.001
@@ -3918,28 +4559,134 @@
           5479.001
         ],
         [
-          5665.867,
+          7916.056189640035,
           6516,
-          5365.243
+          5477.752558384548
         ]
       ],
-      "dimensoes_modulo_mm": [
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
         2278,
         1134,
         30
       ],
-      "espessura_mm": 30,
-      "tecnologia": "Monocristalino N-type",
-      "orientacao": "retrato; lado 2278mm acompanhando o caimento X da cobertura",
-      "material_conceitual": "VIDRO_FOTOVOLTAICO_ESCURO_COM_MOLDURA_ALUMINIO",
-      "offset_visual_sobre_cobertura_mm": 5,
-      "observacao": "face superior modelada na inclinacao real; espessura de 30mm registrada em metadado, nao extrudada pelo schema atual"
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
     },
     {
-      "id": "SOL22_06",
-      "nome": "SOL22_06 - modulo fotovoltaico 2278x1134x30 mm",
+      "id": "PV23_05_F3",
+      "nome": "PV23_05 - moldura aluminio lateral Y baixo",
       "tipo": "face",
-      "tag": "PAINEL_SOLAR_ESTUDO",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          5382,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          5382,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          5407,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          5407,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_05_F4",
+      "nome": "PV23_05 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          6491,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          6491,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          6516,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          6516,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_06_GLASS",
+      "nome": "PV23_06 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          751,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          751,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          1835,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          1835,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_06_F1",
+      "nome": "PV23_06 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
       "pontos_mm": [
         [
           7980.975,
@@ -3947,6 +4694,42 @@
           5480.999
         ],
         [
+          8005.943810359965,
+          726,
+          5482.247441615452
+        ],
+        [
+          8005.943810359965,
+          1860,
+          5482.247441615452
+        ],
+        [
+          7980.975,
+          1860,
+          5480.999
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_06_F2",
+      "nome": "PV23_06 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          10231.164189640034,
+          726,
+          5593.5085583845475
+        ],
+        [
           10256.133,
           726,
           5594.757
@@ -3957,33 +4740,175 @@
           5594.757
         ],
         [
-          7980.975,
+          10231.164189640034,
           1860,
-          5480.999
+          5593.5085583845475
         ]
       ],
-      "dimensoes_modulo_mm": [
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
         2278,
         1134,
         30
       ],
-      "espessura_mm": 30,
-      "tecnologia": "Monocristalino N-type",
-      "orientacao": "retrato; lado 2278mm acompanhando o caimento X da cobertura",
-      "material_conceitual": "VIDRO_FOTOVOLTAICO_ESCURO_COM_MOLDURA_ALUMINIO",
-      "offset_visual_sobre_cobertura_mm": 5,
-      "observacao": "face superior modelada na inclinacao real; espessura de 30mm registrada em metadado, nao extrudada pelo schema atual"
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
     },
     {
-      "id": "SOL22_07",
-      "nome": "SOL22_07 - modulo fotovoltaico 2278x1134x30 mm",
+      "id": "PV23_06_F3",
+      "nome": "PV23_06 - moldura aluminio lateral Y baixo",
       "tipo": "face",
-      "tag": "PAINEL_SOLAR_ESTUDO",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          726,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          726,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          751,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          751,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_06_F4",
+      "nome": "PV23_06 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          1835,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          1835,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          1860,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          1860,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_07_GLASS",
+      "nome": "PV23_07 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          1915,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          1915,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          2999,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          2999,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_07_F1",
+      "nome": "PV23_07 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
       "pontos_mm": [
         [
           7980.975,
           1890,
           5480.999
+        ],
+        [
+          8005.943810359965,
+          1890,
+          5482.247441615452
+        ],
+        [
+          8005.943810359965,
+          3024,
+          5482.247441615452
+        ],
+        [
+          7980.975,
+          3024,
+          5480.999
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_07_F2",
+      "nome": "PV23_07 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          10231.164189640034,
+          1890,
+          5593.5085583845475
         ],
         [
           10256.133,
@@ -3996,33 +4921,175 @@
           5594.757
         ],
         [
-          7980.975,
+          10231.164189640034,
           3024,
-          5480.999
+          5593.5085583845475
         ]
       ],
-      "dimensoes_modulo_mm": [
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
         2278,
         1134,
         30
       ],
-      "espessura_mm": 30,
-      "tecnologia": "Monocristalino N-type",
-      "orientacao": "retrato; lado 2278mm acompanhando o caimento X da cobertura",
-      "material_conceitual": "VIDRO_FOTOVOLTAICO_ESCURO_COM_MOLDURA_ALUMINIO",
-      "offset_visual_sobre_cobertura_mm": 5,
-      "observacao": "face superior modelada na inclinacao real; espessura de 30mm registrada em metadado, nao extrudada pelo schema atual"
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
     },
     {
-      "id": "SOL22_08",
-      "nome": "SOL22_08 - modulo fotovoltaico 2278x1134x30 mm",
+      "id": "PV23_07_F3",
+      "nome": "PV23_07 - moldura aluminio lateral Y baixo",
       "tipo": "face",
-      "tag": "PAINEL_SOLAR_ESTUDO",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          1890,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          1890,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          1915,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          1915,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_07_F4",
+      "nome": "PV23_07 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          2999,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          2999,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          3024,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          3024,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_08_GLASS",
+      "nome": "PV23_08 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          3079,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          3079,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          4163,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          4163,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_08_F1",
+      "nome": "PV23_08 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
       "pontos_mm": [
         [
           7980.975,
           3054,
           5480.999
+        ],
+        [
+          8005.943810359965,
+          3054,
+          5482.247441615452
+        ],
+        [
+          8005.943810359965,
+          4188,
+          5482.247441615452
+        ],
+        [
+          7980.975,
+          4188,
+          5480.999
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_08_F2",
+      "nome": "PV23_08 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          10231.164189640034,
+          3054,
+          5593.5085583845475
         ],
         [
           10256.133,
@@ -4035,33 +5102,175 @@
           5594.757
         ],
         [
-          7980.975,
+          10231.164189640034,
           4188,
-          5480.999
+          5593.5085583845475
         ]
       ],
-      "dimensoes_modulo_mm": [
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
         2278,
         1134,
         30
       ],
-      "espessura_mm": 30,
-      "tecnologia": "Monocristalino N-type",
-      "orientacao": "retrato; lado 2278mm acompanhando o caimento X da cobertura",
-      "material_conceitual": "VIDRO_FOTOVOLTAICO_ESCURO_COM_MOLDURA_ALUMINIO",
-      "offset_visual_sobre_cobertura_mm": 5,
-      "observacao": "face superior modelada na inclinacao real; espessura de 30mm registrada em metadado, nao extrudada pelo schema atual"
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
     },
     {
-      "id": "SOL22_09",
-      "nome": "SOL22_09 - modulo fotovoltaico 2278x1134x30 mm",
+      "id": "PV23_08_F3",
+      "nome": "PV23_08 - moldura aluminio lateral Y baixo",
       "tipo": "face",
-      "tag": "PAINEL_SOLAR_ESTUDO",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          3054,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          3054,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          3079,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          3079,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_08_F4",
+      "nome": "PV23_08 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          4163,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          4163,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          4188,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          4188,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_09_GLASS",
+      "nome": "PV23_09 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          4243,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          4243,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          5327,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          5327,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_09_F1",
+      "nome": "PV23_09 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
       "pontos_mm": [
         [
           7980.975,
           4218,
           5480.999
+        ],
+        [
+          8005.943810359965,
+          4218,
+          5482.247441615452
+        ],
+        [
+          8005.943810359965,
+          5352,
+          5482.247441615452
+        ],
+        [
+          7980.975,
+          5352,
+          5480.999
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_09_F2",
+      "nome": "PV23_09 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          10231.164189640034,
+          4218,
+          5593.5085583845475
         ],
         [
           10256.133,
@@ -4074,28 +5283,134 @@
           5594.757
         ],
         [
-          7980.975,
+          10231.164189640034,
           5352,
-          5480.999
+          5593.5085583845475
         ]
       ],
-      "dimensoes_modulo_mm": [
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
         2278,
         1134,
         30
       ],
-      "espessura_mm": 30,
-      "tecnologia": "Monocristalino N-type",
-      "orientacao": "retrato; lado 2278mm acompanhando o caimento X da cobertura",
-      "material_conceitual": "VIDRO_FOTOVOLTAICO_ESCURO_COM_MOLDURA_ALUMINIO",
-      "offset_visual_sobre_cobertura_mm": 5,
-      "observacao": "face superior modelada na inclinacao real; espessura de 30mm registrada em metadado, nao extrudada pelo schema atual"
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
     },
     {
-      "id": "SOL22_10",
-      "nome": "SOL22_10 - modulo fotovoltaico 2278x1134x30 mm",
+      "id": "PV23_09_F3",
+      "nome": "PV23_09 - moldura aluminio lateral Y baixo",
       "tipo": "face",
-      "tag": "PAINEL_SOLAR_ESTUDO",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          4218,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          4218,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          4243,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          4243,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_09_F4",
+      "nome": "PV23_09 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          5327,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          5327,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          5352,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          5352,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_10_GLASS",
+      "nome": "PV23_10 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          5407,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          5407,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          6491,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          6491,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_10_F1",
+      "nome": "PV23_10 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
       "pontos_mm": [
         [
           7980.975,
@@ -4103,6 +5418,42 @@
           5480.999
         ],
         [
+          8005.943810359965,
+          5382,
+          5482.247441615452
+        ],
+        [
+          8005.943810359965,
+          6516,
+          5482.247441615452
+        ],
+        [
+          7980.975,
+          6516,
+          5480.999
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_10_F2",
+      "nome": "PV23_10 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          10231.164189640034,
+          5382,
+          5593.5085583845475
+        ],
+        [
           10256.133,
           5382,
           5594.757
@@ -4113,29 +5464,222 @@
           5594.757
         ],
         [
-          7980.975,
+          10231.164189640034,
           6516,
-          5480.999
+          5593.5085583845475
         ]
       ],
-      "dimensoes_modulo_mm": [
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
         2278,
         1134,
         30
       ],
-      "espessura_mm": 30,
-      "tecnologia": "Monocristalino N-type",
-      "orientacao": "retrato; lado 2278mm acompanhando o caimento X da cobertura",
-      "material_conceitual": "VIDRO_FOTOVOLTAICO_ESCURO_COM_MOLDURA_ALUMINIO",
-      "offset_visual_sobre_cobertura_mm": 5,
-      "observacao": "face superior modelada na inclinacao real; espessura de 30mm registrada em metadado, nao extrudada pelo schema atual"
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_10_F3",
+      "nome": "PV23_10 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          5382,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          5382,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          5407,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          5407,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_10_F4",
+      "nome": "PV23_10 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          6491,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          6491,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          6516,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          6516,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_RAIL_01",
+      "nome": "PV23_RAIL_01 - trilho de apoio do campo solar",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_TRILHOS",
+      "pontos_mm": [
+        [
+          6209.688,
+          726,
+          5390.434
+        ],
+        [
+          6259.625,
+          726,
+          5392.931
+        ],
+        [
+          6259.625,
+          6516,
+          5392.931
+        ],
+        [
+          6209.688,
+          6516,
+          5390.434
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_TRILHO_FOTOVOLTAICO",
+      "largura_visual_mm": 50,
+      "observacao": "posicao/quantidade de estudo; fabricante e calculo de fixacao pendentes"
+    },
+    {
+      "id": "PV23_RAIL_02",
+      "nome": "PV23_RAIL_02 - trilho de apoio do campo solar",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_TRILHOS",
+      "pontos_mm": [
+        [
+          7347.267,
+          726,
+          5447.313
+        ],
+        [
+          7397.204,
+          726,
+          5449.81
+        ],
+        [
+          7397.204,
+          6516,
+          5449.81
+        ],
+        [
+          7347.267,
+          6516,
+          5447.313
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_TRILHO_FOTOVOLTAICO",
+      "largura_visual_mm": 50,
+      "observacao": "posicao/quantidade de estudo; fabricante e calculo de fixacao pendentes"
+    },
+    {
+      "id": "PV23_RAIL_03",
+      "nome": "PV23_RAIL_03 - trilho de apoio do campo solar",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_TRILHOS",
+      "pontos_mm": [
+        [
+          8524.796,
+          726,
+          5506.19
+        ],
+        [
+          8574.733,
+          726,
+          5508.687
+        ],
+        [
+          8574.733,
+          6516,
+          5508.687
+        ],
+        [
+          8524.796,
+          6516,
+          5506.19
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_TRILHO_FOTOVOLTAICO",
+      "largura_visual_mm": 50,
+      "observacao": "posicao/quantidade de estudo; fabricante e calculo de fixacao pendentes"
+    },
+    {
+      "id": "PV23_RAIL_04",
+      "nome": "PV23_RAIL_04 - trilho de apoio do campo solar",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_TRILHOS",
+      "pontos_mm": [
+        [
+          9662.375,
+          726,
+          5563.069
+        ],
+        [
+          9712.312,
+          726,
+          5565.566
+        ],
+        [
+          9712.312,
+          6516,
+          5565.566
+        ],
+        [
+          9662.375,
+          6516,
+          5563.069
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_TRILHO_FOTOVOLTAICO",
+      "largura_visual_mm": 50,
+      "observacao": "posicao/quantidade de estudo; fabricante e calculo de fixacao pendentes"
     }
   ],
   "historico": {
-    "base": "R21",
-    "commit_base": "85a35ffe80063a670efa8f4501572f14fa0a9b85",
-    "arquivo_integral_anterior": "historico/model-R21.json",
-    "nota": "R22 adiciona 10 modulos fotovoltaicos 2278x1134x30mm em arranjo 2x5 sobre a cobertura, sem alterar sua geometria."
+    "base": "R22",
+    "commit_base": "1970152c5ab1d8547d58f1fc51f3815533af3bbb",
+    "arquivo_integral_anterior": "historico/model-R22.json",
+    "nota": "R23 substitui as 10 faces solares simples por modulos detalhados com superficie interna, moldura perimetral e quatro trilhos, mantendo 2278x1134x30mm."
   },
   "levantamento_campo_mm": {
     "recuo_muro_rua_informado": 300,
@@ -4673,10 +6217,40 @@
         "sombreamento",
         "cabos e inversor"
       ]
+    },
+    "solar_r23": {
+      "modulo_externo_mm": {
+        "comprimento": 2278,
+        "largura": 1134,
+        "espessura": 30
+      },
+      "tecnologia": "Monocristalino N-type",
+      "quantidade": 10,
+      "arranjo": "2 x 5 preservado da R22",
+      "referencia_visual": "arquivo SKP fornecido pelo usuario; dimensoes dele nao foram reutilizadas",
+      "detalhamento": {
+        "superficie_fotovoltaica": "face interna escura",
+        "moldura": "4 faixas por modulo, aluminio prateado",
+        "largura_visual_moldura_mm": 25,
+        "trilhos_apoio": 4,
+        "largura_visual_trilho_mm": 50
+      },
+      "geometria": "dimensao externa de cada modulo permanece exatamente 2278 x 1134mm no plano inclinado; espessura nominal 30mm em metadado",
+      "executivo": false,
+      "pendencias": [
+        "perfil real da moldura",
+        "trilho homologado",
+        "grampos",
+        "fixacao na telha",
+        "carga de vento",
+        "capacidade estrutural",
+        "aterramento",
+        "cabos/inversor"
+      ]
     }
   },
   "referencias_estruturais": {
-    "revisao": "R22",
+    "revisao": "R23",
     "aliases_historicos": {
       "C09": "C04"
     },

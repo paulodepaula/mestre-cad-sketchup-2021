@@ -58,8 +58,8 @@ def validate(data):
         fail('envelope_mm ausente')
     envelope = tuple(number(bounds.get(k), 'envelope.'+k, positive=True) for k in ('x', 'y', 'z'))
     elements = data.get('elementos')
-    if not isinstance(elements, list) or not 1 <= len(elements) <= 220:
-        fail('Elementos devem conter entre 1 e 220 itens')
+    if not isinstance(elements, list) or not 1 <= len(elements) <= 260:
+        fail('Elementos devem conter entre 1 e 260 itens')
     seen, minima, maxima = set(), [float('inf')]*3, [-float('inf')]*3
     for i, item in enumerate(elements):
         if not isinstance(item, dict):
