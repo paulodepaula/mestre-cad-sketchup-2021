@@ -14,16 +14,16 @@
       "size": 46719
     },
     "model.json": {
-      "sha256": "c94384374bc2107f45e247314487ccee9f1ff40df47b57ea9c0c38adc3fae4f1",
-      "size": 102017
+      "sha256": "ae50cb4ad7a0ae72603bb4f063a51644eb6078cfe59de8124d9d39e1b402b8f5",
+      "size": 101972
     },
     "sketchup/modelo.dae": {
-      "sha256": "02dd5086766579ddc823ab04bf361a2bdef166f7cd1eef6b2f0d750fa34f8ecb",
-      "size": 176927
+      "sha256": "a200fe9379a81db22dc6e78d982051c88027fe6d2c975ccdfbd5f851e9ecf863",
+      "size": 176837
     }
   },
   "projeto": "obra-com-mezanino",
   "revisao": "R26",
   "schema": "mestre-cad-sync-v1",
-  "source_sha256": "c94384374bc2107f45e247314487ccee9f1ff40df47b57ea9c0c38adc3fae4f1"
+  "source_sha256": "ae50cb4ad7a0ae72603bb4f063a51644eb6078cfe59de8124d9d39e1b402b8f5"
 }
