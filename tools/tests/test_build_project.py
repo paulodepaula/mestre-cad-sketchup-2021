@@ -51,7 +51,7 @@ class ProjectGenerationTest(unittest.TestCase):
 
     def test_only_local_R13_items_changed_or_removed(self):
         old={e['id']:e for e in self.r13['elementos']}
-        changed={'ESCADA_RES','MEZ_PATAMAR','V11','G11_PL01_03'}
+        changed={'ESCADA_RES','MEZ_PATAMAR','V11','G11_PL01_03','COB_R03'}
         removed={'G11_PT03','G11_PT04','G11_PL01_04','G11_PL01_05'}
         added={k for k in self.refs if k not in old}
         self.assertEqual(len(added),50)
