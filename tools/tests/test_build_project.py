@@ -32,10 +32,10 @@ class ProjectGenerationTest(unittest.TestCase):
         return [min(ah[j],bh[j])-max(al[j],bl[j]) for j in range(3)]
 
     def test_r15_contract(self):
-        self.assertEqual(self.data['revisao'],'R26')
+        self.assertEqual(self.data['revisao'],'R27')
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
-        self.assertEqual(len(self.refs),179)
-        self.assertEqual(sum(e['tipo']=='caixa' for e in self.refs.values()),129)
+        self.assertEqual(len(self.refs),177)
+        self.assertEqual(sum(e['tipo']=='caixa' for e in self.refs.values()),127)
         self.assertEqual(sum(e['tipo']=='face' for e in self.refs.values()),50)
         self.assertEqual(self.data['parametros_estudo_mm']['implantacao']['oficina'],[4000,6000])
         self.assertFalse(self.p['escada_executiva_dimensionada'])
@@ -46,7 +46,7 @@ class ProjectGenerationTest(unittest.TestCase):
             self.assertNotIn(code,self.refs)
         self.assertFalse(any(k.startswith('E14_') for k in self.refs))
         self.assertNotIn('MEZ_PRINCIPAL',self.refs)
-        for code in ('MEZ_PRINCIPAL_A','MEZ_PRINCIPAL_B','MEZ_PRINCIPAL_C','V26_CAB'):
+        for code in ('MEZ_PRINCIPAL_A','MEZ_CORREDOR_R27'):
             self.assertIn(code,self.refs)
         self.assertEqual(self.refs['V03'],next(e for e in self.r13['elementos'] if e['id']=='V03'))
         self.assertEqual(self.refs['C02'],next(e for e in self.r13['elementos'] if e['id']=='C02'))
@@ -56,8 +56,8 @@ class ProjectGenerationTest(unittest.TestCase):
         changed={'ESCADA_RES','MEZ_PATAMAR','V11','G11_PL01_03','COB_R03'}
         removed={'G11_PT03','G11_PT04','G11_PL01_04','G11_PL01_05'}
         added={k for k in self.refs if k not in old}
-        self.assertTrue(any(k.startswith('E26_') for k in added))
-        self.assertTrue({'MEZ_PRINCIPAL_A','MEZ_PRINCIPAL_B','MEZ_PRINCIPAL_C','V26_CAB'}.issubset(added))
+        self.assertTrue(any(k.startswith('E27_') for k in added))
+        self.assertTrue({'MEZ_PRINCIPAL_A','MEZ_CORREDOR_R27'}.issubset(added))
         for k in ('V03','C02','C04','C07','C10'):
             self.assertEqual(self.refs[k],old[k],k)
         self.assertEqual(self.refs['COB_R03']['pontos_mm'],old['COB_R03']['pontos_mm'])
@@ -78,27 +78,27 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(p['nivel_chegada_mm'],2715)
         self.assertFalse(p['escada_executiva_dimensionada'])
 
-    def test_r26_inverted_stair_contract(self):
-        p=self.data['parametros_estudo_mm']['escada_r26']
+    def test_r27_stair_and_corridor_contract(self):
+        p=self.data['parametros_estudo_mm']['escada_r27']
         self.assertEqual(p['largura_nominal_mm'],900)
-        self.assertEqual(p['trecho_inferior']['sentido_subida'],'-X')
-        self.assertEqual(p['trecho_inferior']['x_mm'],[9362,10361])
-        self.assertEqual(p['lance_principal']['x_mm'],[8461,9361])
-        self.assertEqual(p['abertura_mezanino_mm'],{'x':[8461,9361],'y':[1529,4687]})
+        self.assertEqual(p['trecho_inferior']['sentido_subida'],'+X')
+        self.assertEqual(p['trecho_inferior']['x_mm'],[8462,9461])
+        self.assertEqual(p['lance_principal']['x_mm'],[9461,10361])
+        self.assertEqual(p['corredor_oposto_mm'],{'x':[8461,9461],'y':[621,5596],'largura':1000})
         self.assertEqual(p['nivel_chegada_mm'],2715)
         self.assertFalse(p['escada_executiva_dimensionada'])
 
-    def test_r26_lower_leg_and_main_flight_geometry(self):
-        low=[self.refs['E26_LD%02d'%i] for i in range(1,4)]
-        main=[self.refs['E26_MD%02d'%i] for i in range(1,12)]
+    def test_r27_lower_leg_and_main_flight_geometry(self):
+        low=[self.refs['E27_LD%02d'%i] for i in range(1,4)]
+        main=[self.refs['E27_MD%02d'%i] for i in range(1,12)]
         self.assertEqual([e['dimensoes_mm'] for e in low],[[333,900,30]]*3)
-        self.assertEqual([e['origem_mm'][0] for e in low],[10028,9695,9362])
+        self.assertEqual([e['origem_mm'][0] for e in low],[8462,8795,9128])
         self.assertEqual([e['dimensoes_mm'] for e in main],[[900,278,30]]*11)
-        self.assertEqual([e['origem_mm'][0] for e in main],[8461]*11)
+        self.assertEqual([e['origem_mm'][0] for e in main],[9461]*11)
         self.assertEqual(main[-1]['origem_mm'][1],1629)
         self.assertEqual(main[-1]['origem_mm'][2]+30,2534)
-        self.assertEqual(self.refs['E26_MR12']['pontos_mm'][-1][2],2715)
-        self.assertEqual(self.refs['E26_CANTO']['dimensoes_mm'],[300,900,30])
+        self.assertEqual(self.refs['E27_MR12']['pontos_mm'][-1][2],2715)
+        self.assertEqual(self.refs['E27_CANTO']['dimensoes_mm'],[300,900,30])
 
     def test_r24_keeps_door_access_zone_free_of_treads(self):
         door_zone={'tipo':'caixa','origem_mm':[9461,4687,0],'dimensoes_mm':[900,834,2000]}
@@ -110,15 +110,17 @@ class ProjectGenerationTest(unittest.TestCase):
             for e in treads:
                 self.assertFalse(all(v>1e-6 for v in self.overlap(e,c)),(e['id'],code))
 
-    def test_r26_upper_landing_and_structure(self):
+    def test_r27_upper_landing_corridor_and_structure(self):
         self.assertEqual(self.refs['MEZ_PATAMAR']['origem_mm'],[9461,621,2690])
         self.assertEqual(self.refs['MEZ_PATAMAR']['dimensoes_mm'],[1000,1008,25])
-        self.assertEqual(self.refs['V26_CAB']['origem_mm'],[8461,1529,2510])
-        self.assertEqual(self.refs['V26_CAB']['dimensoes_mm'],[900,100,180])
-        for code in ('E26_ML01','E26_ML02','E26_G01'):
+        self.assertEqual(self.refs['MEZ_CORREDOR_R27']['origem_mm'],[8461,621,2690])
+        self.assertEqual(self.refs['MEZ_CORREDOR_R27']['dimensoes_mm'],[1000,4975,25])
+        self.assertEqual(self.refs['V11']['origem_mm'],[9461,1529,2510])
+        self.assertEqual(self.refs['V11']['dimensoes_mm'],[1000,100,180])
+        for code in ('E27_ML01','E27_ML02','E27_G01'):
             self.assertEqual(self.refs[code]['tipo'],'face')
-        self.assertIsNone(self.refs['E26_ML01']['espessura_chapa_mm'])
-        self.assertEqual(self.refs['E26_G01']['altura_referencia_mm'],1100)
+        self.assertIsNone(self.refs['E27_ML01']['espessura_chapa_mm'])
+        self.assertEqual(self.refs['E27_G01']['altura_referencia_mm'],1100)
 
     def test_preserves_roof_glass_and_terrain_from_R13(self):
         old={e['id']:e for e in self.r13['elementos']}
@@ -137,7 +139,7 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(slats[-1]['dimensoes_mm'],[20,900,341])
         self.assertEqual(max(e['origem_mm'][2]+e['dimensoes_mm'][2] for e in slats),5594)
         self.assertTrue(all(e['material_conceitual']=='MADEIRA_AMADEIRADA_TOM_QUENTE' for e in slats))
-        stair=[e for e in self.refs.values() if e['id'].startswith('E26_')]
+        stair=[e for e in self.refs.values() if e['id'].startswith('E27_')]
         for s in slats:
             for e in stair:
                 self.assertFalse(all(v>1e-6 for v in self.overlap(s,e)),(s['id'],e['id']))
@@ -163,7 +165,7 @@ class ProjectGenerationTest(unittest.TestCase):
             for c in (c10,c01):
                 self.assertFalse(all(v>1e-6 for v in self.overlap(s,c)),(s['id'],c['id']))
         self.assertEqual(max(s['origem_mm'][2]+s['dimensoes_mm'][2] for s in slats),5594)
-        stair=[e for e in self.refs.values() if e['id'].startswith('E26_')]
+        stair=[e for e in self.refs.values() if e['id'].startswith('E27_')]
         for s in slats:
             for e in stair:
                 self.assertFalse(all(v>1e-6 for v in self.overlap(s,e)),(s['id'],e['id']))
@@ -221,8 +223,8 @@ class ProjectGenerationTest(unittest.TestCase):
         tree=ET.fromstring(bp.dae(self.data)); ns={'c':bp.NS}
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
-        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),179)
-        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1648)
+        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),177)
+        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1624)
 
     def test_rejects_invalid_geometry(self):
         d=copy.deepcopy(self.data); d['unidades']='m'
@@ -237,7 +239,7 @@ class ProjectGenerationTest(unittest.TestCase):
             path=Path(tmp)/'obra-com-mezanino'/'model.json'; path.parent.mkdir(); path.write_bytes(EXAMPLE.read_bytes())
             bp.build(path); self.assertTrue(bp.build(path,check=True))
             manifest=json.loads((path.parent/'manifest.json').read_text())
-            self.assertEqual(manifest['revisao'],'R26')
+            self.assertEqual(manifest['revisao'],'R27')
             for rel,meta in manifest['files'].items():
                 b=(path.parent/rel).read_bytes()
                 self.assertEqual(meta['sha256'],hashlib.sha256(b).hexdigest())
