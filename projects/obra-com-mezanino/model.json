@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina R17 - painel amadeirado encaixado no vao C10-C01",
-  "revisao": "R17",
+  "nome": "Oficina R18 - porta metalica de enrolar vazada entre C04 e C07",
+  "revisao": "R18",
   "unidades": "mm",
   "envelope_mm": {
     "x": 10461,
@@ -3210,13 +3210,82 @@
       "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
       "orientacao_visual": "regua horizontal",
       "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "P18_FOLHA",
+      "nome": "P18_FOLHA - porta metalica de enrolar vazada entre C04 e C07",
+      "tipo": "face",
+      "tag": "PORTA_ENROLAR_VAZADA",
+      "pontos_mm": [
+        [
+          6611,
+          5621,
+          0
+        ],
+        [
+          9361,
+          5621,
+          0
+        ],
+        [
+          9361,
+          5621,
+          2510
+        ],
+        [
+          6611,
+          5621,
+          2510
+        ]
+      ],
+      "sistema_conceitual": "porta de enrolar vazada tipo grade/transvision; padrao exato a definir com fabricante",
+      "operacao": "enrolamento vertical",
+      "material_conceitual": "ACO; acabamento/cor pendentes",
+      "estado_modelado": "fechada",
+      "observacao": "face representa o plano da cortina vazada; perfuracoes/malha nao modeladas individualmente nesta revisao"
+    },
+    {
+      "id": "P18_GUIA_C04",
+      "nome": "P18_GUIA_C04 - guia lateral da porta junto a C04",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_GUIAS",
+      "origem_mm": [
+        6611,
+        5561,
+        0
+      ],
+      "dimensoes_mm": [
+        40,
+        60,
+        2510
+      ],
+      "material_conceitual": "ACO",
+      "observacao": "dimensao de estudo; perfil/fixacao a definir com fabricante"
+    },
+    {
+      "id": "P18_GUIA_C07",
+      "nome": "P18_GUIA_C07 - guia lateral da porta junto a C07",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_GUIAS",
+      "origem_mm": [
+        9321,
+        5561,
+        0
+      ],
+      "dimensoes_mm": [
+        40,
+        60,
+        2510
+      ],
+      "material_conceitual": "ACO",
+      "observacao": "dimensao de estudo; perfil/fixacao a definir com fabricante"
     }
   ],
   "historico": {
-    "base": "R16",
-    "commit_base": "2f06885883d0949da57532db328f33290ebf314b",
-    "arquivo_integral_anterior": "historico/model-R16.json",
-    "nota": "R17 reposiciona somente as 18 reguas do painel amadeirado entre C10 e C01; cobertura e estrutura preservadas."
+    "base": "R17",
+    "commit_base": "806e9238796847883da348d6a89d6b3740eb82a7",
+    "arquivo_integral_anterior": "historico/model-R17.json",
+    "nota": "R18 adiciona porta metalica de enrolar vazada no vao C04-C07 sem alterar a estrutura existente."
   },
   "levantamento_campo_mm": {
     "recuo_muro_rua_informado": 300,
@@ -3564,10 +3633,38 @@
         "terreno": true,
         "muro": true
       }
+    },
+    "porta_enrolar_r18": {
+      "entre_colunas": [
+        "C04",
+        "C07"
+      ],
+      "vao_bruto_mm": {
+        "largura": 2750,
+        "altura_ate_v05": 2510,
+        "x": [
+          6611,
+          9361
+        ],
+        "z": [
+          0,
+          2510
+        ]
+      },
+      "tipo": "porta metalica de enrolar vazada",
+      "folha_modelada": "plano fechado representativo da cortina; malha/perfuracoes nao individualizadas",
+      "guias_laterais_mm": {
+        "largura_x": 40,
+        "profundidade_y": 60
+      },
+      "caixa_enrolamento": "nao detalhada nesta revisao; compatibilizar sob/na regiao da viga V05 com fabricante",
+      "acionamento": "nao definido",
+      "perfis_fixacoes_motorizacao": "pendentes de fabricante/projeto executivo",
+      "estrutural": false
     }
   },
   "referencias_estruturais": {
-    "revisao": "R17",
+    "revisao": "R18",
     "aliases_historicos": {
       "C09": "C04"
     },

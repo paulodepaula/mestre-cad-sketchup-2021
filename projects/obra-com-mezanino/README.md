@@ -1,13 +1,13 @@
-# Obra com mezanino - R17
+# Obra com mezanino - R18
 
 Fonte central: `model.json` no GitHub. Sincronizacao pelo plugin Mestre CAD 2021. **ESTUDO GEOMETRICO, NAO EXECUTIVO.**
 
-## Correcao R17
-- Painel amadeirado interno reposicionado para o **vao livre entre C10 e C01**.
-- Vao: **900mm**, de Y5621 a Y6521.
-- 18 reguas horizontais, espessura visual 20mm, do piso ate aproximadamente Z5594mm.
-- Painel encaixado pela face interna das colunas e fora da largura da escada.
-- Teto continua especificado conceitualmente como **telha sanduiche com acabamento inferior amadeirado**.
-- Escada, mezanino, vidro, vigas, pilares, terreno e muro preservados.
+## Porta de enrolar R18
+- Porta metalica de enrolar **vazada** entre **C04 e C07**.
+- Vao bruto geometrico: **2750 x 2510mm**.
+- Folha no plano Y5621, estado fechado.
+- Duas guias laterais modeladas, 40 x 60mm (estudo).
+- Malha/grade vazada representada conceitualmente; padrao exato, caixa, motor e fixacoes dependem do fabricante.
+- Estrutura, escada, mezanino, vidro, painel amadeirado, cobertura, terreno e muro preservados.
 
-Detalhes: [R17-PAINEL-C10-C01.md](R17-PAINEL-C10-C01.md).
+Detalhes: [R18-PORTA-ENROLAR-VAZADA.md](R18-PORTA-ENROLAR-VAZADA.md).
