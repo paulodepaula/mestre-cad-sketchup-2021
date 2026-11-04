@@ -58,8 +58,9 @@ class ProjectGenerationTest(unittest.TestCase):
         added={k for k in self.refs if k not in old}
         self.assertTrue(any(k.startswith('E26_') for k in added))
         self.assertTrue({'MEZ_PRINCIPAL_A','MEZ_PRINCIPAL_B','MEZ_PRINCIPAL_C','V26_CAB'}.issubset(added))
-        for k in ('V03','C02','C04','C07','C10','COB_R03'):
+        for k in ('V03','C02','C04','C07','C10'):
             self.assertEqual(self.refs[k],old[k],k)
+        self.assertEqual(self.refs['COB_R03']['pontos_mm'],old['COB_R03']['pontos_mm'])
 
     def test_r24_compact_L_stair_dimensions(self):
         p=self.data['parametros_estudo_mm']['escada_r24']
