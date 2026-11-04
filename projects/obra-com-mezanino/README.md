@@ -1,15 +1,15 @@
-# Obra com mezanino - R20
+# Obra com mezanino - R21
 
 Fonte central: `model.json` no GitHub. **ESTUDO GEOMETRICO, NAO EXECUTIVO.**
 
-## Porta vazada R20
-- Entre C04 e C07: **2750 x 2510mm**.
-- A folha solida da R19 foi removida.
-- Agora ha **12 barras horizontais + 8 montantes verticais**, criando vazios reais.
-- Guias laterais e caixa superior modeladas.
-- A porta passa a ser visualmente reconhecivel como grade metalica vazada no SketchUp.
-- Demais elementos do projeto preservados.
+## Porta R21
+- Entre C04 e C07: **2750 x 2510 mm**.
+- Agora modelada como **porta de enrolar de laminas horizontais microperfuradas**.
+- 26 laminas horizontais.
+- Sem montantes verticais aparentes.
+- Guias laterais e caixa superior preservadas.
+- Microperfuracao representada por material/textura, nao furo a furo.
 
-A extensao Mestre CAD passa para **v1.5.1**, com limite de 220 elementos para suportar esse nivel de detalhe.
+Demais elementos do projeto preservados.
 
-Detalhes: [R20-PORTA-VAZADA-GRADE.md](R20-PORTA-VAZADA-GRADE.md).
+Detalhes: [R21-PORTA-MICROPERFURADA.md](R21-PORTA-MICROPERFURADA.md).

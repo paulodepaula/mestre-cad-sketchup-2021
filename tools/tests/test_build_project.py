@@ -32,10 +32,10 @@ class ProjectGenerationTest(unittest.TestCase):
         return [min(ah[j],bh[j])-max(al[j],bl[j]) for j in range(3)]
 
     def test_r15_contract(self):
-        self.assertEqual(self.data['revisao'],'R20')
+        self.assertEqual(self.data['revisao'],'R21')
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
-        self.assertEqual(len(self.refs),170)
-        self.assertEqual(sum(e['tipo']=='caixa' for e in self.refs.values()),120)
+        self.assertEqual(len(self.refs),175)
+        self.assertEqual(sum(e['tipo']=='caixa' for e in self.refs.values()),125)
         self.assertEqual(sum(e['tipo']=='face' for e in self.refs.values()),50)
         self.assertEqual(self.data['parametros_estudo_mm']['implantacao']['oficina'],[4000,6000])
         self.assertFalse(self.p['escada_executiva_dimensionada'])
@@ -54,8 +54,8 @@ class ProjectGenerationTest(unittest.TestCase):
         changed={'ESCADA_RES','MEZ_PATAMAR','V11','G11_PL01_03','COB_R03'}
         removed={'G11_PT03','G11_PT04','G11_PL01_04','G11_PL01_05'}
         added={k for k in self.refs if k not in old}
-        self.assertEqual(len(added),73)
-        self.assertTrue(all(k.startswith('E15_') or k.startswith('MAD17_') or k.startswith('P18_') or k.startswith('P20_') for k in added))
+        self.assertEqual(len(added),78)
+        self.assertTrue(all(k.startswith('E15_') or k.startswith('MAD17_') or k.startswith('P18_') or k.startswith('P21_') for k in added))
         self.assertEqual(set(old)-set(self.refs),removed)
         for k,e in old.items():
             if k not in changed|removed:
@@ -196,36 +196,32 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(p['vao_bruto_mm']['altura_ate_v05'],2510)
         self.assertFalse(p['estrutural'])
 
-    def test_r20_rolling_grille_is_real_open_grid(self):
-        hs=[e for e in self.refs.values() if e['id'].startswith('P20_H')]
-        vs=[e for e in self.refs.values() if e['id'].startswith('P20_V')]
-        self.assertEqual(len(hs),12)
-        self.assertEqual(len(vs),8)
-        self.assertEqual([e['origem_mm'][2] for e in hs],list(range(0,2201,200)))
-        self.assertTrue(all(e['dimensoes_mm']==[2750,20,40] for e in hs))
-        self.assertEqual([e['origem_mm'][0] for e in vs],[6870,7170,7470,7770,8070,8370,8670,8970])
-        self.assertTrue(all(e['dimensoes_mm']==[30,20,2310] for e in vs))
-        box=self.refs['P20_CAIXA_SUP']
+    def test_r21_rolling_door_uses_horizontal_microperforated_slats(self):
+        slats=[e for e in self.refs.values() if e['id'].startswith('P21_L')]
+        self.assertEqual(len(slats),26)
+        self.assertTrue(all(e['tag']=='PORTA_ENROLAR_MICROPERF' for e in slats))
+        self.assertTrue(all(e['dimensoes_mm']==[2750,20,78] for e in slats))
+        self.assertEqual([e['origem_mm'][2] for e in slats],list(range(0,2251,90)))
+        self.assertFalse(any(e['id'].startswith('P20_') for e in self.refs.values()))
+        box=self.refs['P21_CAIXA_SUP']
         self.assertEqual(box['origem_mm'],[6611,5481,2310])
         self.assertEqual(box['dimensoes_mm'],[2750,140,200])
-        # A grade possui vazios reais: nao existe painel continuo P18_FOLHA.
-        self.assertNotIn('P18_FOLHA',self.refs)
-        p=self.data['parametros_estudo_mm']['porta_enrolar_r20']
-        self.assertEqual(p['grade']['travessas_horizontais'],12)
-        self.assertEqual(p['grade']['montantes_verticais'],8)
+        p=self.data['parametros_estudo_mm']['porta_enrolar_r21']
+        self.assertEqual(p['tipo'],'porta metalica de enrolar com laminas horizontais microperfuradas')
+        self.assertEqual(p['laminas']['quantidade'],26)
         self.assertFalse(p['executivo'])
 
     def test_dxf_and_collada(self):
         for view in ('planta','elevacoes'):
             raw=bp.dxf(self.data,view)
             self.assertIn(b'AC1009',raw); self.assertTrue(raw.endswith(b'\nEOF\n'))
-            for tag in ('ESCADA_DEGRAUS','ESCADA_ESPELHOS','ESCADA_LONGARINAS','ESCADA_GUARDAS','T01_MURO_BC','PORTA_ENROLAR_VAZADA'):
+            for tag in ('ESCADA_DEGRAUS','ESCADA_ESPELHOS','ESCADA_LONGARINAS','ESCADA_GUARDAS','T01_MURO_BC','PORTA_ENROLAR_MICROPERF'):
                 self.assertIn(tag.encode(),raw)
         tree=ET.fromstring(bp.dae(self.data)); ns={'c':bp.NS}
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
-        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),170)
-        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1540)
+        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),175)
+        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1612)
 
     def test_rejects_invalid_geometry(self):
         d=copy.deepcopy(self.data); d['unidades']='m'
@@ -240,7 +236,7 @@ class ProjectGenerationTest(unittest.TestCase):
             path=Path(tmp)/'obra-com-mezanino'/'model.json'; path.parent.mkdir(); path.write_bytes(EXAMPLE.read_bytes())
             bp.build(path); self.assertTrue(bp.build(path,check=True))
             manifest=json.loads((path.parent/'manifest.json').read_text())
-            self.assertEqual(manifest['revisao'],'R20')
+            self.assertEqual(manifest['revisao'],'R21')
             for rel,meta in manifest['files'].items():
                 b=(path.parent/rel).read_bytes()
                 self.assertEqual(meta['sha256'],hashlib.sha256(b).hexdigest())
