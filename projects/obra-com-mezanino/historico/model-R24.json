@@ -1,0 +1,6485 @@
+{
+  "schema": "mestre-cad-geometria-v1",
+  "nome": "Oficina R24 - escada em L compacto para liberar acesso a porta",
+  "revisao": "R24",
+  "unidades": "mm",
+  "envelope_mm": {
+    "x": 10461,
+    "y": 37341,
+    "z": 5600
+  },
+  "elementos": [
+    {
+      "id": "PISO_T",
+      "nome": "Oficina/deposito 4000x6000 - plano Z0",
+      "tipo": "face",
+      "tag": "OFICINA_REFERENCIA",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          0
+        ],
+        [
+          6461,
+          6621,
+          0
+        ],
+        [
+          6461,
+          621,
+          0
+        ],
+        [
+          10461,
+          621,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "PASSE",
+      "nome": "Passarela de 1m a esquerda vista da rua",
+      "tipo": "face",
+      "tag": "PASSARELA_REFERENCIA",
+      "pontos_mm": [
+        [
+          6461,
+          6621,
+          0
+        ],
+        [
+          5461,
+          6621,
+          0
+        ],
+        [
+          5461,
+          621,
+          0
+        ],
+        [
+          6461,
+          621,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "MEZ_PRINCIPAL",
+      "nome": "Piso principal 25mm de estudo, topo Z2715; nao especificado para compra",
+      "tipo": "caixa",
+      "tag": "MEZANINO_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        2690
+      ],
+      "dimensoes_mm": [
+        3000,
+        4975,
+        25
+      ],
+      "material_conceitual": "placa especifica para piso de mezanino, fornecedor e capacidade ainda indefinidos",
+      "folga_esquadria_mm": 25
+    },
+    {
+      "id": "MEZ_PATAMAR",
+      "nome": "Corredor/patamar superior aprox 1m, painel 25mm; topo Z2715",
+      "tipo": "caixa",
+      "tag": "MEZANINO_ESTUDO",
+      "origem_mm": [
+        9461,
+        621,
+        2690
+      ],
+      "dimensoes_mm": [
+        1000,
+        1008,
+        25
+      ],
+      "material_conceitual": "placa especifica para piso de mezanino, fornecedor e capacidade ainda indefinidos"
+    },
+    {
+      "id": "C01",
+      "nome": "C01 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        10361,
+        6521,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5420
+      ]
+    },
+    {
+      "id": "C02",
+      "nome": "C02 - tubo 100x100x3mm de estudo; alinhado a B-C; recebe ligacoes V01/V10, cargas a verificar",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        10361,
+        3571,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5420
+      ],
+      "perfil_referencia": {
+        "tipo": "tubo_quadrado",
+        "dimensao_externa_mm": [
+          100,
+          100
+        ],
+        "parede_mm": 3,
+        "representacao": "caixa macica externa para compatibilidade SketchUp; PAREDE 3 mm somente metadado; NAO implica tubo macico",
+        "aco": "nao_especificado",
+        "norma": "verificar_pelo_engenheiro",
+        "status": "especificacao_preliminar_nao_dimensionada"
+      },
+      "nota_cargas": "A ausencia de cargas NAO foi confirmada. C02 encontra V01 da cobertura e V10 do mezanino no modelo. Reducao somente geometrica; calcular esforcos, flambagem, ligacoes e fundacao."
+    },
+    {
+      "id": "C03",
+      "nome": "C03 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        10311,
+        621,
+        0
+      ],
+      "dimensoes_mm": [
+        150,
+        150,
+        5420
+      ],
+      "perfil_referencia": {
+        "tipo": "tubo_quadrado",
+        "dimensao_externa_mm": [
+          150,
+          150
+        ],
+        "parede_mm": 3,
+        "representacao": "caixa macica externa para compatibilidade SketchUp; PAREDE 3 mm somente metadado; NAO implica tubo macico",
+        "aco": "nao_especificado",
+        "norma": "verificar_pelo_engenheiro",
+        "status": "especificacao_preliminar_nao_dimensionada"
+      }
+    },
+    {
+      "id": "C04",
+      "nome": "C04 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        6461,
+        5521,
+        0
+      ],
+      "dimensoes_mm": [
+        150,
+        150,
+        5225
+      ],
+      "perfil_referencia": {
+        "tipo": "tubo_quadrado",
+        "dimensao_externa_mm": [
+          150,
+          150
+        ],
+        "parede_mm": 3,
+        "representacao": "caixa macica externa para compatibilidade SketchUp; PAREDE 3 mm somente metadado; NAO implica tubo macico",
+        "aco": "nao_especificado",
+        "norma": "verificar_pelo_engenheiro",
+        "status": "especificacao_preliminar_nao_dimensionada"
+      }
+    },
+    {
+      "id": "C05",
+      "nome": "C05 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        6461,
+        3571,
+        0
+      ],
+      "dimensoes_mm": [
+        150,
+        150,
+        5225
+      ],
+      "perfil_referencia": {
+        "tipo": "tubo_quadrado",
+        "dimensao_externa_mm": [
+          150,
+          150
+        ],
+        "parede_mm": 3,
+        "representacao": "caixa macica externa para compatibilidade SketchUp; PAREDE 3 mm somente metadado; NAO implica tubo macico",
+        "aco": "nao_especificado",
+        "norma": "verificar_pelo_engenheiro",
+        "status": "especificacao_preliminar_nao_dimensionada"
+      }
+    },
+    {
+      "id": "C06",
+      "nome": "C06 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        0
+      ],
+      "dimensoes_mm": [
+        150,
+        150,
+        5225
+      ],
+      "perfil_referencia": {
+        "tipo": "tubo_quadrado",
+        "dimensao_externa_mm": [
+          150,
+          150
+        ],
+        "parede_mm": 3,
+        "representacao": "caixa macica externa para compatibilidade SketchUp; PAREDE 3 mm somente metadado; NAO implica tubo macico",
+        "aco": "nao_especificado",
+        "norma": "verificar_pelo_engenheiro",
+        "status": "especificacao_preliminar_nao_dimensionada"
+      }
+    },
+    {
+      "id": "C07",
+      "nome": "C07 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_MEZ_ESTUDO",
+      "origem_mm": [
+        9361,
+        5521,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5355
+      ],
+      "funcoes": [
+        "suporte_viga_V05_mezanino",
+        "referencia_montante_esquadrias_superiores",
+        "encontro_geometrico_com_viga_V13"
+      ]
+    },
+    {
+      "id": "C08",
+      "nome": "C08 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_MEZ_ESTUDO",
+      "origem_mm": [
+        9361,
+        621,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        2510
+      ]
+    },
+    {
+      "id": "C10",
+      "nome": "C10 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        10361,
+        5521,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5420
+      ]
+    },
+    {
+      "id": "V01",
+      "nome": "V01 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_COB_ESTUDO",
+      "origem_mm": [
+        10361,
+        621,
+        5420
+      ],
+      "dimensoes_mm": [
+        100,
+        6000,
+        175
+      ]
+    },
+    {
+      "id": "V02",
+      "nome": "V02 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_COB_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        5225
+      ],
+      "dimensoes_mm": [
+        100,
+        6000,
+        175
+      ]
+    },
+    {
+      "id": "V03",
+      "nome": "V03 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        9361,
+        621,
+        2510
+      ],
+      "dimensoes_mm": [
+        100,
+        5000,
+        180
+      ]
+    },
+    {
+      "id": "V04",
+      "nome": "V04 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        2510
+      ],
+      "dimensoes_mm": [
+        100,
+        5000,
+        180
+      ]
+    },
+    {
+      "id": "V05",
+      "nome": "V05 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        6461,
+        5521,
+        2510
+      ],
+      "dimensoes_mm": [
+        4000,
+        100,
+        180
+      ]
+    },
+    {
+      "id": "V06",
+      "nome": "V06 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        2510
+      ],
+      "dimensoes_mm": [
+        3000,
+        100,
+        180
+      ]
+    },
+    {
+      "id": "V10",
+      "nome": "V10 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        10361,
+        621,
+        2510
+      ],
+      "dimensoes_mm": [
+        100,
+        3050,
+        180
+      ]
+    },
+    {
+      "id": "V11",
+      "nome": "V11 - cabecalho do patamar compacto da escada reta R15",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        9461,
+        1529,
+        2510
+      ],
+      "dimensoes_mm": [
+        1000,
+        100,
+        180
+      ]
+    },
+    {
+      "id": "V12",
+      "nome": "V12 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        9461,
+        621,
+        2510
+      ],
+      "dimensoes_mm": [
+        1000,
+        100,
+        180
+      ]
+    },
+    {
+      "id": "COB_R03",
+      "nome": "COB_R03 - telha sanduiche com acabamento inferior amadeirado; geometria preservada",
+      "tipo": "face",
+      "tag": "COBERTURA_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          5600
+        ],
+        [
+          5461,
+          6621,
+          5350
+        ],
+        [
+          5461,
+          621,
+          5350
+        ],
+        [
+          10461,
+          621,
+          5600
+        ]
+      ],
+      "material_conceitual": "TELHA_SANDUICHE_AMADEIRADA",
+      "acabamento_inferior": "AMADEIRADO",
+      "status_material": "especificacao_visual_conceitual; fabricante, espessura, nucleo, fixacao e desempenho termico pendentes",
+      "geometria_R15_preservada": true
+    },
+    {
+      "id": "V07_SIDEA",
+      "nome": "V07 - travessa inclinada, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          5585
+        ],
+        [
+          5461,
+          6621,
+          5335
+        ],
+        [
+          5461,
+          6621,
+          5160
+        ],
+        [
+          10461,
+          6621,
+          5410
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_SIDEB",
+      "nome": "V07 - travessa inclinada, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6521,
+          5585
+        ],
+        [
+          5461,
+          6521,
+          5335
+        ],
+        [
+          5461,
+          6521,
+          5160
+        ],
+        [
+          10461,
+          6521,
+          5410
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_TOP",
+      "nome": "V07 - travessa inclinada, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          5585
+        ],
+        [
+          5461,
+          6621,
+          5335
+        ],
+        [
+          5461,
+          6521,
+          5335
+        ],
+        [
+          10461,
+          6521,
+          5585
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_BOTTOM",
+      "nome": "V07 - travessa inclinada, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          5410
+        ],
+        [
+          5461,
+          6621,
+          5160
+        ],
+        [
+          5461,
+          6521,
+          5160
+        ],
+        [
+          10461,
+          6521,
+          5410
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_ENDL",
+      "nome": "V07 - travessa inclinada, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          5585
+        ],
+        [
+          10461,
+          6521,
+          5585
+        ],
+        [
+          10461,
+          6521,
+          5410
+        ],
+        [
+          10461,
+          6621,
+          5410
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_ENDR",
+      "nome": "V07 - travessa inclinada, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5461,
+          6621,
+          5335
+        ],
+        [
+          5461,
+          6521,
+          5335
+        ],
+        [
+          5461,
+          6521,
+          5160
+        ],
+        [
+          5461,
+          6621,
+          5160
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V08_SIDEA",
+      "nome": "V08 - travessa inclinada, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          3671,
+          5585
+        ],
+        [
+          5461,
+          3671,
+          5335
+        ],
+        [
+          5461,
+          3671,
+          5160
+        ],
+        [
+          10461,
+          3671,
+          5410
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_SIDEB",
+      "nome": "V08 - travessa inclinada, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          3571,
+          5585
+        ],
+        [
+          5461,
+          3571,
+          5335
+        ],
+        [
+          5461,
+          3571,
+          5160
+        ],
+        [
+          10461,
+          3571,
+          5410
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_TOP",
+      "nome": "V08 - travessa inclinada, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          3671,
+          5585
+        ],
+        [
+          5461,
+          3671,
+          5335
+        ],
+        [
+          5461,
+          3571,
+          5335
+        ],
+        [
+          10461,
+          3571,
+          5585
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_BOTTOM",
+      "nome": "V08 - travessa inclinada, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          3671,
+          5410
+        ],
+        [
+          5461,
+          3671,
+          5160
+        ],
+        [
+          5461,
+          3571,
+          5160
+        ],
+        [
+          10461,
+          3571,
+          5410
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_ENDL",
+      "nome": "V08 - travessa inclinada, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          3671,
+          5585
+        ],
+        [
+          10461,
+          3571,
+          5585
+        ],
+        [
+          10461,
+          3571,
+          5410
+        ],
+        [
+          10461,
+          3671,
+          5410
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_ENDR",
+      "nome": "V08 - travessa inclinada, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5461,
+          3671,
+          5335
+        ],
+        [
+          5461,
+          3571,
+          5335
+        ],
+        [
+          5461,
+          3571,
+          5160
+        ],
+        [
+          5461,
+          3671,
+          5160
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V09_SIDEA",
+      "nome": "V09 - travessa inclinada, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          721,
+          5585
+        ],
+        [
+          5461,
+          721,
+          5335
+        ],
+        [
+          5461,
+          721,
+          5160
+        ],
+        [
+          10461,
+          721,
+          5410
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_SIDEB",
+      "nome": "V09 - travessa inclinada, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          621,
+          5585
+        ],
+        [
+          5461,
+          621,
+          5335
+        ],
+        [
+          5461,
+          621,
+          5160
+        ],
+        [
+          10461,
+          621,
+          5410
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_TOP",
+      "nome": "V09 - travessa inclinada, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          721,
+          5585
+        ],
+        [
+          5461,
+          721,
+          5335
+        ],
+        [
+          5461,
+          621,
+          5335
+        ],
+        [
+          10461,
+          621,
+          5585
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_BOTTOM",
+      "nome": "V09 - travessa inclinada, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          721,
+          5410
+        ],
+        [
+          5461,
+          721,
+          5160
+        ],
+        [
+          5461,
+          621,
+          5160
+        ],
+        [
+          10461,
+          621,
+          5410
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_ENDL",
+      "nome": "V09 - travessa inclinada, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          721,
+          5585
+        ],
+        [
+          10461,
+          621,
+          5585
+        ],
+        [
+          10461,
+          621,
+          5410
+        ],
+        [
+          10461,
+          721,
+          5410
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_ENDR",
+      "nome": "V09 - travessa inclinada, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5461,
+          721,
+          5335
+        ],
+        [
+          5461,
+          621,
+          5335
+        ],
+        [
+          5461,
+          621,
+          5160
+        ],
+        [
+          5461,
+          721,
+          5160
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V13_SIDEA",
+      "nome": "V13 - travessa inclinada, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          5621,
+          5585
+        ],
+        [
+          6461,
+          5621,
+          5385
+        ],
+        [
+          6461,
+          5621,
+          5210
+        ],
+        [
+          10461,
+          5621,
+          5410
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "V13_SIDEB",
+      "nome": "V13 - travessa inclinada, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          5521,
+          5585
+        ],
+        [
+          6461,
+          5521,
+          5385
+        ],
+        [
+          6461,
+          5521,
+          5210
+        ],
+        [
+          10461,
+          5521,
+          5410
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "V13_TOP",
+      "nome": "V13 - travessa inclinada, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          5621,
+          5585
+        ],
+        [
+          6461,
+          5621,
+          5385
+        ],
+        [
+          6461,
+          5521,
+          5385
+        ],
+        [
+          10461,
+          5521,
+          5585
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "V13_BOTTOM",
+      "nome": "V13 - travessa inclinada, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          5621,
+          5410
+        ],
+        [
+          6461,
+          5621,
+          5210
+        ],
+        [
+          6461,
+          5521,
+          5210
+        ],
+        [
+          10461,
+          5521,
+          5410
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "V13_ENDL",
+      "nome": "V13 - travessa inclinada, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          5621,
+          5585
+        ],
+        [
+          10461,
+          5521,
+          5585
+        ],
+        [
+          10461,
+          5521,
+          5410
+        ],
+        [
+          10461,
+          5621,
+          5410
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "V13_ENDR",
+      "nome": "V13 - travessa inclinada, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          6461,
+          5621,
+          5385
+        ],
+        [
+          6461,
+          5521,
+          5385
+        ],
+        [
+          6461,
+          5521,
+          5210
+        ],
+        [
+          6461,
+          5621,
+          5210
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "T01_TERRENO",
+      "nome": "Terreno KMZ A-B-C-D, aproximadamente 382,15m2",
+      "tipo": "face",
+      "tag": "T01_TERRENO",
+      "pontos_mm": [
+        [
+          270,
+          0,
+          0
+        ],
+        [
+          10461,
+          321,
+          0
+        ],
+        [
+          10461,
+          37341,
+          0
+        ],
+        [
+          0,
+          36990,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "MURO_BC",
+      "nome": "Muro B-C 4800mm existente, sem espessura definida",
+      "tipo": "face",
+      "tag": "T01_MURO_BC",
+      "pontos_mm": [
+        [
+          10461,
+          321,
+          0
+        ],
+        [
+          10461,
+          37341,
+          0
+        ],
+        [
+          10461,
+          37341,
+          4800
+        ],
+        [
+          10461,
+          321,
+          4800
+        ]
+      ]
+    },
+    {
+      "id": "VF08_SUP_ESQ",
+      "nome": "VF08_SUP_ESQ - vidro superior de estudo; acabamento visual inalterado",
+      "tipo": "face",
+      "tag": "VIDRO_FUNDOS_ESTUDO",
+      "pontos_mm": [
+        [
+          6611,
+          5621,
+          2715
+        ],
+        [
+          9361,
+          5621,
+          2715
+        ],
+        [
+          9361,
+          5621,
+          5355
+        ],
+        [
+          6611,
+          5621,
+          5217.5
+        ]
+      ],
+      "material_conceitual": "VIDRO; no importador 2021 esta face pode aparecer opaca",
+      "orientacao": "Y5621, no alinhamento do piso recuado e viga V05; nao e fechamento completo da frente do lote",
+      "observacao": "nao e placa estrutural; confirmar espessura do vidro, esquadria, vento, dilatacoes, folgas e fixacoes"
+    },
+    {
+      "id": "VF08_SUP_DIR",
+      "nome": "VF08_SUP_DIR - vidro superior de estudo; acabamento visual inalterado",
+      "tipo": "face",
+      "tag": "VIDRO_FUNDOS_ESTUDO",
+      "pontos_mm": [
+        [
+          9461,
+          5621,
+          2715
+        ],
+        [
+          10361,
+          5621,
+          2715
+        ],
+        [
+          10361,
+          5621,
+          5405
+        ],
+        [
+          9461,
+          5621,
+          5360
+        ]
+      ],
+      "material_conceitual": "VIDRO; no importador 2021 esta face pode aparecer opaca",
+      "orientacao": "Y5621, no alinhamento do piso recuado e viga V05; nao e fechamento completo da frente do lote",
+      "observacao": "nao e placa estrutural; confirmar espessura do vidro, esquadria, vento, dilatacoes, folgas e fixacoes"
+    },
+    {
+      "id": "SG_ESQ",
+      "nome": "SG_ESQ - perfil de estudo, sem dimensionamento",
+      "tipo": "caixa",
+      "tag": "SOLEIRA_VIDRO",
+      "origem_mm": [
+        6611,
+        5596,
+        2690
+      ],
+      "dimensoes_mm": [
+        2750,
+        50,
+        25
+      ],
+      "perfil_referencia": {
+        "tipo": "envelope_de_perfil_metalico",
+        "parede_mm": null,
+        "aco": null,
+        "status": "somente_posicionamento_nao_comprar_sem_calculo"
+      }
+    },
+    {
+      "id": "SG_DIR",
+      "nome": "SG_DIR - perfil de estudo, sem dimensionamento",
+      "tipo": "caixa",
+      "tag": "SOLEIRA_VIDRO",
+      "origem_mm": [
+        9461,
+        5596,
+        2690
+      ],
+      "dimensoes_mm": [
+        900,
+        50,
+        25
+      ],
+      "perfil_referencia": {
+        "tipo": "envelope_de_perfil_metalico",
+        "parede_mm": null,
+        "aco": null,
+        "status": "somente_posicionamento_nao_comprar_sem_calculo"
+      }
+    },
+    {
+      "id": "G11_MT01",
+      "nome": "G11_MT01 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        971,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT02",
+      "nome": "G11_MT02 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        1371,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT03",
+      "nome": "G11_MT03 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        1771,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT04",
+      "nome": "G11_MT04 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        2171,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT05",
+      "nome": "G11_MT05 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        2571,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT06",
+      "nome": "G11_MT06 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        2971,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT07",
+      "nome": "G11_MT07 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        3371,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT08",
+      "nome": "G11_MT08 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        3771,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT09",
+      "nome": "G11_MT09 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        4171,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT10",
+      "nome": "G11_MT10 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        4571,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT11",
+      "nome": "G11_MT11 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        4971,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT12",
+      "nome": "G11_MT12 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        5371,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_01",
+      "nome": "G11_ML01_01 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        721,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        250,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_02",
+      "nome": "G11_ML01_02 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        1021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_03",
+      "nome": "G11_ML01_03 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        1421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_04",
+      "nome": "G11_ML01_04 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        1821,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_05",
+      "nome": "G11_ML01_05 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        2221,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_06",
+      "nome": "G11_ML01_06 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        2621,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_07",
+      "nome": "G11_ML01_07 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        3021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_08",
+      "nome": "G11_ML01_08 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        3421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_09",
+      "nome": "G11_ML01_09 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        3821,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_10",
+      "nome": "G11_ML01_10 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        4221,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_11",
+      "nome": "G11_ML01_11 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        4621,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_12",
+      "nome": "G11_ML01_12 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        5021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_13",
+      "nome": "G11_ML01_13 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        5421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        100,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_01",
+      "nome": "G11_ML02_01 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        721,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        250,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_02",
+      "nome": "G11_ML02_02 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        1021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_03",
+      "nome": "G11_ML02_03 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        1421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_04",
+      "nome": "G11_ML02_04 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        1821,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_05",
+      "nome": "G11_ML02_05 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        2221,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_06",
+      "nome": "G11_ML02_06 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        2621,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_07",
+      "nome": "G11_ML02_07 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        3021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_08",
+      "nome": "G11_ML02_08 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        3421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_09",
+      "nome": "G11_ML02_09 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        3821,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_10",
+      "nome": "G11_ML02_10 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        4221,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_11",
+      "nome": "G11_ML02_11 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        4621,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_12",
+      "nome": "G11_ML02_12 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        5021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_13",
+      "nome": "G11_ML02_13 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        5421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        100,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_PT01",
+      "nome": "G11_PT01 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_PATAMAR_50X50",
+      "origem_mm": [
+        9461,
+        971,
+        2640
+      ],
+      "dimensoes_mm": [
+        900,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_PT02",
+      "nome": "G11_PT02 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_PATAMAR_50X50",
+      "origem_mm": [
+        9461,
+        1371,
+        2640
+      ],
+      "dimensoes_mm": [
+        900,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_PL01_01",
+      "nome": "G11_PL01_01 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_PATAMAR_50X50",
+      "origem_mm": [
+        9911,
+        721,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        250,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_PL01_02",
+      "nome": "G11_PL01_02 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_PATAMAR_50X50",
+      "origem_mm": [
+        9911,
+        1021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_PL01_03",
+      "nome": "G11_PL01_03 - tubo 50x50 ajustado ao cabecalho V11 da R15",
+      "tipo": "caixa",
+      "tag": "GRADE_PATAMAR_50X50",
+      "origem_mm": [
+        9911,
+        1421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        108,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "MAD17_01",
+      "nome": "MAD17_01 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        0
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_02",
+      "nome": "MAD17_02 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        309
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_03",
+      "nome": "MAD17_03 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        618
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_04",
+      "nome": "MAD17_04 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        927
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_05",
+      "nome": "MAD17_05 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        1236
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_06",
+      "nome": "MAD17_06 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        1545
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_07",
+      "nome": "MAD17_07 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        1854
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_08",
+      "nome": "MAD17_08 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        2163
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_09",
+      "nome": "MAD17_09 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        2472
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_10",
+      "nome": "MAD17_10 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        2781
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_11",
+      "nome": "MAD17_11 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        3090
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_12",
+      "nome": "MAD17_12 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        3399
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_13",
+      "nome": "MAD17_13 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        3708
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_14",
+      "nome": "MAD17_14 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        4017
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_15",
+      "nome": "MAD17_15 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        4326
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_16",
+      "nome": "MAD17_16 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        4635
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_17",
+      "nome": "MAD17_17 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        4944
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "MAD17_18",
+      "nome": "MAD17_18 - regua horizontal encaixada entre C10 e C01",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        10341,
+        5621,
+        5253
+      ],
+      "dimensoes_mm": [
+        20,
+        900,
+        341
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; encaixado no vao livre C10-C01; fixacao pendente"
+    },
+    {
+      "id": "P18_GUIA_C04",
+      "nome": "P18_GUIA_C04 - guia lateral da porta junto a C04",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_GUIAS",
+      "origem_mm": [
+        6611,
+        5561,
+        0
+      ],
+      "dimensoes_mm": [
+        40,
+        60,
+        2510
+      ],
+      "material_conceitual": "ACO",
+      "observacao": "dimensao de estudo; perfil/fixacao a definir com fabricante"
+    },
+    {
+      "id": "P18_GUIA_C07",
+      "nome": "P18_GUIA_C07 - guia lateral da porta junto a C07",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_GUIAS",
+      "origem_mm": [
+        9321,
+        5561,
+        0
+      ],
+      "dimensoes_mm": [
+        40,
+        60,
+        2510
+      ],
+      "material_conceitual": "ACO",
+      "observacao": "dimensao de estudo; perfil/fixacao a definir com fabricante"
+    },
+    {
+      "id": "P21_L01",
+      "nome": "P21_L01 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        0
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L02",
+      "nome": "P21_L02 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        90
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L03",
+      "nome": "P21_L03 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        180
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L04",
+      "nome": "P21_L04 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        270
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L05",
+      "nome": "P21_L05 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        360
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L06",
+      "nome": "P21_L06 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        450
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L07",
+      "nome": "P21_L07 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        540
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L08",
+      "nome": "P21_L08 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        630
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L09",
+      "nome": "P21_L09 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        720
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L10",
+      "nome": "P21_L10 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        810
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L11",
+      "nome": "P21_L11 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        900
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L12",
+      "nome": "P21_L12 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        990
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L13",
+      "nome": "P21_L13 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1080
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L14",
+      "nome": "P21_L14 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1170
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L15",
+      "nome": "P21_L15 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1260
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L16",
+      "nome": "P21_L16 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1350
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L17",
+      "nome": "P21_L17 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1440
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L18",
+      "nome": "P21_L18 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1530
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L19",
+      "nome": "P21_L19 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1620
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L20",
+      "nome": "P21_L20 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1710
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L21",
+      "nome": "P21_L21 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1800
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L22",
+      "nome": "P21_L22 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1890
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L23",
+      "nome": "P21_L23 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        1980
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L24",
+      "nome": "P21_L24 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        2070
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_L25",
+      "nome": "P21_L25 - lamina horizontal microperfurada",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_MICROPERF",
+      "origem_mm": [
+        6611,
+        5601,
+        2160
+      ],
+      "dimensoes_mm": [
+        2750,
+        20,
+        78
+      ],
+      "material_conceitual": "ACO GALVANIZADO/ACO PINTADO",
+      "acabamento_visual": "MICROPERFURADO",
+      "observacao": "microperfuracao representada por material/textura; lamina modelada geometricamente"
+    },
+    {
+      "id": "P21_CAIXA_SUP",
+      "nome": "P21_CAIXA_SUP - caixa superior da porta de enrolar",
+      "tipo": "caixa",
+      "tag": "PORTA_ENROLAR_CAIXA",
+      "origem_mm": [
+        6611,
+        5481,
+        2310
+      ],
+      "dimensoes_mm": [
+        2750,
+        140,
+        200
+      ],
+      "material_conceitual": "ACO ESCURO",
+      "observacao": "volume de estudo; dimensoes finais dependem do fabricante"
+    },
+    {
+      "id": "PV23_01_GLASS",
+      "nome": "PV23_01 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          751,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          751,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          1835,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          1835,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_01_F1",
+      "nome": "PV23_01 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5665.867,
+          726,
+          5365.243
+        ],
+        [
+          5690.835810359965,
+          726,
+          5366.4914416154525
+        ],
+        [
+          5690.835810359965,
+          1860,
+          5366.4914416154525
+        ],
+        [
+          5665.867,
+          1860,
+          5365.243
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_01_F2",
+      "nome": "PV23_01 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7916.056189640035,
+          726,
+          5477.752558384548
+        ],
+        [
+          7941.025,
+          726,
+          5479.001
+        ],
+        [
+          7941.025,
+          1860,
+          5479.001
+        ],
+        [
+          7916.056189640035,
+          1860,
+          5477.752558384548
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_01_F3",
+      "nome": "PV23_01 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          726,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          726,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          751,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          751,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_01_F4",
+      "nome": "PV23_01 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          1835,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          1835,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          1860,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          1860,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_02_GLASS",
+      "nome": "PV23_02 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          1915,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          1915,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          2999,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          2999,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_02_F1",
+      "nome": "PV23_02 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5665.867,
+          1890,
+          5365.243
+        ],
+        [
+          5690.835810359965,
+          1890,
+          5366.4914416154525
+        ],
+        [
+          5690.835810359965,
+          3024,
+          5366.4914416154525
+        ],
+        [
+          5665.867,
+          3024,
+          5365.243
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_02_F2",
+      "nome": "PV23_02 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7916.056189640035,
+          1890,
+          5477.752558384548
+        ],
+        [
+          7941.025,
+          1890,
+          5479.001
+        ],
+        [
+          7941.025,
+          3024,
+          5479.001
+        ],
+        [
+          7916.056189640035,
+          3024,
+          5477.752558384548
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_02_F3",
+      "nome": "PV23_02 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          1890,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          1890,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          1915,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          1915,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_02_F4",
+      "nome": "PV23_02 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          2999,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          2999,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          3024,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          3024,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_03_GLASS",
+      "nome": "PV23_03 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          3079,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          3079,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          4163,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          4163,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_03_F1",
+      "nome": "PV23_03 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5665.867,
+          3054,
+          5365.243
+        ],
+        [
+          5690.835810359965,
+          3054,
+          5366.4914416154525
+        ],
+        [
+          5690.835810359965,
+          4188,
+          5366.4914416154525
+        ],
+        [
+          5665.867,
+          4188,
+          5365.243
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_03_F2",
+      "nome": "PV23_03 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7916.056189640035,
+          3054,
+          5477.752558384548
+        ],
+        [
+          7941.025,
+          3054,
+          5479.001
+        ],
+        [
+          7941.025,
+          4188,
+          5479.001
+        ],
+        [
+          7916.056189640035,
+          4188,
+          5477.752558384548
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_03_F3",
+      "nome": "PV23_03 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          3054,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          3054,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          3079,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          3079,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_03_F4",
+      "nome": "PV23_03 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          4163,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          4163,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          4188,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          4188,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_04_GLASS",
+      "nome": "PV23_04 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          4243,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          4243,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          5327,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          5327,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_04_F1",
+      "nome": "PV23_04 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5665.867,
+          4218,
+          5365.243
+        ],
+        [
+          5690.835810359965,
+          4218,
+          5366.4914416154525
+        ],
+        [
+          5690.835810359965,
+          5352,
+          5366.4914416154525
+        ],
+        [
+          5665.867,
+          5352,
+          5365.243
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_04_F2",
+      "nome": "PV23_04 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7916.056189640035,
+          4218,
+          5477.752558384548
+        ],
+        [
+          7941.025,
+          4218,
+          5479.001
+        ],
+        [
+          7941.025,
+          5352,
+          5479.001
+        ],
+        [
+          7916.056189640035,
+          5352,
+          5477.752558384548
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_04_F3",
+      "nome": "PV23_04 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          4218,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          4218,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          4243,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          4243,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_04_F4",
+      "nome": "PV23_04 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          5327,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          5327,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          5352,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          5352,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_05_GLASS",
+      "nome": "PV23_05 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          5407,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          5407,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          6491,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          6491,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_05_F1",
+      "nome": "PV23_05 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5665.867,
+          5382,
+          5365.243
+        ],
+        [
+          5690.835810359965,
+          5382,
+          5366.4914416154525
+        ],
+        [
+          5690.835810359965,
+          6516,
+          5366.4914416154525
+        ],
+        [
+          5665.867,
+          6516,
+          5365.243
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_05_F2",
+      "nome": "PV23_05 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7916.056189640035,
+          5382,
+          5477.752558384548
+        ],
+        [
+          7941.025,
+          5382,
+          5479.001
+        ],
+        [
+          7941.025,
+          6516,
+          5479.001
+        ],
+        [
+          7916.056189640035,
+          6516,
+          5477.752558384548
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_05_F3",
+      "nome": "PV23_05 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          5382,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          5382,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          5407,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          5407,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_05_F4",
+      "nome": "PV23_05 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          5690.835810359965,
+          6491,
+          5366.4914416154525
+        ],
+        [
+          7916.056189640035,
+          6491,
+          5477.752558384548
+        ],
+        [
+          7916.056189640035,
+          6516,
+          5477.752558384548
+        ],
+        [
+          5690.835810359965,
+          6516,
+          5366.4914416154525
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_06_GLASS",
+      "nome": "PV23_06 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          751,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          751,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          1835,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          1835,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_06_F1",
+      "nome": "PV23_06 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7980.975,
+          726,
+          5480.999
+        ],
+        [
+          8005.943810359965,
+          726,
+          5482.247441615452
+        ],
+        [
+          8005.943810359965,
+          1860,
+          5482.247441615452
+        ],
+        [
+          7980.975,
+          1860,
+          5480.999
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_06_F2",
+      "nome": "PV23_06 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          10231.164189640034,
+          726,
+          5593.5085583845475
+        ],
+        [
+          10256.133,
+          726,
+          5594.757
+        ],
+        [
+          10256.133,
+          1860,
+          5594.757
+        ],
+        [
+          10231.164189640034,
+          1860,
+          5593.5085583845475
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_06_F3",
+      "nome": "PV23_06 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          726,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          726,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          751,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          751,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_06_F4",
+      "nome": "PV23_06 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          1835,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          1835,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          1860,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          1860,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_07_GLASS",
+      "nome": "PV23_07 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          1915,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          1915,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          2999,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          2999,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_07_F1",
+      "nome": "PV23_07 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7980.975,
+          1890,
+          5480.999
+        ],
+        [
+          8005.943810359965,
+          1890,
+          5482.247441615452
+        ],
+        [
+          8005.943810359965,
+          3024,
+          5482.247441615452
+        ],
+        [
+          7980.975,
+          3024,
+          5480.999
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_07_F2",
+      "nome": "PV23_07 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          10231.164189640034,
+          1890,
+          5593.5085583845475
+        ],
+        [
+          10256.133,
+          1890,
+          5594.757
+        ],
+        [
+          10256.133,
+          3024,
+          5594.757
+        ],
+        [
+          10231.164189640034,
+          3024,
+          5593.5085583845475
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_07_F3",
+      "nome": "PV23_07 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          1890,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          1890,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          1915,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          1915,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_07_F4",
+      "nome": "PV23_07 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          2999,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          2999,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          3024,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          3024,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_08_GLASS",
+      "nome": "PV23_08 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          3079,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          3079,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          4163,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          4163,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_08_F1",
+      "nome": "PV23_08 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7980.975,
+          3054,
+          5480.999
+        ],
+        [
+          8005.943810359965,
+          3054,
+          5482.247441615452
+        ],
+        [
+          8005.943810359965,
+          4188,
+          5482.247441615452
+        ],
+        [
+          7980.975,
+          4188,
+          5480.999
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_08_F2",
+      "nome": "PV23_08 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          10231.164189640034,
+          3054,
+          5593.5085583845475
+        ],
+        [
+          10256.133,
+          3054,
+          5594.757
+        ],
+        [
+          10256.133,
+          4188,
+          5594.757
+        ],
+        [
+          10231.164189640034,
+          4188,
+          5593.5085583845475
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_08_F3",
+      "nome": "PV23_08 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          3054,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          3054,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          3079,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          3079,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_08_F4",
+      "nome": "PV23_08 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          4163,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          4163,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          4188,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          4188,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_09_GLASS",
+      "nome": "PV23_09 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          4243,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          4243,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          5327,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          5327,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_09_F1",
+      "nome": "PV23_09 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7980.975,
+          4218,
+          5480.999
+        ],
+        [
+          8005.943810359965,
+          4218,
+          5482.247441615452
+        ],
+        [
+          8005.943810359965,
+          5352,
+          5482.247441615452
+        ],
+        [
+          7980.975,
+          5352,
+          5480.999
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_09_F2",
+      "nome": "PV23_09 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          10231.164189640034,
+          4218,
+          5593.5085583845475
+        ],
+        [
+          10256.133,
+          4218,
+          5594.757
+        ],
+        [
+          10256.133,
+          5352,
+          5594.757
+        ],
+        [
+          10231.164189640034,
+          5352,
+          5593.5085583845475
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_09_F3",
+      "nome": "PV23_09 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          4218,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          4218,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          4243,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          4243,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_09_F4",
+      "nome": "PV23_09 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          5327,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          5327,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          5352,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          5352,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_10_GLASS",
+      "nome": "PV23_10 - superficie fotovoltaica interna",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_CELULAS",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          5407,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          5407,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          6491,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          6491,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "VIDRO_FOTOVOLTAICO_PRETO_NTYPE",
+      "acabamento_visual": "textura/celulas escuras; referencia visual baseada no SKP enviado",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_10_F1",
+      "nome": "PV23_10 - moldura aluminio lado X baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          7980.975,
+          5382,
+          5480.999
+        ],
+        [
+          8005.943810359965,
+          5382,
+          5482.247441615452
+        ],
+        [
+          8005.943810359965,
+          6516,
+          5482.247441615452
+        ],
+        [
+          7980.975,
+          6516,
+          5480.999
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_10_F2",
+      "nome": "PV23_10 - moldura aluminio lado X alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          10231.164189640034,
+          5382,
+          5593.5085583845475
+        ],
+        [
+          10256.133,
+          5382,
+          5594.757
+        ],
+        [
+          10256.133,
+          6516,
+          5594.757
+        ],
+        [
+          10231.164189640034,
+          6516,
+          5593.5085583845475
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_10_F3",
+      "nome": "PV23_10 - moldura aluminio lateral Y baixo",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          5382,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          5382,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          5407,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          5407,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_10_F4",
+      "nome": "PV23_10 - moldura aluminio lateral Y alto",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_MOLDURA",
+      "pontos_mm": [
+        [
+          8005.943810359965,
+          6491,
+          5482.247441615452
+        ],
+        [
+          10231.164189640034,
+          6491,
+          5593.5085583845475
+        ],
+        [
+          10231.164189640034,
+          6516,
+          5593.5085583845475
+        ],
+        [
+          8005.943810359965,
+          6516,
+          5482.247441615452
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_PRATEADO",
+      "modulo_externo_mm": [
+        2278,
+        1134,
+        30
+      ],
+      "largura_visual_moldura_mm": 25,
+      "espessura_nominal_modulo_mm": 30
+    },
+    {
+      "id": "PV23_RAIL_01",
+      "nome": "PV23_RAIL_01 - trilho de apoio do campo solar",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_TRILHOS",
+      "pontos_mm": [
+        [
+          6209.688,
+          726,
+          5390.434
+        ],
+        [
+          6259.625,
+          726,
+          5392.931
+        ],
+        [
+          6259.625,
+          6516,
+          5392.931
+        ],
+        [
+          6209.688,
+          6516,
+          5390.434
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_TRILHO_FOTOVOLTAICO",
+      "largura_visual_mm": 50,
+      "observacao": "posicao/quantidade de estudo; fabricante e calculo de fixacao pendentes"
+    },
+    {
+      "id": "PV23_RAIL_02",
+      "nome": "PV23_RAIL_02 - trilho de apoio do campo solar",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_TRILHOS",
+      "pontos_mm": [
+        [
+          7347.267,
+          726,
+          5447.313
+        ],
+        [
+          7397.204,
+          726,
+          5449.81
+        ],
+        [
+          7397.204,
+          6516,
+          5449.81
+        ],
+        [
+          7347.267,
+          6516,
+          5447.313
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_TRILHO_FOTOVOLTAICO",
+      "largura_visual_mm": 50,
+      "observacao": "posicao/quantidade de estudo; fabricante e calculo de fixacao pendentes"
+    },
+    {
+      "id": "PV23_RAIL_03",
+      "nome": "PV23_RAIL_03 - trilho de apoio do campo solar",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_TRILHOS",
+      "pontos_mm": [
+        [
+          8524.796,
+          726,
+          5506.19
+        ],
+        [
+          8574.733,
+          726,
+          5508.687
+        ],
+        [
+          8574.733,
+          6516,
+          5508.687
+        ],
+        [
+          8524.796,
+          6516,
+          5506.19
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_TRILHO_FOTOVOLTAICO",
+      "largura_visual_mm": 50,
+      "observacao": "posicao/quantidade de estudo; fabricante e calculo de fixacao pendentes"
+    },
+    {
+      "id": "PV23_RAIL_04",
+      "nome": "PV23_RAIL_04 - trilho de apoio do campo solar",
+      "tipo": "face",
+      "tag": "PAINEL_SOLAR_TRILHOS",
+      "pontos_mm": [
+        [
+          9662.375,
+          726,
+          5563.069
+        ],
+        [
+          9712.312,
+          726,
+          5565.566
+        ],
+        [
+          9712.312,
+          6516,
+          5565.566
+        ],
+        [
+          9662.375,
+          6516,
+          5563.069
+        ]
+      ],
+      "material_conceitual": "ALUMINIO_TRILHO_FOTOVOLTAICO",
+      "largura_visual_mm": 50,
+      "observacao": "posicao/quantidade de estudo; fabricante e calculo de fixacao pendentes"
+    },
+    {
+      "id": "ESCADA_RES",
+      "nome": "Escada R24 em L compacto; trecho inferior ~1m e lance principal lateral",
+      "tipo": "face",
+      "tag": "ESCADA_HIPOTESE",
+      "pontos_mm": [
+        [
+          8462,
+          5521,
+          0
+        ],
+        [
+          10361,
+          5521,
+          0
+        ],
+        [
+          10361,
+          1629,
+          0
+        ],
+        [
+          9461,
+          1629,
+          0
+        ]
+      ],
+      "status": "envelope conceitual R24; nao representa poligono completo do L",
+      "referencia_limite": "faixa de acesso junto Y4687..5521 mantida livre de degraus no eixo principal",
+      "nivel_chegada_mm": 2715
+    },
+    {
+      "id": "E24_LD01",
+      "nome": "E24_LD01 - piso trecho curto do L",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8462,
+        3787,
+        151
+      ],
+      "dimensoes_mm": [
+        333,
+        900,
+        30
+      ],
+      "trecho": "inferior_L",
+      "pisada_mm": 333
+    },
+    {
+      "id": "E24_LR01",
+      "nome": "E24_LR01 - espelho trecho curto do L",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8462,
+          3787,
+          0
+        ],
+        [
+          8462,
+          4687,
+          0
+        ],
+        [
+          8462,
+          4687,
+          181
+        ],
+        [
+          8462,
+          3787,
+          181
+        ]
+      ],
+      "trecho": "inferior_L",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_LD02",
+      "nome": "E24_LD02 - piso trecho curto do L",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        8795,
+        3787,
+        332
+      ],
+      "dimensoes_mm": [
+        333,
+        900,
+        30
+      ],
+      "trecho": "inferior_L",
+      "pisada_mm": 333
+    },
+    {
+      "id": "E24_LR02",
+      "nome": "E24_LR02 - espelho trecho curto do L",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8795,
+          3787,
+          181
+        ],
+        [
+          8795,
+          4687,
+          181
+        ],
+        [
+          8795,
+          4687,
+          362
+        ],
+        [
+          8795,
+          3787,
+          362
+        ]
+      ],
+      "trecho": "inferior_L",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_LD03",
+      "nome": "E24_LD03 - piso trecho curto do L",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9128,
+        3787,
+        513
+      ],
+      "dimensoes_mm": [
+        333,
+        900,
+        30
+      ],
+      "trecho": "inferior_L",
+      "pisada_mm": 333
+    },
+    {
+      "id": "E24_LR03",
+      "nome": "E24_LR03 - espelho trecho curto do L",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9128,
+          3787,
+          362
+        ],
+        [
+          9128,
+          4687,
+          362
+        ],
+        [
+          9128,
+          4687,
+          543
+        ],
+        [
+          9128,
+          3787,
+          543
+        ]
+      ],
+      "trecho": "inferior_L",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_CANTO",
+      "nome": "E24_CANTO - apoio visual da mudanca de direcao 90 graus",
+      "tipo": "caixa",
+      "tag": "ESCADA_PATAMAR",
+      "origem_mm": [
+        9461,
+        3787,
+        513
+      ],
+      "dimensoes_mm": [
+        300,
+        900,
+        30
+      ],
+      "status": "conector visual compacto; nao e patamar normativo de 900mm"
+    },
+    {
+      "id": "E24_MD01",
+      "nome": "E24_MD01 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        4409,
+        694
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD02",
+      "nome": "E24_MD02 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        4131,
+        875
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD03",
+      "nome": "E24_MD03 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3853,
+        1056
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD04",
+      "nome": "E24_MD04 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3575,
+        1237
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD05",
+      "nome": "E24_MD05 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3297,
+        1418
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD06",
+      "nome": "E24_MD06 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3019,
+        1599
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD07",
+      "nome": "E24_MD07 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        2741,
+        1780
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD08",
+      "nome": "E24_MD08 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        2463,
+        1961
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD09",
+      "nome": "E24_MD09 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        2185,
+        2142
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD10",
+      "nome": "E24_MD10 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        1907,
+        2323
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MD11",
+      "nome": "E24_MD11 - piso lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        1629,
+        2504
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "trecho": "principal",
+      "pisada_mm": 278
+    },
+    {
+      "id": "E24_MR01",
+      "nome": "E24_MR01 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4687,
+          543
+        ],
+        [
+          10361,
+          4687,
+          543
+        ],
+        [
+          10361,
+          4687,
+          724
+        ],
+        [
+          9461,
+          4687,
+          724
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR02",
+      "nome": "E24_MR02 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4409,
+          724
+        ],
+        [
+          10361,
+          4409,
+          724
+        ],
+        [
+          10361,
+          4409,
+          905
+        ],
+        [
+          9461,
+          4409,
+          905
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR03",
+      "nome": "E24_MR03 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4131,
+          905
+        ],
+        [
+          10361,
+          4131,
+          905
+        ],
+        [
+          10361,
+          4131,
+          1086
+        ],
+        [
+          9461,
+          4131,
+          1086
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR04",
+      "nome": "E24_MR04 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3853,
+          1086
+        ],
+        [
+          10361,
+          3853,
+          1086
+        ],
+        [
+          10361,
+          3853,
+          1267
+        ],
+        [
+          9461,
+          3853,
+          1267
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR05",
+      "nome": "E24_MR05 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3575,
+          1267
+        ],
+        [
+          10361,
+          3575,
+          1267
+        ],
+        [
+          10361,
+          3575,
+          1448
+        ],
+        [
+          9461,
+          3575,
+          1448
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR06",
+      "nome": "E24_MR06 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3297,
+          1448
+        ],
+        [
+          10361,
+          3297,
+          1448
+        ],
+        [
+          10361,
+          3297,
+          1629
+        ],
+        [
+          9461,
+          3297,
+          1629
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR07",
+      "nome": "E24_MR07 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3019,
+          1629
+        ],
+        [
+          10361,
+          3019,
+          1629
+        ],
+        [
+          10361,
+          3019,
+          1810
+        ],
+        [
+          9461,
+          3019,
+          1810
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR08",
+      "nome": "E24_MR08 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2741,
+          1810
+        ],
+        [
+          10361,
+          2741,
+          1810
+        ],
+        [
+          10361,
+          2741,
+          1991
+        ],
+        [
+          9461,
+          2741,
+          1991
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR09",
+      "nome": "E24_MR09 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2463,
+          1991
+        ],
+        [
+          10361,
+          2463,
+          1991
+        ],
+        [
+          10361,
+          2463,
+          2172
+        ],
+        [
+          9461,
+          2463,
+          2172
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR10",
+      "nome": "E24_MR10 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2185,
+          2172
+        ],
+        [
+          10361,
+          2185,
+          2172
+        ],
+        [
+          10361,
+          2185,
+          2353
+        ],
+        [
+          9461,
+          2185,
+          2353
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR11",
+      "nome": "E24_MR11 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          1907,
+          2353
+        ],
+        [
+          10361,
+          1907,
+          2353
+        ],
+        [
+          10361,
+          1907,
+          2534
+        ],
+        [
+          9461,
+          1907,
+          2534
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_MR12",
+      "nome": "E24_MR12 - espelho lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          1629,
+          2534
+        ],
+        [
+          10361,
+          1629,
+          2534
+        ],
+        [
+          10361,
+          1629,
+          2715
+        ],
+        [
+          9461,
+          1629,
+          2715
+        ]
+      ],
+      "trecho": "principal",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E24_ML01",
+      "nome": "E24_ML01 - referencia longarina esquerda lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_LONGARINAS",
+      "pontos_mm": [
+        [
+          9461,
+          4687,
+          543
+        ],
+        [
+          9461,
+          4687,
+          748
+        ],
+        [
+          9461,
+          1629,
+          2715
+        ],
+        [
+          9461,
+          1629,
+          2510
+        ]
+      ],
+      "espessura_chapa_mm": null,
+      "status": "referencia geometrica; dimensionamento pendente"
+    },
+    {
+      "id": "E24_ML02",
+      "nome": "E24_ML02 - referencia longarina direita lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_LONGARINAS",
+      "pontos_mm": [
+        [
+          10361,
+          4687,
+          543
+        ],
+        [
+          10361,
+          4687,
+          748
+        ],
+        [
+          10361,
+          1629,
+          2715
+        ],
+        [
+          10361,
+          1629,
+          2510
+        ]
+      ],
+      "espessura_chapa_mm": null,
+      "status": "referencia geometrica; dimensionamento pendente"
+    },
+    {
+      "id": "E24_G01",
+      "nome": "E24_G01 - plano referencia guarda-corpo lance principal",
+      "tipo": "face",
+      "tag": "ESCADA_GUARDAS",
+      "pontos_mm": [
+        [
+          9461,
+          4687,
+          724
+        ],
+        [
+          9461,
+          1629,
+          2715
+        ],
+        [
+          9461,
+          1629,
+          3815
+        ],
+        [
+          9461,
+          4687,
+          1824
+        ]
+      ],
+      "altura_referencia_mm": 1100,
+      "status": "apenas plano de referencia; detalhamento pendente"
+    }
+  ],
+  "historico": {
+    "base": "R23",
+    "commit_base": "7ef28a45338172937e2315db57a76310bbf4d241",
+    "arquivo_integral_anterior": "historico/model-R23.json",
+    "nota": "R24 substitui a escada reta R15 por estudo em L: 3 pisos em ~1m + 11 pisos no lance principal, mantendo chegada superior."
+  },
+  "levantamento_campo_mm": {
+    "recuo_muro_rua_informado": 300,
+    "altura_muro_BC": 4800,
+    "status": "medidas informadas; folga efetiva do portao e recuos legais pendentes"
+  },
+  "levantamento_terreno": {
+    "revisao": "T01",
+    "lado_frontal": "AB",
+    "lateral_direita_vista_da_rua": "BC",
+    "fundos": "CD",
+    "area_m2_estimada": 382.15,
+    "fonte": "KMZ aproximado; nao topografia",
+    "vertices_mm": {
+      "A": [
+        270,
+        0
+      ],
+      "B": [
+        10461,
+        321
+      ],
+      "C": [
+        10461,
+        37341
+      ],
+      "D": [
+        0,
+        36990
+      ]
+    }
+  },
+  "parametros_estudo_mm": {
+    "nivel_superior_mezanino": 2715,
+    "espessura_representativa_plataforma": 25,
+    "uso_mezanino": "escritorio / estacao de trabalho",
+    "grade_r11": {
+      "secao_externa_mm": [
+        50,
+        50
+      ],
+      "espessura_parede_mm": null,
+      "z_inferior": 2640,
+      "z_superior": 2690,
+      "nivel_topo_vigas_principais": 2690,
+      "modo": "entre faces internas das vigas, topo alinhado; nao apoiada por cima",
+      "travessas_principais": 12,
+      "tramos_longitudinais_principais": 26,
+      "travessas_patamar": 4,
+      "tramos_longitudinais_patamar": 5,
+      "passo_travessas_mm": 400,
+      "passo_bloqueios_longitudinais_principais_mm": 1000,
+      "vao_transversal_principal_mm": 2800,
+      "vao_transversal_patamar_mm": 900,
+      "perfil_comercial": null,
+      "aprovacao_estrutural": false,
+      "nota": "Malha mais distribuida NAO comprova que tubo 50x50 suporte o vao de 2,80m. Espessura, rigidez, carga, vibracao e soldas pendentes. Blocos entre travessas nao criam apoios independentes."
+    },
+    "piso_r11": {
+      "z_inferior": 2690,
+      "z_superior": 2715,
+      "espessura_visual": 25,
+      "nivel_anterior": 2850,
+      "rebaixamento_mm": 135,
+      "justificativa": "Grade incorporada dentro da altura das vigas existentes. Preservar 2850 exigiria alterar outras cotas ou voltar a empilhar apoios.",
+      "tipo_painel": null,
+      "espessura_final_calculada": false,
+      "sem_vazio_vertical_entre_piso_e_apoios": true,
+      "painel_principal_y_final": 5596,
+      "nota": "A escada ainda e reserva em planta; chegada deve ser detalhada para Z2715. Recortes dos paineis nos pilares e juntas ainda pendentes."
+    },
+    "encontro_vidro_r11": {
+      "plano_y": 5621,
+      "z_base_vidro": 2715,
+      "z_topo_soleira": 2715,
+      "soleira_y": [
+        5596,
+        5646
+      ],
+      "soleira_altura_visual": 25,
+      "arremates": [
+        "SG_ESQ",
+        "SG_DIR"
+      ],
+      "apoio_soleiras": "contato direto com V05, no topo Z2690; juntas e fixacao pendentes",
+      "vao_visual_inferior_mm": 0,
+      "vidro_apoiado_em_placa_cimenticia": false,
+      "folgas_tecnicas_reais_e_gaxetas": null,
+      "nota": "Extremidades superiores dos vidros preservadas. A soleira direita nao e piso sobre o vazio de escada."
+    },
+    "escopo": {
+      "material_fume_aplicado": false,
+      "transparencia_alterada": false,
+      "extensao_alterada": false,
+      "telhado_alterado": false,
+      "vigas_principais_alteradas": false,
+      "dimensionamento_estrutural": false
+    },
+    "pilares_r07": {
+      "colunas_alteradas": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "secao_externa_mm": [
+        150,
+        150
+      ],
+      "espessura_parede_nominal_mm": 3,
+      "aprovacao_estrutural": false,
+      "nota_historica": "Registro R07. C02 foi substituida na R13 por 100x100x3mm; dimensoes ativas no elemento C02 e em coluna_C02_r13."
+    },
+    "implantacao": {
+      "oficina": [
+        4000,
+        6000
+      ],
+      "passarela_largura": 1000,
+      "frente_funcional": "CD",
+      "recuo_frontal_referencia": 300,
+      "muro_BC_apoio_estrutural": false,
+      "afastamento_lateral_zero_somente_estudo": true
+    },
+    "pendencias": [
+      "calculo de vigas principais e secundarias",
+      "flambagem dos pilares e contraventamentos",
+      "painel para piso e apoio de suas juntas",
+      "ligacoes soldadas, reforcos e chumbadores",
+      "esquadrias e vidro de seguranca",
+      "fundacoes e sondagem",
+      "validar escada reta R15, corrimaos, guarda-corpos, altura livre e enquadramento normativo",
+      "recuos e levantamento topografico"
+    ],
+    "escada_r12": {
+      "representacao": "HISTORICO; substituida pela escada reta R15",
+      "coluna_referencia": "C07",
+      "coluna_alinhada": "C10",
+      "referencia": "face externa voltada para C-D, nao eixo do pilar",
+      "limite_y_mm": 5621,
+      "limite_anterior_y_mm": 6621,
+      "recuo_da_reserva_mm": 1000,
+      "encontro_patamar_y_mm": 2421,
+      "x_mm": [
+        9461,
+        10361
+      ],
+      "y_mm": [
+        2421,
+        5621
+      ],
+      "largura_nominal_mm": 900,
+      "comprimento_disponivel_mm": 3200,
+      "comprimento_anterior_mm": 4200,
+      "nivel_chegada_mm": 2715,
+      "escada_executiva_dimensionada": false,
+      "geometria_dos_degraus": "substituida por escada_r15",
+      "interferencia_preexistente_C02": {
+        "x_mm": [
+          10361,
+          10361
+        ],
+        "y_mm": [
+          3571,
+          3671
+        ],
+        "invasao_lateral_mm": 0,
+        "largura_restante_nominal_mm": 900,
+        "resolvida": true,
+        "revisao_resolucao": "R13",
+        "invasao_lateral_anterior_mm": 50,
+        "nota": "Resolvida somente a invasao lateral de C02 na reserva em planta. Nao inclui corrimaos, folgas, degraus nem aprovacao de largura util."
+      },
+      "nota": "Novo limite de implantacao, nao compressao de degraus existentes. Lance, patamar, largura util, corrimao, altura livre e eventual mudanca de direcao precisam de estudo. R13 remove a invasao lateral de C02 por reduzir a secao preservando a face X10461."
+    },
+    "coluna_C02_r13": {
+      "secao_externa_anterior_mm": [
+        150,
+        150
+      ],
+      "secao_externa_mm": [
+        100,
+        100
+      ],
+      "parede_mm": 3,
+      "altura_mm": 5420,
+      "origem_anterior_mm": [
+        10311,
+        3571,
+        0
+      ],
+      "origem_mm": [
+        10361,
+        3571,
+        0
+      ],
+      "face_externa_x_mm": 10461,
+      "invasao_reserva_escada_mm": 0,
+      "largura_reserva_em_planta_mm": 900,
+      "cargas_nulas_confirmadas": false,
+      "encontros_geometricos": [
+        "V01 - cobertura",
+        "V10 - mezanino"
+      ],
+      "dimensionamento_estrutural": false,
+      "observacao": "Alteracao autorizada apenas no modelo de estudo. C02 nao pode ser considerada sem carga; encontros e ligacoes devem ser avaliados pelo engenheiro."
+    },
+    "escada_r15": {
+      "tipo": "reta lateral, um unico lance",
+      "desnivel_mm": 2715,
+      "numero_espelhos": 15,
+      "espelho_mm": 181,
+      "numero_pisos": 14,
+      "pisada_mm": 278,
+      "blondel_mm": 640,
+      "desenvolvimento_horizontal_mm": 3892,
+      "largura_nominal_mm": 900,
+      "x_mm": [
+        9461,
+        10361
+      ],
+      "y_mm": [
+        1629,
+        5521
+      ],
+      "sentido_subida": "-Y, do terreo junto Y5521 para o corredor superior junto Y1629",
+      "limite_colunas_y_mm": 5521,
+      "corredor_superior_y_mm": [
+        621,
+        1629
+      ],
+      "corredor_superior_comprimento_mm": 1008,
+      "nivel_chegada_mm": 2715,
+      "area_piso_r13_m2": 16.725,
+      "area_piso_r14_m2": 12.9975,
+      "area_piso_r15_m2": 15.933,
+      "perda_vs_r13_m2": 0.792,
+      "recuperacao_vs_r14_m2": 2.9355,
+      "interferencia_C02_mm": 0,
+      "geometria_dos_degraus": "modelada em E15_D01..E15_D14 e E15_R01..E15_R15",
+      "escada_executiva_dimensionada": false,
+      "conformidade_integral_aprovada": false,
+      "observacao": "A geometria cabe no envelope e reduz a ocupacao. Largura util, corrimaos, altura livre, perfis, soldas, apoios, incendio e acessibilidade ainda exigem verificacao profissional."
+    },
+    "acabamentos_r16": {
+      "painel_madeira_lateral": {
+        "localizacao": "interno, lateral esquerda imediatamente antes da entrada da escada reta",
+        "x_mm": [
+          9441,
+          9461
+        ],
+        "y_mm": [
+          5621,
+          6621
+        ],
+        "z_mm": [
+          0,
+          5549
+        ],
+        "comprimento_mm": 1000,
+        "espessura_visual_mm": 20,
+        "reguas": 18,
+        "altura_padrao_regua_mm": 294,
+        "junta_visual_mm": 15,
+        "ultima_regua_altura_mm": 296,
+        "orientacao": "horizontal",
+        "estrutural": false,
+        "material": "madeira/amadeirado de referencia; especie e sistema de fixacao ainda nao especificados",
+        "nota": "painel ocupa somente a faixa lateral, fora da largura nominal de 900mm da escada",
+        "nota_historica": "Substituido na R17: painel agora encaixado no vao C10-C01."
+      },
+      "teto": {
+        "elemento": "COB_R03",
+        "tipo_conceitual": "telha sanduiche",
+        "acabamento_inferior": "amadeirado",
+        "geometria_e_caimento_alterados": false,
+        "parametros_pendentes": [
+          "fabricante",
+          "espessura total",
+          "tipo de nucleo",
+          "acabamento superficial",
+          "fixacoes",
+          "isolamento termico/acustico",
+          "reacao ao fogo"
+        ]
+      },
+      "preservacao": {
+        "escada_R15": true,
+        "mezanino": true,
+        "vidros": true,
+        "pilares": true,
+        "vigas": true,
+        "terreno": true,
+        "muro": true
+      }
+    },
+    "acabamentos_r17": {
+      "painel_madeira_lateral": {
+        "colunas_limite": [
+          "C10",
+          "C01"
+        ],
+        "vao_livre_y_mm": [
+          5621,
+          6521
+        ],
+        "vao_livre_mm": 900,
+        "face_interna_x_mm": [
+          10341,
+          10361
+        ],
+        "z_mm": [
+          0,
+          5594
+        ],
+        "reguas": 18,
+        "orientacao": "horizontal",
+        "espessura_visual_mm": 20,
+        "junta_visual_mm": 15,
+        "estrutural": false,
+        "nota": "Painel movido da faixa lateral da R16 para o vao livre entre C10 e C01; nao invade a largura da escada."
+      },
+      "teto": {
+        "elemento": "COB_R03",
+        "tipo_conceitual": "telha sanduiche",
+        "acabamento_inferior": "amadeirado",
+        "geometria_e_caimento_alterados": false,
+        "parametros_pendentes": [
+          "fabricante",
+          "espessura total",
+          "tipo de nucleo",
+          "acabamento superficial",
+          "fixacoes",
+          "isolamento termico/acustico",
+          "reacao ao fogo"
+        ]
+      },
+      "preservacao": {
+        "escada_R15": true,
+        "mezanino": true,
+        "vidros": true,
+        "pilares": true,
+        "vigas": true,
+        "terreno": true,
+        "muro": true
+      }
+    },
+    "porta_enrolar_r18": {
+      "entre_colunas": [
+        "C04",
+        "C07"
+      ],
+      "vao_bruto_mm": {
+        "largura": 2750,
+        "altura_ate_v05": 2510,
+        "x": [
+          6611,
+          9361
+        ],
+        "z": [
+          0,
+          2510
+        ]
+      },
+      "tipo": "porta metalica de enrolar vazada",
+      "folha_modelada": "plano fechado representativo da cortina; malha/perfuracoes nao individualizadas",
+      "guias_laterais_mm": {
+        "largura_x": 40,
+        "profundidade_y": 60
+      },
+      "caixa_enrolamento": "nao detalhada nesta revisao; compatibilizar sob/na regiao da viga V05 com fabricante",
+      "acionamento": "nao definido",
+      "perfis_fixacoes_motorizacao": "pendentes de fabricante/projeto executivo",
+      "estrutural": false
+    },
+    "porta_enrolar_r19": {
+      "entre_colunas": [
+        "C04",
+        "C07"
+      ],
+      "vao_bruto_mm": {
+        "largura": 2750,
+        "altura": 2510
+      },
+      "folha": {
+        "origem_mm": [
+          6611,
+          5601,
+          0
+        ],
+        "dimensoes_mm": [
+          2750,
+          20,
+          2510
+        ],
+        "representacao": "volume fino visivel",
+        "vazada": true
+      },
+      "guias": [
+        "P18_GUIA_C04",
+        "P18_GUIA_C07"
+      ],
+      "nota": "Malha vazada permanece conceitual; volume foi adotado para garantir visualizacao no importador SketchUp 2021."
+    },
+    "porta_enrolar_r20": {
+      "entre_colunas": [
+        "C04",
+        "C07"
+      ],
+      "vao_bruto_mm": {
+        "largura": 2750,
+        "altura": 2510
+      },
+      "grade": {
+        "plano_y_mm": [
+          5601,
+          5621
+        ],
+        "travessas_horizontais": 12,
+        "espacamento_vertical_mm": 200,
+        "secao_travessa_mm": [
+          2750,
+          20,
+          40
+        ],
+        "montantes_verticais": 8,
+        "secao_montante_mm": [
+          30,
+          20,
+          2310
+        ],
+        "x_montantes_mm": [
+          6870,
+          7170,
+          7470,
+          7770,
+          8070,
+          8370,
+          8670,
+          8970
+        ]
+      },
+      "caixa_superior": {
+        "origem_mm": [
+          6611,
+          5481,
+          2310
+        ],
+        "dimensoes_mm": [
+          2750,
+          140,
+          200
+        ]
+      },
+      "guias": [
+        "P18_GUIA_C04",
+        "P18_GUIA_C07"
+      ],
+      "representacao": "grade vazada geometricamente visivel no SketchUp; nao depende de textura para parecer vazada",
+      "executivo": false
+    },
+    "porta_enrolar_r21": {
+      "entre_colunas": [
+        "C04",
+        "C07"
+      ],
+      "vao_bruto_mm": {
+        "largura": 2750,
+        "altura": 2510
+      },
+      "tipo": "porta metalica de enrolar com laminas horizontais microperfuradas",
+      "laminas": {
+        "quantidade": 25,
+        "largura_mm": 2750,
+        "altura_lamina_mm": 78,
+        "espacamento_visual_mm": 12,
+        "passo_mm": 90,
+        "profundidade_visual_mm": 20,
+        "z_max_modelado_mm": 2238
+      },
+      "microperfuracao": "representada por material/textura no SketchUp; nao modelada furo a furo",
+      "caixa_superior": {
+        "origem_mm": [
+          6611,
+          5481,
+          2310
+        ],
+        "dimensoes_mm": [
+          2750,
+          140,
+          200
+        ]
+      },
+      "guias": [
+        "P18_GUIA_C04",
+        "P18_GUIA_C07"
+      ],
+      "executivo": false
+    },
+    "solar_r22": {
+      "modulo_mm": {
+        "comprimento": 2278,
+        "largura": 1134,
+        "espessura": 30
+      },
+      "tecnologia": "Monocristalino N-type",
+      "quantidade": 10,
+      "arranjo": "2 fileiras no caimento X x 5 colunas no eixo Y",
+      "cobertura_base_mm": {
+        "x": 5000,
+        "y": 6000,
+        "queda_z": 250
+      },
+      "folgas_estudo_mm": {
+        "borda_no_sentido_do_caimento": 205.1,
+        "borda_lateral_y": 105,
+        "entre_fileiras_no_caimento": 40,
+        "entre_modulos_y": 30
+      },
+      "comprimento_inclinado_cobertura_mm": 5006.2,
+      "campo_fotovoltaico_mm": {
+        "no_sentido_do_caimento": 4596,
+        "eixo_y": 5790
+      },
+      "geometria": "faces superiores coplanares com a cobertura, elevadas visualmente 5mm; espessura nominal 30mm em metadado",
+      "estrutural": false,
+      "pendencias": [
+        "sistema de fixacao",
+        "trilhos",
+        "grampos",
+        "carga de vento",
+        "capacidade da cobertura",
+        "orientacao solar/azimute",
+        "sombreamento",
+        "cabos e inversor"
+      ]
+    },
+    "solar_r23": {
+      "modulo_externo_mm": {
+        "comprimento": 2278,
+        "largura": 1134,
+        "espessura": 30
+      },
+      "tecnologia": "Monocristalino N-type",
+      "quantidade": 10,
+      "arranjo": "2 x 5 preservado da R22",
+      "referencia_visual": "arquivo SKP fornecido pelo usuario; dimensoes dele nao foram reutilizadas",
+      "detalhamento": {
+        "superficie_fotovoltaica": "face interna escura",
+        "moldura": "4 faixas por modulo, aluminio prateado",
+        "largura_visual_moldura_mm": 25,
+        "trilhos_apoio": 4,
+        "largura_visual_trilho_mm": 50
+      },
+      "geometria": "dimensao externa de cada modulo permanece exatamente 2278 x 1134mm no plano inclinado; espessura nominal 30mm em metadado",
+      "executivo": false,
+      "pendencias": [
+        "perfil real da moldura",
+        "trilho homologado",
+        "grampos",
+        "fixacao na telha",
+        "carga de vento",
+        "capacidade estrutural",
+        "aterramento",
+        "cabos/inversor"
+      ]
+    },
+    "escada_r24": {
+      "tipo": "L compacto inferior + lance principal",
+      "desnivel_mm": 2715,
+      "numero_espelhos": 15,
+      "espelho_mm": 181,
+      "numero_pisos_total": 14,
+      "largura_nominal_mm": 900,
+      "trecho_inferior": {
+        "quantidade_pisos": 3,
+        "desenvolvimento_mm": 999,
+        "pisada_mm": 333,
+        "x_mm": [
+          8462,
+          9461
+        ],
+        "y_mm": [
+          3787,
+          4687
+        ],
+        "sentido_subida": "+X"
+      },
+      "canto": {
+        "elemento": "E24_CANTO",
+        "mudanca_direcao_graus": 90,
+        "observacao": "conector visual compacto; nao substitui patamar normativo"
+      },
+      "lance_principal": {
+        "quantidade_pisos": 11,
+        "desenvolvimento_mm": 3058,
+        "pisada_mm": 278,
+        "x_mm": [
+          9461,
+          10361
+        ],
+        "y_mm": [
+          1629,
+          4687
+        ],
+        "sentido_subida": "-Y"
+      },
+      "faixa_livre_junto_porta_mm": {
+        "x": [
+          9461,
+          10361
+        ],
+        "y": [
+          4687,
+          5521
+        ],
+        "profundidade": 834
+      },
+      "nivel_chegada_mm": 2715,
+      "blondel_principal_mm": 640,
+      "blondel_trecho_inferior_mm": 695,
+      "escada_executiva_dimensionada": false,
+      "conformidade_integral_aprovada": false,
+      "observacao": "estudo para liberar a zona do inicio da antiga escada; conferir porta, altura livre, ergonomia, corrimaos, estrutura e normas antes de executar"
+    }
+  },
+  "referencias_estruturais": {
+    "revisao": "R24",
+    "aliases_historicos": {
+      "C09": "C04"
+    },
+    "colunas": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C10"
+    ],
+    "vigas": [
+      "V01",
+      "V02",
+      "V03",
+      "V04",
+      "V05",
+      "V06",
+      "V07",
+      "V08",
+      "V09",
+      "V10",
+      "V11",
+      "V12",
+      "V13"
+    ],
+    "grade_principal": [
+      "G11_MT01",
+      "G11_MT02",
+      "G11_MT03",
+      "G11_MT04",
+      "G11_MT05",
+      "G11_MT06",
+      "G11_MT07",
+      "G11_MT08",
+      "G11_MT09",
+      "G11_MT10",
+      "G11_MT11",
+      "G11_MT12",
+      "G11_ML01_01",
+      "G11_ML01_02",
+      "G11_ML01_03",
+      "G11_ML01_04",
+      "G11_ML01_05",
+      "G11_ML01_06",
+      "G11_ML01_07",
+      "G11_ML01_08",
+      "G11_ML01_09",
+      "G11_ML01_10",
+      "G11_ML01_11",
+      "G11_ML01_12",
+      "G11_ML01_13",
+      "G11_ML02_01",
+      "G11_ML02_02",
+      "G11_ML02_03",
+      "G11_ML02_04",
+      "G11_ML02_05",
+      "G11_ML02_06",
+      "G11_ML02_07",
+      "G11_ML02_08",
+      "G11_ML02_09",
+      "G11_ML02_10",
+      "G11_ML02_11",
+      "G11_ML02_12",
+      "G11_ML02_13"
+    ],
+    "grade_patamar": [
+      "G11_PT01",
+      "G11_PT02",
+      "G11_PT03",
+      "G11_PT04",
+      "G11_PL01_01",
+      "G11_PL01_02",
+      "G11_PL01_03",
+      "G11_PL01_04",
+      "G11_PL01_05"
+    ],
+    "soleiras": [
+      "SG_ESQ",
+      "SG_DIR"
+    ],
+    "retirados_R10": [
+      "BM_L01",
+      "BM_L02",
+      "BM_L03",
+      "BM_T01",
+      "BM_T02",
+      "BM_T03",
+      "BM_T04",
+      "BM_T05",
+      "BM_T06",
+      "BM_T07",
+      "BM_T08",
+      "BM_T09",
+      "BM_T10",
+      "BM_T11",
+      "BM_T12",
+      "BM_T13",
+      "BM_F01",
+      "BM_F02",
+      "BP_L01",
+      "BP_L02",
+      "BP_T01",
+      "BP_T02",
+      "BP_T03",
+      "BP_T04",
+      "BP_T05",
+      "BP_T06"
+    ]
+  },
+  "status": "ESTUDO GEOMETRICO; todas as secoes, ligacoes, fundacoes e fechamentos carecem de validacao profissional",
+  "perfis_estudo": {
+    "GRADE_50X50": {
+      "tipo": "tubo_quadrado",
+      "dimensao_externa_mm": [
+        50,
+        50
+      ],
+      "parede_mm": null,
+      "aco": null,
+      "representacao": "envelope externo; vazado e soldas nao modelados",
+      "status": "geometria autorizada; capacidade, rigidez e ligacoes pendentes"
+    }
+  }
+}

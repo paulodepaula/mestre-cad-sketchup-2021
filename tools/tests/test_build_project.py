@@ -32,11 +32,11 @@ class ProjectGenerationTest(unittest.TestCase):
         return [min(ah[j],bh[j])-max(al[j],bl[j]) for j in range(3)]
 
     def test_r15_contract(self):
-        self.assertEqual(self.data['revisao'],'R24')
+        self.assertEqual(self.data['revisao'],'R25')
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
-        self.assertEqual(len(self.refs),230)
+        self.assertEqual(len(self.refs),176)
         self.assertEqual(sum(e['tipo']=='caixa' for e in self.refs.values()),126)
-        self.assertEqual(sum(e['tipo']=='face' for e in self.refs.values()),104)
+        self.assertEqual(sum(e['tipo']=='face' for e in self.refs.values()),50)
         self.assertEqual(self.data['parametros_estudo_mm']['implantacao']['oficina'],[4000,6000])
         self.assertFalse(self.p['escada_executiva_dimensionada'])
         self.assertFalse(self.p['conformidade_integral_aprovada'])
@@ -54,8 +54,8 @@ class ProjectGenerationTest(unittest.TestCase):
         changed={'ESCADA_RES','MEZ_PATAMAR','V11','G11_PL01_03','COB_R03'}
         removed={'G11_PT03','G11_PT04','G11_PL01_04','G11_PL01_05'}
         added={k for k in self.refs if k not in old}
-        self.assertEqual(len(added),133)
-        self.assertTrue(all(k.startswith('E24_') or k.startswith('MAD17_') or k.startswith('P18_') or k.startswith('P21_') or k.startswith('PV23_') for k in added))
+        self.assertEqual(len(added),79)
+        self.assertTrue(all(k.startswith('E24_') or k.startswith('MAD17_') or k.startswith('P18_') or k.startswith('P21_') for k in added))
         self.assertEqual(set(old)-set(self.refs),removed)
         for k,e in old.items():
             if k not in changed|removed:
@@ -191,46 +191,26 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(p['laminas']['quantidade'],25)
         self.assertFalse(p['executivo'])
 
-    def test_r23_solar_modules_have_frame_surface_and_rails(self):
-        glass=[e for e in self.refs.values() if e['id'].startswith('PV23_') and e['id'].endswith('_GLASS')]
-        frames=[e for e in self.refs.values() if e['id'].startswith('PV23_') and any(e['id'].endswith('_F%d'%i) for i in range(1,5))]
-        rails=[e for e in self.refs.values() if e['id'].startswith('PV23_RAIL_')]
-        self.assertEqual(len(glass),10)
-        self.assertEqual(len(frames),40)
-        self.assertEqual(len(rails),4)
-        self.assertFalse(any(e['id'].startswith('SOL22_') for e in self.refs.values()))
-        # Cada conjunto preserva envelope externo 2278 x 1134 mm.
-        for n in range(1,11):
-            parts=[self.refs['PV23_%02d_GLASS'%n]]+[self.refs['PV23_%02d_F%d'%(n,i)] for i in range(1,5)]
-            xs=[p[0] for e in parts for p in e['pontos_mm']]
-            ys=[p[1] for e in parts for p in e['pontos_mm']]
-            # Comprimento real inclinado entre os extremos da moldura.
-            pts=[]
-            for e in parts: pts+=e['pontos_mm']
-            # extremos em y minimo; distancia 3D no sentido do caimento
-            ymin=min(ys)
-            edge=[p for p in pts if abs(p[1]-ymin)<0.01]
-            lo=min(edge,key=lambda p:p[0]); hi=max(edge,key=lambda p:p[0])
-            dist=sum((lo[i]-hi[i])**2 for i in range(3))**0.5
-            self.assertAlmostEqual(dist,2278,places=2)
-            self.assertAlmostEqual(max(ys)-min(ys),1134,places=2)
-        p=self.data['parametros_estudo_mm']['solar_r23']
-        self.assertEqual(p['quantidade'],10)
-        self.assertEqual(p['detalhamento']['trilhos_apoio'],4)
-        self.assertEqual(p['modulo_externo_mm'],{'comprimento':2278,'largura':1134,'espessura':30})
-        self.assertFalse(p['executivo'])
+    def test_r25_has_no_generated_solar_geometry(self):
+        self.assertFalse(any(e['id'].startswith('PV23_') for e in self.refs.values()))
+        self.assertFalse(any(e.get('tag','').startswith('PAINEL_SOLAR_') for e in self.refs.values()))
+        self.assertNotIn('solar_r22',self.data['parametros_estudo_mm'])
+        self.assertNotIn('solar_r23',self.data['parametros_estudo_mm'])
+        p=self.data['parametros_estudo_mm']['escada_r25_estudo_inversao']
+        self.assertEqual(p['restricao_geometrica']['espaco_disponivel_mm'],100)
+        self.assertEqual(p['restricao_geometrica']['trecho_curto_desejado_mm'],1000)
 
     def test_dxf_and_collada(self):
         for view in ('planta','elevacoes'):
             raw=bp.dxf(self.data,view)
             self.assertIn(b'AC1009',raw); self.assertTrue(raw.endswith(b'\nEOF\n'))
-            for tag in ('ESCADA_DEGRAUS','ESCADA_ESPELHOS','ESCADA_LONGARINAS','ESCADA_GUARDAS','T01_MURO_BC','PORTA_ENROLAR_MICROPERF','PAINEL_SOLAR_CELULAS','PAINEL_SOLAR_MOLDURA','PAINEL_SOLAR_TRILHOS'):
+            for tag in ('ESCADA_DEGRAUS','ESCADA_ESPELHOS','ESCADA_LONGARINAS','ESCADA_GUARDAS','T01_MURO_BC','PORTA_ENROLAR_MICROPERF'):
                 self.assertIn(tag.encode(),raw)
         tree=ET.fromstring(bp.dae(self.data)); ns={'c':bp.NS}
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
-        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),230)
-        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1720)
+        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),176)
+        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1612)
 
     def test_rejects_invalid_geometry(self):
         d=copy.deepcopy(self.data); d['unidades']='m'
@@ -245,7 +225,7 @@ class ProjectGenerationTest(unittest.TestCase):
             path=Path(tmp)/'obra-com-mezanino'/'model.json'; path.parent.mkdir(); path.write_bytes(EXAMPLE.read_bytes())
             bp.build(path); self.assertTrue(bp.build(path,check=True))
             manifest=json.loads((path.parent/'manifest.json').read_text())
-            self.assertEqual(manifest['revisao'],'R24')
+            self.assertEqual(manifest['revisao'],'R25')
             for rel,meta in manifest['files'].items():
                 b=(path.parent/rel).read_bytes()
                 self.assertEqual(meta['sha256'],hashlib.sha256(b).hexdigest())

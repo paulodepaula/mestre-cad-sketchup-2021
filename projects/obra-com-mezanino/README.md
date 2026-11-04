@@ -1,16 +1,12 @@
-# Obra com mezanino - R24
+# Obra com mezanino - R25
 
-Fonte central: `model.json` no GitHub. **ESTUDO GEOMETRICO, NAO EXECUTIVO.**
+Fonte central: `model.json`. **ESTUDO GEOMETRICO, NAO EXECUTIVO.**
 
-## Escada R24
-- Escada alterada de reta para **L compacto** na parte inferior.
-- 3 pisos no trecho curto: **333 mm cada / 999 mm total**.
-- 11 pisos no lance principal: **278 mm cada / 3058 mm total**.
-- 15 espelhos de **181 mm** e chegada em Z=2715 preservados.
-- Foi liberada uma faixa de **834 mm** junto ao antigo inicio da escada para estudo de uma porta/acesso.
-- Patamar superior e estrutura principal preservados.
-- O canto compacto ainda precisa de validação ergonômica/normativa e estrutural.
+## Alterações R25
+- Removidos todos os painéis solares e trilhos criados pelo projeto.
+- Telhado original preservado para uso do modelo solar próprio do usuário.
+- Escada R24 preservada temporariamente.
+- A inversão simples do L não cabe no lado oposto: existem apenas **100mm** entre o lance principal e a parede, contra cerca de **1000mm** necessários.
+- O próximo redesenho da escada precisa considerar junto a posição do lance principal e a abertura do mezanino.
 
-Solar R23, porta microperfurada, acabamentos e demais elementos foram preservados.
-
-Detalhes: [R24-ESCADA-L.md](R24-ESCADA-L.md).
+Porta microperfurada, acabamentos e demais elementos permanecem.
