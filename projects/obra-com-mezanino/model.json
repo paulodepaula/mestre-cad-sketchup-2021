@@ -152,7 +152,7 @@
     },
     {
       "id": "ESCADA_RES",
-      "nome": "Escada R26 em L invertido; trecho curto junto ao alinhamento interno da parede direita e lance principal deslocado para a esquerda",
+      "nome": "Escada R26 em L invertido; trecho curto na parede direita e lance principal deslocado",
       "tipo": "face",
       "tag": "ESCADA_HIPOTESE",
       "pontos_mm": [
