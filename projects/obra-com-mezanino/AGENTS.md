@@ -1,6 +1,7 @@
 # AGENTS.md - Contrato permanente deste projeto
 
 ## Fonte da verdade
+- Ler tambem `CONTEXTO-OPERACIONAL.md` antes de qualquer alteracao; ele fixa convencao espacial, fluxo e incidentes conhecidos.
 - O usuario determinou em 2026-11-02: **todos os desenhos e arquivos do projeto devem ser produzidos DIRETAMENTE no GitHub** `paulodepaula/mestre-cad-sketchup-2021`, pasta `projects/obra-com-mezanino`.
 - **NAO instruir o usuario a desenhar, modelar, importar DXF manualmente, criar linhas ou executar scripts manualmente no SketchUp ou no CadCraft.** Essa orientacao substitui procedimentos manuais anteriores.
 - Para cada alteracao pedida: buscar ultimo commit, editar diretamente `model.json` e os arquivos de projeto necessarios, publicar por commit na `main`, acompanhar testes e geracao de `planta.dxf`, `elevacoes.dxf`, `modelo.dae` e `manifest.json`.
