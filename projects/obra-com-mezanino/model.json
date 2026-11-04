@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina R27 - escada na parede direita; chegada aos fundos; corredor 1m no lado oposto",
-  "revisao": "R27",
+  "nome": "Oficina R28 - escada direita sobe aos fundos; corredor 1m a esquerda",
+  "revisao": "R28",
   "unidades": "mm",
   "envelope_mm": {
     "x": 10461,
@@ -67,24 +67,24 @@
     },
     {
       "id": "MEZ_PATAMAR",
-      "nome": "Patamar superior R27 - chegada da escada no fundo junto a parede direita",
+      "nome": "Patamar superior R28 - chegada aos fundos junto a parede direita",
       "tipo": "caixa",
       "tag": "MEZANINO_ESTUDO",
       "origem_mm": [
         9461,
-        621,
+        4687,
         2690
       ],
       "dimensoes_mm": [
         1000,
-        1008,
+        909,
         25
       ],
       "material_conceitual": "placa especifica para piso de mezanino, fornecedor e capacidade ainda indefinidos"
     },
     {
-      "id": "MEZ_CORREDOR_R27",
-      "nome": "Corredor R27 de 1m no lado oposto a escada; topo Z2715",
+      "id": "MEZ_CORREDOR_R28",
+      "nome": "Corredor R28 de 1m no lado esquerdo, oposto a escada; topo Z2715",
       "tipo": "caixa",
       "tag": "MEZANINO_ESTUDO",
       "origem_mm": [
@@ -102,43 +102,43 @@
     },
     {
       "id": "ESCADA_RES",
-      "nome": "Escada R27 em L; lance principal na parede direita com chegada voltada aos fundos",
+      "nome": "Escada R28 em L; lance principal na parede direita subindo para os fundos",
       "tipo": "face",
       "tag": "ESCADA_HIPOTESE",
       "pontos_mm": [
         [
           8462,
-          5521,
-          0
-        ],
-        [
-          10361,
-          5521,
+          1629,
           0
         ],
         [
           10361,
           1629,
+          0
+        ],
+        [
+          10361,
+          5596,
           0
         ],
         [
           9461,
-          1629,
+          5596,
           0
         ]
       ],
-      "status": "envelope conceitual R27; lance principal encostado ao lado direito e chegada voltada para os fundos",
-      "referencia_limite": "lance principal x=9461..10361; corredor de 1000mm no lado oposto x=8461..9461",
+      "status": "envelope conceitual R28; lance principal em +Y e patamar superior nos fundos",
+      "referencia_limite": "lance principal x=9461..10361, y=1629..4687; corredor x=8461..9461; patamar y=4687..5596",
       "nivel_chegada_mm": 2715
     },
     {
-      "id": "E27_LD01",
-      "nome": "E27_LD01 - piso trecho curto do L",
+      "id": "E28_LD01",
+      "nome": "E28_LD01 - piso trecho curto frontal do L",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         8462,
-        3787,
+        1629,
         151
       ],
       "dimensoes_mm": [
@@ -146,47 +146,17 @@
         900,
         30
       ],
-      "trecho": "inferior_L_R27",
+      "trecho": "inferior_L_R28",
       "pisada_mm": 333
     },
     {
-      "id": "E27_LR01",
-      "nome": "E27_LR01 - espelho trecho curto do L",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          8462,
-          3787,
-          0
-        ],
-        [
-          8462,
-          4687,
-          0
-        ],
-        [
-          8462,
-          4687,
-          181
-        ],
-        [
-          8462,
-          3787,
-          181
-        ]
-      ],
-      "trecho": "inferior_L_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_LD02",
-      "nome": "E27_LD02 - piso trecho curto do L",
+      "id": "E28_LD02",
+      "nome": "E28_LD02 - piso trecho curto frontal do L",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         8795,
-        3787,
+        1629,
         332
       ],
       "dimensoes_mm": [
@@ -194,47 +164,17 @@
         900,
         30
       ],
-      "trecho": "inferior_L_R27",
+      "trecho": "inferior_L_R28",
       "pisada_mm": 333
     },
     {
-      "id": "E27_LR02",
-      "nome": "E27_LR02 - espelho trecho curto do L",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          8795,
-          3787,
-          181
-        ],
-        [
-          8795,
-          4687,
-          181
-        ],
-        [
-          8795,
-          4687,
-          362
-        ],
-        [
-          8795,
-          3787,
-          362
-        ]
-      ],
-      "trecho": "inferior_L_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_LD03",
-      "nome": "E27_LD03 - piso trecho curto do L",
+      "id": "E28_LD03",
+      "nome": "E28_LD03 - piso trecho curto frontal do L",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9128,
-        3787,
+        1629,
         513
       ],
       "dimensoes_mm": [
@@ -242,47 +182,107 @@
         900,
         30
       ],
-      "trecho": "inferior_L_R27",
+      "trecho": "inferior_L_R28",
       "pisada_mm": 333
     },
     {
-      "id": "E27_LR03",
-      "nome": "E27_LR03 - espelho trecho curto do L",
+      "id": "E28_LR01",
+      "nome": "E28_LR01 - espelho trecho curto frontal do L",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8462,
+          1629,
+          0
+        ],
+        [
+          8462,
+          2529,
+          0
+        ],
+        [
+          8462,
+          2529,
+          181
+        ],
+        [
+          8462,
+          1629,
+          181
+        ]
+      ],
+      "trecho": "inferior_L_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_LR02",
+      "nome": "E28_LR02 - espelho trecho curto frontal do L",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          8795,
+          1629,
+          181
+        ],
+        [
+          8795,
+          2529,
+          181
+        ],
+        [
+          8795,
+          2529,
+          362
+        ],
+        [
+          8795,
+          1629,
+          362
+        ]
+      ],
+      "trecho": "inferior_L_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_LR03",
+      "nome": "E28_LR03 - espelho trecho curto frontal do L",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
         [
           9128,
-          3787,
+          1629,
           362
         ],
         [
           9128,
-          4687,
+          2529,
           362
         ],
         [
           9128,
-          4687,
+          2529,
           543
         ],
         [
           9128,
-          3787,
+          1629,
           543
         ]
       ],
-      "trecho": "inferior_L_R27",
+      "trecho": "inferior_L_R28",
       "espelho_mm": 181
     },
     {
-      "id": "E27_CANTO",
-      "nome": "E27_CANTO - apoio visual da mudanca de direcao 90 graus",
+      "id": "E28_CANTO",
+      "nome": "E28_CANTO - apoio visual da mudanca de direcao 90 graus",
       "tipo": "caixa",
       "tag": "ESCADA_PATAMAR",
       "origem_mm": [
         9461,
-        3787,
+        1629,
         513
       ],
       "dimensoes_mm": [
@@ -293,13 +293,13 @@
       "status": "conector visual compacto; nao e patamar normativo de 900mm"
     },
     {
-      "id": "E27_MD01",
-      "nome": "E27_MD01 - piso lance principal",
+      "id": "E28_MD01",
+      "nome": "E28_MD01 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9461,
-        4409,
+        1629,
         694
       ],
       "dimensoes_mm": [
@@ -307,17 +307,17 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MD02",
-      "nome": "E27_MD02 - piso lance principal",
+      "id": "E28_MD02",
+      "nome": "E28_MD02 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9461,
-        4131,
+        1907,
         875
       ],
       "dimensoes_mm": [
@@ -325,17 +325,17 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MD03",
-      "nome": "E27_MD03 - piso lance principal",
+      "id": "E28_MD03",
+      "nome": "E28_MD03 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9461,
-        3853,
+        2185,
         1056
       ],
       "dimensoes_mm": [
@@ -343,17 +343,17 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MD04",
-      "nome": "E27_MD04 - piso lance principal",
+      "id": "E28_MD04",
+      "nome": "E28_MD04 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9461,
-        3575,
+        2463,
         1237
       ],
       "dimensoes_mm": [
@@ -361,17 +361,17 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MD05",
-      "nome": "E27_MD05 - piso lance principal",
+      "id": "E28_MD05",
+      "nome": "E28_MD05 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9461,
-        3297,
+        2741,
         1418
       ],
       "dimensoes_mm": [
@@ -379,12 +379,12 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MD06",
-      "nome": "E27_MD06 - piso lance principal",
+      "id": "E28_MD06",
+      "nome": "E28_MD06 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -397,17 +397,17 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MD07",
-      "nome": "E27_MD07 - piso lance principal",
+      "id": "E28_MD07",
+      "nome": "E28_MD07 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9461,
-        2741,
+        3297,
         1780
       ],
       "dimensoes_mm": [
@@ -415,17 +415,17 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MD08",
-      "nome": "E27_MD08 - piso lance principal",
+      "id": "E28_MD08",
+      "nome": "E28_MD08 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9461,
-        2463,
+        3575,
         1961
       ],
       "dimensoes_mm": [
@@ -433,17 +433,17 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MD09",
-      "nome": "E27_MD09 - piso lance principal",
+      "id": "E28_MD09",
+      "nome": "E28_MD09 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9461,
-        2185,
+        3853,
         2142
       ],
       "dimensoes_mm": [
@@ -451,17 +451,17 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MD10",
-      "nome": "E27_MD10 - piso lance principal",
+      "id": "E28_MD10",
+      "nome": "E28_MD10 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9461,
-        1907,
+        4131,
         2323
       ],
       "dimensoes_mm": [
@@ -469,17 +469,17 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MD11",
-      "nome": "E27_MD11 - piso lance principal",
+      "id": "E28_MD11",
+      "nome": "E28_MD11 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
         9461,
-        1629,
+        4409,
         2504
       ],
       "dimensoes_mm": [
@@ -487,393 +487,393 @@
         278,
         30
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "pisada_mm": 278
     },
     {
-      "id": "E27_MR01",
-      "nome": "E27_MR01 - espelho lance principal",
+      "id": "E28_MR01",
+      "nome": "E28_MR01 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
         [
           9461,
-          4687,
+          1629,
           543
         ],
         [
           10361,
-          4687,
+          1629,
           543
         ],
         [
           10361,
+          1629,
+          724
+        ],
+        [
+          9461,
+          1629,
+          724
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR02",
+      "nome": "E28_MR02 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          1907,
+          724
+        ],
+        [
+          10361,
+          1907,
+          724
+        ],
+        [
+          10361,
+          1907,
+          905
+        ],
+        [
+          9461,
+          1907,
+          905
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR03",
+      "nome": "E28_MR03 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2185,
+          905
+        ],
+        [
+          10361,
+          2185,
+          905
+        ],
+        [
+          10361,
+          2185,
+          1086
+        ],
+        [
+          9461,
+          2185,
+          1086
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR04",
+      "nome": "E28_MR04 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2463,
+          1086
+        ],
+        [
+          10361,
+          2463,
+          1086
+        ],
+        [
+          10361,
+          2463,
+          1267
+        ],
+        [
+          9461,
+          2463,
+          1267
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR05",
+      "nome": "E28_MR05 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2741,
+          1267
+        ],
+        [
+          10361,
+          2741,
+          1267
+        ],
+        [
+          10361,
+          2741,
+          1448
+        ],
+        [
+          9461,
+          2741,
+          1448
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR06",
+      "nome": "E28_MR06 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3019,
+          1448
+        ],
+        [
+          10361,
+          3019,
+          1448
+        ],
+        [
+          10361,
+          3019,
+          1629
+        ],
+        [
+          9461,
+          3019,
+          1629
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR07",
+      "nome": "E28_MR07 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3297,
+          1629
+        ],
+        [
+          10361,
+          3297,
+          1629
+        ],
+        [
+          10361,
+          3297,
+          1810
+        ],
+        [
+          9461,
+          3297,
+          1810
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR08",
+      "nome": "E28_MR08 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3575,
+          1810
+        ],
+        [
+          10361,
+          3575,
+          1810
+        ],
+        [
+          10361,
+          3575,
+          1991
+        ],
+        [
+          9461,
+          3575,
+          1991
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR09",
+      "nome": "E28_MR09 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3853,
+          1991
+        ],
+        [
+          10361,
+          3853,
+          1991
+        ],
+        [
+          10361,
+          3853,
+          2172
+        ],
+        [
+          9461,
+          3853,
+          2172
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR10",
+      "nome": "E28_MR10 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4131,
+          2172
+        ],
+        [
+          10361,
+          4131,
+          2172
+        ],
+        [
+          10361,
+          4131,
+          2353
+        ],
+        [
+          9461,
+          4131,
+          2353
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR11",
+      "nome": "E28_MR11 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4409,
+          2353
+        ],
+        [
+          10361,
+          4409,
+          2353
+        ],
+        [
+          10361,
+          4409,
+          2534
+        ],
+        [
+          9461,
+          4409,
+          2534
+        ]
+      ],
+      "trecho": "principal_R28",
+      "espelho_mm": 181
+    },
+    {
+      "id": "E28_MR12",
+      "nome": "E28_MR12 - espelho lance principal para os fundos",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
           4687,
-          724
+          2534
         ],
         [
-          9461,
+          10361,
           4687,
-          724
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR02",
-      "nome": "E27_MR02 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          4409,
-          724
-        ],
-        [
-          10361,
-          4409,
-          724
-        ],
-        [
-          10361,
-          4409,
-          905
-        ],
-        [
-          9461,
-          4409,
-          905
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR03",
-      "nome": "E27_MR03 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          4131,
-          905
-        ],
-        [
-          10361,
-          4131,
-          905
-        ],
-        [
-          10361,
-          4131,
-          1086
-        ],
-        [
-          9461,
-          4131,
-          1086
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR04",
-      "nome": "E27_MR04 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3853,
-          1086
-        ],
-        [
-          10361,
-          3853,
-          1086
-        ],
-        [
-          10361,
-          3853,
-          1267
-        ],
-        [
-          9461,
-          3853,
-          1267
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR05",
-      "nome": "E27_MR05 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3575,
-          1267
-        ],
-        [
-          10361,
-          3575,
-          1267
-        ],
-        [
-          10361,
-          3575,
-          1448
-        ],
-        [
-          9461,
-          3575,
-          1448
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR06",
-      "nome": "E27_MR06 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3297,
-          1448
-        ],
-        [
-          10361,
-          3297,
-          1448
-        ],
-        [
-          10361,
-          3297,
-          1629
-        ],
-        [
-          9461,
-          3297,
-          1629
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR07",
-      "nome": "E27_MR07 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          3019,
-          1629
-        ],
-        [
-          10361,
-          3019,
-          1629
-        ],
-        [
-          10361,
-          3019,
-          1810
-        ],
-        [
-          9461,
-          3019,
-          1810
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR08",
-      "nome": "E27_MR08 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          2741,
-          1810
-        ],
-        [
-          10361,
-          2741,
-          1810
-        ],
-        [
-          10361,
-          2741,
-          1991
-        ],
-        [
-          9461,
-          2741,
-          1991
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR09",
-      "nome": "E27_MR09 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          2463,
-          1991
-        ],
-        [
-          10361,
-          2463,
-          1991
-        ],
-        [
-          10361,
-          2463,
-          2172
-        ],
-        [
-          9461,
-          2463,
-          2172
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR10",
-      "nome": "E27_MR10 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          2185,
-          2172
-        ],
-        [
-          10361,
-          2185,
-          2172
-        ],
-        [
-          10361,
-          2185,
-          2353
-        ],
-        [
-          9461,
-          2185,
-          2353
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR11",
-      "nome": "E27_MR11 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          1907,
-          2353
-        ],
-        [
-          10361,
-          1907,
-          2353
-        ],
-        [
-          10361,
-          1907,
-          2534
-        ],
-        [
-          9461,
-          1907,
-          2534
-        ]
-      ],
-      "trecho": "principal_R27",
-      "espelho_mm": 181
-    },
-    {
-      "id": "E27_MR12",
-      "nome": "E27_MR12 - espelho lance principal",
-      "tipo": "face",
-      "tag": "ESCADA_ESPELHOS",
-      "pontos_mm": [
-        [
-          9461,
-          1629,
           2534
         ],
         [
           10361,
-          1629,
-          2534
-        ],
-        [
-          10361,
-          1629,
+          4687,
           2715
         ],
         [
           9461,
-          1629,
+          4687,
           2715
         ]
       ],
-      "trecho": "principal_R27",
+      "trecho": "principal_R28",
       "espelho_mm": 181
     },
     {
-      "id": "E27_ML01",
-      "nome": "E27_ML01 - referencia longarina esquerda lance principal",
+      "id": "E28_ML01",
+      "nome": "E28_ML01 - referencia longarina esquerda lance principal",
       "tipo": "face",
       "tag": "ESCADA_LONGARINAS",
       "pontos_mm": [
         [
           9461,
-          4687,
+          1629,
           543
         ],
         [
           9461,
-          4687,
+          1629,
           748
         ],
         [
           9461,
-          1629,
+          4687,
           2715
         ],
         [
           9461,
-          1629,
+          4687,
           2510
         ]
       ],
@@ -881,29 +881,29 @@
       "status": "referencia geometrica; dimensionamento pendente"
     },
     {
-      "id": "E27_ML02",
-      "nome": "E27_ML02 - referencia longarina direita lance principal",
+      "id": "E28_ML02",
+      "nome": "E28_ML02 - referencia longarina direita lance principal",
       "tipo": "face",
       "tag": "ESCADA_LONGARINAS",
       "pontos_mm": [
         [
           10361,
-          4687,
+          1629,
           543
         ],
         [
           10361,
-          4687,
+          1629,
           748
         ],
         [
           10361,
-          1629,
+          4687,
           2715
         ],
         [
           10361,
-          1629,
+          4687,
           2510
         ]
       ],
@@ -911,29 +911,29 @@
       "status": "referencia geometrica; dimensionamento pendente"
     },
     {
-      "id": "E27_G01",
-      "nome": "E27_G01 - plano referencia guarda-corpo lance principal",
+      "id": "E28_G01",
+      "nome": "E28_G01 - plano referencia guarda-corpo lado livre do lance principal",
       "tipo": "face",
       "tag": "ESCADA_GUARDAS",
       "pontos_mm": [
         [
           9461,
-          4687,
+          1629,
           724
         ],
         [
           9461,
-          1629,
+          4687,
           2715
         ],
         [
           9461,
-          1629,
+          4687,
           3815
         ],
         [
           9461,
-          4687,
+          1629,
           1824
         ]
       ],
@@ -4488,7 +4488,70 @@
       "nivel_chegada_mm": 2715,
       "escada_executiva_dimensionada": false,
       "conformidade_integral_aprovada": false,
-      "observacao": "R27 geometrica conforme orientacao do usuario; perfis, ligacoes, corrimaos, altura livre e verificacao estrutural/normativa pendentes."
+      "observacao": "R27 geometrica conforme orientacao do usuario; perfis, ligacoes, corrimaos, altura livre e verificacao estrutural/normativa pendentes.",
+      "status": "substituida pela R28 por erro de orientacao frente/fundos"
+    },
+    "escada_r28": {
+      "tipo": "L compacto; lance principal junto a parede direita subindo em +Y para os fundos",
+      "desnivel_mm": 2715,
+      "numero_espelhos": 15,
+      "espelho_mm": 181,
+      "numero_pisos_total": 14,
+      "largura_nominal_mm": 900,
+      "trecho_inferior": {
+        "quantidade_pisos": 3,
+        "desenvolvimento_mm": 999,
+        "pisada_mm": 333,
+        "x_mm": [
+          8462,
+          9461
+        ],
+        "y_mm": [
+          1629,
+          2529
+        ],
+        "sentido_subida": "+X"
+      },
+      "lance_principal": {
+        "quantidade_pisos": 11,
+        "desenvolvimento_mm": 3058,
+        "pisada_mm": 278,
+        "x_mm": [
+          9461,
+          10361
+        ],
+        "y_mm": [
+          1629,
+          4687
+        ],
+        "sentido_subida": "+Y (fundos)"
+      },
+      "patamar_superior_mm": {
+        "x": [
+          9461,
+          10461
+        ],
+        "y": [
+          4687,
+          5596
+        ]
+      },
+      "corredor_oposto_mm": {
+        "x": [
+          8461,
+          9461
+        ],
+        "y": [
+          621,
+          5596
+        ],
+        "largura": 1000,
+        "lado": "esquerda"
+      },
+      "nivel_chegada_mm": 2715,
+      "escada_executiva_dimensionada": false,
+      "conformidade_integral_aprovada": false,
+      "observacao": "R28 corrige a orientacao: +Y=fundos, +X=direita. Dimensionamento estrutural/normativo permanece pendente."
     }
   },
   "referencias_estruturais": {
