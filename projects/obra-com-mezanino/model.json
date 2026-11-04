@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina R15 - escada reta lateral compacta, corredor aproximado 1m",
-  "revisao": "R15",
+  "nome": "Oficina R16 - painel amadeirado interno antes da escada e teto sanduiche amadeirado",
+  "revisao": "R16",
   "unidades": "mm",
   "envelope_mm": {
     "x": 10461,
@@ -487,7 +487,7 @@
     },
     {
       "id": "COB_R03",
-      "nome": "Cobertura preservada da R09 - balanco 1m para dentro do lote",
+      "nome": "COB_R03 - telha sanduiche com acabamento inferior amadeirado; geometria preservada",
       "tipo": "face",
       "tag": "COBERTURA_ESTUDO",
       "pontos_mm": [
@@ -511,7 +511,11 @@
           621,
           5600
         ]
-      ]
+      ],
+      "material_conceitual": "TELHA_SANDUICHE_AMADEIRADA",
+      "acabamento_inferior": "AMADEIRADO",
+      "status_material": "especificacao_visual_conceitual; fabricante, espessura, nucleo, fixacao e desempenho termico pendentes",
+      "geometria_R15_preservada": true
     },
     {
       "id": "V07_SIDEA",
@@ -2864,14 +2868,355 @@
       ],
       "altura_referencia_mm": 1100,
       "status": "plano_representativo; corrimao_montantes_e_fixacoes_pendentes"
+    },
+    {
+      "id": "MAD16_01",
+      "nome": "MAD16_01 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        0
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_02",
+      "nome": "MAD16_02 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        309
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_03",
+      "nome": "MAD16_03 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        618
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_04",
+      "nome": "MAD16_04 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        927
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_05",
+      "nome": "MAD16_05 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        1236
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_06",
+      "nome": "MAD16_06 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        1545
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_07",
+      "nome": "MAD16_07 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        1854
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_08",
+      "nome": "MAD16_08 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        2163
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_09",
+      "nome": "MAD16_09 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        2472
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_10",
+      "nome": "MAD16_10 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        2781
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_11",
+      "nome": "MAD16_11 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        3090
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_12",
+      "nome": "MAD16_12 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        3399
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_13",
+      "nome": "MAD16_13 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        3708
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_14",
+      "nome": "MAD16_14 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        4017
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_15",
+      "nome": "MAD16_15 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        4326
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_16",
+      "nome": "MAD16_16 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        4635
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_17",
+      "nome": "MAD16_17 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        4944
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        294
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
+    },
+    {
+      "id": "MAD16_18",
+      "nome": "MAD16_18 - regua horizontal de madeira, painel interno lateral",
+      "tipo": "caixa",
+      "tag": "PAINEL_MADEIRA_INTERNO",
+      "origem_mm": [
+        9441,
+        5621,
+        5253
+      ],
+      "dimensoes_mm": [
+        20,
+        1000,
+        296
+      ],
+      "material_conceitual": "MADEIRA_AMADEIRADA_TOM_QUENTE",
+      "orientacao_visual": "regua horizontal",
+      "status": "revestimento decorativo nao estrutural; especie, substrato, tratamento e fixacao pendentes"
     }
   ],
   "historico": {
-    "base": "R14",
-    "commit_base": "3dd84625d9803b3435b551df4237d5cd57ba1df0",
-    "arquivo_integral_anterior": "historico/model-R14.json",
-    "origem_geometrica": "R13 recuperada para desfazer a escada U; R15 reaplica somente a escada reta e seus ajustes locais",
-    "nota": "R14 arquivada integralmente. R15 remove a solucao U e restaura a maior parte do piso/grade/vigas ao estado R13."
+    "base": "R15",
+    "commit_base": "0cf5d7c7705e13f0732fc68f68640c6f35c65b86",
+    "arquivo_integral_anterior": "historico/model-R15.json",
+    "nota": "R16 acrescenta somente 18 reguas decorativas e metadados de acabamento na cobertura; geometria estrutural da R15 preservada."
   },
   "levantamento_campo_mm": {
     "recuo_muro_rua_informado": 300,
@@ -3116,10 +3461,61 @@
       "escada_executiva_dimensionada": false,
       "conformidade_integral_aprovada": false,
       "observacao": "A geometria cabe no envelope e reduz a ocupacao. Largura util, corrimaos, altura livre, perfis, soldas, apoios, incendio e acessibilidade ainda exigem verificacao profissional."
+    },
+    "acabamentos_r16": {
+      "painel_madeira_lateral": {
+        "localizacao": "interno, lateral esquerda imediatamente antes da entrada da escada reta",
+        "x_mm": [
+          9441,
+          9461
+        ],
+        "y_mm": [
+          5621,
+          6621
+        ],
+        "z_mm": [
+          0,
+          5549
+        ],
+        "comprimento_mm": 1000,
+        "espessura_visual_mm": 20,
+        "reguas": 18,
+        "altura_padrao_regua_mm": 294,
+        "junta_visual_mm": 15,
+        "ultima_regua_altura_mm": 296,
+        "orientacao": "horizontal",
+        "estrutural": false,
+        "material": "madeira/amadeirado de referencia; especie e sistema de fixacao ainda nao especificados",
+        "nota": "painel ocupa somente a faixa lateral, fora da largura nominal de 900mm da escada"
+      },
+      "teto": {
+        "elemento": "COB_R03",
+        "tipo_conceitual": "telha sanduiche",
+        "acabamento_inferior": "amadeirado",
+        "geometria_e_caimento_alterados": false,
+        "parametros_pendentes": [
+          "fabricante",
+          "espessura total",
+          "tipo de nucleo",
+          "acabamento superficial",
+          "fixacoes",
+          "isolamento termico/acustico",
+          "reacao ao fogo"
+        ]
+      },
+      "preservacao": {
+        "escada_R15": true,
+        "mezanino": true,
+        "vidros": true,
+        "pilares": true,
+        "vigas": true,
+        "terreno": true,
+        "muro": true
+      }
     }
   },
   "referencias_estruturais": {
-    "revisao": "R15",
+    "revisao": "R16",
     "aliases_historicos": {
       "C09": "C04"
     },

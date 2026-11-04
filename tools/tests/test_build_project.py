@@ -16,6 +16,7 @@ class ProjectGenerationTest(unittest.TestCase):
         self.refs={e['id']:e for e in self.data['elementos']}
         self.r13=json.loads((EXAMPLE.parent/'historico'/'model-R13.json').read_text(encoding='utf-8'))
         self.r14=json.loads((EXAMPLE.parent/'historico'/'model-R14.json').read_text(encoding='utf-8'))
+        self.r15=json.loads((EXAMPLE.parent/'historico'/'model-R15.json').read_text(encoding='utf-8'))
         self.p=self.data['parametros_estudo_mm']['escada_r15']
 
     @staticmethod
@@ -31,10 +32,10 @@ class ProjectGenerationTest(unittest.TestCase):
         return [min(ah[j],bh[j])-max(al[j],bl[j]) for j in range(3)]
 
     def test_r15_contract(self):
-        self.assertEqual(self.data['revisao'],'R15')
+        self.assertEqual(self.data['revisao'],'R16')
         self.assertEqual(bp.validate(self.data),(10461.,37341.,5600.))
-        self.assertEqual(len(self.refs),129)
-        self.assertEqual(sum(e['tipo']=='caixa' for e in self.refs.values()),79)
+        self.assertEqual(len(self.refs),147)
+        self.assertEqual(sum(e['tipo']=='caixa' for e in self.refs.values()),97)
         self.assertEqual(sum(e['tipo']=='face' for e in self.refs.values()),50)
         self.assertEqual(self.data['parametros_estudo_mm']['implantacao']['oficina'],[4000,6000])
         self.assertFalse(self.p['escada_executiva_dimensionada'])
@@ -134,6 +135,26 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertFalse(self.data['parametros_estudo_mm']['escopo']['material_fume_aplicado'])
         self.assertFalse(self.data['parametros_estudo_mm']['escopo']['telhado_alterado'])
 
+    def test_r16_wood_panel_and_sandwich_roof_finish(self):
+        slats=[e for e in self.refs.values() if e['tag']=='PAINEL_MADEIRA_INTERNO']
+        self.assertEqual(len(slats),18)
+        self.assertEqual(slats[0]['origem_mm'],[9441,5621,0])
+        self.assertEqual(slats[0]['dimensoes_mm'],[20,1000,294])
+        self.assertEqual(slats[-1]['origem_mm'],[9441,5621,5253])
+        self.assertEqual(slats[-1]['dimensoes_mm'],[20,1000,296])
+        self.assertEqual(max(e['origem_mm'][2]+e['dimensoes_mm'][2] for e in slats),5549)
+        self.assertTrue(all(e['material_conceitual']=='MADEIRA_AMADEIRADA_TOM_QUENTE' for e in slats))
+        stair=[e for e in self.refs.values() if e['id'].startswith('E15_')]
+        for s in slats:
+            for e in stair:
+                self.assertFalse(all(v>1e-6 for v in self.overlap(s,e)),(s['id'],e['id']))
+        roof=self.refs['COB_R03']
+        oldroof=next(e for e in self.r15['elementos'] if e['id']=='COB_R03')
+        self.assertEqual(roof['pontos_mm'],oldroof['pontos_mm'])
+        self.assertEqual(roof['material_conceitual'],'TELHA_SANDUICHE_AMADEIRADA')
+        self.assertEqual(roof['acabamento_inferior'],'AMADEIRADO')
+        self.assertTrue(roof['geometria_R15_preservada'])
+
     def test_dxf_and_collada(self):
         for view in ('planta','elevacoes'):
             raw=bp.dxf(self.data,view)
@@ -143,8 +164,8 @@ class ProjectGenerationTest(unittest.TestCase):
         tree=ET.fromstring(bp.dae(self.data)); ns={'c':bp.NS}
         self.assertEqual(tree.find('.//c:unit',ns).attrib['meter'],'0.001')
         self.assertEqual(tree.find('.//c:up_axis',ns).text,'Z_UP')
-        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),129)
-        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1048)
+        self.assertEqual(len(tree.findall('.//c:visual_scene/c:node',ns)),147)
+        self.assertEqual(sum(int(x.attrib['count']) for x in tree.findall('.//c:mesh/c:triangles',ns)),1264)
 
     def test_rejects_invalid_geometry(self):
         d=copy.deepcopy(self.data); d['unidades']='m'
@@ -159,7 +180,7 @@ class ProjectGenerationTest(unittest.TestCase):
             path=Path(tmp)/'obra-com-mezanino'/'model.json'; path.parent.mkdir(); path.write_bytes(EXAMPLE.read_bytes())
             bp.build(path); self.assertTrue(bp.build(path,check=True))
             manifest=json.loads((path.parent/'manifest.json').read_text())
-            self.assertEqual(manifest['revisao'],'R15')
+            self.assertEqual(manifest['revisao'],'R16')
             for rel,meta in manifest['files'].items():
                 b=(path.parent/rel).read_bytes()
                 self.assertEqual(meta['sha256'],hashlib.sha256(b).hexdigest())

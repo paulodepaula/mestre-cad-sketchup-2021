@@ -1,0 +1,3250 @@
+{
+  "schema": "mestre-cad-geometria-v1",
+  "nome": "Oficina R15 - escada reta lateral compacta, corredor aproximado 1m",
+  "revisao": "R15",
+  "unidades": "mm",
+  "envelope_mm": {
+    "x": 10461,
+    "y": 37341,
+    "z": 5600
+  },
+  "elementos": [
+    {
+      "id": "PISO_T",
+      "nome": "Oficina/deposito 4000x6000 - plano Z0",
+      "tipo": "face",
+      "tag": "OFICINA_REFERENCIA",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          0
+        ],
+        [
+          6461,
+          6621,
+          0
+        ],
+        [
+          6461,
+          621,
+          0
+        ],
+        [
+          10461,
+          621,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "PASSE",
+      "nome": "Passarela de 1m a esquerda vista da rua",
+      "tipo": "face",
+      "tag": "PASSARELA_REFERENCIA",
+      "pontos_mm": [
+        [
+          6461,
+          6621,
+          0
+        ],
+        [
+          5461,
+          6621,
+          0
+        ],
+        [
+          5461,
+          621,
+          0
+        ],
+        [
+          6461,
+          621,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "ESCADA_RES",
+      "nome": "Escada reta lateral 900x3892; 15 espelhos; termina antes da linha C07",
+      "tipo": "face",
+      "tag": "ESCADA_HIPOTESE",
+      "pontos_mm": [
+        [
+          10361,
+          5521,
+          0
+        ],
+        [
+          9461,
+          5521,
+          0
+        ],
+        [
+          9461,
+          1629,
+          0
+        ],
+        [
+          10361,
+          1629,
+          0
+        ]
+      ],
+      "status": "envelope_da_escada_reta_R15; estudo_nao_executivo",
+      "referencia_limite": "Y5521, alinhado ao inicio de C07/C10; nao ultrapassa a linha das colunas",
+      "nivel_chegada_mm": 2715
+    },
+    {
+      "id": "MEZ_PRINCIPAL",
+      "nome": "Piso principal 25mm de estudo, topo Z2715; nao especificado para compra",
+      "tipo": "caixa",
+      "tag": "MEZANINO_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        2690
+      ],
+      "dimensoes_mm": [
+        3000,
+        4975,
+        25
+      ],
+      "material_conceitual": "placa especifica para piso de mezanino, fornecedor e capacidade ainda indefinidos",
+      "folga_esquadria_mm": 25
+    },
+    {
+      "id": "MEZ_PATAMAR",
+      "nome": "Corredor/patamar superior aprox 1m, painel 25mm; topo Z2715",
+      "tipo": "caixa",
+      "tag": "MEZANINO_ESTUDO",
+      "origem_mm": [
+        9461,
+        621,
+        2690
+      ],
+      "dimensoes_mm": [
+        1000,
+        1008,
+        25
+      ],
+      "material_conceitual": "placa especifica para piso de mezanino, fornecedor e capacidade ainda indefinidos"
+    },
+    {
+      "id": "C01",
+      "nome": "C01 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        10361,
+        6521,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5420
+      ]
+    },
+    {
+      "id": "C02",
+      "nome": "C02 - tubo 100x100x3mm de estudo; alinhado a B-C; recebe ligacoes V01/V10, cargas a verificar",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        10361,
+        3571,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5420
+      ],
+      "perfil_referencia": {
+        "tipo": "tubo_quadrado",
+        "dimensao_externa_mm": [
+          100,
+          100
+        ],
+        "parede_mm": 3,
+        "representacao": "caixa macica externa para compatibilidade SketchUp; PAREDE 3 mm somente metadado; NAO implica tubo macico",
+        "aco": "nao_especificado",
+        "norma": "verificar_pelo_engenheiro",
+        "status": "especificacao_preliminar_nao_dimensionada"
+      },
+      "nota_cargas": "A ausencia de cargas NAO foi confirmada. C02 encontra V01 da cobertura e V10 do mezanino no modelo. Reducao somente geometrica; calcular esforcos, flambagem, ligacoes e fundacao."
+    },
+    {
+      "id": "C03",
+      "nome": "C03 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        10311,
+        621,
+        0
+      ],
+      "dimensoes_mm": [
+        150,
+        150,
+        5420
+      ],
+      "perfil_referencia": {
+        "tipo": "tubo_quadrado",
+        "dimensao_externa_mm": [
+          150,
+          150
+        ],
+        "parede_mm": 3,
+        "representacao": "caixa macica externa para compatibilidade SketchUp; PAREDE 3 mm somente metadado; NAO implica tubo macico",
+        "aco": "nao_especificado",
+        "norma": "verificar_pelo_engenheiro",
+        "status": "especificacao_preliminar_nao_dimensionada"
+      }
+    },
+    {
+      "id": "C04",
+      "nome": "C04 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        6461,
+        5521,
+        0
+      ],
+      "dimensoes_mm": [
+        150,
+        150,
+        5225
+      ],
+      "perfil_referencia": {
+        "tipo": "tubo_quadrado",
+        "dimensao_externa_mm": [
+          150,
+          150
+        ],
+        "parede_mm": 3,
+        "representacao": "caixa macica externa para compatibilidade SketchUp; PAREDE 3 mm somente metadado; NAO implica tubo macico",
+        "aco": "nao_especificado",
+        "norma": "verificar_pelo_engenheiro",
+        "status": "especificacao_preliminar_nao_dimensionada"
+      }
+    },
+    {
+      "id": "C05",
+      "nome": "C05 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        6461,
+        3571,
+        0
+      ],
+      "dimensoes_mm": [
+        150,
+        150,
+        5225
+      ],
+      "perfil_referencia": {
+        "tipo": "tubo_quadrado",
+        "dimensao_externa_mm": [
+          150,
+          150
+        ],
+        "parede_mm": 3,
+        "representacao": "caixa macica externa para compatibilidade SketchUp; PAREDE 3 mm somente metadado; NAO implica tubo macico",
+        "aco": "nao_especificado",
+        "norma": "verificar_pelo_engenheiro",
+        "status": "especificacao_preliminar_nao_dimensionada"
+      }
+    },
+    {
+      "id": "C06",
+      "nome": "C06 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        0
+      ],
+      "dimensoes_mm": [
+        150,
+        150,
+        5225
+      ],
+      "perfil_referencia": {
+        "tipo": "tubo_quadrado",
+        "dimensao_externa_mm": [
+          150,
+          150
+        ],
+        "parede_mm": 3,
+        "representacao": "caixa macica externa para compatibilidade SketchUp; PAREDE 3 mm somente metadado; NAO implica tubo macico",
+        "aco": "nao_especificado",
+        "norma": "verificar_pelo_engenheiro",
+        "status": "especificacao_preliminar_nao_dimensionada"
+      }
+    },
+    {
+      "id": "C07",
+      "nome": "C07 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_MEZ_ESTUDO",
+      "origem_mm": [
+        9361,
+        5521,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5355
+      ],
+      "funcoes": [
+        "suporte_viga_V05_mezanino",
+        "referencia_montante_esquadrias_superiores",
+        "encontro_geometrico_com_viga_V13"
+      ]
+    },
+    {
+      "id": "C08",
+      "nome": "C08 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_MEZ_ESTUDO",
+      "origem_mm": [
+        9361,
+        621,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        2510
+      ]
+    },
+    {
+      "id": "C10",
+      "nome": "C10 - pilar de estudo, alturas e perfil preservados da R09",
+      "tipo": "caixa",
+      "tag": "PILARES_ESTUDO",
+      "origem_mm": [
+        10361,
+        5521,
+        0
+      ],
+      "dimensoes_mm": [
+        100,
+        100,
+        5420
+      ]
+    },
+    {
+      "id": "V01",
+      "nome": "V01 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_COB_ESTUDO",
+      "origem_mm": [
+        10361,
+        621,
+        5420
+      ],
+      "dimensoes_mm": [
+        100,
+        6000,
+        175
+      ]
+    },
+    {
+      "id": "V02",
+      "nome": "V02 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_COB_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        5225
+      ],
+      "dimensoes_mm": [
+        100,
+        6000,
+        175
+      ]
+    },
+    {
+      "id": "V03",
+      "nome": "V03 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        9361,
+        621,
+        2510
+      ],
+      "dimensoes_mm": [
+        100,
+        5000,
+        180
+      ]
+    },
+    {
+      "id": "V04",
+      "nome": "V04 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        2510
+      ],
+      "dimensoes_mm": [
+        100,
+        5000,
+        180
+      ]
+    },
+    {
+      "id": "V05",
+      "nome": "V05 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        6461,
+        5521,
+        2510
+      ],
+      "dimensoes_mm": [
+        4000,
+        100,
+        180
+      ]
+    },
+    {
+      "id": "V06",
+      "nome": "V06 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        6461,
+        621,
+        2510
+      ],
+      "dimensoes_mm": [
+        3000,
+        100,
+        180
+      ]
+    },
+    {
+      "id": "V10",
+      "nome": "V10 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        10361,
+        621,
+        2510
+      ],
+      "dimensoes_mm": [
+        100,
+        3050,
+        180
+      ]
+    },
+    {
+      "id": "V11",
+      "nome": "V11 - cabecalho do patamar compacto da escada reta R15",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        9461,
+        1529,
+        2510
+      ],
+      "dimensoes_mm": [
+        1000,
+        100,
+        180
+      ]
+    },
+    {
+      "id": "V12",
+      "nome": "V12 - viga principal de estudo preservada da R09",
+      "tipo": "caixa",
+      "tag": "VIGAS_MEZ_ESTUDO",
+      "origem_mm": [
+        9461,
+        621,
+        2510
+      ],
+      "dimensoes_mm": [
+        1000,
+        100,
+        180
+      ]
+    },
+    {
+      "id": "COB_R03",
+      "nome": "Cobertura preservada da R09 - balanco 1m para dentro do lote",
+      "tipo": "face",
+      "tag": "COBERTURA_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          5600
+        ],
+        [
+          5461,
+          6621,
+          5350
+        ],
+        [
+          5461,
+          621,
+          5350
+        ],
+        [
+          10461,
+          621,
+          5600
+        ]
+      ]
+    },
+    {
+      "id": "V07_SIDEA",
+      "nome": "V07 - travessa inclinada, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          5585
+        ],
+        [
+          5461,
+          6621,
+          5335
+        ],
+        [
+          5461,
+          6621,
+          5160
+        ],
+        [
+          10461,
+          6621,
+          5410
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_SIDEB",
+      "nome": "V07 - travessa inclinada, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6521,
+          5585
+        ],
+        [
+          5461,
+          6521,
+          5335
+        ],
+        [
+          5461,
+          6521,
+          5160
+        ],
+        [
+          10461,
+          6521,
+          5410
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_TOP",
+      "nome": "V07 - travessa inclinada, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          5585
+        ],
+        [
+          5461,
+          6621,
+          5335
+        ],
+        [
+          5461,
+          6521,
+          5335
+        ],
+        [
+          10461,
+          6521,
+          5585
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_BOTTOM",
+      "nome": "V07 - travessa inclinada, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          5410
+        ],
+        [
+          5461,
+          6621,
+          5160
+        ],
+        [
+          5461,
+          6521,
+          5160
+        ],
+        [
+          10461,
+          6521,
+          5410
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_ENDL",
+      "nome": "V07 - travessa inclinada, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          6621,
+          5585
+        ],
+        [
+          10461,
+          6521,
+          5585
+        ],
+        [
+          10461,
+          6521,
+          5410
+        ],
+        [
+          10461,
+          6621,
+          5410
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V07_ENDR",
+      "nome": "V07 - travessa inclinada, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5461,
+          6621,
+          5335
+        ],
+        [
+          5461,
+          6521,
+          5335
+        ],
+        [
+          5461,
+          6521,
+          5160
+        ],
+        [
+          5461,
+          6621,
+          5160
+        ]
+      ],
+      "numero_logico": "V07"
+    },
+    {
+      "id": "V08_SIDEA",
+      "nome": "V08 - travessa inclinada, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          3671,
+          5585
+        ],
+        [
+          5461,
+          3671,
+          5335
+        ],
+        [
+          5461,
+          3671,
+          5160
+        ],
+        [
+          10461,
+          3671,
+          5410
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_SIDEB",
+      "nome": "V08 - travessa inclinada, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          3571,
+          5585
+        ],
+        [
+          5461,
+          3571,
+          5335
+        ],
+        [
+          5461,
+          3571,
+          5160
+        ],
+        [
+          10461,
+          3571,
+          5410
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_TOP",
+      "nome": "V08 - travessa inclinada, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          3671,
+          5585
+        ],
+        [
+          5461,
+          3671,
+          5335
+        ],
+        [
+          5461,
+          3571,
+          5335
+        ],
+        [
+          10461,
+          3571,
+          5585
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_BOTTOM",
+      "nome": "V08 - travessa inclinada, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          3671,
+          5410
+        ],
+        [
+          5461,
+          3671,
+          5160
+        ],
+        [
+          5461,
+          3571,
+          5160
+        ],
+        [
+          10461,
+          3571,
+          5410
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_ENDL",
+      "nome": "V08 - travessa inclinada, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          3671,
+          5585
+        ],
+        [
+          10461,
+          3571,
+          5585
+        ],
+        [
+          10461,
+          3571,
+          5410
+        ],
+        [
+          10461,
+          3671,
+          5410
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V08_ENDR",
+      "nome": "V08 - travessa inclinada, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5461,
+          3671,
+          5335
+        ],
+        [
+          5461,
+          3571,
+          5335
+        ],
+        [
+          5461,
+          3571,
+          5160
+        ],
+        [
+          5461,
+          3671,
+          5160
+        ]
+      ],
+      "numero_logico": "V08"
+    },
+    {
+      "id": "V09_SIDEA",
+      "nome": "V09 - travessa inclinada, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          721,
+          5585
+        ],
+        [
+          5461,
+          721,
+          5335
+        ],
+        [
+          5461,
+          721,
+          5160
+        ],
+        [
+          10461,
+          721,
+          5410
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_SIDEB",
+      "nome": "V09 - travessa inclinada, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          621,
+          5585
+        ],
+        [
+          5461,
+          621,
+          5335
+        ],
+        [
+          5461,
+          621,
+          5160
+        ],
+        [
+          10461,
+          621,
+          5410
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_TOP",
+      "nome": "V09 - travessa inclinada, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          721,
+          5585
+        ],
+        [
+          5461,
+          721,
+          5335
+        ],
+        [
+          5461,
+          621,
+          5335
+        ],
+        [
+          10461,
+          621,
+          5585
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_BOTTOM",
+      "nome": "V09 - travessa inclinada, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          721,
+          5410
+        ],
+        [
+          5461,
+          721,
+          5160
+        ],
+        [
+          5461,
+          621,
+          5160
+        ],
+        [
+          10461,
+          621,
+          5410
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_ENDL",
+      "nome": "V09 - travessa inclinada, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          721,
+          5585
+        ],
+        [
+          10461,
+          621,
+          5585
+        ],
+        [
+          10461,
+          621,
+          5410
+        ],
+        [
+          10461,
+          721,
+          5410
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V09_ENDR",
+      "nome": "V09 - travessa inclinada, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          5461,
+          721,
+          5335
+        ],
+        [
+          5461,
+          621,
+          5335
+        ],
+        [
+          5461,
+          621,
+          5160
+        ],
+        [
+          5461,
+          721,
+          5160
+        ]
+      ],
+      "numero_logico": "V09"
+    },
+    {
+      "id": "V13_SIDEA",
+      "nome": "V13 - travessa inclinada, face SIDEA (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          5621,
+          5585
+        ],
+        [
+          6461,
+          5621,
+          5385
+        ],
+        [
+          6461,
+          5621,
+          5210
+        ],
+        [
+          10461,
+          5621,
+          5410
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "V13_SIDEB",
+      "nome": "V13 - travessa inclinada, face SIDEB (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          5521,
+          5585
+        ],
+        [
+          6461,
+          5521,
+          5385
+        ],
+        [
+          6461,
+          5521,
+          5210
+        ],
+        [
+          10461,
+          5521,
+          5410
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "V13_TOP",
+      "nome": "V13 - travessa inclinada, face TOP (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          5621,
+          5585
+        ],
+        [
+          6461,
+          5621,
+          5385
+        ],
+        [
+          6461,
+          5521,
+          5385
+        ],
+        [
+          10461,
+          5521,
+          5585
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "V13_BOTTOM",
+      "nome": "V13 - travessa inclinada, face BOTTOM (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          5621,
+          5410
+        ],
+        [
+          6461,
+          5621,
+          5210
+        ],
+        [
+          6461,
+          5521,
+          5210
+        ],
+        [
+          10461,
+          5521,
+          5410
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "V13_ENDL",
+      "nome": "V13 - travessa inclinada, face ENDL (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          10461,
+          5621,
+          5585
+        ],
+        [
+          10461,
+          5521,
+          5585
+        ],
+        [
+          10461,
+          5521,
+          5410
+        ],
+        [
+          10461,
+          5621,
+          5410
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "V13_ENDR",
+      "nome": "V13 - travessa inclinada, face ENDR (estudo)",
+      "tipo": "face",
+      "tag": "TRAVESSAS_BALANCO_ESTUDO",
+      "pontos_mm": [
+        [
+          6461,
+          5621,
+          5385
+        ],
+        [
+          6461,
+          5521,
+          5385
+        ],
+        [
+          6461,
+          5521,
+          5210
+        ],
+        [
+          6461,
+          5621,
+          5210
+        ]
+      ],
+      "numero_logico": "V13"
+    },
+    {
+      "id": "T01_TERRENO",
+      "nome": "Terreno KMZ A-B-C-D, aproximadamente 382,15m2",
+      "tipo": "face",
+      "tag": "T01_TERRENO",
+      "pontos_mm": [
+        [
+          270,
+          0,
+          0
+        ],
+        [
+          10461,
+          321,
+          0
+        ],
+        [
+          10461,
+          37341,
+          0
+        ],
+        [
+          0,
+          36990,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "MURO_BC",
+      "nome": "Muro B-C 4800mm existente, sem espessura definida",
+      "tipo": "face",
+      "tag": "T01_MURO_BC",
+      "pontos_mm": [
+        [
+          10461,
+          321,
+          0
+        ],
+        [
+          10461,
+          37341,
+          0
+        ],
+        [
+          10461,
+          37341,
+          4800
+        ],
+        [
+          10461,
+          321,
+          4800
+        ]
+      ]
+    },
+    {
+      "id": "VF08_SUP_ESQ",
+      "nome": "VF08_SUP_ESQ - vidro superior de estudo; acabamento visual inalterado",
+      "tipo": "face",
+      "tag": "VIDRO_FUNDOS_ESTUDO",
+      "pontos_mm": [
+        [
+          6611,
+          5621,
+          2715
+        ],
+        [
+          9361,
+          5621,
+          2715
+        ],
+        [
+          9361,
+          5621,
+          5355
+        ],
+        [
+          6611,
+          5621,
+          5217.5
+        ]
+      ],
+      "material_conceitual": "VIDRO; no importador 2021 esta face pode aparecer opaca",
+      "orientacao": "Y5621, no alinhamento do piso recuado e viga V05; nao e fechamento completo da frente do lote",
+      "observacao": "nao e placa estrutural; confirmar espessura do vidro, esquadria, vento, dilatacoes, folgas e fixacoes"
+    },
+    {
+      "id": "VF08_SUP_DIR",
+      "nome": "VF08_SUP_DIR - vidro superior de estudo; acabamento visual inalterado",
+      "tipo": "face",
+      "tag": "VIDRO_FUNDOS_ESTUDO",
+      "pontos_mm": [
+        [
+          9461,
+          5621,
+          2715
+        ],
+        [
+          10361,
+          5621,
+          2715
+        ],
+        [
+          10361,
+          5621,
+          5405
+        ],
+        [
+          9461,
+          5621,
+          5360
+        ]
+      ],
+      "material_conceitual": "VIDRO; no importador 2021 esta face pode aparecer opaca",
+      "orientacao": "Y5621, no alinhamento do piso recuado e viga V05; nao e fechamento completo da frente do lote",
+      "observacao": "nao e placa estrutural; confirmar espessura do vidro, esquadria, vento, dilatacoes, folgas e fixacoes"
+    },
+    {
+      "id": "SG_ESQ",
+      "nome": "SG_ESQ - perfil de estudo, sem dimensionamento",
+      "tipo": "caixa",
+      "tag": "SOLEIRA_VIDRO",
+      "origem_mm": [
+        6611,
+        5596,
+        2690
+      ],
+      "dimensoes_mm": [
+        2750,
+        50,
+        25
+      ],
+      "perfil_referencia": {
+        "tipo": "envelope_de_perfil_metalico",
+        "parede_mm": null,
+        "aco": null,
+        "status": "somente_posicionamento_nao_comprar_sem_calculo"
+      }
+    },
+    {
+      "id": "SG_DIR",
+      "nome": "SG_DIR - perfil de estudo, sem dimensionamento",
+      "tipo": "caixa",
+      "tag": "SOLEIRA_VIDRO",
+      "origem_mm": [
+        9461,
+        5596,
+        2690
+      ],
+      "dimensoes_mm": [
+        900,
+        50,
+        25
+      ],
+      "perfil_referencia": {
+        "tipo": "envelope_de_perfil_metalico",
+        "parede_mm": null,
+        "aco": null,
+        "status": "somente_posicionamento_nao_comprar_sem_calculo"
+      }
+    },
+    {
+      "id": "G11_MT01",
+      "nome": "G11_MT01 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        971,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT02",
+      "nome": "G11_MT02 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        1371,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT03",
+      "nome": "G11_MT03 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        1771,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT04",
+      "nome": "G11_MT04 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        2171,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT05",
+      "nome": "G11_MT05 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        2571,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT06",
+      "nome": "G11_MT06 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        2971,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT07",
+      "nome": "G11_MT07 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        3371,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT08",
+      "nome": "G11_MT08 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        3771,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT09",
+      "nome": "G11_MT09 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        4171,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT10",
+      "nome": "G11_MT10 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        4571,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT11",
+      "nome": "G11_MT11 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        4971,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_MT12",
+      "nome": "G11_MT12 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        6561,
+        5371,
+        2640
+      ],
+      "dimensoes_mm": [
+        2800,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_01",
+      "nome": "G11_ML01_01 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        721,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        250,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_02",
+      "nome": "G11_ML01_02 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        1021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_03",
+      "nome": "G11_ML01_03 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        1421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_04",
+      "nome": "G11_ML01_04 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        1821,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_05",
+      "nome": "G11_ML01_05 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        2221,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_06",
+      "nome": "G11_ML01_06 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        2621,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_07",
+      "nome": "G11_ML01_07 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        3021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_08",
+      "nome": "G11_ML01_08 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        3421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_09",
+      "nome": "G11_ML01_09 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        3821,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_10",
+      "nome": "G11_ML01_10 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        4221,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_11",
+      "nome": "G11_ML01_11 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        4621,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_12",
+      "nome": "G11_ML01_12 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        5021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML01_13",
+      "nome": "G11_ML01_13 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        7461,
+        5421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        100,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_01",
+      "nome": "G11_ML02_01 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        721,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        250,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_02",
+      "nome": "G11_ML02_02 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        1021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_03",
+      "nome": "G11_ML02_03 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        1421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_04",
+      "nome": "G11_ML02_04 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        1821,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_05",
+      "nome": "G11_ML02_05 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        2221,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_06",
+      "nome": "G11_ML02_06 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        2621,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_07",
+      "nome": "G11_ML02_07 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        3021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_08",
+      "nome": "G11_ML02_08 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        3421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_09",
+      "nome": "G11_ML02_09 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        3821,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_10",
+      "nome": "G11_ML02_10 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        4221,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_11",
+      "nome": "G11_ML02_11 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        4621,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_12",
+      "nome": "G11_ML02_12 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        5021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_ML02_13",
+      "nome": "G11_ML02_13 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_MEZ_50X50",
+      "origem_mm": [
+        8461,
+        5421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        100,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_PT01",
+      "nome": "G11_PT01 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_PATAMAR_50X50",
+      "origem_mm": [
+        9461,
+        971,
+        2640
+      ],
+      "dimensoes_mm": [
+        900,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_PT02",
+      "nome": "G11_PT02 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_PATAMAR_50X50",
+      "origem_mm": [
+        9461,
+        1371,
+        2640
+      ],
+      "dimensoes_mm": [
+        900,
+        50,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_PL01_01",
+      "nome": "G11_PL01_01 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_PATAMAR_50X50",
+      "origem_mm": [
+        9911,
+        721,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        250,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_PL01_02",
+      "nome": "G11_PL01_02 - tubo 50x50, entre vigas; solda e parede a dimensionar",
+      "tipo": "caixa",
+      "tag": "GRADE_PATAMAR_50X50",
+      "origem_mm": [
+        9911,
+        1021,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        350,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "G11_PL01_03",
+      "nome": "G11_PL01_03 - tubo 50x50 ajustado ao cabecalho V11 da R15",
+      "tipo": "caixa",
+      "tag": "GRADE_PATAMAR_50X50",
+      "origem_mm": [
+        9911,
+        1421,
+        2640
+      ],
+      "dimensoes_mm": [
+        50,
+        108,
+        50
+      ],
+      "perfil_ref": "GRADE_50X50"
+    },
+    {
+      "id": "E15_D01",
+      "nome": "E15_D01 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        5243,
+        151
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D02",
+      "nome": "E15_D02 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        4965,
+        332
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D03",
+      "nome": "E15_D03 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        4687,
+        513
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D04",
+      "nome": "E15_D04 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        4409,
+        694
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D05",
+      "nome": "E15_D05 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        4131,
+        875
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D06",
+      "nome": "E15_D06 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3853,
+        1056
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D07",
+      "nome": "E15_D07 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3575,
+        1237
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D08",
+      "nome": "E15_D08 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3297,
+        1418
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D09",
+      "nome": "E15_D09 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        3019,
+        1599
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D10",
+      "nome": "E15_D10 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        2741,
+        1780
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D11",
+      "nome": "E15_D11 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        2463,
+        1961
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D12",
+      "nome": "E15_D12 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        2185,
+        2142
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D13",
+      "nome": "E15_D13 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        1907,
+        2323
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_D14",
+      "nome": "E15_D14 - piso degrau 900x278; estudo",
+      "tipo": "caixa",
+      "tag": "ESCADA_DEGRAUS",
+      "origem_mm": [
+        9461,
+        1629,
+        2504
+      ],
+      "dimensoes_mm": [
+        900,
+        278,
+        30
+      ],
+      "status": "geometria_de_estudo; material_e_espessura_executiva_pendentes"
+    },
+    {
+      "id": "E15_R01",
+      "nome": "E15_R01 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          5521,
+          0
+        ],
+        [
+          10361,
+          5521,
+          0
+        ],
+        [
+          10361,
+          5521,
+          181
+        ],
+        [
+          9461,
+          5521,
+          181
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R02",
+      "nome": "E15_R02 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          5243,
+          181
+        ],
+        [
+          10361,
+          5243,
+          181
+        ],
+        [
+          10361,
+          5243,
+          362
+        ],
+        [
+          9461,
+          5243,
+          362
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R03",
+      "nome": "E15_R03 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4965,
+          362
+        ],
+        [
+          10361,
+          4965,
+          362
+        ],
+        [
+          10361,
+          4965,
+          543
+        ],
+        [
+          9461,
+          4965,
+          543
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R04",
+      "nome": "E15_R04 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4687,
+          543
+        ],
+        [
+          10361,
+          4687,
+          543
+        ],
+        [
+          10361,
+          4687,
+          724
+        ],
+        [
+          9461,
+          4687,
+          724
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R05",
+      "nome": "E15_R05 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4409,
+          724
+        ],
+        [
+          10361,
+          4409,
+          724
+        ],
+        [
+          10361,
+          4409,
+          905
+        ],
+        [
+          9461,
+          4409,
+          905
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R06",
+      "nome": "E15_R06 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          4131,
+          905
+        ],
+        [
+          10361,
+          4131,
+          905
+        ],
+        [
+          10361,
+          4131,
+          1086
+        ],
+        [
+          9461,
+          4131,
+          1086
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R07",
+      "nome": "E15_R07 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3853,
+          1086
+        ],
+        [
+          10361,
+          3853,
+          1086
+        ],
+        [
+          10361,
+          3853,
+          1267
+        ],
+        [
+          9461,
+          3853,
+          1267
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R08",
+      "nome": "E15_R08 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3575,
+          1267
+        ],
+        [
+          10361,
+          3575,
+          1267
+        ],
+        [
+          10361,
+          3575,
+          1448
+        ],
+        [
+          9461,
+          3575,
+          1448
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R09",
+      "nome": "E15_R09 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3297,
+          1448
+        ],
+        [
+          10361,
+          3297,
+          1448
+        ],
+        [
+          10361,
+          3297,
+          1629
+        ],
+        [
+          9461,
+          3297,
+          1629
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R10",
+      "nome": "E15_R10 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          3019,
+          1629
+        ],
+        [
+          10361,
+          3019,
+          1629
+        ],
+        [
+          10361,
+          3019,
+          1810
+        ],
+        [
+          9461,
+          3019,
+          1810
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R11",
+      "nome": "E15_R11 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2741,
+          1810
+        ],
+        [
+          10361,
+          2741,
+          1810
+        ],
+        [
+          10361,
+          2741,
+          1991
+        ],
+        [
+          9461,
+          2741,
+          1991
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R12",
+      "nome": "E15_R12 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2463,
+          1991
+        ],
+        [
+          10361,
+          2463,
+          1991
+        ],
+        [
+          10361,
+          2463,
+          2172
+        ],
+        [
+          9461,
+          2463,
+          2172
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R13",
+      "nome": "E15_R13 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          2185,
+          2172
+        ],
+        [
+          10361,
+          2185,
+          2172
+        ],
+        [
+          10361,
+          2185,
+          2353
+        ],
+        [
+          9461,
+          2185,
+          2353
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R14",
+      "nome": "E15_R14 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          1907,
+          2353
+        ],
+        [
+          10361,
+          1907,
+          2353
+        ],
+        [
+          10361,
+          1907,
+          2534
+        ],
+        [
+          9461,
+          1907,
+          2534
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_R15",
+      "nome": "E15_R15 - espelho 181mm; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_ESPELHOS",
+      "pontos_mm": [
+        [
+          9461,
+          1629,
+          2534
+        ],
+        [
+          10361,
+          1629,
+          2534
+        ],
+        [
+          10361,
+          1629,
+          2715
+        ],
+        [
+          9461,
+          1629,
+          2715
+        ]
+      ],
+      "status": "geometria_de_estudo"
+    },
+    {
+      "id": "E15_L01",
+      "nome": "E15_L01 - longarina lateral reta; perfil a dimensionar",
+      "tipo": "face",
+      "tag": "ESCADA_LONGARINAS",
+      "pontos_mm": [
+        [
+          9461,
+          5521,
+          0
+        ],
+        [
+          9461,
+          5521,
+          205
+        ],
+        [
+          9461,
+          1629,
+          2715
+        ],
+        [
+          9461,
+          1629,
+          2510
+        ]
+      ],
+      "espessura_chapa_mm": null,
+      "status": "face_representativa_nao_executiva"
+    },
+    {
+      "id": "E15_L02",
+      "nome": "E15_L02 - longarina lateral reta; perfil a dimensionar",
+      "tipo": "face",
+      "tag": "ESCADA_LONGARINAS",
+      "pontos_mm": [
+        [
+          10361,
+          5521,
+          0
+        ],
+        [
+          10361,
+          5521,
+          205
+        ],
+        [
+          10361,
+          1629,
+          2715
+        ],
+        [
+          10361,
+          1629,
+          2510
+        ]
+      ],
+      "espessura_chapa_mm": null,
+      "status": "face_representativa_nao_executiva"
+    },
+    {
+      "id": "E15_G01",
+      "nome": "E15_G01 - plano de guarda lateral da escada reta; estudo",
+      "tipo": "face",
+      "tag": "ESCADA_GUARDAS",
+      "pontos_mm": [
+        [
+          9461,
+          5521,
+          181
+        ],
+        [
+          9461,
+          1629,
+          2715
+        ],
+        [
+          9461,
+          1629,
+          3815
+        ],
+        [
+          9461,
+          5521,
+          1281
+        ]
+      ],
+      "altura_referencia_mm": 1100,
+      "status": "plano_representativo; corrimao_montantes_e_fixacoes_pendentes"
+    }
+  ],
+  "historico": {
+    "base": "R14",
+    "commit_base": "3dd84625d9803b3435b551df4237d5cd57ba1df0",
+    "arquivo_integral_anterior": "historico/model-R14.json",
+    "origem_geometrica": "R13 recuperada para desfazer a escada U; R15 reaplica somente a escada reta e seus ajustes locais",
+    "nota": "R14 arquivada integralmente. R15 remove a solucao U e restaura a maior parte do piso/grade/vigas ao estado R13."
+  },
+  "levantamento_campo_mm": {
+    "recuo_muro_rua_informado": 300,
+    "altura_muro_BC": 4800,
+    "status": "medidas informadas; folga efetiva do portao e recuos legais pendentes"
+  },
+  "levantamento_terreno": {
+    "revisao": "T01",
+    "lado_frontal": "AB",
+    "lateral_direita_vista_da_rua": "BC",
+    "fundos": "CD",
+    "area_m2_estimada": 382.15,
+    "fonte": "KMZ aproximado; nao topografia",
+    "vertices_mm": {
+      "A": [
+        270,
+        0
+      ],
+      "B": [
+        10461,
+        321
+      ],
+      "C": [
+        10461,
+        37341
+      ],
+      "D": [
+        0,
+        36990
+      ]
+    }
+  },
+  "parametros_estudo_mm": {
+    "nivel_superior_mezanino": 2715,
+    "espessura_representativa_plataforma": 25,
+    "uso_mezanino": "escritorio / estacao de trabalho",
+    "grade_r11": {
+      "secao_externa_mm": [
+        50,
+        50
+      ],
+      "espessura_parede_mm": null,
+      "z_inferior": 2640,
+      "z_superior": 2690,
+      "nivel_topo_vigas_principais": 2690,
+      "modo": "entre faces internas das vigas, topo alinhado; nao apoiada por cima",
+      "travessas_principais": 12,
+      "tramos_longitudinais_principais": 26,
+      "travessas_patamar": 4,
+      "tramos_longitudinais_patamar": 5,
+      "passo_travessas_mm": 400,
+      "passo_bloqueios_longitudinais_principais_mm": 1000,
+      "vao_transversal_principal_mm": 2800,
+      "vao_transversal_patamar_mm": 900,
+      "perfil_comercial": null,
+      "aprovacao_estrutural": false,
+      "nota": "Malha mais distribuida NAO comprova que tubo 50x50 suporte o vao de 2,80m. Espessura, rigidez, carga, vibracao e soldas pendentes. Blocos entre travessas nao criam apoios independentes."
+    },
+    "piso_r11": {
+      "z_inferior": 2690,
+      "z_superior": 2715,
+      "espessura_visual": 25,
+      "nivel_anterior": 2850,
+      "rebaixamento_mm": 135,
+      "justificativa": "Grade incorporada dentro da altura das vigas existentes. Preservar 2850 exigiria alterar outras cotas ou voltar a empilhar apoios.",
+      "tipo_painel": null,
+      "espessura_final_calculada": false,
+      "sem_vazio_vertical_entre_piso_e_apoios": true,
+      "painel_principal_y_final": 5596,
+      "nota": "A escada ainda e reserva em planta; chegada deve ser detalhada para Z2715. Recortes dos paineis nos pilares e juntas ainda pendentes."
+    },
+    "encontro_vidro_r11": {
+      "plano_y": 5621,
+      "z_base_vidro": 2715,
+      "z_topo_soleira": 2715,
+      "soleira_y": [
+        5596,
+        5646
+      ],
+      "soleira_altura_visual": 25,
+      "arremates": [
+        "SG_ESQ",
+        "SG_DIR"
+      ],
+      "apoio_soleiras": "contato direto com V05, no topo Z2690; juntas e fixacao pendentes",
+      "vao_visual_inferior_mm": 0,
+      "vidro_apoiado_em_placa_cimenticia": false,
+      "folgas_tecnicas_reais_e_gaxetas": null,
+      "nota": "Extremidades superiores dos vidros preservadas. A soleira direita nao e piso sobre o vazio de escada."
+    },
+    "escopo": {
+      "material_fume_aplicado": false,
+      "transparencia_alterada": false,
+      "extensao_alterada": false,
+      "telhado_alterado": false,
+      "vigas_principais_alteradas": false,
+      "dimensionamento_estrutural": false
+    },
+    "pilares_r07": {
+      "colunas_alteradas": [
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06"
+      ],
+      "secao_externa_mm": [
+        150,
+        150
+      ],
+      "espessura_parede_nominal_mm": 3,
+      "aprovacao_estrutural": false,
+      "nota_historica": "Registro R07. C02 foi substituida na R13 por 100x100x3mm; dimensoes ativas no elemento C02 e em coluna_C02_r13."
+    },
+    "implantacao": {
+      "oficina": [
+        4000,
+        6000
+      ],
+      "passarela_largura": 1000,
+      "frente_funcional": "CD",
+      "recuo_frontal_referencia": 300,
+      "muro_BC_apoio_estrutural": false,
+      "afastamento_lateral_zero_somente_estudo": true
+    },
+    "pendencias": [
+      "calculo de vigas principais e secundarias",
+      "flambagem dos pilares e contraventamentos",
+      "painel para piso e apoio de suas juntas",
+      "ligacoes soldadas, reforcos e chumbadores",
+      "esquadrias e vidro de seguranca",
+      "fundacoes e sondagem",
+      "validar escada reta R15, corrimaos, guarda-corpos, altura livre e enquadramento normativo",
+      "recuos e levantamento topografico"
+    ],
+    "escada_r12": {
+      "representacao": "HISTORICO; substituida pela escada reta R15",
+      "coluna_referencia": "C07",
+      "coluna_alinhada": "C10",
+      "referencia": "face externa voltada para C-D, nao eixo do pilar",
+      "limite_y_mm": 5621,
+      "limite_anterior_y_mm": 6621,
+      "recuo_da_reserva_mm": 1000,
+      "encontro_patamar_y_mm": 2421,
+      "x_mm": [
+        9461,
+        10361
+      ],
+      "y_mm": [
+        2421,
+        5621
+      ],
+      "largura_nominal_mm": 900,
+      "comprimento_disponivel_mm": 3200,
+      "comprimento_anterior_mm": 4200,
+      "nivel_chegada_mm": 2715,
+      "escada_executiva_dimensionada": false,
+      "geometria_dos_degraus": "substituida por escada_r15",
+      "interferencia_preexistente_C02": {
+        "x_mm": [
+          10361,
+          10361
+        ],
+        "y_mm": [
+          3571,
+          3671
+        ],
+        "invasao_lateral_mm": 0,
+        "largura_restante_nominal_mm": 900,
+        "resolvida": true,
+        "revisao_resolucao": "R13",
+        "invasao_lateral_anterior_mm": 50,
+        "nota": "Resolvida somente a invasao lateral de C02 na reserva em planta. Nao inclui corrimaos, folgas, degraus nem aprovacao de largura util."
+      },
+      "nota": "Novo limite de implantacao, nao compressao de degraus existentes. Lance, patamar, largura util, corrimao, altura livre e eventual mudanca de direcao precisam de estudo. R13 remove a invasao lateral de C02 por reduzir a secao preservando a face X10461."
+    },
+    "coluna_C02_r13": {
+      "secao_externa_anterior_mm": [
+        150,
+        150
+      ],
+      "secao_externa_mm": [
+        100,
+        100
+      ],
+      "parede_mm": 3,
+      "altura_mm": 5420,
+      "origem_anterior_mm": [
+        10311,
+        3571,
+        0
+      ],
+      "origem_mm": [
+        10361,
+        3571,
+        0
+      ],
+      "face_externa_x_mm": 10461,
+      "invasao_reserva_escada_mm": 0,
+      "largura_reserva_em_planta_mm": 900,
+      "cargas_nulas_confirmadas": false,
+      "encontros_geometricos": [
+        "V01 - cobertura",
+        "V10 - mezanino"
+      ],
+      "dimensionamento_estrutural": false,
+      "observacao": "Alteracao autorizada apenas no modelo de estudo. C02 nao pode ser considerada sem carga; encontros e ligacoes devem ser avaliados pelo engenheiro."
+    },
+    "escada_r15": {
+      "tipo": "reta lateral, um unico lance",
+      "desnivel_mm": 2715,
+      "numero_espelhos": 15,
+      "espelho_mm": 181,
+      "numero_pisos": 14,
+      "pisada_mm": 278,
+      "blondel_mm": 640,
+      "desenvolvimento_horizontal_mm": 3892,
+      "largura_nominal_mm": 900,
+      "x_mm": [
+        9461,
+        10361
+      ],
+      "y_mm": [
+        1629,
+        5521
+      ],
+      "sentido_subida": "-Y, do terreo junto Y5521 para o corredor superior junto Y1629",
+      "limite_colunas_y_mm": 5521,
+      "corredor_superior_y_mm": [
+        621,
+        1629
+      ],
+      "corredor_superior_comprimento_mm": 1008,
+      "nivel_chegada_mm": 2715,
+      "area_piso_r13_m2": 16.725,
+      "area_piso_r14_m2": 12.9975,
+      "area_piso_r15_m2": 15.933,
+      "perda_vs_r13_m2": 0.792,
+      "recuperacao_vs_r14_m2": 2.9355,
+      "interferencia_C02_mm": 0,
+      "geometria_dos_degraus": "modelada em E15_D01..E15_D14 e E15_R01..E15_R15",
+      "escada_executiva_dimensionada": false,
+      "conformidade_integral_aprovada": false,
+      "observacao": "A geometria cabe no envelope e reduz a ocupacao. Largura util, corrimaos, altura livre, perfis, soldas, apoios, incendio e acessibilidade ainda exigem verificacao profissional."
+    }
+  },
+  "referencias_estruturais": {
+    "revisao": "R15",
+    "aliases_historicos": {
+      "C09": "C04"
+    },
+    "colunas": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08",
+      "C10"
+    ],
+    "vigas": [
+      "V01",
+      "V02",
+      "V03",
+      "V04",
+      "V05",
+      "V06",
+      "V07",
+      "V08",
+      "V09",
+      "V10",
+      "V11",
+      "V12",
+      "V13"
+    ],
+    "grade_principal": [
+      "G11_MT01",
+      "G11_MT02",
+      "G11_MT03",
+      "G11_MT04",
+      "G11_MT05",
+      "G11_MT06",
+      "G11_MT07",
+      "G11_MT08",
+      "G11_MT09",
+      "G11_MT10",
+      "G11_MT11",
+      "G11_MT12",
+      "G11_ML01_01",
+      "G11_ML01_02",
+      "G11_ML01_03",
+      "G11_ML01_04",
+      "G11_ML01_05",
+      "G11_ML01_06",
+      "G11_ML01_07",
+      "G11_ML01_08",
+      "G11_ML01_09",
+      "G11_ML01_10",
+      "G11_ML01_11",
+      "G11_ML01_12",
+      "G11_ML01_13",
+      "G11_ML02_01",
+      "G11_ML02_02",
+      "G11_ML02_03",
+      "G11_ML02_04",
+      "G11_ML02_05",
+      "G11_ML02_06",
+      "G11_ML02_07",
+      "G11_ML02_08",
+      "G11_ML02_09",
+      "G11_ML02_10",
+      "G11_ML02_11",
+      "G11_ML02_12",
+      "G11_ML02_13"
+    ],
+    "grade_patamar": [
+      "G11_PT01",
+      "G11_PT02",
+      "G11_PT03",
+      "G11_PT04",
+      "G11_PL01_01",
+      "G11_PL01_02",
+      "G11_PL01_03",
+      "G11_PL01_04",
+      "G11_PL01_05"
+    ],
+    "soleiras": [
+      "SG_ESQ",
+      "SG_DIR"
+    ],
+    "retirados_R10": [
+      "BM_L01",
+      "BM_L02",
+      "BM_L03",
+      "BM_T01",
+      "BM_T02",
+      "BM_T03",
+      "BM_T04",
+      "BM_T05",
+      "BM_T06",
+      "BM_T07",
+      "BM_T08",
+      "BM_T09",
+      "BM_T10",
+      "BM_T11",
+      "BM_T12",
+      "BM_T13",
+      "BM_F01",
+      "BM_F02",
+      "BP_L01",
+      "BP_L02",
+      "BP_T01",
+      "BP_T02",
+      "BP_T03",
+      "BP_T04",
+      "BP_T05",
+      "BP_T06"
+    ]
+  },
+  "status": "ESTUDO GEOMETRICO; todas as secoes, ligacoes, fundacoes e fechamentos carecem de validacao profissional",
+  "perfis_estudo": {
+    "GRADE_50X50": {
+      "tipo": "tubo_quadrado",
+      "dimensao_externa_mm": [
+        50,
+        50
+      ],
+      "parede_mm": null,
+      "aco": null,
+      "representacao": "envelope externo; vazado e soldas nao modelados",
+      "status": "geometria autorizada; capacidade, rigidez e ligacoes pendentes"
+    }
+  }
+}
