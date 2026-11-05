@@ -1,7 +1,7 @@
 {
   "schema": "mestre-cad-geometria-v1",
-  "nome": "Oficina R31 - escada L corrigida com patamar 900x900 no canto",
-  "revisao": "R31",
+  "nome": "Oficina R32 - escada L com sustentacao metalica conceitual",
+  "revisao": "R32",
   "unidades": "mm",
   "envelope_mm": {
     "x": 10461,
@@ -67,7 +67,7 @@
     },
     {
       "id": "MEZ_PATAMAR",
-      "nome": "Patamar superior R31 - chegada aos fundos junto a parede direita",
+      "nome": "Patamar superior R32 - chegada aos fundos junto a parede direita",
       "tipo": "caixa",
       "tag": "MEZANINO_ESTUDO",
       "origem_mm": [
@@ -83,8 +83,8 @@
       "material_conceitual": "placa especifica para piso de mezanino, fornecedor e capacidade ainda indefinidos"
     },
     {
-      "id": "MEZ_CORREDOR_R31",
-      "nome": "Corredor R31 de 1m no lado esquerdo, oposto a escada; topo Z2715",
+      "id": "MEZ_CORREDOR_R32",
+      "nome": "Corredor R32 de 1m no lado esquerdo, oposto a escada; topo Z2715",
       "tipo": "caixa",
       "tag": "MEZANINO_ESTUDO",
       "origem_mm": [
@@ -102,7 +102,7 @@
     },
     {
       "id": "ESCADA_RES",
-      "nome": "Escada R31 em L; tres degraus, patamar 900x900 e lance principal continuo",
+      "nome": "Escada R32 em L com patamar 900x900 e sustentacao metalica conceitual",
       "tipo": "face",
       "tag": "ESCADA_HIPOTESE",
       "pontos_mm": [
@@ -127,13 +127,13 @@
           0
         ]
       ],
-      "status": "geometria R31 corrigida: trecho curto ligado a patamar integral de 900x900 e lance principal",
+      "status": "geometria R32 com apoios e longarinas visiveis; perfis e ligacoes ainda nao dimensionados",
       "referencia_limite": "trecho curto x=8461..9461; patamar x=9461..10361,y=621..1521; lance principal y=1521..4579",
       "nivel_chegada_mm": 2715
     },
     {
-      "id": "E31_LD01",
-      "nome": "E31_LD01 - piso trecho curto ajustado ao canto interno",
+      "id": "E32_LD01",
+      "nome": "E32_LD01 - piso trecho curto ajustado ao canto interno",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -146,12 +146,12 @@
         900,
         30
       ],
-      "trecho": "inferior_L_R31",
+      "trecho": "inferior_L_R32",
       "pisada_mm": 333
     },
     {
-      "id": "E31_LD02",
-      "nome": "E31_LD02 - piso trecho curto ajustado ao canto interno",
+      "id": "E32_LD02",
+      "nome": "E32_LD02 - piso trecho curto ajustado ao canto interno",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -164,12 +164,12 @@
         900,
         30
       ],
-      "trecho": "inferior_L_R31",
+      "trecho": "inferior_L_R32",
       "pisada_mm": 333
     },
     {
-      "id": "E31_LD03",
-      "nome": "E31_LD03 - piso trecho curto ajustado ao canto interno",
+      "id": "E32_LD03",
+      "nome": "E32_LD03 - piso trecho curto ajustado ao canto interno",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -182,12 +182,12 @@
         900,
         30
       ],
-      "trecho": "inferior_L_R31",
+      "trecho": "inferior_L_R32",
       "pisada_mm": 334
     },
     {
-      "id": "E31_LR01",
-      "nome": "E31_LR01 - espelho trecho curto ajustado ao canto interno",
+      "id": "E32_LR01",
+      "nome": "E32_LR01 - espelho trecho curto ajustado ao canto interno",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -212,12 +212,12 @@
           181
         ]
       ],
-      "trecho": "inferior_L_R31",
+      "trecho": "inferior_L_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_LR02",
-      "nome": "E31_LR02 - espelho trecho curto ajustado ao canto interno",
+      "id": "E32_LR02",
+      "nome": "E32_LR02 - espelho trecho curto ajustado ao canto interno",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -242,12 +242,12 @@
           362
         ]
       ],
-      "trecho": "inferior_L_R31",
+      "trecho": "inferior_L_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_LR03",
-      "nome": "E31_LR03 - espelho trecho curto ajustado ao canto interno",
+      "id": "E32_LR03",
+      "nome": "E32_LR03 - espelho trecho curto ajustado ao canto interno",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -272,12 +272,12 @@
           543
         ]
       ],
-      "trecho": "inferior_L_R31",
+      "trecho": "inferior_L_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_CANTO",
-      "nome": "E31_CANTO - patamar integral de giro 90 graus",
+      "id": "E32_CANTO",
+      "nome": "E32_CANTO - patamar integral de giro 90 graus",
       "tipo": "caixa",
       "tag": "ESCADA_PATAMAR",
       "origem_mm": [
@@ -293,8 +293,8 @@
       "status": "patamar geometrico 900x900 para continuidade do L; dimensionamento estrutural pendente"
     },
     {
-      "id": "E31_MD01",
-      "nome": "E31_MD01 - piso lance principal para os fundos",
+      "id": "E32_MD01",
+      "nome": "E32_MD01 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -307,12 +307,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MD02",
-      "nome": "E31_MD02 - piso lance principal para os fundos",
+      "id": "E32_MD02",
+      "nome": "E32_MD02 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -325,12 +325,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MD03",
-      "nome": "E31_MD03 - piso lance principal para os fundos",
+      "id": "E32_MD03",
+      "nome": "E32_MD03 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -343,12 +343,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MD04",
-      "nome": "E31_MD04 - piso lance principal para os fundos",
+      "id": "E32_MD04",
+      "nome": "E32_MD04 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -361,12 +361,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MD05",
-      "nome": "E31_MD05 - piso lance principal para os fundos",
+      "id": "E32_MD05",
+      "nome": "E32_MD05 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -379,12 +379,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MD06",
-      "nome": "E31_MD06 - piso lance principal para os fundos",
+      "id": "E32_MD06",
+      "nome": "E32_MD06 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -397,12 +397,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MD07",
-      "nome": "E31_MD07 - piso lance principal para os fundos",
+      "id": "E32_MD07",
+      "nome": "E32_MD07 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -415,12 +415,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MD08",
-      "nome": "E31_MD08 - piso lance principal para os fundos",
+      "id": "E32_MD08",
+      "nome": "E32_MD08 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -433,12 +433,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MD09",
-      "nome": "E31_MD09 - piso lance principal para os fundos",
+      "id": "E32_MD09",
+      "nome": "E32_MD09 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -451,12 +451,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MD10",
-      "nome": "E31_MD10 - piso lance principal para os fundos",
+      "id": "E32_MD10",
+      "nome": "E32_MD10 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -469,12 +469,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MD11",
-      "nome": "E31_MD11 - piso lance principal para os fundos",
+      "id": "E32_MD11",
+      "nome": "E32_MD11 - piso lance principal para os fundos",
       "tipo": "caixa",
       "tag": "ESCADA_DEGRAUS",
       "origem_mm": [
@@ -487,12 +487,12 @@
         278,
         30
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "pisada_mm": 278
     },
     {
-      "id": "E31_MR01",
-      "nome": "E31_MR01 - espelho lance principal para os fundos",
+      "id": "E32_MR01",
+      "nome": "E32_MR01 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -517,12 +517,12 @@
           724
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR02",
-      "nome": "E31_MR02 - espelho lance principal para os fundos",
+      "id": "E32_MR02",
+      "nome": "E32_MR02 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -547,12 +547,12 @@
           905
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR03",
-      "nome": "E31_MR03 - espelho lance principal para os fundos",
+      "id": "E32_MR03",
+      "nome": "E32_MR03 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -577,12 +577,12 @@
           1086
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR04",
-      "nome": "E31_MR04 - espelho lance principal para os fundos",
+      "id": "E32_MR04",
+      "nome": "E32_MR04 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -607,12 +607,12 @@
           1267
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR05",
-      "nome": "E31_MR05 - espelho lance principal para os fundos",
+      "id": "E32_MR05",
+      "nome": "E32_MR05 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -637,12 +637,12 @@
           1448
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR06",
-      "nome": "E31_MR06 - espelho lance principal para os fundos",
+      "id": "E32_MR06",
+      "nome": "E32_MR06 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -667,12 +667,12 @@
           1629
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR07",
-      "nome": "E31_MR07 - espelho lance principal para os fundos",
+      "id": "E32_MR07",
+      "nome": "E32_MR07 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -697,12 +697,12 @@
           1810
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR08",
-      "nome": "E31_MR08 - espelho lance principal para os fundos",
+      "id": "E32_MR08",
+      "nome": "E32_MR08 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -727,12 +727,12 @@
           1991
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR09",
-      "nome": "E31_MR09 - espelho lance principal para os fundos",
+      "id": "E32_MR09",
+      "nome": "E32_MR09 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -757,12 +757,12 @@
           2172
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR10",
-      "nome": "E31_MR10 - espelho lance principal para os fundos",
+      "id": "E32_MR10",
+      "nome": "E32_MR10 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -787,12 +787,12 @@
           2353
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR11",
-      "nome": "E31_MR11 - espelho lance principal para os fundos",
+      "id": "E32_MR11",
+      "nome": "E32_MR11 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -817,12 +817,12 @@
           2534
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_MR12",
-      "nome": "E31_MR12 - espelho lance principal para os fundos",
+      "id": "E32_MR12",
+      "nome": "E32_MR12 - espelho lance principal para os fundos",
       "tipo": "face",
       "tag": "ESCADA_ESPELHOS",
       "pontos_mm": [
@@ -847,12 +847,12 @@
           2715
         ]
       ],
-      "trecho": "principal_R31",
+      "trecho": "principal_R32",
       "espelho_mm": 181
     },
     {
-      "id": "E31_ML01",
-      "nome": "E31_ML01 - referencia longarina esquerda lance principal",
+      "id": "E32_ML01",
+      "nome": "E32_ML01 - referencia longarina esquerda lance principal",
       "tipo": "face",
       "tag": "ESCADA_LONGARINAS",
       "pontos_mm": [
@@ -881,8 +881,8 @@
       "status": "referencia geometrica; dimensionamento pendente"
     },
     {
-      "id": "E31_ML02",
-      "nome": "E31_ML02 - referencia longarina direita lance principal",
+      "id": "E32_ML02",
+      "nome": "E32_ML02 - referencia longarina direita lance principal",
       "tipo": "face",
       "tag": "ESCADA_LONGARINAS",
       "pontos_mm": [
@@ -911,8 +911,8 @@
       "status": "referencia geometrica; dimensionamento pendente"
     },
     {
-      "id": "E31_G01",
-      "nome": "E31_G01 - plano referencia guarda-corpo lado livre do lance principal",
+      "id": "E32_G01",
+      "nome": "E32_G01 - plano referencia guarda-corpo lado livre do lance principal",
       "tipo": "face",
       "tag": "ESCADA_GUARDAS",
       "pontos_mm": [
@@ -939,6 +939,474 @@
       ],
       "altura_referencia_mm": 1100,
       "status": "apenas plano de referencia; detalhamento pendente"
+    },
+    {
+      "id": "E32_AP01",
+      "nome": "E32_AP01 - apoio vertical esquerdo do patamar inferior",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        1421,
+        0
+      ],
+      "dimensoes_mm": [
+        80,
+        80,
+        513
+      ],
+      "perfil_referencia": "80x80 conceitual; dimensionar",
+      "status": "apoio visual/geométrico, nao executivo"
+    },
+    {
+      "id": "E32_AP02",
+      "nome": "E32_AP02 - apoio vertical direito do patamar inferior",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10261,
+        1421,
+        0
+      ],
+      "dimensoes_mm": [
+        80,
+        80,
+        513
+      ],
+      "perfil_referencia": "80x80 conceitual; dimensionar",
+      "status": "apoio visual/geométrico, nao executivo"
+    },
+    {
+      "id": "E32_VP01",
+      "nome": "E32_VP01 - viga transversal sob patamar inferior",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9461,
+        1421,
+        433
+      ],
+      "dimensoes_mm": [
+        900,
+        80,
+        80
+      ],
+      "perfil_referencia": "viga 80mm conceitual; dimensionar",
+      "status": "apoio visual/geométrico, nao executivo"
+    },
+    {
+      "id": "E32_LE01",
+      "nome": "E32_LE01 - longarina esquerda sob degrau 01",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        1521,
+        594
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LE02",
+      "nome": "E32_LE02 - longarina esquerda sob degrau 02",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        1799,
+        775
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LE03",
+      "nome": "E32_LE03 - longarina esquerda sob degrau 03",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        2077,
+        956
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LE04",
+      "nome": "E32_LE04 - longarina esquerda sob degrau 04",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        2355,
+        1137
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LE05",
+      "nome": "E32_LE05 - longarina esquerda sob degrau 05",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        2633,
+        1318
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LE06",
+      "nome": "E32_LE06 - longarina esquerda sob degrau 06",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        2911,
+        1499
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LE07",
+      "nome": "E32_LE07 - longarina esquerda sob degrau 07",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        3189,
+        1680
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LE08",
+      "nome": "E32_LE08 - longarina esquerda sob degrau 08",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        3467,
+        1861
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LE09",
+      "nome": "E32_LE09 - longarina esquerda sob degrau 09",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        3745,
+        2042
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LE10",
+      "nome": "E32_LE10 - longarina esquerda sob degrau 10",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        4023,
+        2223
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LE11",
+      "nome": "E32_LE11 - longarina esquerda sob degrau 11",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9481,
+        4301,
+        2404
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD01",
+      "nome": "E32_LD01 - longarina direita sob degrau 01",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        1521,
+        594
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD02",
+      "nome": "E32_LD02 - longarina direita sob degrau 02",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        1799,
+        775
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD03",
+      "nome": "E32_LD03 - longarina direita sob degrau 03",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        2077,
+        956
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD04",
+      "nome": "E32_LD04 - longarina direita sob degrau 04",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        2355,
+        1137
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD05",
+      "nome": "E32_LD05 - longarina direita sob degrau 05",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        2633,
+        1318
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD06",
+      "nome": "E32_LD06 - longarina direita sob degrau 06",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        2911,
+        1499
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD07",
+      "nome": "E32_LD07 - longarina direita sob degrau 07",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        3189,
+        1680
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD08",
+      "nome": "E32_LD08 - longarina direita sob degrau 08",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        3467,
+        1861
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD09",
+      "nome": "E32_LD09 - longarina direita sob degrau 09",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        3745,
+        2042
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD10",
+      "nome": "E32_LD10 - longarina direita sob degrau 10",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        4023,
+        2223
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_LD11",
+      "nome": "E32_LD11 - longarina direita sob degrau 11",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        10281,
+        4301,
+        2404
+      ],
+      "dimensoes_mm": [
+        80,
+        278,
+        100
+      ],
+      "perfil_referencia": "longarina escalonada conceitual; perfil final a dimensionar",
+      "status": "representacao volumetrica para apoio visual; nao executivo"
+    },
+    {
+      "id": "E32_VL01",
+      "nome": "E32_VL01 - travessa de ligacao no inicio do lance principal",
+      "tipo": "caixa",
+      "tag": "ESCADA_ESTRUTURA",
+      "origem_mm": [
+        9461,
+        1521,
+        594
+      ],
+      "dimensoes_mm": [
+        900,
+        80,
+        80
+      ],
+      "perfil_referencia": "travessa conceitual; dimensionar",
+      "status": "apoio visual/geométrico, nao executivo"
     },
     {
       "id": "MEZ_PRINCIPAL_A",
@@ -4749,7 +5217,102 @@
       "nivel_chegada_mm": 2715,
       "escada_executiva_dimensionada": false,
       "conformidade_integral_aprovada": false,
-      "observacao": "R31 elimina o conector parcial de 300mm e usa patamar integral 900x900 entre os dois lances."
+      "observacao": "R31 elimina o conector parcial de 300mm e usa patamar integral 900x900 entre os dois lances.",
+      "status": "substituida pela R32 com sustentacao metalica conceitual"
+    },
+    "escada_r32": {
+      "tipo": "L com patamar 900x900 e sustentacao metalica conceitual",
+      "desnivel_mm": 2715,
+      "numero_espelhos": 15,
+      "espelho_mm": 181,
+      "numero_pisos_total": 14,
+      "largura_nominal_mm": 900,
+      "trecho_inferior": {
+        "quantidade_pisos": 3,
+        "desenvolvimento_mm": 1000,
+        "pisadas_mm": [
+          333,
+          333,
+          334
+        ],
+        "x_mm": [
+          8461,
+          9461
+        ],
+        "y_mm": [
+          621,
+          1521
+        ],
+        "sentido_subida": "+X"
+      },
+      "patamar_inferior_mm": {
+        "x": [
+          9461,
+          10361
+        ],
+        "y": [
+          621,
+          1521
+        ],
+        "largura": 900,
+        "profundidade": 900,
+        "nivel_topo": 543
+      },
+      "lance_principal": {
+        "quantidade_pisos": 11,
+        "desenvolvimento_mm": 3058,
+        "pisada_mm": 278,
+        "x_mm": [
+          9461,
+          10361
+        ],
+        "y_mm": [
+          1521,
+          4579
+        ],
+        "sentido_subida": "+Y (fundos)"
+      },
+      "patamar_superior_mm": {
+        "x": [
+          9461,
+          10461
+        ],
+        "y": [
+          4579,
+          5488
+        ]
+      },
+      "corredor_oposto_mm": {
+        "x": [
+          8461,
+          9461
+        ],
+        "y": [
+          621,
+          5596
+        ],
+        "largura": 1000,
+        "lado": "esquerda"
+      },
+      "c08_removido": true,
+      "nivel_chegada_mm": 2715,
+      "escada_executiva_dimensionada": false,
+      "conformidade_integral_aprovada": false,
+      "observacao": "R32 adiciona sustentacao visual/geométrica. Perfis, soldas, chumbadores, ligacoes, cargas e fundacoes exigem calculo estrutural.",
+      "apoio_patamar_inferior": {
+        "pilares": [
+          "E32_AP01",
+          "E32_AP02"
+        ],
+        "viga": "E32_VP01",
+        "perfil_referencia": "80mm conceitual; dimensionamento pendente"
+      },
+      "longarinas_lance_principal": {
+        "lado_esquerdo": "E32_LE01..E32_LE11",
+        "lado_direito": "E32_LD01..E32_LD11",
+        "representacao": "segmentos escalonados sob cada piso para dar volume e leitura estrutural"
+      },
+      "dimensionamento_estrutural_aprovado": false
     }
   },
   "referencias_estruturais": {
