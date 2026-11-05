@@ -5312,7 +5312,8 @@
         "lado_direito": "E32_LDIR01..E32_LDIR11",
         "representacao": "segmentos escalonados sob cada piso para dar volume e leitura estrutural"
       },
-      "dimensionamento_estrutural_aprovado": false
+      "dimensionamento_estrutural_aprovado": false,
+      "ci_publicacao": "retry limpo apos corrida de push; geometria inalterada"
     }
   },
   "referencias_estruturais": {
