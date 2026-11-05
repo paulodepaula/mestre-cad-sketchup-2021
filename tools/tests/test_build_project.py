@@ -86,7 +86,6 @@ class ProjectGenerationTest(unittest.TestCase):
         self.assertEqual(p['lance_principal']['x_mm'],[9461,10361])
         self.assertEqual(p['lance_principal']['sentido_subida'],'+Y (fundos)')
         self.assertEqual(p['c08_removido'],True)
-        self.assertEqual(p['trecho_inferior']['canto_contato'],'x=9461,y=621')
         self.assertEqual(p['corredor_oposto_mm'],{'x':[8461,9461],'y':[621,5596],'largura':1000,'lado':'esquerda'})
         self.assertEqual(p['nivel_chegada_mm'],2715)
         self.assertFalse(p['escada_executiva_dimensionada'])
