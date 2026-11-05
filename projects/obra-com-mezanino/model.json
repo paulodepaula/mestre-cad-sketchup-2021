@@ -1193,8 +1193,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD01",
-      "nome": "E32_LD01 - longarina direita sob degrau 01",
+      "id": "E32_LDIR01",
+      "nome": "E32_LDIR01 - longarina direita sob degrau 01",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -1211,8 +1211,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD02",
-      "nome": "E32_LD02 - longarina direita sob degrau 02",
+      "id": "E32_LDIR02",
+      "nome": "E32_LDIR02 - longarina direita sob degrau 02",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -1229,8 +1229,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD03",
-      "nome": "E32_LD03 - longarina direita sob degrau 03",
+      "id": "E32_LDIR03",
+      "nome": "E32_LDIR03 - longarina direita sob degrau 03",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -1247,8 +1247,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD04",
-      "nome": "E32_LD04 - longarina direita sob degrau 04",
+      "id": "E32_LDIR04",
+      "nome": "E32_LDIR04 - longarina direita sob degrau 04",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -1265,8 +1265,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD05",
-      "nome": "E32_LD05 - longarina direita sob degrau 05",
+      "id": "E32_LDIR05",
+      "nome": "E32_LDIR05 - longarina direita sob degrau 05",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -1283,8 +1283,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD06",
-      "nome": "E32_LD06 - longarina direita sob degrau 06",
+      "id": "E32_LDIR06",
+      "nome": "E32_LDIR06 - longarina direita sob degrau 06",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -1301,8 +1301,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD07",
-      "nome": "E32_LD07 - longarina direita sob degrau 07",
+      "id": "E32_LDIR07",
+      "nome": "E32_LDIR07 - longarina direita sob degrau 07",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -1319,8 +1319,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD08",
-      "nome": "E32_LD08 - longarina direita sob degrau 08",
+      "id": "E32_LDIR08",
+      "nome": "E32_LDIR08 - longarina direita sob degrau 08",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -1337,8 +1337,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD09",
-      "nome": "E32_LD09 - longarina direita sob degrau 09",
+      "id": "E32_LDIR09",
+      "nome": "E32_LDIR09 - longarina direita sob degrau 09",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -1355,8 +1355,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD10",
-      "nome": "E32_LD10 - longarina direita sob degrau 10",
+      "id": "E32_LDIR10",
+      "nome": "E32_LDIR10 - longarina direita sob degrau 10",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -1373,8 +1373,8 @@
       "status": "representacao volumetrica para apoio visual; nao executivo"
     },
     {
-      "id": "E32_LD11",
-      "nome": "E32_LD11 - longarina direita sob degrau 11",
+      "id": "E32_LDIR11",
+      "nome": "E32_LDIR11 - longarina direita sob degrau 11",
       "tipo": "caixa",
       "tag": "ESCADA_ESTRUTURA",
       "origem_mm": [
@@ -5309,7 +5309,7 @@
       },
       "longarinas_lance_principal": {
         "lado_esquerdo": "E32_LE01..E32_LE11",
-        "lado_direito": "E32_LD01..E32_LD11",
+        "lado_direito": "E32_LDIR01..E32_LDIR11",
         "representacao": "segmentos escalonados sob cada piso para dar volume e leitura estrutural"
       },
       "dimensionamento_estrutural_aprovado": false
